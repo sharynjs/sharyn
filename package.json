@@ -4,6 +4,61 @@
   "repository": "https://github.com/sharynjs/main.git",
   "license": "MIT",
   "scripts": {
-    "start": "echo Hello"
+    "build": "babel src --out-dir .",
+    "lint": "eslint src && flow",
+    "test": "jest --coverage",
+    "prepublishOnly": "yarn build"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/flow"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base",
+      "plugin:flowtype/recommended",
+      "prettier",
+      "prettier/flowtype"
+    ],
+    "plugins": [
+      "flowtype",
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "rules": {
+      "no-unexpected-multiline": 2,
+      "import/prefer-default-export": 0,
+      "prettier/prettier": 2,
+      "func-names": 0
+    }
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.52",
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "@babel/preset-flow": "^7.0.0-beta.52",
+    "babel-eslint": "^8.2.5",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "flow-bin": "^0.76.0",
+    "prettier": "^1.13.7"
   }
 }
