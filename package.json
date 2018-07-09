@@ -11,8 +11,8 @@
   },
   "babel": {
     "presets": [
-      "@babel/env",
-      "@babel/flow"
+      "@babel/preset-env",
+      "@babel/preset-flow"
     ]
   },
   "prettier": {
@@ -43,14 +43,13 @@
       "func-names": 0
     }
   },
-  "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.52",
     "@babel/core": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.5",
     "eslint": "^5.1.0",
     "eslint-config-airbnb-base": "^13.0.0",
@@ -59,6 +58,7 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-prettier": "^2.6.2",
     "flow-bin": "^0.76.0",
+    "jest": "^23.2.0",
     "prettier": "^1.13.7"
   }
 }
