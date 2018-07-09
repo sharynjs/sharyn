@@ -1,0 +1,9 @@
+{
+  "name": "sharyn",
+  "version": "0.1.0",
+  "repository": "https://github.com/sharynjs/main.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "echo Hello"
+  }
+}
