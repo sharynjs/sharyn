@@ -20,4 +20,8 @@ DrawerItem.propTypes = {
   icon: PropTypes.func,
 }
 
+DrawerItem.defaultProps = {
+  icon: null,
+}
+
 export default DrawerItem

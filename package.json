@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "babel src --out-dir . --ignore '**/*.test.js'",
-    "lint": "eslint . && flow",
+    "lint": "eslint packages && flow",
     "test": "jest --coverage",
     "prepublishOnly": "yarn build"
   },
@@ -46,6 +46,7 @@
       "no-unexpected-multiline": 2,
       "import/prefer-default-export": 0,
       "prettier/prettier": 2,
+      "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
       "func-names": 0
     }
   },
