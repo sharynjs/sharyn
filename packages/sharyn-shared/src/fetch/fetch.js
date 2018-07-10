@@ -23,11 +23,12 @@ export const fetchGraphql = async (
     body: JSON.stringify(body),
     credentials: 'same-origin',
   }
+
+  const finalOptions = Object.assign(defaultFetchOptions, fetchOptions)
+
   if (cookie) {
-    defaultFetchOptions.headers.cookie = cookie
+    finalOptions.headers.cookie = cookie
   }
-  return (await fetch(
-    `${host || ''}${path || '/graphql'}`,
-    Object.assign(defaultFetchOptions, fetchOptions),
-  )).json()
+
+  return (await fetch(`${host || ''}${path || '/graphql'}`, finalOptions)).json()
 }
