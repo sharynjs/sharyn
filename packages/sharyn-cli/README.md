@@ -1,5 +1,9 @@
 # @sharyn/cli
 
+![npm (scoped)](https://img.shields.io/npm/v/@sharyn/cli.svg)
+
+This package provides CLI tasks to use as your NPM scripts.
+
 ## Install
 
 ```bash

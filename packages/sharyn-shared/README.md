@@ -1,5 +1,9 @@
 # @sharyn/shared
 
+![npm (scoped)](https://img.shields.io/npm/v/@sharyn/shared.svg)
+
+This package provides _isomorphic_ / _universal_ utilities than can be used on both the client and the server.
+
 ## Install
 
 ```bash
