@@ -6,13 +6,18 @@
 
 Collecion of helpers to build a JS app.
 
+The following packages are available:
+
+- [@sharyn/cli](https://github.com/sharynjs/cli) – Convenient NPM scripts
+- [@sharyn/material-ui](https://github.com/sharynjs/material-ui) – UI components using Material UI
+
 ## Artwork
 
-Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1).
+Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1)
 
 ## Why 'Sharyn'?
 
-It's a reference to one of my all-time favorite metalcore song, [Killswitch Engage - Rose of Sharyn](https://www.youtube.com/watch?v=PgMsACFMIq8).
+It's a reference to one of my all-time favorite metalcore song, [Killswitch Engage - Rose of Sharyn](https://www.youtube.com/watch?v=PgMsACFMIq8)
 
 ## License
 
