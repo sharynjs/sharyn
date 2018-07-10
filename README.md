@@ -4,7 +4,7 @@
 
 # Sharyn JS
 
-Collection of helpers to build a JS app.
+Collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that strictly follow my [JS Stack from Scratch](https://github.com/verekia/js-stack-from-scratch) tutorial ([major update](https://github.com/verekia/js-stack-from-scratch/issues/255) coming soon).
 
 The following packages are available:
 
