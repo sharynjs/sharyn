@@ -1,6 +1,6 @@
 # @sharyn/config
 
-![npm (scoped)](https://img.shields.io/npm/v/@sharyn/config.svg)
+![npm](https://img.shields.io/npm/v/@sharyn/config.svg)
 
 This package provides configuration files for Babel, ESLint, and Prettier.
 
