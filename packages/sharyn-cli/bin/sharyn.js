@@ -25,10 +25,6 @@ switch (scriptName) {
     command = './node_modules/.bin/jest --coverage'
     break
   }
-  case 'clean': {
-    command = './node_modules/.bin/rimraf .cache lib dist'
-    break
-  }
   case 'client-build': {
     const parcelBuild =
       './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
