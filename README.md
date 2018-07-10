@@ -13,7 +13,7 @@ The following packages are available:
 
 ## Credits
 
-By Jonathan Verrecchia – @verekia
+By Jonathan Verrecchia – [@verekia](https://github.com/verekia)
 
 Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1)
 
