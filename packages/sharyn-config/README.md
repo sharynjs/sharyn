@@ -1,10 +1,14 @@
 # @sharyn/config
 
+This package provides configuration files for Babel, ESLint, and Prettier.
+
 ## Install
 
 ```bash
-yarn add @sharyn-config
+npx install-peerdeps -Y --dev @sharyn/config
 ```
+
+(the `-Y` option is to use Yarn)
 
 ## Usage
 
