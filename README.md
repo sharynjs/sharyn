@@ -4,7 +4,7 @@
 
 # Sharyn JS
 
-Collecion of helpers to build a JS app.
+Collection of helpers to build a JS app.
 
 The following packages are available:
 
@@ -17,7 +17,7 @@ Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1)
 
 ## Why 'Sharyn'?
 
-It's a reference to one of my all-time favorite metalcore song, [Killswitch Engage - Rose of Sharyn](https://www.youtube.com/watch?v=PgMsACFMIq8)
+It's a reference to one of my all-time favorite metalcore song: [Rose of Sharyn by Killswitch Engage](https://www.youtube.com/watch?v=PgMsACFMIq8)
 
 ## License
 
