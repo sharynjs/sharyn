@@ -11,7 +11,9 @@ The following packages are available:
 - [@sharyn/cli](https://github.com/sharynjs/cli) – Convenient NPM scripts
 - [@sharyn/material-ui](https://github.com/sharynjs/material-ui) – UI components using Material UI
 
-## Artwork
+## Credits
+
+By Jonathan Verrecchia – @verekia
 
 Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1)
 
