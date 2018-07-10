@@ -4,6 +4,8 @@ const { spawn } = require('child_process')
 let command
 const scriptName = process.argv[2]
 
+const rimrafDist = './node_modules/.bin/rimraf dist'
+
 switch (scriptName) {
   case 'lint': {
     const eslint = './node_modules/.bin/eslint src'
@@ -13,7 +15,9 @@ switch (scriptName) {
     break
   }
   case 'babel': {
-    command = './node_modules/.bin/babel src -d lib --ignore .test.js'
+    const rimrafLib = './node_modules/.bin/rimraf lib'
+    const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
+    command = [rimrafLib, babel].join(' && ')
     break
   }
   case 'test': {
@@ -25,13 +29,15 @@ switch (scriptName) {
     break
   }
   case 'client-build': {
-    command =
+    const parcelBuild =
       './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
+    command = [rimrafDist, parcelBuild].join(' && ')
     break
   }
   case 'client-watch': {
-    command =
+    const parcelWatch =
       './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
+    command = [rimrafDist, parcelWatch].join(' && ')
     break
   }
   default:
