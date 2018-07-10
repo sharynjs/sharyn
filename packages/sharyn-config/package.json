@@ -1,6 +1,22 @@
 {
   "name": "@sharyn/config",
-  "version": "0.2.0",
+  "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn",
-  "license": "MIT"
+  "license": "MIT",
+  "peerDependencies": {
+    "@babel/core": "x",
+    "@babel/preset-env": "x",
+    "@babel/preset-flow": "x",
+    "@babel/preset-react": "x",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "x",
+    "babel-jest": "x",
+    "eslint-config-airbnb": "x",
+    "eslint-config-prettier": "x",
+    "eslint-plugin-flowtype": "x",
+    "eslint-plugin-import": "x",
+    "eslint-plugin-jsx-a11y": "x",
+    "eslint-plugin-prettier": "x",
+    "eslint-plugin-react": "x"
+  }
 }
