@@ -8,17 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "babel src --out-dir . --ignore '**/*.test.js'",
+    "build": "babel packages/sharyn-material-ui/src --out-dir packages/sharyn-material-ui --ignore '**/*.test.js' && babel packages/sharyn-shared/src --out-dir packages/sharyn-shared --ignore '**/*.test.js'",
+    "clean": "rimraf packages/sharyn-material-ui/DrawerItem packages/sharyn-shared/fetch",
     "lint": "eslint packages && flow && madge --circular packages",
-    "test": "jest --coverage",
-    "prepublishOnly": "yarn build"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "@babel/preset-flow"
-    ]
+    "test": "jest --coverage"
   },
   "prettier": {
     "printWidth": 100,
@@ -46,6 +39,7 @@
       "no-unexpected-multiline": 2,
       "import/prefer-default-export": 0,
       "prettier/prettier": 2,
+      "func-names": 0,
       "react/jsx-filename-extension": [
         1,
         {
@@ -53,8 +47,7 @@
             ".js"
           ]
         }
-      ],
-      "func-names": 0
+      ]
     }
   },
   "devDependencies": {
@@ -77,6 +70,7 @@
     "flow-bin": "^0.76.0",
     "jest": "^23.2.0",
     "madge": "^3.2.0",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "rimraf": "^2.6.2"
   }
 }
