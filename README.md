@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/40995577/42486668-f217a99c-8405-11e8-9f89-8bf3b28dca44.png" width="363" height="108">
+  <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png">
 </p>
 
 # Sharyn JS
