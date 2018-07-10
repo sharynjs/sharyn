@@ -4,7 +4,7 @@
   "repository": "https://github.com/sharynjs/main.git",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir .",
+    "build": "babel src --out-dir . --ignore '**/*.test.js'",
     "lint": "eslint src && flow",
     "test": "jest --coverage",
     "prepublishOnly": "yarn build"
