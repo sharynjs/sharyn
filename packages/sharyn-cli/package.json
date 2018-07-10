@@ -13,5 +13,8 @@
   },
   "bin": {
     "sharyn": "bin/sharyn.js"
+  },
+  "dependencies": {
+    "@sharyn/config": "^0.1.0"
   }
 }
