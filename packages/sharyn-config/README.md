@@ -11,6 +11,7 @@ yarn add @sharyn-config
 Create a `babel.config.js` file at the root of your project containing:
 
 ```js
+// eslint-disable-next-line
 module.exports = require('@sharyn/config/babel.config.js')
 ```
 
