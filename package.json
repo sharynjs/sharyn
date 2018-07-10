@@ -1,6 +1,6 @@
 {
   "name": "sharyn-monorepo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "description": "The monorepo of SharynJS",
   "private": true,
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "babel src --out-dir . --ignore '**/*.test.js'",
-    "lint": "eslint packages && flow",
+    "lint": "eslint packages && flow && madge --circular packages",
     "test": "jest --coverage",
     "prepublishOnly": "yarn build"
   },
@@ -46,7 +46,14 @@
       "no-unexpected-multiline": 2,
       "import/prefer-default-export": 0,
       "prettier/prettier": 2,
-      "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js"
+          ]
+        }
+      ],
       "func-names": 0
     }
   },
@@ -69,6 +76,7 @@
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.76.0",
     "jest": "^23.2.0",
+    "madge": "^3.2.0",
     "prettier": "^1.13.7"
   }
 }
