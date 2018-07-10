@@ -1,14 +1,23 @@
 {
   "name": "@sharyn/cli",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "peerDependencies": {
+    "babel-eslint": "x",
     "eslint": "x",
+    "eslint-config-airbnb": "x",
+    "eslint-config-prettier": "x",
+    "eslint-plugin-flowtype": "x",
+    "eslint-plugin-import": "x",
+    "eslint-plugin-jsx-a11y": "x",
+    "eslint-plugin-prettier": "x",
+    "eslint-plugin-react": "x",
     "flow-bin": "x",
     "jest": "x",
     "madge": "x",
     "parcel-bundler": "x",
+    "prettier": "x",
     "rimraf": "x"
   },
   "bin": {
