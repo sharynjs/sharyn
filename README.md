@@ -8,9 +8,9 @@ Collection of helpers to build a JS app. At the moment, this is pretty much a pe
 
 The following packages are available:
 
-- [@sharyn/cli](https://github.com/sharynjs/cli) – Convenient NPM scripts
-- [@sharyn/material-ui](https://github.com/sharynjs/material-ui) – UI components using Material UI
-- [@sharyn/shared](https://github.com/sharynjs/shared) – Utils shared between the client and the server
+- [@sharyn/cli](https://www.npmjs.com/package/@sharyn/cli) ([source](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-cli)) – Convenient NPM scripts
+- [@sharyn/material-ui](https://www.npmjs.com/package/@sharyn/sharyn-material-ui) ([source](https://github.com/sharynjs/sharyn/tree/master/packages/material-ui)) – UI components using Material UI
+- [@sharyn/shared](https://www.npmjs.com/package/@sharyn/shared) ([source](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-shared)) – Utils shared between the client and the server
 
 ## Credits
 
