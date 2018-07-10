@@ -1,8 +1,12 @@
 {
   "name": "sharyn",
   "version": "0.1.0",
-  "repository": "https://github.com/sharynjs/main.git",
-  "license": "MIT",
+  "repository": "https://github.com/sharynjs/sharyn.git",
+  "description": "The monorepo of SharynJS",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "babel src --out-dir . --ignore '**/*.test.js'",
     "lint": "eslint src && flow",
@@ -43,7 +47,6 @@
       "func-names": 0
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.52",
     "@babel/core": "^7.0.0-beta.52",
@@ -51,6 +54,7 @@
     "@babel/preset-flow": "^7.0.0-beta.52",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.5",
+    "babel-jest": "^23.2.0",
     "eslint": "^5.1.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-config-prettier": "^2.9.0",
