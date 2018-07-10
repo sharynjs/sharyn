@@ -1,0 +1,1 @@
+export { fetchGraphql } from './fetch'

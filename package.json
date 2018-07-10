@@ -1,7 +1,7 @@
 {
-  "name": "sharyn",
+  "name": "sharyn-monorepo",
   "version": "0.1.0",
-  "repository": "https://github.com/sharynjs/sharyn.git",
+  "repository": "https://github.com/sharynjs/sharyn",
   "description": "The monorepo of SharynJS",
   "private": true,
   "workspaces": [
@@ -9,13 +9,14 @@
   ],
   "scripts": {
     "build": "babel src --out-dir . --ignore '**/*.test.js'",
-    "lint": "eslint src && flow",
+    "lint": "eslint . && flow",
     "test": "jest --coverage",
     "prepublishOnly": "yarn build"
   },
   "babel": {
     "presets": [
       "@babel/preset-env",
+      "@babel/preset-react",
       "@babel/preset-flow"
     ]
   },
@@ -27,9 +28,10 @@
   },
   "eslintConfig": {
     "extends": [
-      "airbnb-base",
+      "airbnb",
       "plugin:flowtype/recommended",
       "prettier",
+      "prettier/react",
       "prettier/flowtype"
     ],
     "plugins": [
@@ -52,15 +54,18 @@
     "@babel/core": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
+    "@babel/preset-react": "^7.0.0-beta.52",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "eslint": "^5.1.0",
-    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.76.0",
     "jest": "^23.2.0",
     "prettier": "^1.13.7"

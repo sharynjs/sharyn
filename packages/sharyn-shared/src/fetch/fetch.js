@@ -31,5 +31,3 @@ export const fetchGraphql = async (
     Object.assign(defaultFetchOptions, fetchOptions),
   )).json()
 }
-
-export default fetchGraphql

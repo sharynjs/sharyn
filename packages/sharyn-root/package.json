@@ -1,0 +1,9 @@
+{
+  "name": "sharyn",
+  "version": "0.2.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "node index.js"
+  }
+}

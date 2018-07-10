@@ -1,0 +1,9 @@
+{
+  "name": "@sharyn/shared",
+  "version": "0.1.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  }
+}
