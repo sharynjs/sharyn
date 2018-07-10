@@ -8,10 +8,10 @@ Sharyn in a collection of helpers to build a JS app. At the moment, this is pret
 
 The following packages are available:
 
-- **[@sharyn/cli](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-cli)** – Convenient NPM scripts
-- **[@sharyn/config](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-config)** – Configuration files for ESLint, Prettier, Babel
-- **[@sharyn/material-ui](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-material-ui)** – UI components using Material UI
-- **[@sharyn/shared](https://github.com/sharynjs/sharyn/tree/master/packages/sharyn-shared)** – Utils shared between the client and the server
+- **[@sharyn/cli](https://github.com/sharynjs/sharyn/blob/master/packages/sharyn-cli/README.md)** – Convenient NPM scripts
+- **[@sharyn/config](https://github.com/sharynjs/sharyn/blob/master/packages/sharyn-config/README.md)** – Configuration files for ESLint, Prettier, Babel
+- **[@sharyn/material-ui](https://github.com/sharynjs/sharyn/blob/master/packages/sharyn-material-ui/README.md)** – UI components using Material UI
+- **[@sharyn/shared](https://github.com/sharynjs/sharyn/blob/master/packages/sharyn-shared/README.md)** – Utils shared between the client and the server
 
 ## Credits
 
