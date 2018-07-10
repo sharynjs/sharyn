@@ -10,6 +10,7 @@ The following packages are available:
 
 - [@sharyn/cli](https://github.com/sharynjs/cli) – Convenient NPM scripts
 - [@sharyn/material-ui](https://github.com/sharynjs/material-ui) – UI components using Material UI
+- [@sharyn/shared](https://github.com/sharynjs/shared) – Utils shared between the client and the server
 
 ## Credits
 
