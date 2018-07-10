@@ -50,7 +50,7 @@
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
     "@babel/preset-react": "^7.0.0-beta.52",
-    "@sharyn/config": "^0.2.0",
+    "@sharyn/config": "^1.0.1",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
