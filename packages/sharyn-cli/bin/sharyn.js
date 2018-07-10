@@ -5,6 +5,7 @@ let command
 const scriptName = process.argv[2]
 
 const rimrafDist = './node_modules/.bin/rimraf dist'
+const rimrafCache = './node_modules/.bin/rimraf .cache'
 
 switch (scriptName) {
   case 'lint': {
@@ -31,13 +32,13 @@ switch (scriptName) {
   case 'client-build': {
     const parcelBuild =
       './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
-    command = [rimrafDist, parcelBuild].join(' && ')
+    command = [rimrafCache, rimrafDist, parcelBuild].join(' && ')
     break
   }
   case 'client-watch': {
     const parcelWatch =
       './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
-    command = [rimrafDist, parcelWatch].join(' && ')
+    command = [rimrafCache, rimrafDist, parcelWatch].join(' && ')
     break
   }
   default:
