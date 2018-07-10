@@ -13,12 +13,6 @@
     "lint": "eslint packages && flow && madge --circular packages",
     "test": "jest --coverage"
   },
-  "prettier": {
-    "printWidth": 100,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all"
-  },
   "eslintConfig": {
     "extends": [
       "airbnb",

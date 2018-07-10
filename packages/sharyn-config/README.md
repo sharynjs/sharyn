@@ -8,6 +8,12 @@ yarn add @sharyn-config
 
 ## Usage
 
-- Automatic with `@sharyn/cli`
+Create a `.eslintrc.js` file at the root of your project containing:
+```js
+module.exports = require('@sharyn/config/.eslintrc')
+```
 
-- Run ESLint with the following option: `eslint -c node_modules/@sharyn-config/.eslintrc.json`
+Create a `.prettierrc.js` file at the root of your project containing:
+```js
+module.exports = require('@sharyn/config/.prettierrc')
+```
