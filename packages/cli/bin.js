@@ -11,9 +11,6 @@ const rmDistCache = [rmDist, rmCache]
 
 const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
 
-const parcelBuild =
-  './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
-
 const dockerUp = 'docker-compose up -d'
 const dockerWaitPg =
   'until docker run --rm --link db:pg --net js-stack-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
@@ -56,18 +53,16 @@ switch (scriptName) {
     command = './node_modules/.bin/jest --coverage'
     break
   }
-  case 'client-build': {
-    command = rmDistCache.concat(parcelBuild).join(' && ')
-    break
-  }
   case 'client-watch': {
-    const parcelWatch =
+    const clientWatch =
       './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
-    command = rmDistCache.concat(parcelWatch).join(' && ')
+    command = rmDistCache.concat(clientWatch).join(' && ')
     break
   }
   case 'prod-build': {
-    command = rmDistCache.concat([rmLib, parcelBuild, babel]).join(' && ')
+    const clientBuild =
+      './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
+    command = rmDistCache.concat([rmLib, clientBuild, babel]).join(' && ')
     break
   }
   default:
