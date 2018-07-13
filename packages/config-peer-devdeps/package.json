@@ -1,5 +1,5 @@
 {
-  "name": "@sharyn/config-peerdeps",
+  "name": "@sharyn/config-peer-devdeps",
   "version": "1.0.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
