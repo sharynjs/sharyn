@@ -1,19 +1,8 @@
 {
   "name": "@sharyn/cli",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
-  "peerDependencies": {
-    "@babel/cli": "^7.0.0-beta.52",
-    "@babel/core": "^7.0.0-beta.52",
-    "eslint": "^5.1.0",
-    "flow-bin": "^0.76.0",
-    "jest": "^23.3.0",
-    "madge": "^3.2.0",
-    "parcel-bundler": "^1.9.4",
-    "prettier": "^1.13.7",
-    "rimraf": "^2.6.2"
-  },
   "bin": {
     "sharyn": "bin/sharyn.js"
   }

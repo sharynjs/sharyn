@@ -8,6 +8,15 @@ const rimrafDist = './node_modules/.bin/rimraf dist'
 const rimrafCache = './node_modules/.bin/rimraf .cache'
 
 switch (scriptName) {
+  case 'dev': {
+    // double spawn?
+    break
+  }
+  case 'dev-server-only': {
+    command =
+      './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
+    break
+  }
   case 'lint': {
     const eslint = './node_modules/.bin/eslint src'
     const flow = './node_modules/.bin/flow'
