@@ -22,41 +22,44 @@ const dbSeed = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd
 
 const localServerSetup = [dockerUp, dockerWaitPg, dbMigr, dbSeed]
 
+const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
+  multiPartCommand = true
+  if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
+    const firstSpawn = spawn(localServerSetup.join(' && '), { shell: true, stdio: 'inherit' })
+    firstSpawn.on('close', code => {
+      if (code === 0) {
+        spawn(serverCommand, { shell: true, stdio: 'inherit' })
+        if (runClientWatch) {
+          spawn(clientWatch, { shell: true, stdio: 'inherit' })
+        }
+      }
+    })
+  } else {
+    spawn(serverCommand, { shell: true, stdio: 'inherit' })
+    if (runClientWatch) {
+      spawn(clientWatch, { shell: true, stdio: 'inherit' })
+    }
+  }
+}
+
 switch (scriptName) {
   case 'dev': {
-    // double spawn?
+    runLocalSetupThenServer(
+      './node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"',
+    )
     break
   }
   case 'dev-server-only': {
-    multiPartCommand = true
-    const startServerWithoutClient =
-      './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
-    if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
-      command = localServerSetup.concat(startServerWithoutClient).join(' && ')
-    } else {
-      command = startServerWithoutClient
-    }
-
+    runLocalSetupThenServer(
+      './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"',
+      false,
+    )
     break
   }
   case 'dev-client-only': {
-    multiPartCommand = true
-    const startServerWithoutSSR =
-      './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js'
-    if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
-      const firstSpawn = spawn(localServerSetup.join(' && '), { shell: true, stdio: 'inherit' })
-      firstSpawn.on('close', code => {
-        console.log(code)
-        if (code === 0) {
-          spawn(startServerWithoutSSR, { shell: true, stdio: 'inherit' })
-          spawn(clientWatch, { shell: true, stdio: 'inherit' })
-        }
-      })
-    } else {
-      spawn(startServerWithoutSSR, { shell: true, stdio: 'inherit' })
-      spawn(clientWatch, { shell: true, stdio: 'inherit' })
-    }
-
+    runLocalSetupThenServer(
+      './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js',
+    )
     break
   }
   case 'lint': {
