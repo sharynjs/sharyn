@@ -18,12 +18,22 @@ const rmDist = './node_modules/.bin/rimraf dist'
 const rmCache = './node_modules/.bin/rimraf .cache' // For Parcel
 const rmDistCache = [rmDist, rmCache].join(' && ')
 
+const eslint = './node_modules/.bin/eslint src'
+const flow = './node_modules/.bin/flow'
+const madge = './node_modules/.bin/madge --circular src'
+const lint = [eslint, flow, madge].join(' && ')
+const test = './node_modules/.bin/jest --coverage'
+
 const dockerUp = 'docker-compose up -d'
 const dockerWaitPg =
   'until docker run --rm --link db:pg --net js-stack-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
 
 const dbMigr = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . migrate:latest'
 const dbSeed = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . seed:run'
+
+const clientBuild = './node_modules/.bin/webpack --mode=production'
+const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
+const prodBuild = [rmDistCache, rmLib, clientBuild, babel].join(' && ')
 
 const localServerSetup = [dockerUp, dockerWaitPg, dbMigr, dbSeed].join(' && ')
 
@@ -63,21 +73,25 @@ switch (scriptName) {
     runLocalSetupThenServer(`./node_modules/.bin/cross-env ENABLE_SSR=false ${nodemonCommand}`)
     break
   }
+  case 'prod-local': {
+    const herokuLocal = 'cross-env NODE_ENV=production heroku local'
+    command = [localServerSetup, prodBuild, herokuLocal].join(' && ')
+    break
+  }
   case 'lint': {
-    const eslint = './node_modules/.bin/eslint src'
-    const flow = './node_modules/.bin/flow'
-    const madge = './node_modules/.bin/madge --circular src'
-    command = [eslint, flow, madge].join(' && ')
+    command = lint
     break
   }
   case 'test': {
-    command = './node_modules/.bin/jest --coverage'
+    command = test
+    break
+  }
+  case 'lint-test': {
+    command = [lint, test].join(' && ')
     break
   }
   case 'prod-build': {
-    const clientBuild = './node_modules/.bin/webpack --mode=production'
-    const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
-    command = [rmDistCache, rmLib, clientBuild, babel].join(' && ')
+    command = prodBuild
     break
   }
   default:
