@@ -1,12 +1,13 @@
 #! /usr/bin/env node
 const { spawn } = require('child_process')
+const fs = require('fs')
 
 let command
 const scriptName = process.argv[2]
 
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
-const rmCache = './node_modules/.bin/rimraf .cache'
+const rmCache = './node_modules/.bin/rimraf .cache' // For Parcel
 const rmDistCache = [rmDist, rmCache]
 
 const dockerUp = 'docker-compose up -d'
@@ -24,16 +25,33 @@ switch (scriptName) {
     break
   }
   case 'dev-server-only': {
-    command = localServerSetup
-      .concat(
-        './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"',
-      )
-      .join(' && ')
+    const startServerWithoutClient =
+      './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
+    if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
+      command = localServerSetup.concat(startServerWithoutClient).join(' && ')
+    } else {
+      command = startServerWithoutClient
+    }
+
     break
   }
   case 'dev-client-only': {
-    command =
+    const startServerWithoutSSR =
       './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js'
+    let firstCommand
+    if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
+      firstCommand = localServerSetup.concat(startServerWithoutSSR).join(' && ')
+    } else {
+      firstCommand = startServerWithoutSSR
+    }
+    const firstSpawn = spawn(firstCommand, { shell: true, stdio: 'inherit' })
+    firstSpawn.on('close', code => {
+      console.log(code)
+      if (code === 0) {
+        console.log('SPAWNING SECOND PART')
+      }
+    })
+
     break
   }
   case 'lint': {
