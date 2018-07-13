@@ -6,8 +6,7 @@ let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
 
-const clientWatch =
-  './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
+const clientWatch = './node_modules/.bin/webpack --mode=development'
 
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
@@ -76,8 +75,7 @@ switch (scriptName) {
     break
   }
   case 'prod-build': {
-    const clientBuild =
-      './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
+    const clientBuild = './node_modules/.bin/webpack --mode=production'
     const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
     command = rmDistCache.concat([rmLib, clientBuild, babel]).join(' && ')
     break
