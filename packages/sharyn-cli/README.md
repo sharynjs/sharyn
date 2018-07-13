@@ -7,10 +7,8 @@ This package provides CLI tasks to use as your NPM scripts.
 ## Install
 
 ```bash
-npx install-peerdeps -Y --dev @sharyn/cli
+npx install-peerdeps -Y --dev @sharyn/cli-peerdeps && yarn add --dev @sharyn/cli
 ```
-
-(the `-Y` option is to use Yarn)
 
 ## Usage
 
@@ -18,6 +16,7 @@ In your `package.json`, add the following scripts:
 
 ```json
   "scripts": {
+    "dev-server-only": "sharyn dev-server-only",
     "babel": "sharyn babel",
     "client-build": "sharyn client-build",
     "client-watch": "sharyn client-watch",
