@@ -3,6 +3,7 @@ const { spawn } = require('child_process')
 const fs = require('fs')
 
 let command
+let multiPartCommand = false
 const scriptName = process.argv[2]
 
 const rmLib = './node_modules/.bin/rimraf lib'
@@ -25,6 +26,7 @@ switch (scriptName) {
     break
   }
   case 'dev-server-only': {
+    multiPartCommand = true
     const startServerWithoutClient =
       './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
     if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
@@ -36,6 +38,7 @@ switch (scriptName) {
     break
   }
   case 'dev-client-only': {
+    multiPartCommand = true
     const startServerWithoutSSR =
       './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js'
     let firstCommand
@@ -84,4 +87,6 @@ switch (scriptName) {
     process.exit(1)
 }
 
-spawn(command, { shell: true, stdio: 'inherit' })
+if (!multiPartCommand) {
+  spawn(command, { shell: true, stdio: 'inherit' })
+}
