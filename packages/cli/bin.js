@@ -6,6 +6,9 @@ let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
 
+const nodemonCommand =
+  './node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
+
 const clientWatch = './node_modules/.bin/webpack --mode=development --watch'
 
 const rmLib = './node_modules/.bin/rimraf lib'
@@ -44,22 +47,18 @@ const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
 
 switch (scriptName) {
   case 'dev': {
-    runLocalSetupThenServer(
-      './node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"',
-    )
+    runLocalSetupThenServer(nodemonCommand)
     break
   }
   case 'dev-server-only': {
     runLocalSetupThenServer(
-      './node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ./node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"',
+      `./node_modules/.bin/cross-env USE_CLIENT_BUNDLE=false ${nodemonCommand}`,
       false,
     )
     break
   }
   case 'dev-client-only': {
-    runLocalSetupThenServer(
-      './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js',
-    )
+    runLocalSetupThenServer(`./node_modules/.bin/cross-env ENABLE_SSR=false ${nodemonCommand}`)
     break
   }
   case 'lint': {
