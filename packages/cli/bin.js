@@ -2,6 +2,8 @@
 const { spawn } = require('child_process')
 const fs = require('fs')
 
+const mySpawn = cmd => spawn(cmd, { shell: true, stdio: 'inherit' })
+
 let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
@@ -14,7 +16,7 @@ const clientWatch = './node_modules/.bin/webpack --mode=development --watch'
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
 const rmCache = './node_modules/.bin/rimraf .cache' // For Parcel
-const rmDistCache = [rmDist, rmCache]
+const rmDistCache = [rmDist, rmCache].join(' && ')
 
 const dockerUp = 'docker-compose up -d'
 const dockerWaitPg =
@@ -23,24 +25,24 @@ const dockerWaitPg =
 const dbMigr = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . migrate:latest'
 const dbSeed = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . seed:run'
 
-const localServerSetup = [dockerUp, dockerWaitPg, dbMigr, dbSeed]
+const localServerSetup = [dockerUp, dockerWaitPg, dbMigr, dbSeed].join(' && ')
 
 const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
   multiPartCommand = true
   if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
-    const firstSpawn = spawn(localServerSetup.join(' && '), { shell: true, stdio: 'inherit' })
+    const firstSpawn = mySpawn(localServerSetup)
     firstSpawn.on('close', code => {
       if (code === 0) {
-        spawn(serverCommand, { shell: true, stdio: 'inherit' })
+        mySpawn(serverCommand)
         if (runClientWatch) {
-          spawn(rmDistCache.concat(clientWatch).join(' && '), { shell: true, stdio: 'inherit' })
+          mySpawn([rmDistCache, clientWatch].join(' && '))
         }
       }
     })
   } else {
-    spawn(serverCommand, { shell: true, stdio: 'inherit' })
+    mySpawn(serverCommand)
     if (runClientWatch) {
-      spawn(rmDistCache.concat(clientWatch).join(' && '), { shell: true, stdio: 'inherit' })
+      mySpawn([rmDistCache, clientWatch].join(' && '))
     }
   }
 }
@@ -75,7 +77,7 @@ switch (scriptName) {
   case 'prod-build': {
     const clientBuild = './node_modules/.bin/webpack --mode=production'
     const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
-    command = rmDistCache.concat([rmLib, clientBuild, babel]).join(' && ')
+    command = [rmDistCache, rmLib, clientBuild, babel].join(' && ')
     break
   }
   default:
@@ -85,5 +87,5 @@ switch (scriptName) {
 }
 
 if (!multiPartCommand) {
-  spawn(command, { shell: true, stdio: 'inherit' })
+  mySpawn(command)
 }
