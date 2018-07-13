@@ -6,7 +6,7 @@ let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
 
-const clientWatch = './node_modules/.bin/webpack --mode=development'
+const clientWatch = './node_modules/.bin/webpack --mode=development --watch'
 
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
@@ -44,7 +44,7 @@ switch (scriptName) {
     const startServerWithoutSSR =
       './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js'
     if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
-      const firstSpawn = spawn(localServerSetup, { shell: true, stdio: 'inherit' })
+      const firstSpawn = spawn(localServerSetup.join(' && '), { shell: true, stdio: 'inherit' })
       firstSpawn.on('close', code => {
         console.log(code)
         if (code === 0) {
