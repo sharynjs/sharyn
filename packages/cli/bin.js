@@ -8,8 +8,7 @@ let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
 
-const nodemonCommand =
-  './node_modules/.bin/nodemon -w src -i dist -x "./node_modules/.bin/babel-node src/_server/server.js"'
+const nodemonCommand = './node_modules/.bin/nodemon -w src -i dist src/_server/require-hook.js'
 
 const clientWatch = './node_modules/.bin/webpack --mode=development --watch'
 
@@ -43,14 +42,20 @@ const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
     const firstSpawn = mySpawn(localServerSetup)
     firstSpawn.on('close', code => {
       if (code === 0) {
-        mySpawn(serverCommand)
+        const serverSpawn = mySpawn(serverCommand)
+        serverSpawn.on('exit', () => {
+          process.exit(0)
+        })
         if (runClientWatch) {
           mySpawn([rmDistCache, clientWatch].join(' && '))
         }
       }
     })
   } else {
-    mySpawn(serverCommand)
+    const serverSpawn = mySpawn(serverCommand)
+    serverSpawn.on('exit', () => {
+      process.exit(0)
+    })
     if (runClientWatch) {
       mySpawn([rmDistCache, clientWatch].join(' && '))
     }
