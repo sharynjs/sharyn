@@ -15,6 +15,44 @@ The following packages are available:
 - **[@sharyn/material-ui](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md)** – UI components using Material UI
 - **[@sharyn/shared](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md)** – Utils shared between the client and the server
 
+## Bootstrapping a project
+
+Here is a command that combines the installation of `@sharyn/cli`, `@sharyn/babel-preset`, `@sharyn/eslint-config`, `@sharyn/prettier-config`, and their peer dependencies.
+
+```bash
+npx install-peerdeps -o -Y @sharyn/cli-peer-deps && npx install-peerdeps -o -Y -d @sharyn/cli-peer-devdeps && npx install-peerdeps -d -Y @sharyn/babel-preset && npx install-peerdeps -d -Y @sharyn/eslint-config && npx install-peerdeps -d -Y @sharyn/prettier-config && yarn add --dev @sharyn/cli
+```
+
+Then, add this to your `package.json`:
+
+```json
+  "scripts": {
+    "dev-server-only": "sharyn dev-server-only",
+    "dev-client-only": "sharyn dev-client-only",
+    "client-build": "sharyn client-build",
+    "client-watch": "sharyn client-watch",
+    "prod-build": "sharyn prod-build",
+    "babel": "sharyn babel",
+    "lint": "sharyn lint",
+    "test": "sharyn test"
+  },
+  "babel": {
+    "presets": [
+      "@sharyn"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@sharyn"
+  },
+```
+
+Finally, create a `.prettierrc.js` file at the root of your project containing:
+
+```js
+module.exports = require('@sharyn/prettier-config')
+```
+
+
 ## Credits
 
 By Jonathan Verrecchia – [@verekia](https://github.com/verekia)

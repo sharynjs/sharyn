@@ -10,7 +10,7 @@ npx install-peerdeps -d -Y @sharyn/prettier-config
 
 ## Usage
 
-Create a `.prettierrc` file at the root of your project containing:
+Create a `.prettierrc.js` file at the root of your project containing:
 
 ```js
 module.exports = require('@sharyn/prettier-config')
