@@ -10,7 +10,7 @@ const scriptName = process.argv[2]
 
 const nodemonCommand = './node_modules/.bin/nodemon -w src -i dist src/_server/require-hook.js'
 
-const clientWatch = './node_modules/.bin/webpack --mode=development --watch'
+const clientWatch = './node_modules/.bin/webpack --mode=development --watch --progress'
 
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
@@ -30,7 +30,7 @@ const dockerWaitPg =
 const dbMigr = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . migrate:latest'
 const dbSeed = './node_modules/.bin/knex --knexfile src/_db/knex-config.js --cwd . seed:run'
 
-const clientBuild = './node_modules/.bin/webpack --mode=production'
+const clientBuild = './node_modules/.bin/webpack --mode=production --progress'
 const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
 const prodBuild = [rmDistCache, rmLib, clientBuild, babel].join(' && ')
 
@@ -43,21 +43,29 @@ const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
     firstSpawn.on('close', code => {
       if (code === 0) {
         const serverSpawn = mySpawn(serverCommand)
+        let clientSpawn
         serverSpawn.on('exit', () => {
           process.exit(0)
+          if (clientSpawn) {
+            clientSpawn.exit(0)
+          }
         })
         if (runClientWatch) {
-          mySpawn([rmDistCache, clientWatch].join(' && '))
+          clientSpawn = mySpawn([rmDistCache, clientWatch].join(' && '))
         }
       }
     })
   } else {
     const serverSpawn = mySpawn(serverCommand)
+    let clientSpawn
     serverSpawn.on('exit', () => {
       process.exit(0)
+      if (clientSpawn) {
+        clientSpawn.exit(0)
+      }
     })
     if (runClientWatch) {
-      mySpawn([rmDistCache, clientWatch].join(' && '))
+      clientSpawn = mySpawn([rmDistCache, clientWatch].join(' && '))
     }
   }
 }
@@ -79,8 +87,12 @@ switch (scriptName) {
     break
   }
   case 'prod-local': {
+    let commands = []
+    if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
+      commands = [localServerSetup]
+    }
     const herokuLocal = 'cross-env NODE_ENV=production heroku local'
-    command = [localServerSetup, prodBuild, herokuLocal].join(' && ')
+    command = commands.concat([prodBuild, herokuLocal]).join(' && ')
     break
   }
   case 'lint': {
