@@ -21,7 +21,7 @@ Rose design by [tiaesther](https://pngtree.com/tiaesther_4360?type=1)
 
 ## Why 'Sharyn'?
 
-It's a reference to one of my favorite metalcore song, [Rose of Sharyn](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
+It's a reference to one of my favorite metalcore songs, [Rose of Sharyn](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
 
 ## License
 
