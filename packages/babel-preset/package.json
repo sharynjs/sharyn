@@ -1,12 +1,13 @@
 {
   "name": "@sharyn/babel-preset",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "peerDependencies": {
     "@babel/core": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
-    "@babel/preset-react": "^7.0.0-beta.52"
+    "@babel/preset-react": "^7.0.0-beta.52",
+    "babel-plugin-module-resolver": "^3.1.1"
   }
 }
