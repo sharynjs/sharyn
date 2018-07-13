@@ -1,1 +1,1 @@
-module.exports = require('@sharyn/config/babel.config.js')
+module.exports = require('@sharyn/config/babel.config')

@@ -7,7 +7,7 @@ This package provides CLI tasks to use as your NPM scripts.
 ## Install
 
 ```bash
-npx install-peerdeps -Y --dev @sharyn/cli-peerdeps && yarn add --dev @sharyn/cli
+npx install-peerdeps -d -o -Y @sharyn/cli-peerdeps && yarn add --dev @sharyn/cli
 ```
 
 ## Usage

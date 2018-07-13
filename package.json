@@ -13,45 +13,14 @@
     "lint": "eslint packages && flow && madge --circular packages",
     "test": "jest --coverage"
   },
-  "eslintConfig": {
-    "extends": [
-      "airbnb",
-      "plugin:flowtype/recommended",
-      "prettier",
-      "prettier/react",
-      "prettier/flowtype"
-    ],
-    "plugins": [
-      "flowtype",
-      "prettier"
-    ],
-    "env": {
-      "browser": true,
-      "jest": true
-    },
-    "rules": {
-      "no-unexpected-multiline": 2,
-      "import/prefer-default-export": 0,
-      "prettier/prettier": 2,
-      "func-names": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js"
-          ]
-        }
-      ]
-    }
-  },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.52",
     "@babel/core": "^7.0.0-beta.52",
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
     "@babel/preset-react": "^7.0.0-beta.52",
-    "@sharyn/config": "^1.0.1",
-    "babel-core": "^7.0.0-0",
+    "@sharyn/config": "^1.2.0",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "eslint": "^5.1.0",
