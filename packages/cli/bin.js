@@ -30,14 +30,14 @@ const runLocalSetupThenServer = (serverCommand, runClientWatch = true) => {
       if (code === 0) {
         spawn(serverCommand, { shell: true, stdio: 'inherit' })
         if (runClientWatch) {
-          spawn(clientWatch, { shell: true, stdio: 'inherit' })
+          spawn(rmDistCache.concat(clientWatch).join(' && '), { shell: true, stdio: 'inherit' })
         }
       }
     })
   } else {
     spawn(serverCommand, { shell: true, stdio: 'inherit' })
     if (runClientWatch) {
-      spawn(clientWatch, { shell: true, stdio: 'inherit' })
+      spawn(rmDistCache.concat(clientWatch).join(' && '), { shell: true, stdio: 'inherit' })
     }
   }
 }
@@ -71,10 +71,6 @@ switch (scriptName) {
   }
   case 'test': {
     command = './node_modules/.bin/jest --coverage'
-    break
-  }
-  case 'client-watch': {
-    command = rmDistCache.concat(clientWatch).join(' && ')
     break
   }
   case 'prod-build': {
