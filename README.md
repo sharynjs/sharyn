@@ -46,12 +46,22 @@ Then, add this to your `package.json`:
   },
 ```
 
-Finally, create a `.prettierrc.js` file at the root of your project containing:
+Create a `.prettierrc.js` file at the root of your project containing:
 
 ```js
 module.exports = require('@sharyn/prettier-config')
 ```
 
+Create a `.flowconfig` file at the root of your project containing:
+
+```
+[options]
+suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
+
+[ignore]
+.*/node_modules/config-chain/.*
+.*/node_modules/graphviz/.*
+```
 
 ## Credits
 
