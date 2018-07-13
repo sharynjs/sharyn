@@ -9,8 +9,6 @@ const rmDist = './node_modules/.bin/rimraf dist'
 const rmCache = './node_modules/.bin/rimraf .cache'
 const rmDistCache = [rmDist, rmCache]
 
-const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
-
 const dockerUp = 'docker-compose up -d'
 const dockerWaitPg =
   'until docker run --rm --link db:pg --net js-stack-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
@@ -45,10 +43,6 @@ switch (scriptName) {
     command = [eslint, flow, madge].join(' && ')
     break
   }
-  case 'babel': {
-    command = [rmLib, babel].join(' && ')
-    break
-  }
   case 'test': {
     command = './node_modules/.bin/jest --coverage'
     break
@@ -62,6 +56,7 @@ switch (scriptName) {
   case 'prod-build': {
     const clientBuild =
       './node_modules/.bin/parcel build src/_client/client.js --no-source-maps -d dist/js -o bundle.js'
+    const babel = './node_modules/.bin/babel src -d lib --ignore "**/*.test.js"'
     command = rmDistCache.concat([rmLib, clientBuild, babel]).join(' && ')
     break
   }

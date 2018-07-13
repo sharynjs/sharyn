@@ -19,7 +19,6 @@ In your `package.json`, add the following scripts:
     "dev-server-only": "sharyn dev-server-only",
     "dev-client-only": "sharyn dev-client-only",
     "prod-build": "sharyn prod-build",
-    "babel": "sharyn babel",
     "lint": "sharyn lint",
     "test": "sharyn test"
   },
