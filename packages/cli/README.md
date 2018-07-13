@@ -17,7 +17,7 @@ In your `package.json`, add the following scripts:
 ```json
   "scripts": {
     "dev-server-only": "sharyn dev-server-only",
-    "dev-client-only": "sharyn dev-server-only",
+    "dev-client-only": "sharyn dev-client-only",
     "client-build": "sharyn client-build",
     "client-watch": "sharyn client-watch",
     "prod-build": "sharyn prod-build",

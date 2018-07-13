@@ -1,4 +1,4 @@
-# @sharyn/config
+# @sharyn/prettier-config
 
 ![npm](https://img.shields.io/npm/v/@sharyn/prettier-config.svg)
 
