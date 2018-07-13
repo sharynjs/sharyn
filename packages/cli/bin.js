@@ -90,10 +90,6 @@ switch (scriptName) {
     command = [lint, test].join(' && ')
     break
   }
-  case 'prod-build': {
-    command = prodBuild
-    break
-  }
   default:
     // eslint-disable-next-line no-console
     console.error(`${process.argv[2]} is not a valid @sharyn/cli command.`)
