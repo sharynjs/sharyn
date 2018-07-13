@@ -6,6 +6,9 @@ let command
 let multiPartCommand = false
 const scriptName = process.argv[2]
 
+const clientWatch =
+  './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
+
 const rmLib = './node_modules/.bin/rimraf lib'
 const rmDist = './node_modules/.bin/rimraf dist'
 const rmCache = './node_modules/.bin/rimraf .cache' // For Parcel
@@ -41,19 +44,19 @@ switch (scriptName) {
     multiPartCommand = true
     const startServerWithoutSSR =
       './node_modules/.bin/cross-env ENABLE_SSR=false ./node_modules/.bin/babel-node src/_server/server.js'
-    let firstCommand
     if (fs.existsSync(`${process.cwd()}/docker-compose.yml`)) {
-      firstCommand = localServerSetup.concat(startServerWithoutSSR).join(' && ')
+      const firstSpawn = spawn(localServerSetup, { shell: true, stdio: 'inherit' })
+      firstSpawn.on('close', code => {
+        console.log(code)
+        if (code === 0) {
+          spawn(startServerWithoutSSR, { shell: true, stdio: 'inherit' })
+          spawn(clientWatch, { shell: true, stdio: 'inherit' })
+        }
+      })
     } else {
-      firstCommand = startServerWithoutSSR
+      spawn(startServerWithoutSSR, { shell: true, stdio: 'inherit' })
+      spawn(clientWatch, { shell: true, stdio: 'inherit' })
     }
-    const firstSpawn = spawn(firstCommand, { shell: true, stdio: 'inherit' })
-    firstSpawn.on('close', code => {
-      console.log(code)
-      if (code === 0) {
-        console.log('SPAWNING SECOND PART')
-      }
-    })
 
     break
   }
@@ -69,8 +72,6 @@ switch (scriptName) {
     break
   }
   case 'client-watch': {
-    const clientWatch =
-      './node_modules/.bin/parcel watch src/_client/client.js --public-url . -d dist/js -o bundle.js'
     command = rmDistCache.concat(clientWatch).join(' && ')
     break
   }
