@@ -7,7 +7,7 @@ This package provides configuration files for Babel, ESLint, and Prettier.
 ## Install
 
 ```bash
-npx install-peerdeps -d -o -Y @sharyn/config-peerdeps && yarn add --dev @sharyn/config
+npx install-peerdeps -d -o -Y @sharyn/config-peer-devdeps && yarn add --dev @sharyn/config
 ```
 
 ## Usage
