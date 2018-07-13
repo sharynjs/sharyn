@@ -9,7 +9,9 @@ Sharyn in a collection of helpers to build a JS app. At the moment, this is pret
 The following packages are available:
 
 - **[@sharyn/cli](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md)** – Convenient NPM scripts
-- **[@sharyn/config](https://github.com/sharynjs/sharyn/blob/master/packages/config/README.md)** – Configuration files for ESLint, Prettier, Babel
+- **[@sharyn/babel-preset](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md)** – Babel preset
+- **[@sharyn/eslint-config](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md)** – ESLint configuration
+- **[@sharyn/prettier-config](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md)** – Prettier configuration
 - **[@sharyn/material-ui](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md)** – UI components using Material UI
 - **[@sharyn/shared](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md)** – Utils shared between the client and the server
 
