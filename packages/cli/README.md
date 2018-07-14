@@ -75,14 +75,6 @@ Then runs in parallel:
 - `cross-env NO_SSR=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
 - `webpack --mode=development --watch --progress`
 
-### `prod-build`
-
-Runs sequencially:
-
-- `rimraf lib dist`
-- `webpack --mode=production --progress`
-- `babel src -d lib`
-
 ### `prod-local`
 
 Runs sequencially:
@@ -100,6 +92,14 @@ Runs sequencially:
   - `cross-env NODE_ENV=production heroku local`
 - If not:
   - `node lib/_server/server.js`
+
+### `prod-build`
+
+Runs sequencially:
+
+- `rimraf lib dist`
+- `webpack --mode=production --progress`
+- `babel src -d lib`
 
 ### `migrate-db`
 

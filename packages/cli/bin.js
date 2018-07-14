@@ -1,24 +1,37 @@
 #! /usr/bin/env node
+
+// @flow
+/* eslint-disable no-unused-expressions */
+
 const { spawn } = require('child_process')
 const fs = require('fs')
 const { swit } = require('@verekia/lib-lang')
 const colors = require('colors/safe')
 
 const {
-  lintTask,
-  testTask,
-  lintTestTask,
-  prodLocalTask,
-  localServerSetupTask,
-  serverWatchTask,
-  serverSsrOnlyWatchTask,
-  clientWatchTask,
-  serverClientOnlyWatchTask,
-  prodBuildTask,
-  migrateDbTask,
+  DOCKER_UP,
+  DOCKER_WAIT_PG,
+  NODE_LIB_SERVER,
+  dbMigr,
+  dbSeed,
+  rmDist,
+  rmLibDist,
+  serverWatch,
+  clientWatch,
+  clientBuild,
+  serverWatchSsrOnly,
+  serverWatchNoSsr,
+  herokuLocal,
+  babel,
+  test,
+  lint,
+  typecheck,
+  circular,
 } = require('./commands')
 
-const bf = undefined
+const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
+const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
+const hasPg = fs.existsSync(`${process.cwd()}/src/_db/knex-config.js`)
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
@@ -26,9 +39,7 @@ const mySpawn = cmd => {
   return spawn(cmd, { shell: true, stdio: 'inherit' })
 }
 
-const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
-const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
-const hasPg = fs.existsSync(`${process.cwd()}/src/_db/knex-config.js`)
+const sequence = arr => arr.join(' && ')
 
 const taskName = process.argv[2]
 
@@ -37,39 +48,60 @@ swit(
   [
     [
       'dev',
-      () =>
-        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
+      () => {
+        const firstCommands = []
+        hasDocker && firstCommands.push(DOCKER_UP)
+        hasPg && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        firstCommands.push(rmDist)
+        mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
-            mySpawn(serverWatchTask(bf))
-            mySpawn(clientWatchTask(bf))
+            mySpawn(serverWatch)
+            mySpawn(clientWatch)
           }
-        }),
+        })
+      },
     ],
     [
-      'dev-server-only',
-      () =>
-        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
-          if (code === 0) {
-            mySpawn(serverSsrOnlyWatchTask(bf))
-          }
-        }),
+      'dev-ssr-only',
+      () => {
+        const commands = []
+        hasDocker && commands.push(DOCKER_UP)
+        hasPg && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        commands.push(serverWatchSsrOnly)
+        mySpawn(sequence(commands))
+      },
     ],
     [
-      'dev-client-only',
-      () =>
-        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
+      'dev-no-ssr',
+      () => {
+        const firstCommands = []
+        hasDocker && firstCommands.push(DOCKER_UP)
+        hasPg && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        firstCommands.push(rmDist)
+        mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
-            mySpawn(serverClientOnlyWatchTask(bf))
-            mySpawn(clientWatchTask(bf))
+            mySpawn(serverWatchNoSsr)
+            mySpawn(clientWatch)
           }
-        }),
+        })
+      },
     ],
-    ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker, hasHeroku))],
-    ['prod-build', () => mySpawn(prodBuildTask(bf))],
-    ['lint', () => mySpawn(lintTask(bf))],
-    ['test', () => mySpawn(testTask(bf))],
-    ['lint-test', () => mySpawn(lintTestTask(bf))],
-    ['migrate-db', () => mySpawn(migrateDbTask, bf)],
+    [
+      'prod-local',
+      () => {
+        const commands = []
+        hasDocker && commands.push(DOCKER_UP)
+        hasPg && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        commands.push(rmLibDist, clientBuild, babel)
+        hasHeroku ? commands.push(herokuLocal) : commands.push(NODE_LIB_SERVER)
+        mySpawn(sequence(commands))
+      },
+    ],
+    ['prod-build', () => mySpawn(sequence([rmLibDist, clientBuild, babel]))],
+    ['lint', () => mySpawn(sequence([lint, typecheck, circular]))],
+    ['test', () => mySpawn(test)],
+    ['lint-test', () => mySpawn(sequence([lint, typecheck, circular, test]))],
+    ['migrate-db', () => mySpawn(dbMigr)],
   ],
   () => {
     // eslint-disable-next-line no-console
