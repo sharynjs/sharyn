@@ -16,7 +16,6 @@ const {
   serverClientOnlyWatchTask,
 } = require('./commands')
 
-const childrenProcs = []
 const bf = undefined
 
 const mySpawn = cmd => {
@@ -37,8 +36,8 @@ swit(
       () =>
         mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
           if (code === 0) {
-            childrenProcs.push(mySpawn(serverWatchTask(bf)))
-            childrenProcs.push(mySpawn(clientWatchTask(bf)))
+            mySpawn(serverWatchTask(bf))
+            mySpawn(clientWatchTask(bf))
           }
         }),
     ],
@@ -47,7 +46,7 @@ swit(
       () =>
         mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
           if (code === 0) {
-            childrenProcs.push(mySpawn(serverSsrOnlyWatchTask(bf)))
+            mySpawn(serverSsrOnlyWatchTask(bf))
           }
         }),
     ],
@@ -56,15 +55,15 @@ swit(
       () =>
         mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
           if (code === 0) {
-            childrenProcs.push(mySpawn(serverClientOnlyWatchTask(bf)))
-            childrenProcs.push(mySpawn(clientWatchTask(bf)))
+            mySpawn(serverClientOnlyWatchTask(bf))
+            mySpawn(clientWatchTask(bf))
           }
         }),
     ],
-    ['prod-local', () => childrenProcs.push(mySpawn(prodLocalTask(bf, hasDocker)))],
-    ['lint', () => childrenProcs.push(mySpawn(lintTask(bf)))],
-    ['test', () => childrenProcs.push(mySpawn(testTask(bf)))],
-    ['lint-test', () => childrenProcs.push(mySpawn(lintTestTask(bf)))],
+    ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker))],
+    ['lint', () => mySpawn(lintTask(bf))],
+    ['test', () => mySpawn(testTask(bf))],
+    ['lint-test', () => mySpawn(lintTestTask(bf))],
   ],
   () => {
     // eslint-disable-next-line no-console
@@ -72,11 +71,3 @@ swit(
     process.exit(1)
   },
 )
-
-childrenProcs.forEach(cp => {
-  cp.on('exit', () => {
-    childrenProcs.forEach(p => {
-      p.exit(0)
-    })
-  })
-})

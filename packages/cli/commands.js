@@ -41,29 +41,20 @@ const prodBuild = bf => sequence([rmDist(bf), rmLib(bf), clientBuild(bf), babel(
 const localServerSetupTask = bf => sequence([docker, db(bf)])
 const lintTask = bf => sequence([lint(bf), typecheck(bf), circular(bf)])
 const lintTestTask = bf => sequence([lintTask(bf), test(bf)])
-const testTask = test
+const serverSsrOnlyWatchTask = bf => [crossEnvSsrOnly(bf), serverWatch(bf)].join(' ')
+const serverClientOnlyWatchTask = bf => [crossEnvClientOnly(bf), serverWatch(bf)].join(' ')
+
 const prodLocalTask = (bf, hasDocker) =>
   sequence((hasDocker ? [localServerSetupTask(bf)] : []).concat([prodBuild(bf), herokuLocal(bf)]))
-
-const serverWatchTask = serverWatch
-const clientWatchTask = clientWatch
-const serverSsrOnlyWatchTask = (bf, hasDocker) =>
-  (hasDocker ? [localServerSetupTask(bf)] : []).concat(
-    [crossEnvSsrOnly(bf), serverWatch(bf)].join(' '),
-  )
-const serverClientOnlyWatchTask = (bf, hasDocker) =>
-  (hasDocker ? [localServerSetupTask(bf)] : []).concat(
-    [crossEnvClientOnly(bf), serverWatch(bf)].join(' '),
-  )
 
 module.exports = {
   lintTask,
   lintTestTask,
-  testTask,
+  testTask: test,
   prodLocalTask,
   localServerSetupTask,
-  serverWatchTask,
-  clientWatchTask,
+  serverWatchTask: serverWatch,
+  clientWatchTask: clientWatch,
   serverSsrOnlyWatchTask,
   serverClientOnlyWatchTask,
 }
