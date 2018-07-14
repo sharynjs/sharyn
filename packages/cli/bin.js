@@ -27,6 +27,8 @@ const mySpawn = cmd => {
 }
 
 const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
+const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
+const hasPg = fs.existsSync(`${process.cwd()}/src/_db/knex-config.js`)
 
 const taskName = process.argv[2]
 
@@ -36,7 +38,7 @@ swit(
     [
       'dev',
       () =>
-        mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
+        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
           if (code === 0) {
             mySpawn(serverWatchTask(bf))
             mySpawn(clientWatchTask(bf))
@@ -46,7 +48,7 @@ swit(
     [
       'dev-server-only',
       () =>
-        mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
+        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
           if (code === 0) {
             mySpawn(serverSsrOnlyWatchTask(bf))
           }
@@ -55,14 +57,14 @@ swit(
     [
       'dev-client-only',
       () =>
-        mySpawn(localServerSetupTask(bf, hasDocker)).on('close', code => {
+        mySpawn(localServerSetupTask(bf, hasDocker, hasPg)).on('close', code => {
           if (code === 0) {
             mySpawn(serverClientOnlyWatchTask(bf))
             mySpawn(clientWatchTask(bf))
           }
         }),
     ],
-    ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker))],
+    ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker, hasHeroku))],
     ['prod-build', () => mySpawn(prodBuildTask(bf))],
     ['lint', () => mySpawn(lintTask(bf))],
     ['test', () => mySpawn(testTask(bf))],

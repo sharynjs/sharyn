@@ -38,14 +38,20 @@ const prodBuild = bf => sequence([rmDist(bf), rmLib(bf), clientBuild(bf), babel(
 // High-level tasks
 
 // export const rmDistParcelCacheTask = bf => sequence([rmDist(bf), rmParcelCache(bf)])
-const localServerSetupTask = bf => sequence([docker, db(bf)])
+const localServerSetupTask = (bf, hasPg) => sequence([docker].concat(hasPg ? [db(bf)] : []))
 const lintTask = bf => sequence([lint(bf), typecheck(bf), circular(bf)])
 const lintTestTask = bf => sequence([lintTask(bf), test(bf)])
 const serverSsrOnlyWatchTask = bf => [crossEnvSsrOnly(bf), serverWatch(bf)].join(' ')
 const serverClientOnlyWatchTask = bf => [crossEnvClientOnly(bf), serverWatch(bf)].join(' ')
 
-const prodLocalTask = (bf, hasDocker) =>
-  sequence((hasDocker ? [localServerSetupTask(bf)] : []).concat([prodBuild(bf), herokuLocal(bf)]))
+const prodLocalTask = (bf, hasDocker, hasHeroku) => {
+  const commands = hasDocker ? [localServerSetupTask(bf)] : []
+  commands.push(prodBuild(bf))
+  if (hasHeroku) {
+    commands.push(herokuLocal(bf))
+  }
+  return sequence(commands)
+}
 
 module.exports = {
   lintTask,
@@ -58,4 +64,5 @@ module.exports = {
   serverSsrOnlyWatchTask,
   serverClientOnlyWatchTask,
   prodBuildTask: prodBuild,
+  migrateDbTask: dbMigr,
 }
