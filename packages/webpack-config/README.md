@@ -1,6 +1,6 @@
 # @sharyn/webpack-config
 
-![npm](https://img.shields.io/npm/v/@sharyn/babel-preset.svg)
+![npm](https://img.shields.io/npm/v/@sharyn/webpack-config.svg)
 
 ## Install
 
