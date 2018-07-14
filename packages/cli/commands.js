@@ -1,4 +1,4 @@
-export const prefix = (command, binFolder = './node_modules/.bin/') => `${binFolder}${command}`
+const prefix = (command, binFolder = './node_modules/.bin/') => `${binFolder}${command}`
 
 const serverWatch = bf => prefix('nodemon -w src -i dist src/_server/require-hook.js', bf)
 const clientWatch = bf => prefix('webpack --mode=development --watch --progress', bf)
