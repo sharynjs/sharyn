@@ -1,0 +1,9 @@
+{
+  "name": "@sharyn/webpack-config",
+  "version": "1.0.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "peerDependencies": {
+    "babel-loader": "^8.0.0-beta.4"
+  }
+}
