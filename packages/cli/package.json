@@ -1,8 +1,11 @@
 {
   "name": "@sharyn/cli",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
+  "dependencies": {
+    "@verekia/lib-lang": "^2.4.0"
+  },
   "bin": {
     "sharyn": "bin.js"
   }
