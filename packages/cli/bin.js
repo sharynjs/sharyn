@@ -62,7 +62,7 @@ swit(
         }),
     ],
     ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker))],
-    ['prod-build', () => mySpawn(prodBuildTask, bf)],
+    ['prod-build', () => mySpawn(prodBuildTask(bf))],
     ['lint', () => mySpawn(lintTask(bf))],
     ['test', () => mySpawn(testTask(bf))],
     ['lint-test', () => mySpawn(lintTestTask(bf))],
