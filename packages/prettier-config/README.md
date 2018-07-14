@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-npx install-peerdeps -d -Y @sharyn/prettier-config
+yarn add --dev @sharyn/prettier-config
 ```
 
 ## Usage

@@ -1,9 +1,6 @@
 {
   "name": "@sharyn/prettier-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn",
-  "license": "MIT",
-  "peerDependencies": {
-    "prettier": "^1.13.7"
-  }
+  "license": "MIT"
 }
