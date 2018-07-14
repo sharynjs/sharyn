@@ -3,7 +3,7 @@ module.exports = () => ({
   plugins: [['module-resolver', { root: ['./src'] }]],
   env: {
     development: {
-      plugins: ['flow-react-proptypes'],
+      plugins: ['flow-react-proptypes', 'react-hot-loader/babel'],
     },
   },
 })
