@@ -1,10 +1,9 @@
 {
   "name": "@sharyn/cli-peer-deps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "peerDependencies": {
-    "cross-env": "^5.2.0",
     "knex": "^0.15.1"
   }
 }
