@@ -16,6 +16,8 @@ const typecheck = bf => prefix('flow', bf)
 const circular = bf => prefix('madge --circular src', bf)
 const test = bf => prefix('jest --coverage', bf)
 
+const NODE_SERVER = 'node lib/_server/server.js'
+
 const DOCKER_UP = 'docker-compose up -d'
 const DOCKER_WAIT_PG =
   'until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
@@ -47,9 +49,7 @@ const serverClientOnlyWatchTask = bf => [crossEnvClientOnly(bf), serverWatch(bf)
 const prodLocalTask = (bf, hasDocker, hasHeroku) => {
   const commands = hasDocker ? [localServerSetupTask(bf)] : []
   commands.push(prodBuild(bf))
-  if (hasHeroku) {
-    commands.push(herokuLocal(bf))
-  }
+  commands.push(hasHeroku ? herokuLocal(bf) : NODE_SERVER)
   return sequence(commands)
 }
 
