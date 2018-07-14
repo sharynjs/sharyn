@@ -15,6 +15,7 @@ const {
   clientWatchTask,
   serverClientOnlyWatchTask,
   prodBuildTask,
+  migrateDbTask,
 } = require('./commands')
 
 const bf = undefined
@@ -66,6 +67,7 @@ swit(
     ['lint', () => mySpawn(lintTask(bf))],
     ['test', () => mySpawn(testTask(bf))],
     ['lint-test', () => mySpawn(lintTestTask(bf))],
+    ['migrate-db', () => mySpawn(migrateDbTask, bf)],
   ],
   () => {
     // eslint-disable-next-line no-console
