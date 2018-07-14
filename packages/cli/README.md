@@ -44,7 +44,7 @@ Runs sequencially:
 Then runs in parallel:
 
 - `nodemon -w src -i dist -x "babel-node src/_server/server.js"`
-- `webpack --mode=development --watch --progress`
+- `webpack-dev-server --mode=development --progress --hot`
 
 ### `dev-ssr-only`
 
@@ -73,7 +73,7 @@ Runs sequencially:
 Then runs in parallel:
 
 - `cross-env NO_SSR=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
-- `webpack --mode=development --watch --progress`
+- `webpack-dev-server --mode=development --progress --hot`
 
 ### `prod-local`
 
@@ -105,7 +105,7 @@ Runs sequencially:
 
 Runs `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
 
-Useful for the `release` command in Heroku's `Procfile`
+Useful for the `release` command in Heroku's `Procfile` or on its own.
 
 ### `lint`
 

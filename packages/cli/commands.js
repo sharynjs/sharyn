@@ -21,7 +21,7 @@ module.exports = {
   test: prefix('jest --coverage'),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
   rmLibDist: prefix('rimraf lib dist'), // Add .cache when switching back to Parcel
-  clientWatch: prefix('webpack --mode=development --watch --progress'),
+  clientWatch: prefix('webpack-dev-server --mode=development --progress --hot'),
   clientBuild: prefix('webpack --mode=production --progress'),
   serverWatch: nodemon,
   serverWatchSsrOnly: `${prefix('cross-env SSR_ONLY=true')} ${nodemon}`,
