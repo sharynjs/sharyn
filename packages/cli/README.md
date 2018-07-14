@@ -26,3 +26,106 @@ In your `package.json`, add the following scripts:
     "precommit": "sharyn lint-test"
   },
 ```
+
+## Tasks
+
+### `dev`
+
+Runs sequencially:
+
+- If a `docker-compose.yml` file is present:
+  - `docker-compose up -d`
+- If a `src/_db/knex-config.js` file is present:
+  - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
+  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+- `rimraf dist`
+
+Then runs in parallel:
+
+- `nodemon -w src -i dist -x "babel-node src/_server/server.js"`
+- `webpack --mode=development --watch --progress`
+
+### `dev-ssr-only`
+
+Runs sequencially:
+
+- If a `docker-compose.yml` file is present:
+  - `docker-compose up -d`
+- If a `src/_db/knex-config.js` file is present:
+  - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
+  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+- `cross-env SSR_ONLY=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
+
+### `dev-no-ssr`
+
+Runs sequencially:
+
+- If a `docker-compose.yml` file is present:
+  - `docker-compose up -d`
+- If a `src/_db/knex-config.js` file is present:
+  - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
+  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+- `rimraf dist`
+
+Then runs in parallel:
+
+- `cross-env NO_SSR=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
+- `webpack --mode=development --watch --progress`
+
+### `prod-build`
+
+Runs sequencially:
+
+- `rimraf lib dist`
+- `webpack --mode=production --progress`
+- `babel src -d lib`
+
+### `prod-local`
+
+Runs sequencially:
+
+- If a `docker-compose.yml` file is present:
+  - `docker-compose up -d`
+- If a `src/_db/knex-config.js` file is present:
+  - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
+  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+- `rimraf lib dist`
+- `webpack --mode=production --progress`
+- `babel src -d lib`
+- If a `Procfile` file is present:
+  - `cross-env NODE_ENV=production heroku local`
+- If not:
+  - `node lib/_server/server.js`
+
+### `migrate-db`
+
+Runs `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+
+Useful for the `release` command in Heroku's `Procfile`
+
+### `lint`
+
+Runs sequencially:
+
+- `eslint src`
+- `flow`
+- `madge --circular src`
+
+### `test`
+
+Runs `jest --coverage`
+
+### `lint-test`
+
+Runs sequencially:
+
+- `eslint src`
+- `flow`
+- `madge --circular src`
+- `jest --coverage`
+
+Useful as the `precommit` Git hook or on its own.
