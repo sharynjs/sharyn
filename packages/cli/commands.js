@@ -1,8 +1,11 @@
 const prefix = (command, binFolder = './node_modules/.bin/') => `${binFolder}${command}`
 
-const serverWatch = bf => prefix('nodemon -w src -i dist src/_server/require-hook.js', bf)
+const serverWatch = bf => prefix('nodemon -w src -i dist -x "babel-node src/_server/server.js"', bf)
 const clientWatch = bf => prefix('webpack --mode=development --watch --progress', bf)
 const clientBuild = bf => prefix('webpack --mode=production --progress', bf)
+
+const crossEnvSsrOnly = bf => prefix('cross-env SSR_ONLY=true', bf)
+const crossEnvClientOnly = bf => prefix('cross-env CLIENT_ONLY=true', bf)
 
 const rmLib = bf => prefix('rimraf lib', bf)
 const rmDist = bf => prefix('rimraf dist', bf)
@@ -30,23 +33,37 @@ const sequence = arr => arr.join(' && ')
 
 const docker = sequence([DOCKER_UP, DOCKER_WAIT_PG])
 const db = bf => sequence([dbMigr(bf), dbSeed(bf)])
-const localServerSetup = bf => sequence([docker, db(bf)])
 const prodBuild = bf => sequence([rmDist(bf), rmLib(bf), clientBuild(bf), babel(bf)])
 
 // High-level tasks
 
 // export const rmDistParcelCacheTask = bf => sequence([rmDist(bf), rmParcelCache(bf)])
+const localServerSetupTask = bf => sequence([docker, db(bf)])
 const lintTask = bf => sequence([lint(bf), typecheck(bf), circular(bf)])
 const lintTestTask = bf => sequence([lintTask(bf), test(bf)])
 const testTask = test
-const prodLocalWithDockerTask = bf =>
-  sequence([localServerSetup(bf), prodBuild(bf), herokuLocal(bf)])
-const prodLocalWithoutDockerTask = bf => sequence([prodBuild(bf), herokuLocal(bf)])
+const prodLocalTask = (bf, hasDocker) =>
+  sequence((hasDocker ? [localServerSetupTask(bf)] : []).concat([prodBuild(bf), herokuLocal(bf)]))
+
+const serverWatchTask = serverWatch
+const clientWatchTask = clientWatch
+const serverSsrOnlyWatchTask = (bf, hasDocker) =>
+  (hasDocker ? [localServerSetupTask(bf)] : []).concat(
+    [crossEnvSsrOnly(bf), serverWatch(bf)].join(' '),
+  )
+const serverClientOnlyWatchTask = (bf, hasDocker) =>
+  (hasDocker ? [localServerSetupTask(bf)] : []).concat(
+    [crossEnvClientOnly(bf), serverWatch(bf)].join(' '),
+  )
 
 module.exports = {
   lintTask,
   lintTestTask,
   testTask,
-  prodLocalWithDockerTask,
-  prodLocalWithoutDockerTask,
+  prodLocalTask,
+  localServerSetupTask,
+  serverWatchTask,
+  clientWatchTask,
+  serverSsrOnlyWatchTask,
+  serverClientOnlyWatchTask,
 }

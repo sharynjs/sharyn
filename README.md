@@ -58,6 +58,9 @@ Create a `.flowconfig` file at the root of your project containing:
 [options]
 suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
 
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=src
+
 [ignore]
 .*/node_modules/config-chain/.*
 .*/node_modules/graphviz/.*
