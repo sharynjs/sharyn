@@ -66,6 +66,31 @@ module.system.node.resolve_dirname=src
 .*/node_modules/graphviz/.*
 ```
 
+Create a `webpack.config.js` file at the root of your project containing:
+
+```js
+module.exports = {
+  entry: './src/_client/client.js',
+  output: { filename: 'js/bundle.js' },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: { loader: 'babel-loader' },
+      },
+    ],
+  },
+}
+```
+
+To use Heroku, create a `Procfile` file at the root of your project containing:
+
+```
+web: node lib/_server/server.js
+release: sharyn migrate-db
+```
+
 ## Credits
 
 By Jonathan Verrecchia – [@verekia](https://github.com/verekia)
