@@ -27,14 +27,14 @@ Then, add this to your `package.json`:
 
 ```json
   "scripts": {
+    "start": "sharyn dev",
     "dev-server-only": "sharyn dev-server-only",
     "dev-client-only": "sharyn dev-client-only",
-    "client-build": "sharyn client-build",
-    "client-watch": "sharyn client-watch",
-    "prod-build": "sharyn prod-build",
-    "babel": "sharyn babel",
+    "prod-local": "sharyn prod-local",
     "lint": "sharyn lint",
-    "test": "sharyn test"
+    "test": "sharyn test",
+    "heroku-postbuild": "sharyn prod-build",
+    "precommit": "sharyn lint-test"
   },
   "babel": {
     "presets": [

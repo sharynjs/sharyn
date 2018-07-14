@@ -57,4 +57,5 @@ module.exports = {
   clientWatchTask: clientWatch,
   serverSsrOnlyWatchTask,
   serverClientOnlyWatchTask,
+  prodBuildTask: prodBuild,
 }

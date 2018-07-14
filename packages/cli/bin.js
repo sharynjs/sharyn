@@ -14,6 +14,7 @@ const {
   serverSsrOnlyWatchTask,
   clientWatchTask,
   serverClientOnlyWatchTask,
+  prodBuildTask,
 } = require('./commands')
 
 const bf = undefined
@@ -61,6 +62,7 @@ swit(
         }),
     ],
     ['prod-local', () => mySpawn(prodLocalTask(bf, hasDocker))],
+    ['prod-build', () => mySpawn(prodBuildTask, bf)],
     ['lint', () => mySpawn(lintTask(bf))],
     ['test', () => mySpawn(testTask(bf))],
     ['lint-test', () => mySpawn(lintTestTask(bf))],
