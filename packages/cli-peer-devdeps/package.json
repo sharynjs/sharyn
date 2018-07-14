@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/cli-peer-devdeps",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "peerDependencies": {
@@ -8,7 +8,6 @@
     "@babel/core": "^7.0.0-beta.52",
     "@babel/node": "^7.0.0-beta.52",
     "babel-core": "7.0.0-bridge.0",
-    "babel-loader": "^8.0.0-beta.4",
     "babel-jest": "^23.2.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.1.0",
@@ -19,6 +18,7 @@
     "prettier": "^1.13.7",
     "rimraf": "^2.6.2",
     "webpack": "^4.1.6",
-    "webpack-cli": "^3.0.8"
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   }
 }
