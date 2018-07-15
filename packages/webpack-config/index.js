@@ -1,7 +1,7 @@
 const path = require('path')
-const { WDS_PORT } = require('@sharyn/env')
+const { WDS_PORT, IS_PROD } = require('@sharyn/env')
 
-if (!WDS_PORT) {
+if (!IS_PROD && !WDS_PORT) {
   throw Error('You must define a WDS_PORT environment variable in your .env file')
 }
 
