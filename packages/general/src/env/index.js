@@ -1,1 +1,3 @@
-export { default } from './env'
+import env from './env'
+
+module.exports = env
