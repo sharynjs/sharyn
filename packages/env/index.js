@@ -1,9 +1,9 @@
 // @flow
 
-import 'dotenv/config'
-import readEnv from 'read-env'
+require('dotenv/config')
+const readEnv = require('read-env')
 
 const env = readEnv({ transformKey: false })
 env.IS_PROD = env.NODE_ENV === 'production'
 
-export default env
+module.exports = env

@@ -12,7 +12,7 @@ The following packages are available:
 - **[@sharyn/babel-preset](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md)** – Babel preset
 - **[@sharyn/eslint-config](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md)** – ESLint configuration
 - **[@sharyn/prettier-config](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md)** – Prettier configuration
-- **[@sharyn/general](https://github.com/sharynjs/sharyn/blob/master/packages/general/README.md)** – General utils
+- **[@sharyn/env](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md)** – Env util
 - **[@sharyn/material-ui](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md)** – UI components using Material UI
 - **[@sharyn/shared](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md)** – Utils shared between the client and the server
 

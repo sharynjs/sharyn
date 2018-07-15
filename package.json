@@ -8,8 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "babel packages/material-ui/src -d packages/material-ui && babel packages/shared/src -d packages/shared && babel packages/general/src -d packages/general",
-    "clean": "rimraf packages/material-ui/DrawerItem packages/shared/fetch packages/general/env",
+    "start": "babel packages/material-ui/src -d packages/material-ui && babel packages/shared/src -d packages/shared",
+    "clean": "rimraf packages/material-ui/DrawerItem packages/shared/fetch",
     "lint": "eslint packages && flow && madge --circular packages",
     "test": "jest --coverage"
   },
