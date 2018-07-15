@@ -1,4 +1,4 @@
-# @sharyn/babel-preset
+# 🌹 `@sharyn/babel-preset`
 
 ![npm](https://img.shields.io/npm/v/@sharyn/babel-preset.svg)
 
