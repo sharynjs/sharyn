@@ -4,13 +4,13 @@
 
 This package provides CLI tasks to use as your NPM scripts.
 
-## Install
+## 🌹 Install
 
 ```bash
 npx install-peerdeps -o -Y @sharyn/cli-peer-deps && npx install-peerdeps -o -Y -d @sharyn/cli-peer-devdeps && yarn add --dev @sharyn/cli
 ```
 
-## Usage
+## 🌹 Usage
 
 In your `package.json`, add the following scripts:
 
@@ -27,7 +27,7 @@ In your `package.json`, add the following scripts:
   },
 ```
 
-## Tasks
+## 🌹 Tasks
 
 ### `dev`
 

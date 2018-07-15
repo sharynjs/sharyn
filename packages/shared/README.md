@@ -4,13 +4,13 @@
 
 This package provides _isomorphic_ / _universal_ utilities than can be used on both the client and the server.
 
-## Install
+## 🌹 Install
 
 ```bash
 yarn add @sharyn-shared
 ```
 
-## Usage
+## 🌹 Usage
 
 ### fetchGraphql
 
