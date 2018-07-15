@@ -1,6 +1,6 @@
 # 🌹 `@sharyn/babel-preset`
 
-![npm](https://img.shields.io/npm/v/@sharyn/babel-preset.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/babel-preset.svg)](https://www.npmjs.com/package/@sharyn/babel-preset)
 
 ## Install
 
@@ -8,7 +8,7 @@
 npx install-peerdeps -d -Y @sharyn/babel-preset
 ```
 
-Add your `package.json`:
+Add to your `package.json`:
 
 ```json
 "babel": {
