@@ -1,6 +1,6 @@
-# @sharyn/env
+# 🌹 @sharyn/env
 
-![npm](https://img.shields.io/npm/v/@sharyn/env.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/env.svg)](https://www.npmjs.com/package/@sharyn/env)
 
 This package helps accessing your environment variables.
 

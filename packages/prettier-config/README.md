@@ -1,6 +1,6 @@
-# @sharyn/prettier-config
+# 🌹 @sharyn/prettier-config
 
-![npm](https://img.shields.io/npm/v/@sharyn/prettier-config.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/prettier-config.svg)](https://www.npmjs.com/package/@sharyn/prettier-config)
 
 ## Install
 

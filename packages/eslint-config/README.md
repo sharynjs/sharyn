@@ -1,6 +1,6 @@
-# @sharyn/eslint-config
+# 🌹 @sharyn/eslint-config
 
-![npm](https://img.shields.io/npm/v/@sharyn/eslint-config.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/eslint-config.svg)](https://www.npmjs.com/package/@sharyn/eslint-config)
 
 ## Install
 

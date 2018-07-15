@@ -1,6 +1,6 @@
-# @sharyn/shared
+# 🌹 @sharyn/shared
 
-![npm](https://img.shields.io/npm/v/@sharyn/shared.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/shared.svg)](https://www.npmjs.com/package/@sharyn/shared)
 
 This package provides _isomorphic_ / _universal_ utilities than can be used on both the client and the server.
 

@@ -1,6 +1,6 @@
-# @sharyn/cli
+# 🌹 @sharyn/cli
 
-![npm](https://img.shields.io/npm/v/@sharyn/cli.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/cli.svg)](https://www.npmjs.com/package/@sharyn/cli)
 
 This package provides CLI tasks to use as your NPM scripts.
 

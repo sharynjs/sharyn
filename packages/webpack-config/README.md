@@ -1,6 +1,6 @@
-# @sharyn/webpack-config
+# 🌹 @sharyn/webpack-config
 
-![npm](https://img.shields.io/npm/v/@sharyn/webpack-config.svg)
+[![npm](https://img.shields.io/npm/v/@sharyn/webpack-config.svg)](https://www.npmjs.com/package/@sharyn/webpack-config)
 
 ## Install
 
