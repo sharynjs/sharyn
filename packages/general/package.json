@@ -1,0 +1,10 @@
+{
+  "name": "@sharyn/general",
+  "version": "0.1.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "read-env": "^1.2.0"
+  }
+}

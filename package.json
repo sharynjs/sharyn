@@ -8,15 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "babel packages/sharyn-material-ui/src --out-dir packages/sharyn-material-ui --ignore '**/*.test.js' && babel packages/sharyn-shared/src --out-dir packages/sharyn-shared --ignore '**/*.test.js'",
-    "clean": "rimraf packages/sharyn-material-ui/DrawerItem packages/sharyn-shared/fetch",
+    "start": "babel packages/material-ui/src -d packages/material-ui && babel packages/shared/src -d packages/shared && babel packages/general/src -d packages/general",
+    "clean": "rimraf packages/material-ui/DrawerItem packages/shared/fetch packages/general/env",
     "lint": "eslint packages && flow && madge --circular packages",
     "test": "jest --coverage"
-  },
-  "babel": {
-    "presets": [
-      "@sharyn"
-    ]
   },
   "eslintConfig": {
     "extends": "@sharyn"
@@ -27,12 +22,13 @@
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
     "@babel/preset-react": "^7.0.0-beta.52",
-    "@sharyn/babel-preset": "1.0.2",
+    "@sharyn/babel-preset": "1.2.0",
     "@sharyn/eslint-config": "1.0.2",
-    "@sharyn/prettier-config": "0.1.0",
+    "@sharyn/prettier-config": "1.0.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
+    "babel-plugin-flow-react-proptypes": "^24.0.1",
     "babel-plugin-module-resolver": "^3.1.1",
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
@@ -47,6 +43,8 @@
     "jest": "^23.2.0",
     "madge": "^3.2.0",
     "prettier": "^1.13.7",
+    "prop-types": "^15.6.2",
+    "react-hot-loader": "^4.3.3",
     "rimraf": "^2.6.2"
   }
 }
