@@ -4,11 +4,11 @@
 
 # 🌹 Sharyn
 
-Sharyn in a collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that strictly follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my **[JS Stack from Scratch](https://github.com/verekia/js-stack-from-scratch)** tutorial.
+Sharyn in a collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that strictly follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
 
 The following packages are available:
 
-- **[@sharyn/cli](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md)** – Convenient NPM scripts
+- [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
 - **[@sharyn/babel-preset](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md)** – Babel preset
 - **[@sharyn/eslint-config](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md)** – ESLint configuration
 - **[@sharyn/prettier-config](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md)** – Prettier configuration
