@@ -8,7 +8,9 @@
 npx install-peerdeps -d -Y @sharyn/webpack-config
 ```
 
-Create a `webpack.config.js` at the root of your project containing:
+If you are using `@sharyn/cli`, the config file will be used automatically.
+
+If not, create a `webpack.config.js` at the root of your project containing:
 
 ```js
 module.exports = require('@sharyn/webpack-config')

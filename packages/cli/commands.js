@@ -1,5 +1,10 @@
 // @flow
 
+const fs = require('fs')
+
+const pathToSharynWebpackConfig = 'node_modules/@sharyn/webpack-config'
+const hasSharynWebpackConfig = fs.existsSync(`${pathToSharynWebpackConfig}/index.js`)
+
 const binDir = null
 
 const prefix = command => `${binDir || './node_modules/.bin/'}${command}`
@@ -21,8 +26,16 @@ module.exports = {
   test: prefix('jest --coverage'),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
   rmLibDist: prefix('rimraf lib dist'), // Add .cache when switching back to Parcel
-  clientWatch: prefix('webpack-dev-server --mode=development --progress --hot'),
-  clientBuild: prefix('webpack --mode=production --progress'),
+  clientWatch: prefix(
+    `webpack-dev-server --mode=development --progress --hot ${
+      hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    }`,
+  ),
+  clientBuild: prefix(
+    `webpack --mode=production --progress ${
+      hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    }`,
+  ),
   serverWatch: nodemon,
   serverWatchSsrOnly: `${prefix('cross-env SSR_ONLY=true')} ${nodemon}`,
   serverWatchNoSsr: `${prefix('cross-env NO_SSR=true')} ${nodemon}`,

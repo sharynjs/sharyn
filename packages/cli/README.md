@@ -44,7 +44,7 @@ Runs sequencially:
 Then runs in parallel:
 
 - `nodemon -w src -i dist -x "babel-node src/_server/server.js"`
-- `webpack-dev-server --mode=development --progress --hot`
+- `webpack-dev-server --mode=development --progress --hot [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 
 ### `dev-ssr-only`
 
@@ -73,7 +73,7 @@ Runs sequencially:
 Then runs in parallel:
 
 - `cross-env NO_SSR=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
-- `webpack-dev-server --mode=development --progress --hot`
+- `webpack-dev-server --mode=development --progress --hot [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 
 ### `prod-local`
 
@@ -86,7 +86,7 @@ Runs sequencially:
   - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
   - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
 - `rimraf lib dist`
-- `webpack --mode=production --progress`
+- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
 - If a `Procfile` file is present:
   - `cross-env NODE_ENV=production heroku local`
@@ -98,7 +98,7 @@ Runs sequencially:
 Runs sequencially:
 
 - `rimraf lib dist`
-- `webpack --mode=production --progress`
+- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
 
 ### `migrate-db`
