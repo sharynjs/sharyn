@@ -21,7 +21,7 @@ The following packages are available:
 Here is a command that combines the installation of `@sharyn/cli`, `@sharyn/babel-preset`, `@sharyn/eslint-config`, `@sharyn/prettier-config`, and their peer dependencies.
 
 ```bash
-npx install-peerdeps -o -Y @sharyn/cli-peer-deps && npx install-peerdeps -o -Y -d @sharyn/cli-peer-devdeps && npx install-peerdeps -d -Y @sharyn/babel-preset && npx install-peerdeps -d -Y @sharyn/eslint-config && npx install-peerdeps -d -Y @sharyn/prettier-config && yarn add --dev @sharyn/cli
+npx install-peerdeps -o -Y @sharyn/cli-peer-deps && npx install-peerdeps -o -Y -d @sharyn/cli-peer-devdeps && npx install-peerdeps -d -Y @sharyn/babel-preset && npx install-peerdeps -d -Y @sharyn/eslint-config && yarn add --dev @sharyn/cli @sharyn/prettier-config
 ```
 
 Then, add this to your `package.json`:
@@ -65,24 +65,6 @@ module.system.node.resolve_dirname=src
 [ignore]
 .*/node_modules/config-chain/.*
 .*/node_modules/graphviz/.*
-```
-
-Create a `webpack.config.js` file at the root of your project containing:
-
-```js
-module.exports = {
-  entry: './src/_client/client.js',
-  output: { filename: 'js/bundle.js' },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: { loader: 'babel-loader' },
-      },
-    ],
-  },
-}
 ```
 
 To use Heroku, create a `Procfile` file at the root of your project containing:
