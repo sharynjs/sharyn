@@ -1,7 +1,7 @@
 {
   "name": "@sharyn/cli-peer-devdeps",
   "version": "1.1.9",
-  "repository": "https://github.com/sharynjs/sharyn",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/cli-peer-devdeps",
   "license": "MIT",
   "peerDependencies": {
     "@babel/cli": "^7.0.0-beta.52",

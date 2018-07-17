@@ -1,7 +1,7 @@
 {
   "name": "@sharyn/shared",
   "version": "0.1.1",
-  "repository": "https://github.com/sharynjs/sharyn",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/shared",
   "license": "MIT",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"

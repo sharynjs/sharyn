@@ -1,7 +1,7 @@
 {
   "name": "@sharyn/cli",
   "version": "2.3.2",
-  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/cli-peer-deps",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/cli",
   "license": "MIT",
   "dependencies": {
     "@verekia/lib-lang": "^2.4.0",
