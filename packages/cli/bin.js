@@ -11,10 +11,14 @@ const colors = require('colors/safe')
 const { knexConfigPath } = require('./shared')
 const {
   DOCKER_UP,
+  DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
+  DOCKER_WAIT_PG_TEST,
   NODE_LIB_SERVER,
   dbMigr,
+  dbMigrTest,
   dbSeed,
+  dbSeedTest,
   rmDist,
   rmLibDist,
   serverWatch,
@@ -103,8 +107,28 @@ swit(
     ],
     ['build-prod', () => mySpawn(sequence([rmLibDist, clientBuild, babel]))],
     ['lint', () => mySpawn(sequence([lint, typecheck]))],
-    ['test', () => mySpawn(test)],
-    ['lint-test', () => mySpawn(sequence([lint, typecheck, test]))],
+    [
+      'test',
+      () => {
+        const commands = []
+        hasDocker && commands.push(DOCKER_UP_TEST, DOCKER_WAIT_PG_TEST)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigrTest)
+        hasSeeds && commands.push(dbSeedTest)
+        commands.push(test)
+        mySpawn(sequence(commands))
+      },
+    ],
+    [
+      'lint-test',
+      () => {
+        const commands = [lint, typecheck]
+        hasDocker && commands.push(DOCKER_UP_TEST, DOCKER_WAIT_PG_TEST)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigrTest)
+        hasSeeds && commands.push(dbSeedTest)
+        commands.push(test)
+        mySpawn(sequence(commands))
+      },
+    ],
     ['migrate-db', () => mySpawn(dbMigr)],
   ],
   () => {
