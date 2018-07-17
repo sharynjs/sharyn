@@ -1,9 +1,14 @@
+const fs = require('fs')
 const Knex = require('knex')
 const exitHook = require('async-exit-hook')
 
 let knexConfig = require('./knex-config')
-// eslint-disable-next-line import/no-unresolved
-const customKnexConfig = require('../../../src/_db/knex-config')
+
+let customKnexConfig
+if (fs.existsSync('src/_db/knex-config.js')) {
+  // eslint-disable-next-line import/no-unresolved, global-require
+  customKnexConfig = require('../../../src/_db/knex-config')
+}
 
 if (customKnexConfig) {
   knexConfig = customKnexConfig
