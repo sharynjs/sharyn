@@ -1,0 +1,11 @@
+{
+  "name": "@sharyn/db",
+  "version": "0.1.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "@sharyn/env": "^1.0.2",
+    "knex": "^0.15.1",
+    "pg": "^7.4.3"
+  }
+}
