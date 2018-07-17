@@ -7,6 +7,11 @@ const { knexConfigPath } = require('./shared')
 const pathToSharynWebpackConfig = 'node_modules/@sharyn/webpack-config'
 const hasSharynWebpackConfig = fs.existsSync(`${pathToSharynWebpackConfig}/index.js`)
 
+const pathToGlobalSetup = './src/testing/global-setup.js'
+const hasGlobalSetup = fs.existsSync(pathToGlobalSetup)
+const pathToGlobalTeardown = './src/testing/global-teardown.js'
+const hasGlobalTeardown = fs.existsSync(pathToGlobalTeardown)
+
 const dockerWaitPg = containerName =>
   `until docker run --rm --link ${containerName}:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
 
@@ -32,7 +37,11 @@ module.exports = {
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
-  test: prefix('jest --coverage --coveragePathIgnorePatterns src/_db'),
+  test: prefix(
+    `jest --coverage ${hasGlobalSetup ? pathToGlobalSetup : ''} ${
+      hasGlobalTeardown ? pathToGlobalTeardown : ''
+    }`,
+  ),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
   rmLibDist: prefix('rimraf lib dist'), // Add .cache when switching back to Parcel
   clientWatch: prefix(
