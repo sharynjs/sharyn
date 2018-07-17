@@ -18,7 +18,6 @@ const {
   dbMigr,
   dbMigrTest,
   dbSeed,
-  dbSeedTest,
   rmDist,
   rmLibDist,
   serverWatch,
@@ -113,7 +112,6 @@ swit(
         const commands = []
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },
@@ -124,7 +122,6 @@ swit(
         const commands = [lint, typecheck]
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },

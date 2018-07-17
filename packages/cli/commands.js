@@ -29,7 +29,6 @@ module.exports = {
   dbMigr,
   dbSeed,
   dbMigrTest: `${prefix('cross-env NODE_ENV=test')} ${dbMigr}`,
-  dbSeedTest: `${prefix('cross-env NODE_ENV=test')} ${dbSeed}`,
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
