@@ -1,4 +1,6 @@
-module.exports = (knex, tableName) => (userId, trx) => {
+const knex = require('./knex')
+
+module.exports = tableName => (userId, trx) => {
   if (typeof tableName !== 'string') {
     throw Error('tableName must be a string')
   }
