@@ -38,8 +38,8 @@ module.exports = {
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
   test: prefix(
-    `jest --coverage ${hasGlobalSetup ? pathToGlobalSetup : ''} ${
-      hasGlobalTeardown ? pathToGlobalTeardown : ''
+    `jest --coverage ${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
+      hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
     }`,
   ),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
