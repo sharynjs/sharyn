@@ -1,0 +1,12 @@
+{
+  "name": "@sharyn/redis",
+  "version": "0.1.0",
+  "repository": "https://github.com/sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "@sharyn/env": "^1.0.2",
+    "async-exit-hook": "^2.0.1",
+    "bluebird": "^3.5.1",
+    "redis": "^2.8.0"
+  }
+}
