@@ -4,7 +4,7 @@
 
 # 🌹 Sharyn
 
-Sharyn in a collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that strictly follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
+Sharyn in a collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
 
 The following packages are available:
 

@@ -77,7 +77,7 @@ Two helpers are available to reduce bloat in your migration files, `standardCols
 They define your columns the following way:
 
 ```js
-const standardCols = (knex: Function, t: Object) => {
+const standardCols = (knex, t) => {
   t.uuid('id').primary()
   t
     .timestamp('createdAt')
@@ -89,7 +89,7 @@ const standardCols = (knex: Function, t: Object) => {
     .defaultTo(knex.fn.now())
 }
 
-const userIdCol = (t: Object) =>
+const userIdCol = t =>
   t
     .uuid('userId')
     .references(`${USER}.id`)
