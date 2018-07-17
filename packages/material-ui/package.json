@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/material-ui",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/material-ui",
   "license": "MIT",
   "dependencies": {
