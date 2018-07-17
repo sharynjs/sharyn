@@ -8,6 +8,9 @@
     "packages/*"
   ],
   "scripts": {
+    "diff": "lerna diff",
+    "updated": "lerna updated",
+    "pub": "lerna publish",
     "start": "babel packages/material-ui/src -d packages/material-ui && babel packages/shared/src -d packages/shared",
     "clean": "rimraf packages/material-ui/DrawerItem packages/shared/fetch",
     "lint": "eslint packages && flow && madge --circular packages",
@@ -41,7 +44,7 @@
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.76.0",
     "jest": "^23.2.0",
-    "lerna": "^2.11.0",
+    "lerna": "^3.0.0-beta.21",
     "madge": "^3.2.0",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",
