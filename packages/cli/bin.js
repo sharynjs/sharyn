@@ -111,8 +111,8 @@ swit(
       'test',
       () => {
         const commands = []
-        hasDocker && commands.push(DOCKER_UP_TEST, DOCKER_WAIT_PG_TEST)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigrTest)
+        hasDocker && commands.push(DOCKER_UP_TEST)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
@@ -122,8 +122,8 @@ swit(
       'lint-test',
       () => {
         const commands = [lint, typecheck]
-        hasDocker && commands.push(DOCKER_UP_TEST, DOCKER_WAIT_PG_TEST)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigrTest)
+        hasDocker && commands.push(DOCKER_UP_TEST)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
