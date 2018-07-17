@@ -8,6 +8,7 @@ const fs = require('fs')
 const { swit } = require('@verekia/lib-lang')
 const colors = require('colors/safe')
 
+const { knexConfigPath } = require('./shared')
 const {
   DOCKER_UP,
   DOCKER_WAIT_PG,
@@ -31,7 +32,6 @@ const {
 
 const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
 const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
-const hasPg = fs.existsSync(`${process.cwd()}/src/_db/knex-config.js`)
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
@@ -51,7 +51,7 @@ swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        hasPg && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -66,7 +66,7 @@ swit(
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        hasPg && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
         commands.push(serverWatchSsrOnly)
         mySpawn(sequence(commands))
       },
@@ -76,7 +76,7 @@ swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        hasPg && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -87,17 +87,17 @@ swit(
       },
     ],
     [
-      'prod-local',
+      'local-prod',
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        hasPg && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
         commands.push(rmLibDist, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocal) : commands.push(NODE_LIB_SERVER)
         mySpawn(sequence(commands))
       },
     ],
-    ['prod-build', () => mySpawn(sequence([rmLibDist, clientBuild, babel]))],
+    ['build-prod', () => mySpawn(sequence([rmLibDist, clientBuild, babel]))],
     ['lint', () => mySpawn(sequence([lint, typecheck, circular]))],
     ['test', () => mySpawn(test)],
     ['lint-test', () => mySpawn(sequence([lint, typecheck, circular, test]))],

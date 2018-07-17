@@ -19,10 +19,10 @@ In your `package.json`, add the following scripts:
     "start": "sharyn dev",
     "dev-ssr-only": "sharyn dev-ssr-only",
     "dev-no-ssr": "sharyn dev-no-ssr",
-    "prod-local": "sharyn prod-local",
+    "local-prod": "sharyn local-prod",
     "lint": "sharyn lint",
     "test": "sharyn test",
-    "heroku-postbuild": "sharyn prod-build",
+    "heroku-postbuild": "sharyn build-prod",
     "precommit": "sharyn lint-test"
   },
 ```
@@ -35,10 +35,10 @@ Runs sequencially:
 
 - If a `docker-compose.yml` file is present:
   - `docker-compose up -d`
-- If a `src/_db/knex-config.js` file is present:
+- If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
-  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
-  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf dist`
 
 Then runs in parallel:
@@ -52,10 +52,10 @@ Runs sequencially:
 
 - If a `docker-compose.yml` file is present:
   - `docker-compose up -d`
-- If a `src/_db/knex-config.js` file is present:
+- If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
-  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
-  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `cross-env SSR_ONLY=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
 
 ### `dev-no-ssr`
@@ -64,10 +64,10 @@ Runs sequencially:
 
 - If a `docker-compose.yml` file is present:
   - `docker-compose up -d`
-- If a `src/_db/knex-config.js` file is present:
+- If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
-  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
-  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf dist`
 
 Then runs in parallel:
@@ -75,16 +75,16 @@ Then runs in parallel:
 - `cross-env NO_SSR=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
 - `webpack-dev-server --mode=development --progress --hot [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 
-### `prod-local`
+### `local-prod`
 
 Runs sequencially:
 
 - If a `docker-compose.yml` file is present:
   - `docker-compose up -d`
-- If a `src/_db/knex-config.js` file is present:
+- If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
-  - `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
-  - `knex --knexfile src/_db/knex-config.js --cwd . seed:run`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf lib dist`
 - `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
@@ -93,7 +93,7 @@ Runs sequencially:
 - If not:
   - `node lib/_server/server.js`
 
-### `prod-build`
+### `build-prod`
 
 Runs sequencially:
 
@@ -103,9 +103,11 @@ Runs sequencially:
 
 ### `migrate-db`
 
-Runs `knex --knexfile src/_db/knex-config.js --cwd . migrate:latest`
+Runs `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
 
-Useful for the `release` command in Heroku's `Procfile` or on its own.
+With `[path-to-knex-config.js]` being `src/_db/knex-config.js` or the one provided by `@sharyn/db`
+
+Useful for the `release` command in Heroku's `Procfile` or on its own during local development.
 
 ### `lint`
 

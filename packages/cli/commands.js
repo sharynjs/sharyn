@@ -2,6 +2,8 @@
 
 const fs = require('fs')
 
+const { knexConfigPath } = require('./shared')
+
 const pathToSharynWebpackConfig = 'node_modules/@sharyn/webpack-config'
 const hasSharynWebpackConfig = fs.existsSync(`${pathToSharynWebpackConfig}/index.js`)
 
@@ -17,8 +19,8 @@ module.exports = {
   DOCKER_WAIT_PG:
     'until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done',
   babel: prefix('babel src -d lib'),
-  dbMigr: prefix('knex --knexfile src/_db/knex-config.js --cwd . migrate:latest'),
-  dbSeed: prefix('knex --knexfile src/_db/knex-config.js --cwd . seed:run'),
+  dbMigr: prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . migrate:latest`),
+  dbSeed: prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`),
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
