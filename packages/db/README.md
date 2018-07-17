@@ -60,3 +60,40 @@ export const somethingWithATransaction = userId =>
     await tableBQuery(null, trx).something()
   })
 ```
+
+### Migration helpers
+
+Two helpers are available to reduce bloat in your migration files, `standardCols` and `userIdCol`:
+
+```js
+  up: async knex => {
+    await knex.schema.createTable('Note', t => {
+    standardCols(knex, t)
+    userIdCol(t)
+    })
+  }
+```
+
+They define your columns the following way:
+
+```js
+const standardCols = (knex: Function, t: Object) => {
+  t.uuid('id').primary()
+  t
+    .timestamp('createdAt')
+    .notNullable()
+    .defaultTo(knex.fn.now())
+  t
+    .timestamp('updatedAt')
+    .notNullable()
+    .defaultTo(knex.fn.now())
+}
+
+const userIdCol = (t: Object) =>
+  t
+    .uuid('userId')
+    .references(`${USER}.id`)
+    .onUpdate('cascade')
+    .onDelete('cascade')
+    .notNullable()
+```
