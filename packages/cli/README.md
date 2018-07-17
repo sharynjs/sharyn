@@ -119,7 +119,6 @@ Runs sequencially:
 
 - `eslint src`
 - `flow`
-- `madge --circular src`
 
 ### `test`
 
@@ -131,7 +130,6 @@ Runs sequencially:
 
 - `eslint src`
 - `flow`
-- `madge --circular src`
 - `jest --coverage`
 
 Useful as the `precommit` Git hook or on its own.

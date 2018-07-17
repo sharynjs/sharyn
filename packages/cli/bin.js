@@ -27,7 +27,6 @@ const {
   test,
   lint,
   typecheck,
-  circular,
 } = require('./commands')
 
 const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
@@ -103,9 +102,9 @@ swit(
       },
     ],
     ['build-prod', () => mySpawn(sequence([rmLibDist, clientBuild, babel]))],
-    ['lint', () => mySpawn(sequence([lint, typecheck, circular]))],
+    ['lint', () => mySpawn(sequence([lint, typecheck]))],
     ['test', () => mySpawn(test)],
-    ['lint-test', () => mySpawn(sequence([lint, typecheck, circular, test]))],
+    ['lint-test', () => mySpawn(sequence([lint, typecheck, test]))],
     ['migrate-db', () => mySpawn(dbMigr)],
   ],
   () => {
