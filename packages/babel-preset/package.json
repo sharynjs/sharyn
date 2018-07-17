@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/babel-preset",
-  "version": "1.3.0-1",
+  "version": "1.3.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "peerDependencies": {
