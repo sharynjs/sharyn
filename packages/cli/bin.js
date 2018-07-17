@@ -32,6 +32,7 @@ const {
 
 const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
 const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
+const hasSeeds = fs.existsSync(`${process.cwd()}/src/_db/seeds`)
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
@@ -51,7 +52,8 @@ swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -66,7 +68,8 @@ swit(
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        hasSeeds && commands.push(dbSeed)
         commands.push(serverWatchSsrOnly)
         mySpawn(sequence(commands))
       },
@@ -76,7 +79,8 @@ swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -91,7 +95,8 @@ swit(
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr, dbSeed)
+        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        hasSeeds && commands.push(dbSeed)
         commands.push(rmLibDist, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocal) : commands.push(NODE_LIB_SERVER)
         mySpawn(sequence(commands))

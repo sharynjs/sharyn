@@ -38,7 +38,8 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
+  - If a `src/_db/seeds` folder is present:
+    - knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf dist`
 
 Then runs in parallel:
@@ -55,7 +56,8 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
+  - If a `src/_db/seeds` folder is present:
+    - knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `cross-env SSR_ONLY=true nodemon -w src -i dist -x "babel-node src/_server/server.js"`
 
 ### `dev-no-ssr`
@@ -67,7 +69,8 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
+  - If a `src/_db/seeds` folder is present:
+    - knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf dist`
 
 Then runs in parallel:
@@ -84,7 +87,8 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-  - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
+  - If a `src/_db/seeds` folder is present:
+    - knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf lib dist`
 - `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
