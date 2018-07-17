@@ -4,9 +4,9 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/cli-peer-devdeps",
   "license": "MIT",
   "peerDependencies": {
-    "@babel/cli": "^7.0.0-beta.52",
-    "@babel/core": "^7.0.0-beta.52",
-    "@babel/node": "^7.0.0-beta.52",
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/node": "^7.0.0-beta.54",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.2.0",
     "cross-env": "^5.2.0",
