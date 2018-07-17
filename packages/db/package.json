@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/db",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
