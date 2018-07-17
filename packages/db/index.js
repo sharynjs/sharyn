@@ -1,5 +1,2 @@
-const knex = require('./knex')
-
-module.exports = {
-  knex,
-}
+exports.knex = require('./knex')
+exports.createQuery = require('./createQuery')
