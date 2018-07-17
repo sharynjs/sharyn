@@ -5,6 +5,9 @@
   "license": "MIT",
   "peerDependencies": {
     "@babel/core": "^7.0.0-beta.52",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.54",
+    "@babel/plugin-syntax-throw-expressions": "^7.0.0-beta.54",
     "@babel/preset-env": "^7.0.0-beta.52",
     "@babel/preset-flow": "^7.0.0-beta.52",
     "@babel/preset-react": "^7.0.0-beta.52",

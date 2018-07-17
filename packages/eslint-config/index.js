@@ -6,7 +6,7 @@ module.exports = {
     'prettier/react',
     'prettier/flowtype',
   ],
-  plugins: ['flowtype', 'prettier'],
+  plugins: ['babel', 'flowtype', 'prettier'],
   env: {
     browser: true,
     jest: true,
@@ -23,6 +23,8 @@ module.exports = {
         extensions: ['.js'],
       },
     ],
+    'no-unused-expressions': 0,
+    'babel/no-unused-expressions': 1,
   },
   settings: {
     'import/resolver': {
