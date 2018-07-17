@@ -3,7 +3,7 @@ module.exports = () => ({
   plugins: [
     ['@babel/plugin-proposal-pipeline-operator', { proposal: 'minimal' }],
     '@babel/plugin-proposal-do-expressions',
-    '@babel/plugin-syntax-throw-expressions',
+    '@babel/plugin-proposal-nullish-coalescing-operator',
     ['module-resolver', { root: ['./src'] }],
   ],
   env: {
