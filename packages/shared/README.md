@@ -7,7 +7,7 @@ This package provides _isomorphic_ / _universal_ utilities than can be used on b
 ## 🌹 Install
 
 ```bash
-yarn add @sharyn-shared
+yarn add @sharyn/shared
 ```
 
 ## 🌹 Usage
