@@ -14,6 +14,7 @@ The following packages are available:
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
 - [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md) – Env util
+- [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – PostgreSQL and Knex utils, and a Knex configuration
 - [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
 - [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
 
