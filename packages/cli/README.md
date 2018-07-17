@@ -129,7 +129,7 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-- `jest --coverage [--globalSetup ./src/testing/global-setup.js --globalTeardown ./src/testing/global-teardown.js if these files exist]`
+- `jest --coverage [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 ### `lint-test`
 
@@ -142,6 +142,6 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
-- `jest --coverage [--globalSetup ./src/testing/global-setup.js --globalTeardown ./src/testing/global-teardown.js if these files exist]`
+- `jest --coverage [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 Useful as the `precommit` Git hook or on its own.

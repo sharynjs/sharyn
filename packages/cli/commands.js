@@ -7,9 +7,9 @@ const { knexConfigPath } = require('./shared')
 const pathToSharynWebpackConfig = 'node_modules/@sharyn/webpack-config'
 const hasSharynWebpackConfig = fs.existsSync(`${pathToSharynWebpackConfig}/index.js`)
 
-const pathToGlobalSetup = './src/testing/global-setup.js'
+const pathToGlobalSetup = './src/_testing/global-setup.js'
 const hasGlobalSetup = fs.existsSync(pathToGlobalSetup)
-const pathToGlobalTeardown = './src/testing/global-teardown.js'
+const pathToGlobalTeardown = './src/_testing/global-teardown.js'
 const hasGlobalTeardown = fs.existsSync(pathToGlobalTeardown)
 
 const dockerWaitPg = containerName =>
