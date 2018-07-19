@@ -30,11 +30,16 @@ const stopServer = options => {
 }
 
 const startServer = (routing, options) => {
+  if (!routing) {
+    throw Error('You must pass a routing function to startServer')
+  }
+
   if (!(options && options.silent)) {
     // eslint-disable-next-line no-console
     console.log(`${PREFIX} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
     exitHook(() => stopServer())
   }
+
   const app = new Koa()
 
   if (hasPackage('koa-compress')) {
