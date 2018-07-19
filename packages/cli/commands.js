@@ -24,6 +24,10 @@ const nodemon = prefix('nodemon -w src -i dist -x "babel-node src/_server/server
 const dbMigr = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . migrate:latest`)
 const dbSeed = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`)
 
+const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
+  hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
+}`
+
 module.exports = {
   NODE_LIB_SERVER: 'node lib/_server/server.js',
   DOCKER_UP: 'docker-compose up -d',
@@ -39,11 +43,8 @@ module.exports = {
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
-  test: prefix(
-    `jest --coverage ${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
-      hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
-    }`,
-  ),
+  testParallel: prefix(`jest --testPathIgnorePatterns .*.seq.test.js ${jestOptions}`),
+  testSequencial: prefix(`jest --testMatch **/*.seq.test.js --runInBand ${jestOptions}`),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
   rmLibDist: prefix('rimraf lib dist'), // Add .cache when switching back to Parcel
   clientWatch: prefix(

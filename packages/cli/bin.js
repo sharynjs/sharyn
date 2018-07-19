@@ -29,7 +29,8 @@ const {
   serverWatchNoSsr,
   herokuLocal,
   babel,
-  test,
+  testParallel,
+  testSequencial,
   lint,
   typecheck,
 } = require('./commands')
@@ -132,7 +133,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(test)
+        commands.push(testParallel, testSequencial)
         mySpawn(sequence(commands))
       },
     ],
@@ -144,7 +145,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(test)
+        commands.push(testParallel, testSequencial)
         mySpawn(sequence(commands))
       },
     ],
