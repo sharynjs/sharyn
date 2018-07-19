@@ -2,6 +2,7 @@
 
 const { hasPackage } = require('@sharyn/check-setup')
 const colors = require('colors/safe')
+const exitHook = require('exit-hook')
 
 hasPackage('koa', true)
 
@@ -14,19 +15,26 @@ const Koa = require('koa')
 const app = new Koa()
 let server
 
-const startServer = () => {
-  // eslint-disable-next-line no-console
-  console.log(
-    `${colors.cyan('[koa]')} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`,
-  )
-  server = app.listen(PORT)
-}
-
-const stopServer = () => {
+const stopServer = ({ silent }) => {
   if (server) {
+    if (!silent) {
+      // eslint-disable-next-line no-console
+      console.log(`${colors.cyan('[koa]')} Server stopped`)
+    }
     return server.close()
   }
   throw Error('Tried to stop the server but no server was running')
+}
+
+const startServer = ({ silent }) => {
+  if (!silent) {
+    // eslint-disable-next-line no-console
+    console.log(
+      `${colors.cyan('[koa]')} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`,
+    )
+    exitHook(() => stopServer())
+  }
+  server = app.listen(PORT)
 }
 
 exports.startServer = startServer
