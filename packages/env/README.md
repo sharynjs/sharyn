@@ -15,5 +15,5 @@ yarn add @sharyn/env
 `@sharyn/env` reads the `.env` file, parses the `process.env` object with `rend-env` (no key transformation), and exposes its keys to make it easy to import them.
 
 ```js
-import { PORT, IS_PROD } from '@sharyn/env'
+import { PORT } from '@sharyn/env'
 ```
