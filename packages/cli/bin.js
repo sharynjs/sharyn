@@ -20,7 +20,6 @@ const {
   dbMigr,
   dbMigrTest,
   dbSeed,
-  dbSeedTest,
   rmDist,
   rmLibDist,
   serverWatch,
@@ -133,7 +132,6 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        knexConfigPath && hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },
@@ -146,7 +144,6 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        knexConfigPath && hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },
