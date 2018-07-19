@@ -5,12 +5,10 @@ const colors = require('colors/safe')
 const exitHook = require('exit-hook')
 
 hasPackage('koa', true)
-
-const PORT = hasPackage('@sharyn/env') ? require('@sharyn/env').PORT : 8000
+const PREFIX = colors.cyan('[sharyn/koa]')
 
 const { NODE_ENV } = process.env
-
-const PREFIX = colors.cyan('[sharyn/koa]')
+const PORT = process.env.PORT || 8000
 
 const Koa = require('koa')
 
