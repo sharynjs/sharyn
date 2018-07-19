@@ -6,8 +6,16 @@ This package provides a Koa server.
 
 ## 🌹 Install
 
+Minimal:
+
 ```bash
 yarn add @sharyn/koa koa
+```
+
+Full-featured:
+
+```bash
+yarn add @sharyn/koa koa koa-mount koa-static
 ```
 
 ## 🌹 Usage
@@ -18,5 +26,10 @@ yarn add @sharyn/koa koa
 import { startServer, stopServer } from '@sharyn/koa'
 
 startServer()
+// or
+startServer({ silent: true })
+
+// To programatically stop the server (like in tests teardown):
 stopServer()
+stopServer({ silent: true })
 ```

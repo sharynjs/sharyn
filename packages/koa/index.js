@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies, global-require */
 
 const { hasPackage } = require('@sharyn/check-setup')
 const colors = require('colors/safe')
@@ -10,10 +10,22 @@ const PORT = hasPackage('@sharyn/env') ? require('@sharyn/env').PORT : 8000
 
 const { NODE_ENV } = process.env
 
+const PREFIX = colors.cyan('[sharyn/koa]')
+
 const Koa = require('koa')
 
 const app = new Koa()
 let server
+
+if (hasPackage('koa-mount') && hasPackage('koa-static')) {
+  const mount = require('koa-mount')
+  const serveStatic = require('koa-static')
+  app.use(mount('/static', serveStatic('dist'))).use(mount('/static', serveStatic('public')))
+}
+
+if (hasPackage('koa-favicon')) {
+  app.use(require('koa-favicon')(`./public/img/favicon.ico`))
+}
 
 const stopServer = options => {
   if (server) {
@@ -21,7 +33,7 @@ const stopServer = options => {
       // eslint-disable-next-line no-console
       console.log() // cross-os newline
       // eslint-disable-next-line no-console
-      console.log(`${colors.cyan('[koa]')} Server stopped`)
+      console.log(`${PREFIX} Server stopped`)
     }
     return server.close()
   }
@@ -31,11 +43,7 @@ const stopServer = options => {
 const startServer = options => {
   if (!(options && options.silent)) {
     // eslint-disable-next-line no-console
-    console.log(
-      `${colors.cyan('[sharyn/koa]')} Server running on port ${PORT} ${
-        NODE_ENV ? `(${NODE_ENV})` : ''
-      }`,
-    )
+    console.log(`${PREFIX} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
     exitHook(() => stopServer())
   }
   server = app.listen(PORT)
