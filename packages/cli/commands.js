@@ -21,12 +21,6 @@ const prefix = command => `${binDir || './node_modules/.bin/'}${command}`
 
 const nodemon = prefix('nodemon -w src -i dist -x "babel-node src/_server/server.js"')
 
-const buildClientProd = prefix(
-  `webpack --mode=production --progress ${
-    hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
-  }`,
-)
-
 const dbMigr = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . migrate:latest`)
 const dbSeed = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`)
 
@@ -54,15 +48,17 @@ module.exports = {
     `jest --preset jest-puppeteer --testPathIgnorePatterns /lib/* --testMatch **/*.seq.test.js --runInBand ${jestOptions}`,
   ),
   rmBundle: prefix('rimraf dist/js/bundle.js'), // Add .cache when switching back to Parcel
-  rmTestingBundle: prefix('rimraf dist/js/bundle-testing.js'), // Add .cache when switching back to Parcel
   rmLibAndBundle: prefix('rimraf lib dist/js/bundle.js'), // Add .cache when switching back to Parcel
   clientWatch: prefix(
     `webpack-dev-server --mode=development --progress --hot ${
       hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
     }`,
   ),
-  clientBuild: buildClientProd,
-  clientBuildTesting: `${prefix('cross-env NODE_ENV=test')} ${buildClientProd}`,
+  clientBuild: prefix(
+    `webpack --mode=production --progress ${
+      hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    }`,
+  ),
   serverWatch: nodemon,
   serverWatchSsrOnly: `${prefix('cross-env SSR_ONLY=true')} ${nodemon}`,
   serverWatchNoSsr: `${prefix('cross-env NO_SSR=true')} ${nodemon}`,

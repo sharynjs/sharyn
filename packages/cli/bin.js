@@ -22,11 +22,9 @@ const {
   dbSeed,
   rmBundle,
   rmLibAndBundle,
-  rmTestingBundle,
   serverWatch,
   clientWatch,
   clientBuild,
-  clientBuildTesting,
   serverWatchSsrOnly,
   serverWatchNoSsr,
   herokuLocal,
@@ -135,7 +133,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(rmTestingBundle, clientBuildTesting, testParallel, testSequencial)
+        commands.push(rmBundle, clientBuild, testParallel, testSequencial)
         mySpawn(sequence(commands))
       },
     ],
@@ -147,7 +145,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(rmTestingBundle, clientBuildTesting, testParallel, testSequencial)
+        commands.push(rmBundle, clientBuild, testParallel, testSequencial)
         mySpawn(sequence(commands))
       },
     ],
