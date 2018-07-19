@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/cli",
-  "version": "2.11.0-0",
+  "version": "2.11.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/cli",
   "license": "MIT",
   "dependencies": {
