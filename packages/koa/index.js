@@ -32,7 +32,9 @@ const startServer = options => {
   if (!(options && options.silent)) {
     // eslint-disable-next-line no-console
     console.log(
-      `${colors.cyan('[koa]')} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`,
+      `${colors.cyan('[sharyn/koa]')} Server running on port ${PORT} ${
+        NODE_ENV ? `(${NODE_ENV})` : ''
+      }`,
     )
     exitHook(() => stopServer())
   }

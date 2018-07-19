@@ -38,7 +38,7 @@ const hasSeeds = fs.existsSync(`${process.cwd()}/src/_db/seeds`)
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
-  console.log(`${colors.magenta(`[sharyn]`)} ${colors.gray(cmd)}`)
+  console.log(`${colors.magenta(`[sharyn/cli]`)} ${colors.gray(cmd)}`)
   return spawn(cmd, { shell: true, stdio: 'inherit' })
 }
 
