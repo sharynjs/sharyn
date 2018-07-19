@@ -36,10 +36,10 @@ const routing = router => {
   })
 }
 
-startServer(routing)
+startServer(routing) // Starts server on port PORT of your env, defaulting to 8000
 
 
-// Mute the output with the silent option in your tests:
-setup = () => startServer(routing, { silent: true })
-teardown = () => stopServer({ silent: true })
+// Mute the output with the silent option or change the port in your tests:
+setup = () => startServer(routing, { port: 6000, silent: true })
+teardown = () => stopServer({ port: 6000, silent: true })
 ```

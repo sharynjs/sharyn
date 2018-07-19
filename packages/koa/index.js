@@ -59,7 +59,7 @@ const startServer = (routing, options) => {
   routing(router)
   app.use(router.routes()).use(router.allowedMethods())
 
-  server = app.listen(PORT)
+  server = app.listen((options && options.port) || PORT)
 }
 
 exports.startServer = startServer
