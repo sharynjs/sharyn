@@ -17,7 +17,7 @@ let server
 
 const stopServer = options => {
   if (server) {
-    if (options && !options.silent) {
+    if (!(options && options.silent)) {
       // eslint-disable-next-line no-console
       console.log(`${colors.cyan('[koa]')} Server stopped`)
     }
@@ -27,7 +27,7 @@ const stopServer = options => {
 }
 
 const startServer = options => {
-  if (options && !options.silent) {
+  if (!(options && options.silent)) {
     // eslint-disable-next-line no-console
     console.log(
       `${colors.cyan('[koa]')} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`,
