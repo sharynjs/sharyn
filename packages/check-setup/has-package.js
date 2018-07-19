@@ -1,12 +1,12 @@
 // eslint-disable-next-line import/no-dynamic-require
 const { dependencies, devDependencies } = require(`${process.cwd()}/package.json`)
 
-const hasPackage = name => {
-  if (dependencies && dependencies[name]) {
+const hasPackage = (name, isRequired) => {
+  if ((dependencies && dependencies[name]) || (devDependencies && devDependencies[name])) {
     return true
   }
-  if (devDependencies && devDependencies[name]) {
-    return true
+  if (isRequired) {
+    throw Error(`Package ${name} is required`)
   }
   return false
 }

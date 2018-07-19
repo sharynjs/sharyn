@@ -1,0 +1,6 @@
+{
+  "name": "@sharyn/check-setup",
+  "version": "0.0.1",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/check-setup",
+  "license": "MIT"
+}
