@@ -18,6 +18,7 @@ The following packages are available:
 - [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis util
 - [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
 - [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
+- [**@sharyn/check-setup**](https://github.com/sharynjs/sharyn/blob/master/packages/check-setup/README.md) – To test whether a package or a file is present in a project
 
 ## 🌹 Boilerplate
 
