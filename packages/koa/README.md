@@ -37,9 +37,9 @@ const routing = router => {
 }
 
 startServer(routing)
-// or
-startServer(routing, { silent: true })
 
-// To programatically stop the server (like in tests teardown):
-stopServer({ silent: true })
+
+// Mute the output with the silent option in your tests:
+setup = () => startServer(routing, { silent: true })
+teardown = () => stopServer({ silent: true })
 ```
