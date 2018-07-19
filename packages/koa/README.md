@@ -7,7 +7,7 @@ This package provides a Koa server.
 ## 🌹 Install
 
 ```bash
-yarn add @sharyn/koa @sharyn/env koa
+yarn add @sharyn/koa koa
 ```
 
 ## 🌹 Usage
