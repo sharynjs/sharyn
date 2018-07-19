@@ -15,7 +15,7 @@ yarn add @sharyn/koa koa
 Full-featured:
 
 ```bash
-yarn add @sharyn/koa koa koa-mount koa-static
+yarn add @sharyn/koa koa koa-mount koa-static koa-favicon
 ```
 
 ## 🌹 Usage
