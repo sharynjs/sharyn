@@ -1,11 +1,11 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies */
 
 const { hasPackage } = require('@sharyn/check-setup')
 
 hasPackage('koa', true)
-hasPackage('@sharyn/env', true)
 
-const { PORT } = require('@sharyn/env')
+const PORT = hasPackage('@sharyn/env') ? require('@sharyn/env').PORT : 8000
+
 const Koa = require('koa')
 
 const app = new Koa()
