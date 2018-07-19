@@ -11,6 +11,11 @@ module.exports = {
     browser: true,
     jest: true,
   },
+  globals: {
+    page: true,
+    browser: true,
+    jestPuppeteer: true,
+  },
   rules: {
     'no-unexpected-multiline': 2,
     'import/prefer-default-export': 0,
