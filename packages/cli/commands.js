@@ -43,8 +43,10 @@ module.exports = {
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
   lint: prefix('eslint src'),
   typecheck: prefix('flow'),
-  testParallel: prefix(`jest --testPathIgnorePatterns .*\\.seq\\.test.js ${jestOptions}`),
-  testSequencial: prefix(`jest --testMatch **/*.seq.test.js --runInBand ${jestOptions}`),
+  testParallel: prefix(`jest --testPathIgnorePatterns /lib/* .*\\.seq\\.test.js ${jestOptions}`),
+  testSequencial: prefix(
+    `jest --preset jest-puppeteer --testPathIgnorePatterns /lib/* --testMatch **/*.seq.test.js --runInBand ${jestOptions}`,
+  ),
   rmDist: prefix('rimraf dist'), // Add .cache when switching back to Parcel
   rmLibDist: prefix('rimraf lib dist'), // Add .cache when switching back to Parcel
   clientWatch: prefix(
