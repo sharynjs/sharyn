@@ -5,7 +5,7 @@ const { hasPackage } = require('@sharyn/check-setup')
 hasPackage('koa', true)
 hasPackage('koa-router', true)
 const Koa = require('koa')
-const router = require('koa-router')
+const router = new (require('koa-router'))()
 
 const colors = require('colors/safe')
 const exitHook = require('exit-hook')
