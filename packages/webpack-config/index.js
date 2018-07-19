@@ -1,14 +1,11 @@
 const path = require('path')
-const { WDS_PORT, NODE_ENV } = require('@sharyn/env')
 
-if (NODE_ENV !== 'production' && NODE_ENV !== 'test' && !WDS_PORT) {
-  throw Error('You must define a WDS_PORT environment variable in your .env file')
-}
+const WDS_PORT = 8371
 
 module.exports = {
   entry: './src/_client/client.js',
   output: {
-    filename: `js/bundle${NODE_ENV === 'test' ? '-testing' : ''}.js`,
+    filename: `js/bundle.js`,
     path: path.resolve('dist'),
     publicPath: `http://localhost:${WDS_PORT}/static`,
   },

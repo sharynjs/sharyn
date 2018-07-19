@@ -3,9 +3,6 @@
   "version": "1.3.0-0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/webpack-config",
   "license": "MIT",
-  "dependencies": {
-    "@sharyn/env": "^1.0.3"
-  },
   "peerDependencies": {
     "babel-loader": "^8.0.0-beta.4"
   }
