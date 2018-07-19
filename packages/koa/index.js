@@ -15,9 +15,9 @@ const Koa = require('koa')
 const app = new Koa()
 let server
 
-const stopServer = ({ silent }) => {
+const stopServer = options => {
   if (server) {
-    if (!silent) {
+    if (options && !options.silent) {
       // eslint-disable-next-line no-console
       console.log(`${colors.cyan('[koa]')} Server stopped`)
     }
@@ -26,8 +26,8 @@ const stopServer = ({ silent }) => {
   throw Error('Tried to stop the server but no server was running')
 }
 
-const startServer = ({ silent }) => {
-  if (!silent) {
+const startServer = options => {
+  if (options && !options.silent) {
     // eslint-disable-next-line no-console
     console.log(
       `${colors.cyan('[koa]')} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`,
