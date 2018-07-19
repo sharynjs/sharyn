@@ -19,6 +19,8 @@ const stopServer = options => {
   if (server) {
     if (!(options && options.silent)) {
       // eslint-disable-next-line no-console
+      console.log() // cross-os newline
+      // eslint-disable-next-line no-console
       console.log(`${colors.cyan('[koa]')} Server stopped`)
     }
     return server.close()
