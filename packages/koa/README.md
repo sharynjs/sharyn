@@ -9,13 +9,13 @@ This package provides a Koa server.
 Minimal:
 
 ```bash
-yarn add @sharyn/koa koa
+yarn add @sharyn/koa koa koa-router
 ```
 
 Full-featured:
 
 ```bash
-yarn add @sharyn/koa koa koa-mount koa-static koa-favicon
+yarn add @sharyn/koa koa koa-router koa-mount koa-static koa-favicon koa-compress
 ```
 
 ## 🌹 Usage
@@ -25,11 +25,21 @@ yarn add @sharyn/koa koa koa-mount koa-static koa-favicon
 ```js
 import { startServer, stopServer } from '@sharyn/koa'
 
-startServer()
+const routing = router => {
+  router.get('*', ctx => {
+    ctx.body = `<!doctype html>
+    <html>
+      <body>
+        Hello world!
+      </body>
+    </html>`
+  })
+}
+
+startServer(routing)
 // or
-startServer({ silent: true })
+startServer(routing, { silent: true })
 
 // To programatically stop the server (like in tests teardown):
-stopServer()
 stopServer({ silent: true })
 ```

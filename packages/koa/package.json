@@ -4,7 +4,8 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/koa",
   "license": "MIT",
   "peerDependencies": {
-    "koa": "2.x"
+    "koa": "2.x",
+    "koa-router": "7.x"
   },
   "dependencies": {
     "@sharyn/check-setup": "^1.0.1",
