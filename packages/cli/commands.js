@@ -27,6 +27,8 @@ const dbSeed = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`
 module.exports = {
   NODE_LIB_SERVER: 'node lib/_server/server.js',
   DOCKER_UP: 'docker-compose up -d',
+  // flow-disable-next-line
+  dockerDownTest: id => `docker rm -f ${id}`,
   DOCKER_UP_TEST: 'docker-compose up -d db-test',
   DOCKER_WAIT_PG: dockerWaitPg('db'),
   DOCKER_WAIT_PG_TEST: dockerWaitPg('db-test'),

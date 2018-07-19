@@ -125,6 +125,8 @@ Runs sequencially:
 Runs sequencially:
 
 - If a `docker-compose.yml` file is present:
+  - If a Docker process is found matching the `db-test` name:
+    - `docker rm -f [db-test-id]`
   - `docker-compose up -d db-test`
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
@@ -138,6 +140,8 @@ Runs sequencially:
 - `eslint src`
 - `flow`
 - If a `docker-compose.yml` file is present:
+  - If a Docker process is found matching the `db-test` name:
+    - `docker rm -f [db-test-id]`
   - `docker-compose up -d db-test`
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`

@@ -3,7 +3,8 @@
 // @flow
 /* eslint-disable no-unused-expressions */
 
-const { spawn } = require('child_process')
+const { EOL } = require('os')
+const { execSync, spawn } = require('child_process')
 const fs = require('fs')
 const { swit } = require('@verekia/lib-lang')
 const colors = require('colors/safe')
@@ -15,6 +16,7 @@ const {
   DOCKER_WAIT_PG,
   DOCKER_WAIT_PG_TEST,
   NODE_LIB_SERVER,
+  dockerDownTest,
   dbMigr,
   dbMigrTest,
   dbSeed,
@@ -36,9 +38,20 @@ const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
 const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
 const hasSeeds = fs.existsSync(`${process.cwd()}/src/_db/seeds`)
 
+const getDbTestProcessId = () => {
+  const dbTestContainerName = 'db-test'
+
+  const result = execSync(`docker ps -q --filter="name=${dbTestContainerName}"`).toString()
+  const ids = result.split(EOL).filter(x => x)
+  if (ids.length > 1) {
+    throw Error(`Multiple running processes found for ${dbTestContainerName}`)
+  }
+  return ids[0]
+}
+
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
-  console.log(`${colors.magenta(`[sharyn/cli]`)} ${colors.gray(cmd)}`)
+  console.log(`${colors.magenta(`[sharyn]`)} ${colors.gray(cmd)}`)
   return spawn(cmd, { shell: true, stdio: 'inherit' })
 }
 
@@ -110,6 +123,8 @@ swit(
       'test',
       () => {
         const commands = []
+        const testDbId = getDbTestProcessId()
+        hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(test)
@@ -120,6 +135,8 @@ swit(
       'lint-test',
       () => {
         const commands = [lint, typecheck]
+        const testDbId = getDbTestProcessId()
+        hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(test)
