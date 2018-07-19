@@ -24,6 +24,9 @@ const stopServer = options => {
       // eslint-disable-next-line no-console
       console.log(`${PREFIX} Server stopped`)
     }
+    if (hasPackage('@sharyn/db')) {
+      require('@sharyn/db').knex.destroy()
+    }
     return server.close()
   }
   throw Error('Tried to stop the server but no server was running')
