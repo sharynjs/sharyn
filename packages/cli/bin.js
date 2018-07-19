@@ -20,6 +20,7 @@ const {
   dbMigr,
   dbMigrTest,
   dbSeed,
+  dbSeedTest,
   rmDist,
   rmLibDist,
   serverWatch,
@@ -68,7 +69,7 @@ swit(
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
         knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        hasSeeds && firstCommands.push(dbSeed)
+        knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -84,7 +85,7 @@ swit(
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
         knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        hasSeeds && commands.push(dbSeed)
+        knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(serverWatchSsrOnly)
         mySpawn(sequence(commands))
       },
@@ -95,7 +96,7 @@ swit(
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
         knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        hasSeeds && firstCommands.push(dbSeed)
+        knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmDist)
         mySpawn(sequence(firstCommands)).on('close', code => {
           if (code === 0) {
@@ -111,7 +112,7 @@ swit(
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
         knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        hasSeeds && commands.push(dbSeed)
+        knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(rmLibDist, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocal) : commands.push(NODE_LIB_SERVER)
         mySpawn(sequence(commands))
@@ -127,6 +128,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        knexConfigPath && hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },
@@ -139,6 +141,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        knexConfigPath && hasSeeds && commands.push(dbSeedTest)
         commands.push(test)
         mySpawn(sequence(commands))
       },
