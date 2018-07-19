@@ -52,7 +52,9 @@ const getDbTestProcessId = () => {
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
-  console.log(`${colors.magenta(`[sharyn]`)} ${colors.gray(cmd)}`)
+  console.log(
+    `${colors.magenta(`[sharyn/cli]`)} ${colors.gray(cmd)}`.replace('./node_modules/.bin/', ''),
+  )
   return spawn(cmd, { shell: true, stdio: 'inherit' })
 }
 
