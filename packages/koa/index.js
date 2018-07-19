@@ -1,17 +1,11 @@
-/* eslint-disable import/order, import/no-unresolved */
+/* eslint-disable import/no-unresolved */
 
-const hasPackage = require('../../shared/has-package')
+const { hasPackage } = require('@sharyn/check-setup')
 
-if (!hasPackage('koa')) {
-  throw Error('You need to have koa installed to use @sharyn/koa')
-}
-
-if (!hasPackage('@sharyn/env')) {
-  throw Error('You need to have @sharyn/env installed to use @sharyn/koa')
-}
+hasPackage('koa', true)
+hasPackage('@sharyn/env', true)
 
 const { PORT } = require('@sharyn/env')
-
 const Koa = require('koa')
 
 const app = new Koa()
@@ -25,7 +19,7 @@ const stopServer = () => {
   if (server) {
     return server.close()
   }
-  throw Error('No server was running')
+  throw Error('Tried to stop the server but no server was running')
 }
 
 exports.startServer = startServer

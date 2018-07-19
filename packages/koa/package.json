@@ -6,5 +6,8 @@
   "peerDependencies": {
     "@sharyn/env": "x",
     "koa": "2.x"
+  },
+  "dependencies": {
+    "@sharyn/check-setup": "^1.0.0"
   }
 }

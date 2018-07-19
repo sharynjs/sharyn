@@ -3,8 +3,6 @@ const path = require('path')
 
 const appRoot = path.resolve(__dirname, '../../../')
 
-console.log(appRoot)
-
 const hasFile = (filePath, isRequired) => {
   if (fs.existsSync(`${appRoot}/${filePath}`)) {
     return true
