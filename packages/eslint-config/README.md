@@ -23,3 +23,15 @@ Add your `package.json`:
   "extends": "@sharyn"
 },
 ```
+
+If you are not using `@sharyn/babel-preset`, remember that you also need to configure Babel to use `babel-plugin-module-resolver` for `eslint-import-resolver-babel-module` to work. A minimal setup in your `package.json` would be:
+
+```json
+  "babel": {
+    "plugins": [
+      ["module-resolver", {
+        "root": ["./src"]
+      }]
+    ]
+  },
+```
