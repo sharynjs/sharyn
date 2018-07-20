@@ -39,11 +39,11 @@ if (hasPackage('@babel/plugin-proposal-optional-chaining')) {
 }
 
 if (hasPackage('babel-plugin-module-resolver')) {
-  config.plugins.push(['module-resolver', { root: ['./src'] }])
+  config.plugins.push(['babel-plugin-module-resolver', { root: ['./src'] }])
 }
 
 if (hasPackage('babel-plugin-flow-react-proptypes')) {
-  config.env.development.plugins.push('flow-react-proptypes')
+  config.env.development.plugins.push('babel-plugin-flow-react-proptypes')
 }
 
 if (hasPackage('react-hot-loader')) {
