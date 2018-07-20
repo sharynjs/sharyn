@@ -1,39 +1,101 @@
-module.exports = {
-  extends: [
-    'airbnb',
-    'plugin:flowtype/recommended',
-    'prettier',
-    'prettier/react',
-    'prettier/flowtype',
-  ],
-  plugins: ['flowtype', 'prettier'],
+const { hasPackage } = require('@sharyn/check-setup')
+
+const config = {
+  extends: [],
+  plugins: [],
   env: {
     browser: true,
-    jest: true,
   },
-  globals: {
-    page: true,
-    browser: true,
-    jestPuppeteer: true,
-  },
+  globals: {},
   rules: {
-    'no-unexpected-multiline': 2,
-    'import/prefer-default-export': 0,
-    'prettier/prettier': 2,
-    'func-names': 0,
-    'no-underscore-dangle': 0,
-    'react/require-default-props': 0,
     'no-unused-expressions': 0,
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js'],
-      },
-    ],
+    'no-underscore-dangle': 0,
+    'func-names': 0,
+    'no-unexpected-multiline': 2,
   },
-  settings: {
-    'import/resolver': {
-      'babel-module': {},
-    },
-  },
+  settings: {},
 }
+
+if (hasPackage('eslint-config-airbnb' && hasPackage('eslint-config-airbnb'))) {
+  throw Error(
+    'Your package.json should either have eslint-config-airbnb or eslint-config-airbnb-base as a dependency but not both',
+  )
+}
+
+if (hasPackage('eslint-config-airbnb')) {
+  config.extends.push('airbnb')
+
+  if (!hasPackage('eslint-plugin-import')) {
+    throw Error('eslint-config-airbnb requires having eslint-plugin-import installed')
+  }
+  if (!hasPackage('eslint-plugin-react')) {
+    throw Error('eslint-config-airbnb requires having eslint-plugin-react installed')
+  }
+  if (!hasPackage('eslint-plugin-jsx-a11y')) {
+    throw Error('eslint-config-airbnb requires having eslint-plugin-jsx-a11y installed')
+  }
+}
+
+if (hasPackage('eslint-config-airbnb-base')) {
+  config.extends.push('airbnb-base')
+
+  if (!hasPackage('eslint-plugin-import')) {
+    throw Error('eslint-config-airbnb-base requires having eslint-plugin-import installed')
+  }
+}
+
+if (hasPackage('jest-puppeteer')) {
+  config.globals.page = true
+  config.globals.browser = true
+  config.globals.jestPuppeteer = true
+}
+
+if (hasPackage('jest')) {
+  config.env.jest = true
+}
+
+if (hasPackage('eslint-plugin-flowtype')) {
+  config.extends.push('plugin:flowtype/recommended')
+  config.plugins.push('flowtype')
+}
+
+if (hasPackage('eslint-plugin-prettier')) {
+  config.plugins.push('prettier')
+  config.rules['prettier/prettier'] = 2
+}
+
+if (hasPackage('eslint-config-prettier')) {
+  config.extends.push('prettier')
+
+  if (hasPackage('react')) {
+    config.extends.push('prettier/react')
+  }
+  if (hasPackage('flow-bin')) {
+    config.extends.push('prettier/flowtype')
+  }
+}
+
+if (hasPackage('eslint-plugin-react')) {
+  config.rules['react/require-default-props'] = 0
+  config.rules['react/jsx-filename-extension'] = [1, { extensions: ['.js'] }]
+}
+
+if (hasPackage('eslint-plugin-import')) {
+  config.rules['import/prefer-default-export'] = 0
+}
+
+if (hasPackage('eslint-import-resolver-babel-module')) {
+  config.settings['import/resolver'] = { 'babel-module': {} }
+
+  if (!hasPackage('babel-plugin-module-resolver')) {
+    throw Error(
+      'eslint-import-resolver-babel-module requires having babel-plugin-module-resolver installed',
+    )
+  }
+}
+
+/* TODO Add babel-eslint in the cases where it's necessary */
+
+console.log(config)
+
+module.exports = config
