@@ -6,5 +6,7 @@
   "dependencies": {
     "@sharyn/check-setup": "^1.0.1"
   },
-  "gitHead": "bebffdfecc3f227afbb9b54e6949451fc9afb8ac"
+  "peerDependencies": {
+    "@babel/core": "x"
+  }
 }
