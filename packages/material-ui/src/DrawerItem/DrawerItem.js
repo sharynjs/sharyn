@@ -5,7 +5,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
-const styles = { label: { textDecoration: 'none', display: 'inline-block' } }
+const styles = { label: { '& > span': { textDecoration: 'none', display: 'inline-block' } } }
 
 const DrawerItem = ({ classes, label, icon: Icon }) => (
   <ListItem button>
