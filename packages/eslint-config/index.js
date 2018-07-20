@@ -12,6 +12,7 @@ const config = {
     'no-underscore-dangle': 0,
     'func-names': 0,
     'no-unexpected-multiline': 2,
+    semi: [2, 'never'],
   },
   settings: {},
 }
@@ -87,9 +88,17 @@ if (hasPackage('eslint-plugin-import')) {
 if (hasPackage('eslint-import-resolver-babel-module')) {
   config.settings['import/resolver'] = { 'babel-module': {} }
 
+  if (!hasPackage('@babel/core')) {
+    throw Error('eslint-import-resolver-babel-module requires having @babel/core installed')
+  }
   if (!hasPackage('babel-plugin-module-resolver')) {
     throw Error(
       'eslint-import-resolver-babel-module requires having babel-plugin-module-resolver installed',
+    )
+  }
+  if (!hasPackage('eslint-plugin-import')) {
+    throw Error(
+      'eslint-import-resolver-babel-module requires having eslint-plugin-import installed',
     )
   }
 }
