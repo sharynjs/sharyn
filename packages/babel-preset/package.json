@@ -7,6 +7,6 @@
     "@sharyn/check-setup": "^1.0.1"
   },
   "peerDependencies": {
-    "@babel/core": "x"
+    "@babel/core": ">= 7.0.0-beta"
   }
 }
