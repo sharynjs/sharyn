@@ -26,6 +26,7 @@ If your project uses the entire tech stack of Sharyn, we will add:
     "@babel/cli": "^7.0.0-beta.54",
     "@babel/node": "^7.0.0-beta.54",
     "@babel/preset-react": "^7.0.0-beta.54",
+    @sharyn/cli
     "@sharyn/webpack-config": "1.3.0",
     "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-flow-react-proptypes": "^24.0.1",
