@@ -21,6 +21,17 @@ PORT // 8000
 typeof PORT // 'number'
 ```
 
+`@sharyn/env` defaults `NODE_ENV` to `development` if it is `undefined`, and exposes the `IS_PROD_ENV`, `IS_DEV_ENV`, and `IS_TEST_ENV` boolean properties:
+
+```js
+import { NODE_ENV, IS_DEV_ENV, IS_PROD_ENV, IS_TEST_ENV } from '@sharyn/env'
+
+console.log(NODE_ENV) // 'development'
+console.log(IS_DEV_ENV) // true
+console.log(IS_PROD_ENV) // false
+console.log(IS_TEST_ENV) // false
+```
+
 You can use a `.env-check.js` file at the root of your project to check the validity of your env:
 
 ```js

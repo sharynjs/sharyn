@@ -10,6 +10,10 @@ const readEnv = require('read-env').default
 
 const parsedEnv = readEnv({ transformKey: false })
 
+parsedEnv.IS_PROD_ENV = parsedEnv.NODE_ENV === 'production'
+parsedEnv.IS_DEV_ENV = parsedEnv.NODE_ENV === 'development'
+parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
+
 if (hasFile('.env-check.js')) {
   require('../../../.env-check')(parsedEnv)
 }
