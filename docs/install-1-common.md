@@ -14,8 +14,8 @@ It will install the following packages:
 
 ## Dependencies
 
-- **@sharyn/util**: Utils
-- **lodash**: Utils
+- **`@sharyn/util`** – Lodash-like Utils
+- **`lodash`** – Utils
 
 ```bash
 devDependencies
