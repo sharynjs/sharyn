@@ -41,6 +41,6 @@ The following supported modules are automatically configured for ESLint if they 
 - [**flow-bin**](https://flow.org/) – Flow (type checker) core library and CLI
 - [**jest**](https://jestjs.io/) – Jest (test runner) core library and CLI
 - [**jest-puppeteer**](https://github.com/smooth-code/jest-puppeteer) – Jest preset for Puppeteer
-- [**react**](https://reactjs.org/) – React (UI library) core
+- [**react**](https://reactjs.org/) – React and JSX core
 
 See the [implementation](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/index.js).
