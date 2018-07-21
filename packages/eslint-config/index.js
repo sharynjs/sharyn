@@ -143,15 +143,6 @@ if (hasPackage('@babel/plugin-proposal-nullish-coalescing-operator')) {
   }
 }
 
-if (hasPackage('@babel/plugin-proposal-nullish-coalescing-operator')) {
-  config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error(
-      '@babel/plugin-proposal-nullish-coalescing-operator requires having babel-eslint installed',
-    )
-  }
-}
-
 if (hasPackage('@babel/plugin-proposal-optional-chaining')) {
   config.parser = 'babel-eslint'
   if (!hasPackage('babel-eslint')) {
@@ -180,7 +171,5 @@ if (hasPackage('react')) {
     },
   }
 }
-
-console.log(config)
 
 module.exports = config
