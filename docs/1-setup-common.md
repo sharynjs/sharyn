@@ -26,13 +26,13 @@ Let's break down what all those packages are.
 
 [**@babel/cli**](https://github.com/babel/babel/tree/master/packages/babel-cli) – The `babel` binary to compile files for production
 
-**`@babel/core`** – Babel (transpiler) core library
+[**@babel/core**](https://github.com/babel/babel/tree/master/packages/babel-core) – Babel (transpiler) core library
 
-**`@babel/node`** – The `babel-node` binary to execute Babel code on the fly in development
+[**@babel/node**](https://github.com/babel/babel/tree/master/packages/babel-node) – The `babel-node` binary to execute Babel code on the fly in development
 
-**`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
+[**@babel/plugin-proposal-do-expressions**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-do-expressions) – To use `do { }` expressions
 
-**`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `isUndef ?? 'default'`
+[**@babel/plugin-proposal-nullish-coalescing-operator**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator) – To use `isUndef ?? 'default'`
 
 **`@babel/plugin-proposal-optional-chaining`** – To use `isUndef?.property`
 
