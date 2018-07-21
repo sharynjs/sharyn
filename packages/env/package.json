@@ -4,6 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/env",
   "license": "MIT",
   "dependencies": {
+    "@sharyn/check-setup": "^1.0.1",
     "dotenv": "^6.0.0",
     "read-env": "^1.2.0"
   }

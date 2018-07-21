@@ -17,5 +17,31 @@ yarn add @sharyn/env
 ```js
 import { PORT } from '@sharyn/env'
 
-// PORT === 8000 (number, not string)
+PORT // 8000
+typeof PORT // 'number'
+```
+
+You can use a `.env-check.js` file at the root of your project to check the validity of your env:
+
+```js
+module.exports = parsedEnv => {
+  if (parsedEnv.PORT < 8000) {
+    throw Error('PORT must be superior to 8000')
+  }
+
+  if (!parsedEnv.DATABASE_URL) {
+    throw Error('DATABASE_URL is missing in the environment')
+  }
+}
+```
+
+An `ENV_TYPE` variable can be useful to have different rules based on your environment:
+
+```js
+module.exports = ({ ENV_TYPE, SENTRY_KEY }) => {
+  if (ENV_TYPE === 'local' || ENV_TYPE === 'staging' && SENTRY_KEY) {
+    throw Error('You cannot have a SENTRY_KEY env variable in local and staging environments')
+  }
+}
+
 ```
