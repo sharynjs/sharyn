@@ -32,7 +32,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 
 ## 🌹 Getting Started
 
-To get started, follow the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/install-1-common.md) or download the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
+To get started, follow the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/1-setup-common.md) or download the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
 
 I recommend the tutorial the first time you use Sharyn, and the boilerplate once you're familiar with the stack.
 
