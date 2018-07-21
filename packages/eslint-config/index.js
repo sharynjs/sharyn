@@ -58,11 +58,22 @@ if (hasPackage('jest')) {
 if (hasPackage('eslint-plugin-flowtype')) {
   config.extends.push('plugin:flowtype/recommended')
   config.plugins.push('flowtype')
+
+  if (!hasPackage('flow-bin')) {
+    throw Error('eslint-plugin-flowtype requires having flow-bin installed')
+  }
+  if (!hasPackage('babel-eslint')) {
+    throw Error('eslint-plugin-flowtype requires having babel-eslint installed')
+  }
 }
 
 if (hasPackage('eslint-plugin-prettier')) {
   config.plugins.push('prettier')
   config.rules['prettier/prettier'] = 2
+
+  if (!hasPackage('prettier')) {
+    throw Error('eslint-plugin-prettier requires having prettier installed')
+  }
 }
 
 if (hasPackage('eslint-config-prettier')) {
@@ -74,11 +85,19 @@ if (hasPackage('eslint-config-prettier')) {
   if (hasPackage('flow-bin')) {
     config.extends.push('prettier/flowtype')
   }
+
+  if (!hasPackage('prettier')) {
+    throw Error('eslint-config-prettier requires having prettier installed')
+  }
 }
 
 if (hasPackage('eslint-plugin-react')) {
   config.rules['react/require-default-props'] = 0
   config.rules['react/jsx-filename-extension'] = [1, { extensions: ['.js'] }]
+
+  if (!hasPackage('react')) {
+    throw Error('eslint-plugin-react requires having react installed')
+  }
 }
 
 if (hasPackage('eslint-plugin-import')) {
