@@ -55,7 +55,20 @@ Yup, that's a lot of dependencies for not even writing a _Hello World_ yet. Brea
 
 ## 🌹 Files
 
-Now let's create the following files:
+- Add this to your `package.json`:
+
+```json
+  "babel": {
+    "presets": [
+      "@sharyn"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "@sharyn"
+  },
+```
+
+And create the following files:
 
 - `.prettierrc.js` containing:
 
