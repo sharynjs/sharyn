@@ -97,6 +97,6 @@ yarn add --dev eslint-config-airbnb-base
 
 You're now all set for a simple project!
 
-## 🌹 Next – Full-Stack Project
+## 🌹 Next – Web Project
 
-Let's now move on to the next part, setting up the [**full-stack project**](https://github.com/sharynjs/sharyn/blob/master/docs/2-setup-full-stack.md) environment.
+Let's now move on to the next part, setting up the [**web project**](https://github.com/sharynjs/sharyn/blob/master/docs/2-setup-web.md) environment.

@@ -4,24 +4,24 @@
 
 # 🌹 Sharyn
 
-Sharyn is a collection of packages that make your life easier and reduce your boilerplate code in a JavaScript project. Some packages are useful for any project (like the Babel, ESLint, or Prettier configurations), and some are specifically made to build a full-stack production-ready React app.
+Sharyn is a library of packages that make your life easier and reduce your boilerplate code in JavaScript projects. The **Development** packages are useful for any project, and the **Web** ones provide a wide range of tools and helpers for your web app projects.
 
-For full-stack projects, Sharyn is almost a framework. _Almost_ because you get to pick which modules you use instead of a monolithic black box. A round-up of its features and technical bricks is available on the [**tech stack**](https://github.com/sharynjs/sharyn/blob/master/docs/stack.md) page.
+The default kick-ass tech stack that Sharyn supports is: Babel 7, ESLint 5, Flow, Prettier, React with server-side rendering, Redux, Webpack with HMR, Koa, GraphQL with Apollo, Knex, PostgreSQL, Redis, Jest, Puppeteer, Docker, and Heroku. These bricks are all optional and replaceable.
 
 Sharyn will work wonders for projects that follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
 
 ## 🌹 Packages
 
-### Common
+### Development
 
 - [**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Configures all the detected Babel modules
 - [**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – Configures all the detected ESLint modules
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
+
+### Web
+
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md) – Env util
-
-### Full-Stack Projects
-
 - [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
 - [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
 - [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Database utils using Knex and a Knex configuration
@@ -32,7 +32,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 
 ## 🌹 Getting Started
 
-To get started, follow the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/1-setup-common.md) or download the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
+To get started, follow the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/1-setup-development.md) or download the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
 
 I recommend the tutorial the first time you use Sharyn, and the boilerplate once you're familiar with the stack.
 
