@@ -14,31 +14,21 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 
 ### Common
 
-[**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Configures all the detected Babel modules
-
-[**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – Configures all the detected ESLint modules
-
-[**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
-
-[**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
-
-[**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md) – Env util
+- [**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Configures all the detected Babel modules
+- [**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – Configures all the detected ESLint modules
+- [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
+- [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
+- [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md) – Env util
 
 ### Full-Stack Projects
 
-[**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
-
-[**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
-
-[**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Database utils using Knex and a Knex configuration
-
-[**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis util
-
-[**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A Koa server
-
-[**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
-
-[**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
+- [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
+- [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
+- [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Database utils using Knex and a Knex configuration
+- [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis util
+- [**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A Koa server
+- [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
+- [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
 
 ## 🌹 Getting Started
 
