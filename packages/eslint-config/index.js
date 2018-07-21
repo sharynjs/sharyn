@@ -161,10 +161,10 @@ if (hasPackage('@babel/plugin-proposal-pipeline-operator')) {
   }
 }
 
-if (hasPackage('flow-type')) {
+if (hasPackage('flow-bin')) {
   config.parser = 'babel-eslint'
   if (!hasPackage('babel-eslint')) {
-    throw Error('flow-type requires having babel-eslint installed')
+    throw Error('flow-bin requires having babel-eslint installed')
   }
 }
 
