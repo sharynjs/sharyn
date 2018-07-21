@@ -6,7 +6,7 @@
 
 Sharyn is a collection of packages that make your life easier and reduce your boilerplate code in a JavaScript project. Some packages are useful for any project (like the Babel, ESLint, or Prettier configurations), and some are specifically made to build a full-stack production-ready React app.
 
-For full-stack projects, Sharyn is almost a framework. _Almost_ because you get to pick which modules you use instead of a monolithic black box, but those modules may sometimes not be as flexible as you would want. For instance the `@sharyn/db` package is specifically made for PostgreSQL. If you want to use a different database, you cannot use that module. All the technical choices are documented on the [**tech stack**](https://github.com/sharynjs/sharyn/blob/master/docs/stack.md) page.
+For full-stack projects, Sharyn is almost a framework. _Almost_ because you get to pick which modules you use instead of a monolithic black box. A round-up of its features and technical bricks is available on the [**tech stack**](https://github.com/sharynjs/sharyn/blob/master/docs/stack.md) page.
 
 Sharyn will work wonders for projects that follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
 
@@ -24,7 +24,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 
 - [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
 - [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
-- [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – PostgreSQL and Knex utils, and a Knex configuration
+- [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Database utils using Knex and a Knex configuration
 - [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis util
 - [**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A Koa server
 - [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
