@@ -2,6 +2,8 @@
 
 First, let's install the packages that I consider useful for _any_ project by running the command:
 
+## Install Command
+
 ```bash
 
 ```
@@ -10,11 +12,12 @@ First, let's install the packages that I consider useful for _any_ project by ru
 
 It will install the following packages:
 
-```bash
-dependencies:
-  @sharyn/util # Utils
-  lodash # Utils
+## Dependencies
 
+- **@sharyn/util**: Utils
+- **lodash**: Utils
+
+```bash
 devDependencies
   @babel/core # Babel core (no CLI)
   @babel/plugin-proposal-do-expressions # To use do { } expressions
