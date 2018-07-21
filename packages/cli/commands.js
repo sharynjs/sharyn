@@ -41,7 +41,7 @@ module.exports = {
   dbSeed,
   dbMigrTest: `${prefix('cross-env NODE_ENV=test')} ${dbMigr}`,
   herokuLocal: prefix('cross-env NODE_ENV=production heroku local'),
-  lint: prefix('eslint src'),
+  lint: prefix('eslint src --fix'),
   typecheck: prefix('flow'),
   testParallel: prefix(`jest --testPathIgnorePatterns /lib/* .*\\.seq\\.test.js ${jestOptions}`),
   testSequencial: prefix(
