@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@sharyn/babel-preset.svg)](https://www.npmjs.com/package/@sharyn/babel-preset)
 
-You can use this package as a standalone, but I recommend following the [**development setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/1-setup-development.md) to also install ESLint, Flow, Jest, React, and their Babel-related plugins.
+You can use this package as a standalone, but I recommend following the [**development setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/1-development-setup.md) to also install ESLint, Flow, Jest, React, and their Babel-related plugins.
 
 ## 🌹 Install
 
