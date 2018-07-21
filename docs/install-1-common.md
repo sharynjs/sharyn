@@ -17,7 +17,7 @@ It will install the following packages:
 
 ## 🌹 Dev Dependencies
 
-**`@babel/core`** – Babel transpiler core (no CLI)
+**`@babel/core`** – Babel (transpiler) core - no CLI
 
 **`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
 
@@ -43,11 +43,11 @@ It will install the following packages:
 
 **`babel-plugin-module-resolver`** – To import `from 'foo'` instead of `'../../foo'`
 
-**`eslint`** – ESLint linter core and CLI
+**`eslint`** – ESLint (linter) core and CLI
 
 **`eslint-config-prettier`** – Disables ESLint rules conflicting with Prettier
 
-**`eslint-import-resolver-babel-module`** – Make ESLint resolve modules with `babel-plugin-module-resolver`
+**`eslint-import-resolver-babel-module@5.0.0-beta.0`** – Make ESLint resolve modules with `babel-plugin-module-resolver`
 
 **`eslint-plugin-flowtype`** – ESLint rules for your Flow annotations
 
@@ -55,11 +55,11 @@ It will install the following packages:
 
 **`eslint-plugin-prettier`** – Show Prettier errors in ESLint
 
-**`flow-bin`** – Flow typechecker core and CLI
+**`flow-bin`** – Flow (type checker) core and CLI
 
-**`jest`** – Jest test runner core and CLI
+**`jest`** – Jest (test runner) core and CLI
 
-**`prettier`** – Prettier core and CLI
+**`prettier`** – Prettier (code formatter) core and CLI
 
 ## 🌹 Files
 
