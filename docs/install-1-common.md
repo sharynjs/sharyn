@@ -2,7 +2,7 @@
 
 First, let's install the packages that I consider useful for _any_ project by running the command:
 
-## Install Command
+## 🌹 Install Command
 
 ```bash
 
@@ -12,24 +12,30 @@ First, let's install the packages that I consider useful for _any_ project by ru
 
 It will install the following packages:
 
-## Dependencies
+## 🌹 Dependencies
 
 - **`@sharyn/util`** – Lodash-like Utils
 - **`lodash`** – Utils
 
+## 🌹 Dev Dependencies
+
+- **`@babel/core`** – Babel core (no CLI)
+- **`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
+- **`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
+- **`@babel/plugin-proposal-optional-chaining`** – To use `obj?.maybe`
+- **`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
+- **`@babel/preset-env`** – The recommended latest Babel preset
+- **`@babel/preset-flow`** – The recommended Babel preset for Flow
+- **`@sharyn/babel-preset`** – The Sharyn Babel preset that glues everything together
+- **`@sharyn/eslint-config`** – The Sharyn ESLint config that glues everything together
+- **`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
+- **`babel-eslint`** – Used to parse Flow and the new syntax Babel proposals
+- **``** –
+- **``** –
+- **``** –
+- **``** –
+
 ```bash
-devDependencies
-  @babel/core # Babel core (no CLI)
-  @babel/plugin-proposal-do-expressions # To use do { } expressions
-  @babel/plugin-proposal-nullish-coalescing-operator # To use undef ?? default
-  @babel/plugin-proposal-optional-chaining # To use obj?.maybe
-  @babel/plugin-proposal-pipeline-operator # To use 'hello' |> console.log
-  @babel/preset-env # The recommended latest Babel preset
-  @babel/preset-flow # The recommended preset for Flow
-  @sharyn/babel-preset # The Sharyn Babel preset that glues everything together
-  @sharyn/eslint-config # The Sharyn ESLint config that glues everything together
-  babel-core@^7.0.0-0 # The bridge from Babel 6 to 7, used by Jest
-  babel-eslint # Used to parse Flow and the new syntax Babel proposals
   babel-jest # Needed by Jest to use Babel 7
   babel-plugin-module-resolver # To import from 'foo' instead of '../../foo'
   eslint # ESLint core and CLI
