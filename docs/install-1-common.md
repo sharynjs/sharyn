@@ -2,8 +2,6 @@
 
 First, let's install the packages that I consider useful for _any_ project by running the command:
 
-## 🌹 Install Command
-
 ```bash
 
 ```
@@ -19,7 +17,7 @@ It will install the following packages:
 
 ## 🌹 Dev Dependencies
 
-**`@babel/core`** – Babel core (no CLI)
+**`@babel/core`** – Babel transpiler core (no CLI)
 
 **`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
 
@@ -41,19 +39,29 @@ It will install the following packages:
 
 **`babel-eslint`** – Used to parse Flow and the new syntax Babel proposals
 
-```bash
-  babel-jest # Needed by Jest to use Babel 7
-  babel-plugin-module-resolver # To import from 'foo' instead of '../../foo'
-  eslint # ESLint core and CLI
-  eslint-config-prettier # Disables ESLint rules conflicting with Prettier
-  eslint-import-resolver-babel-module # Make ESLint resolve modules with babel-plugin-module-resolver
-  eslint-plugin-flowtype # ESLint rules for your Flow annotations
-  eslint-plugin-import # Add support for import syntax to ESLint
-  eslint-plugin-prettier # Show Prettier errors in ESLint
-  flow-bin # Flow core and CLI
-  jest # Jest core and CLI
-  prettier # Prettier core and CLI
-```
+**`babel-jest`** – Needed by Jest to use Babel 7
+
+**`babel-plugin-module-resolver`** – To import `from 'foo'` instead of `'../../foo'`
+
+**`eslint`** – ESLint linter core and CLI
+
+**`eslint-config-prettier`** – Disables ESLint rules conflicting with Prettier
+
+**`eslint-import-resolver-babel-module`** – Make ESLint resolve modules with `babel-plugin-module-resolver`
+
+**`eslint-plugin-flowtype`** – ESLint rules for your Flow annotations
+
+**`eslint-plugin-import`** – Add support for `import` syntax to ESLint
+
+**`eslint-plugin-prettier`** – Show Prettier errors in ESLint
+
+**`flow-bin`** – Flow typechecker core and CLI
+
+**`jest`** – Jest test runner core and CLI
+
+**`prettier`** – Prettier core and CLI
+
+## 🌹 Files
 
 And create the following files:
 
@@ -73,5 +81,6 @@ module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 ```
 
+## 🌹 Next
 
-Then you have 2 options:
+Then you have 2 options.
