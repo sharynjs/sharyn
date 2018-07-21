@@ -25,18 +25,21 @@ It will install the following packages:
 
 **`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
 
-- **`@babel/plugin-proposal-optional-chaining`** – To use `obj?.maybe`
-- **`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
-- **`@babel/preset-env`** – The recommended latest Babel preset
-- **`@babel/preset-flow`** – The recommended Babel preset for Flow
-- **`@sharyn/babel-preset`** – The Sharyn Babel preset that glues everything together
-- **`@sharyn/eslint-config`** – The Sharyn ESLint config that glues everything together
-- **`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
-- **`babel-eslint`** – Used to parse Flow and the new syntax Babel proposals
-- **``** –
-- **``** –
-- **``** –
-- **``** –
+**`@babel/plugin-proposal-optional-chaining`** – To use `obj?.maybe`
+
+**`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
+
+**`@babel/preset-env`** – The recommended latest Babel preset
+
+**`@babel/preset-flow`** – The recommended Babel preset for Flow
+
+**`@sharyn/babel-preset`** – The Sharyn Babel preset that glues everything together
+
+**`@sharyn/eslint-config`** – The Sharyn ESLint config that glues everything together
+
+**`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
+
+**`babel-eslint`** – Used to parse Flow and the new syntax Babel proposals
 
 ```bash
   babel-jest # Needed by Jest to use Babel 7
