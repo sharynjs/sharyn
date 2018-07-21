@@ -18,8 +18,8 @@ Let's break down what all those packages are.
 
 ## 🌹 Dependencies
 
-- **`@sharyn/util`** – Lodash-like utils
-- **`lodash`** – Utils
+**`@sharyn/util`** – Lodash-like utils
+**`lodash`** – Utils
 
 ## 🌹 Dev Dependencies
 
@@ -31,25 +31,25 @@ Let's break down what all those packages are.
 
 **`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
 
-**`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
+**`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `isUndef ?? 'default'`
 
-**`@babel/plugin-proposal-optional-chaining`** – To use `maybe?.property`
+**`@babel/plugin-proposal-optional-chaining`** – To use `isUndef?.property`
 
 **`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
 
-**`@babel/preset-env`** – The recommended latest Babel preset
+**`@babel/preset-env`** – The latest Babel preset
 
-**`@babel/preset-flow`** – The recommended Babel preset for Flow
+**`@babel/preset-flow`** – The Babel preset for Flow
 
-**`@sharyn/babel-preset`** – Configures all the Babel modules together
+**`@sharyn/babel-preset`** – Configures all the detected Babel modules
 
-**`@sharyn/eslint-config`** – Configures all the ESLint modules together
+**`@sharyn/eslint-config`** – Configures all the detected ESLint modules
 
-**`@sharyn/prettier-config`** – Configures Prettier
+**`@sharyn/prettier-config`** – Offers a Prettier configuration
 
 **`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
 
-**`babel-eslint`** – Used to parse Flow and the new syntax Babel proposals
+**`babel-eslint`** – Used to parse Flow and the new Babel syntax proposals
 
 **`babel-jest`** – Needed by Jest to use Babel 7
 
@@ -63,7 +63,7 @@ Let's break down what all those packages are.
 
 **`eslint-plugin-flowtype`** – ESLint rules for Flow annotations
 
-**`eslint-plugin-import`** – Add support for `import` syntax to ESLint and import rules
+**`eslint-plugin-import`** – Add support for `import` syntax to ESLint, and import rules
 
 **`eslint-plugin-prettier`** – Show Prettier errors in ESLint
 
@@ -77,13 +77,13 @@ Let's break down what all those packages are.
 
 Now let's create the following files:
 
-- `.prettierrc.js` containing:
+`.prettierrc.js` containing:
 
 ```js
 module.exports = require('@sharyn/prettier-config')
 ```
 
-- `.flowconfig` containing:
+`.flowconfig` containing:
 
 ```
 [options]
@@ -93,7 +93,7 @@ module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 ```
 
-- `.gitignore` containing:
+`.gitignore` containing:
 
 ```
 .DS_Store
