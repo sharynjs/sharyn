@@ -122,7 +122,51 @@ if (hasPackage('eslint-import-resolver-babel-module')) {
   }
 }
 
-/* TODO Add babel-eslint in the cases where it's necessary */
+if (hasPackage('@babel/plugin-proposal-do-expressions')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error('@babel/plugin-proposal-do-expressions requires having babel-eslint installed')
+  }
+}
+
+if (hasPackage('@babel/plugin-proposal-nullish-coalescing-operator')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error(
+      '@babel/plugin-proposal-nullish-coalescing-operator requires having babel-eslint installed',
+    )
+  }
+}
+
+if (hasPackage('@babel/plugin-proposal-nullish-coalescing-operator')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error(
+      '@babel/plugin-proposal-nullish-coalescing-operator requires having babel-eslint installed',
+    )
+  }
+}
+
+if (hasPackage('@babel/plugin-proposal-optional-chaining')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error('@babel/plugin-proposal-optional-chaining requires having babel-eslint installed')
+  }
+}
+
+if (hasPackage('@babel/plugin-proposal-pipeline-operator')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error('@babel/plugin-proposal-pipeline-operator requires having babel-eslint installed')
+  }
+}
+
+if (hasPackage('flow-type')) {
+  config.parser = 'babel-eslint'
+  if (!hasPackage('babel-eslint')) {
+    throw Error('flow-type requires having babel-eslint installed')
+  }
+}
 
 console.log(config)
 
