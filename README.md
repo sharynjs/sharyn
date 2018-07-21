@@ -21,9 +21,11 @@ The following packages are available:
 - [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
 - [**@sharyn/check-setup**](https://github.com/sharynjs/sharyn/blob/master/packages/check-setup/README.md) – To test whether a package or a file is present in a project
 
-## 🌹 Boilerplate
+## 🌹 Getting Started
 
-The [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) repository gives you a preconfigured project that uses every feature of Sharyn.
+Sharyn is very modular, you can use just the bits you need. But if you want a full-featured Sharyn project, you have two options: following the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/install-1-common.md) or downloading the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
+
+I recommend following the tutorial the first time you use Sharyn, and starting from the boilerplate once you're familiar with the stack.
 
 ## 🌹 Credits
 

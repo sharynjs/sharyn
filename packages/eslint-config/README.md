@@ -19,7 +19,7 @@ yarn add --dev @sharyn/eslint-config eslint babel-eslint eslint-config-airbnb-ba
 Full-featured with React and Jest Puppeteer (web projects):
 
 ```bash
-yarn add react && yarn add --dev @sharyn/eslint-config eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y jest jest-puppeteer eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin prettier @babel/core babel-plugin-module-resolver
+yarn add react && yarn add --dev @sharyn/eslint-config eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y jest jest-puppeteer puppeteer eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin prettier @babel/core babel-plugin-module-resolver
 ```
 
 > Triple-click to select the entire line
