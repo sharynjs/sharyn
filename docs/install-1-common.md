@@ -47,7 +47,7 @@ It will install the following packages:
 
 **`eslint-config-prettier`** – Disables ESLint rules conflicting with Prettier
 
-**`eslint-import-resolver-babel-module@5.0.0-beta.0`** – Make ESLint resolve modules with `babel-plugin-module-resolver`
+**`eslint-import-resolver-babel-module@5.0.0-beta.0`** – For ESLint to use `babel-plugin-module-resolver`
 
 **`eslint-plugin-flowtype`** – ESLint rules for your Flow annotations
 
