@@ -16,4 +16,6 @@ yarn add @sharyn/env
 
 ```js
 import { PORT } from '@sharyn/env'
+
+// PORT === 8000 (number, not string)
 ```
