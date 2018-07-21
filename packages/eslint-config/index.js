@@ -127,41 +127,33 @@ if (hasPackage('eslint-import-resolver-babel-module')) {
   }
 }
 
-if (hasPackage('@babel/plugin-proposal-do-expressions')) {
-  config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error('@babel/plugin-proposal-do-expressions requires having babel-eslint installed')
-  }
+if (hasPackage('@babel/plugin-proposal-do-expressions') && !hasPackage('babel-eslint')) {
+  throw Error('@babel/plugin-proposal-do-expressions requires having babel-eslint installed')
 }
 
-if (hasPackage('@babel/plugin-proposal-nullish-coalescing-operator')) {
-  config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error(
-      '@babel/plugin-proposal-nullish-coalescing-operator requires having babel-eslint installed',
-    )
-  }
+if (
+  hasPackage('@babel/plugin-proposal-nullish-coalescing-operator') &&
+  !hasPackage('babel-eslint')
+) {
+  throw Error(
+    '@babel/plugin-proposal-nullish-coalescing-operator requires having babel-eslint installed',
+  )
 }
 
-if (hasPackage('@babel/plugin-proposal-optional-chaining')) {
-  config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error('@babel/plugin-proposal-optional-chaining requires having babel-eslint installed')
-  }
+if (hasPackage('@babel/plugin-proposal-optional-chaining') && !hasPackage('babel-eslint')) {
+  throw Error('@babel/plugin-proposal-optional-chaining requires having babel-eslint installed')
 }
 
-if (hasPackage('@babel/plugin-proposal-pipeline-operator')) {
-  config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error('@babel/plugin-proposal-pipeline-operator requires having babel-eslint installed')
-  }
+if (hasPackage('@babel/plugin-proposal-pipeline-operator') && !hasPackage('babel-eslint')) {
+  throw Error('@babel/plugin-proposal-pipeline-operator requires having babel-eslint installed')
 }
 
-if (hasPackage('flow-bin')) {
+if (hasPackage('flow-bin') && !hasPackage('babel-eslint')) {
+  throw Error('flow-bin requires having babel-eslint installed')
+}
+
+if (hasPackage('babel-eslint')) {
   config.parser = 'babel-eslint'
-  if (!hasPackage('babel-eslint')) {
-    throw Error('flow-bin requires having babel-eslint installed')
-  }
 }
 
 if (hasPackage('react')) {

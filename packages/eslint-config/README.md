@@ -13,13 +13,13 @@ yarn add --dev @sharyn/eslint-config eslint
 Full-featured without React or Jest Puppeteer (non-web projects):
 
 ```bash
-yarn add --dev @sharyn/eslint-config eslint eslint-config-airbnb-base eslint-plugin-import jest eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin
+yarn add --dev @sharyn/eslint-config eslint babel-eslint eslint-config-airbnb-base eslint-plugin-import jest eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin
 ```
 
 Full-featured with React and Jest Puppeteer (web projects):
 
 ```bash
-yarn add react && yarn add --dev @sharyn/eslint-config eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y jest jest-puppeteer eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin
+yarn add react && yarn add --dev @sharyn/eslint-config eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y jest jest-puppeteer eslint-plugin-flowtype eslint-plugin-prettier eslint-config-prettier eslint-import-resolver-babel-module@v5.0.0-beta.0 @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator flow-bin
 ```
 
 > Triple-click to select the entire line
@@ -41,6 +41,7 @@ The following modules are automatically configured for ESLint if they are detect
 - `@babel/plugin-proposal-nullish-coalescing-operator`
 - `@babel/plugin-proposal-optional-chaining`
 - `@babel/plugin-proposal-pipeline-operator`
+- `babel-eslint`
 - `flow-bin`
 - `react`
 
