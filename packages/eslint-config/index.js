@@ -17,7 +17,7 @@ const config = {
   settings: {},
 }
 
-if (hasPackage('eslint-config-airbnb' && hasPackage('eslint-config-airbnb'))) {
+if (hasPackage('eslint-config-airbnb') && hasPackage('eslint-config-airbnb-base')) {
   throw Error(
     'Your package.json should either have eslint-config-airbnb or eslint-config-airbnb-base as a dependency but not both',
   )
@@ -93,7 +93,11 @@ if (hasPackage('eslint-config-prettier')) {
 
 if (hasPackage('eslint-plugin-react')) {
   config.rules['react/require-default-props'] = 0
-  config.rules['react/jsx-filename-extension'] = [1, { extensions: ['.js'] }]
+  config.rules['react/jsx-filename-extension'] = [2, { extensions: ['.js'] }]
+
+  if (!hasPackage('eslint-config-airbnb')) {
+    config.extends.push('plugin:react/recommended')
+  }
 
   if (!hasPackage('react')) {
     throw Error('eslint-plugin-react requires having react installed')
@@ -110,6 +114,7 @@ if (hasPackage('eslint-import-resolver-babel-module')) {
   if (!hasPackage('@babel/core')) {
     throw Error('eslint-import-resolver-babel-module requires having @babel/core installed')
   }
+
   if (!hasPackage('babel-plugin-module-resolver')) {
     throw Error(
       'eslint-import-resolver-babel-module requires having babel-plugin-module-resolver installed',
@@ -165,6 +170,14 @@ if (hasPackage('flow-bin')) {
   config.parser = 'babel-eslint'
   if (!hasPackage('babel-eslint')) {
     throw Error('flow-bin requires having babel-eslint installed')
+  }
+}
+
+if (hasPackage('react')) {
+  config.parserOptions = {
+    ecmaFeatures: {
+      jsx: true,
+    },
   }
 }
 
