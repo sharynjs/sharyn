@@ -40,39 +40,39 @@ Let's break down what all those packages are.
 
 [**@babel/preset-env**](https://github.com/babel/babel/tree/master/packages/babel-preset-env) – The latest Babel preset
 
-**`@babel/preset-flow`** – The Babel preset for Flow
+[**@babel/preset-flow**](https://github.com/babel/babel/tree/master/packages/babel-preset-flow) – The Babel preset for Flow
 
-**`@sharyn/babel-preset`** – Configures all the detected Babel modules
+[**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/tree/master/packages/babel-preset) – Configures all the detected Babel modules
 
-**`@sharyn/eslint-config`** – Configures all the detected ESLint modules
+[**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/tree/master/packages/eslint-config) – Configures all the detected ESLint modules
 
-**`@sharyn/prettier-config`** – Offers a Prettier configuration
+[**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/tree/master/packages/prettier-config) – Offers a Prettier configuration
 
-**`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
+[**babel-core@^7.0.0-0**](https://github.com/babel/babel-bridge) – The bridge from Babel 6 to 7, used by Jest
 
-**`babel-eslint`** – Used to parse Flow and the new Babel syntax proposals
+[**babel-eslint**](https://github.com/babel/babel-eslint) – Used to parse Flow and the new Babel syntax proposals
 
-**`babel-jest`** – Needed by Jest to use Babel 7
+[**babel-jest**](https://github.com/facebook/jest/tree/master/packages/babel-jest) – Needed by Jest to use Babel 7
 
-**`babel-plugin-module-resolver`** – To import `from 'foo'` instead of `'../../foo'`
+[**babel-plugin-module-resolver**](https://github.com/tleunen/babel-plugin-module-resolver) – To import `from 'foo'` instead of `'../../foo'`
 
-**`eslint`** – ESLint (linter) core library and CLI
+[**eslint**](https://eslint.org/) – ESLint (linter) core library and CLI
 
-**`eslint-config-prettier`** – Disables ESLint rules conflicting with Prettier
+[**eslint-config-prettier**](https://github.com/prettier/eslint-config-prettier) – Disables ESLint rules conflicting with Prettier
 
-**`eslint-import-resolver-babel-module@5.0.0-beta.0`** – For ESLint to use `babel-plugin-module-resolver`
+[**eslint-import-resolver-babel-module@5.0.0-beta.0**](https://github.com/tleunen/eslint-import-resolver-babel-module) – For ESLint to use `babel-plugin-module-resolver`
 
-**`eslint-plugin-flowtype`** – ESLint rules for Flow annotations
+[**eslint-plugin-flowtype**](https://github.com/gajus/eslint-plugin-flowtype) – ESLint rules for Flow annotations
 
-**`eslint-plugin-import`** – Add support for `import` syntax to ESLint, and import rules
+[**eslint-plugin-import**](https://github.com/benmosher/eslint-plugin-import) – Add support for `import` syntax to ESLint, and import rules
 
-**`eslint-plugin-prettier`** – Show Prettier errors in ESLint
+[**eslint-plugin-prettier**](https://github.com/prettier/eslint-plugin-prettier) – Show Prettier errors in ESLint
 
-**`flow-bin`** – Flow (type checker) core library and CLI
+[**flow-bin**](https://flow.org/) – Flow (type checker) core library and CLI
 
-**`jest`** – Jest (test runner) core library and CLI
+[**jest**](https://jestjs.io/) – Jest (test runner) core library and CLI
 
-**`prettier`** – Prettier (code formatter) core library and CLI
+[**prettier**](https://prettier.io/) – Prettier (code formatter) core library and CLI
 
 ## 🌹 Files
 
@@ -114,7 +114,7 @@ If that's your case, and **only if that's your case**, install `eslint-config-ai
 yarn add --dev eslint-config-airbnb-base
 ```
 
-**`eslint-config-airbnb-base`** – ESLint configuration by Airbnb (without React rules)
+[**eslint-config-airbnb-base**](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) – ESLint configuration by Airbnb (without React rules)
 
 You're now all set for a simple project.
 
