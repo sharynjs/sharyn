@@ -19,9 +19,12 @@ It will install the following packages:
 
 ## 🌹 Dev Dependencies
 
-- **`@babel/core`** – Babel core (no CLI)
-- **`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
-- **`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
+**`@babel/core`** – Babel core (no CLI)
+
+**`@babel/plugin-proposal-do-expressions`** – To use `do { }` expressions
+
+**`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
+
 - **`@babel/plugin-proposal-optional-chaining`** – To use `obj?.maybe`
 - **`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
 - **`@babel/preset-env`** – The recommended latest Babel preset
