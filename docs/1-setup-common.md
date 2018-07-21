@@ -4,7 +4,9 @@ In this tutorial, for the purpose of learning, we are going to create a project 
 
 You might not need all these features for your projects, but it is very easy to take away some modules. For instance if you don't want to use Flow or Jest, simply uninstall all the packages that are related to Flow or Jest. The Babel and ESLint configurations are dynamically updated based on the content of your `package.json`, so removing bricks should keep the project running smoothly (and otherwise, you'll see helpful errors letting you know that a specific package is missing).
 
-Alright, let's get started! First, let's install the packages that I consider useful for any project by running the following command:
+Alright, let's get started!
+
+First, let's install the packages that I consider useful for any project by running the following command:
 
 ```bash
 yarn add @sharyn/util lodash && yarn add --dev @babel/cli @babel/core @babel/node @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow @sharyn/babel-preset @sharyn/eslint-config @sharyn/prettier-config babel-core@^7.0.0-0 babel-eslint babel-jest babel-plugin-module-resolver eslint eslint-config-prettier eslint-import-resolver-babel-module@5.0.0-beta.0 eslint-plugin-flowtype eslint-plugin-import eslint-plugin-prettier flow-bin jest prettier
