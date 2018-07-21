@@ -34,11 +34,11 @@ Let's break down what all those packages are.
 
 [**@babel/plugin-proposal-nullish-coalescing-operator**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator) – To use `isUndef ?? 'default'`
 
-**`@babel/plugin-proposal-optional-chaining`** – To use `isUndef?.property`
+[**@babel/plugin-proposal-optional-chaining**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-optional-chaining) – To use `isUndef?.property`
 
-**`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
+[**@babel/plugin-proposal-pipeline-operator**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) – To use `'hello' |> console.log`
 
-**`@babel/preset-env`** – The latest Babel preset
+[**@babel/preset-env**](https://github.com/babel/babel/tree/master/packages/babel-preset-env) – The latest Babel preset
 
 **`@babel/preset-flow`** – The Babel preset for Flow
 
