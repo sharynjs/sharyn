@@ -53,13 +53,13 @@ Let's break down what all those packages are.
 
 Now let's create the following files:
 
-`.prettierrc.js` containing:
+- `.prettierrc.js` containing:
 
 ```js
 module.exports = require('@sharyn/prettier-config')
 ```
 
-`.flowconfig` containing:
+- `.flowconfig` containing:
 
 ```
 [options]
@@ -69,7 +69,7 @@ module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
 ```
 
-`.gitignore` containing:
+- `.gitignore` containing:
 
 ```
 .DS_Store
