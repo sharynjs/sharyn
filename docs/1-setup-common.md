@@ -1,6 +1,6 @@
 # 🌹 Sharyn Setup Tutorial: Common Packages
 
-In this tutorial and for the purpose of demonstration, we are going to create a project that enables every feature offered by Sharyn.
+In this tutorial, for the purpose of learning, we are going to create a project that enables every feature offered by Sharyn.
 
 You might not need all these features for your projects, but it is very easy to take away some modules. For instance if you don't want to use Flow or Jest, simply uninstall all the packages that are related to Flow or Jest. The Babel and ESLint configurations are dynamically updated based on the content of your `package.json` so removing bricks should keep the project run smoothly (and otherwise, you'll see helpful errors letting you know that a specific package is missing).
 
