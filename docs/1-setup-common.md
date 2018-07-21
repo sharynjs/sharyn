@@ -4,7 +4,9 @@ In this tutorial, for the purpose of learning, we are going to create a project 
 
 You might not need all these features for your projects, but it is very easy to take away some modules. For instance if you don't want to use Flow or Jest, simply uninstall all the packages that are related to Flow or Jest. The Babel and ESLint configurations are dynamically updated based on the content of your `package.json`, so removing bricks should keep the project running smoothly (and otherwise, you'll see helpful errors letting you know that a specific package is missing).
 
-Alright, let's get started!
+The stack we are going to set up uses the _cool-ass_ new [**Babel 7**](https://medium.freecodecamp.org/were-nearing-the-7-0-babel-release-here-s-all-the-cool-stuff-we-ve-been-doing-8c1ade684039). We lint the code with [**ESLint 5**](https://eslint.org/docs/user-guide/migrating-to-5.0.0), type-check it with [**Flow**](https://flow.org/en/), test it with [**Jest**](https://jestjs.io/), and auto-format it with [**Prettier**](https://prettier.io/). Then we have access to a bunch of utils with [**Lodash**](https://lodash.com/) and [**@sharyn/util**](https://github.com/sharynjs/sharyn/tree/master/packages/util) to make out life easier.
+
+Excited? Let's get started!
 
 First, let's install the packages that I consider useful for any project by running the following command:
 
@@ -14,7 +16,7 @@ yarn add @sharyn/util lodash && yarn add --dev @babel/cli @babel/core @babel/nod
 
 > Triple-click to select it all
 
-Let's break down what all those packages are.
+Here we're setting up our development environment, because as you can see, these packages are mostly _development_ dependencies. Let's break these down.
 
 ## 🌹 Dependencies
 
@@ -49,6 +51,8 @@ Let's break down what all those packages are.
 - [**jest**](https://jestjs.io/) – Jest (test runner) core library and CLI
 - [**prettier**](https://prettier.io/) – Prettier (code formatter) core library and CLI
 
+Yup, that's a lot of dependencies for not even writing a _Hello World_ yet. Breathe, I promise you'll be fine 🙂
+
 ## 🌹 Files
 
 Now let's create the following files:
@@ -81,7 +85,7 @@ That's almost enough to get started.
 
 ## 🌹 Just want a simple project?
 
-Before we get into the full-stack setup part, you can branch-off here in case you just want to make a simple non-web JS project. Because all that stuff we just installed works wonders for any JS project.
+Before we get into the full-stack setup part, you can branch-off here in case you just want to make a simple non-web JS project. Because all that stuff we just installed works wonders for any project.
 
 If that's your case, and **only if that's your case**, install `eslint-config-airbnb-base`:
 
@@ -93,6 +97,6 @@ yarn add --dev eslint-config-airbnb-base
 
 You're now all set for a simple project.
 
-## 🌹 Next: Full-Stack Project
+## 🌹 Next – Full-Stack Project
 
-Let's now move on to the next part, setting up the [full-stack project](https://github.com/sharynjs/sharyn/blob/master/docs/2-setup-full-stack.md) environment.
+Let's now move on to the next part, setting up the [**full-stack project**](https://github.com/sharynjs/sharyn/blob/master/docs/2-setup-full-stack.md) environment.

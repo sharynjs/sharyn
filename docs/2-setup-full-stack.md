@@ -1,4 +1,4 @@
-# 🌹 Sharyn Setup Tutorial: Full-Stack Projects
+# 🌹 Sharyn Setup Tutorial – Full-Stack Project
 
 If your project uses the entire tech stack of Sharyn, we will add:
 
