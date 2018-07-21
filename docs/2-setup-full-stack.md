@@ -1,5 +1,7 @@
 # 🌹 Sharyn Setup Tutorial – Full-Stack Project
 
+In the previous part, we've set up our [development environment](https://github.com/sharynjs/sharyn/blob/master/docs/1-setup-common.md). In this part, we are going to do _web stuff_.
+
 If your project uses the entire tech stack of Sharyn, we will add:
 
 ```json

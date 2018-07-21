@@ -95,7 +95,7 @@ yarn add --dev eslint-config-airbnb-base
 
 - [**eslint-config-airbnb-base**](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) – ESLint configuration by Airbnb (without React rules)
 
-You're now all set for a simple project.
+You're now all set for a simple project!
 
 ## 🌹 Next – Full-Stack Project
 
