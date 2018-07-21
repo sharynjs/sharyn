@@ -10,13 +10,21 @@ Minimal:
 yarn add --dev @sharyn/babel-preset @babel/core
 ```
 
-Full-featured:
+Full-featured without React (non-web projects):
 
 ```bash
-yarn add react && yarn add --dev @sharyn/babel-preset @babel/core @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow @babel/preset-react @sharyn/babel-preset babel-plugin-flow-react-proptypes babel-plugin-module-resolver
+yarn add --dev @sharyn/babel-preset @babel/core @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow babel-plugin-module-resolver
 ```
 
-The following modules are automatically enabled in the Babel preset if they are detected in your `package.json`:
+Full-featured with React (web projects):
+
+```bash
+yarn add react && yarn add --dev @sharyn/babel-preset @babel/core @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow @babel/preset-react babel-plugin-flow-react-proptypes babel-plugin-module-resolver
+```
+
+> Triple-click to select the entire line
+
+The following modules are automatically configured for Babel if they are detected in your `package.json`:
 
 - `@babel/plugin-proposal-do-expressions`
 - `@babel/plugin-proposal-nullish-coalescing-operator`
