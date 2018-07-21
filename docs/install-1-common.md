@@ -4,7 +4,6 @@ First, let's install the packages that I consider useful for _any_ project:
 
 ```json
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.54",
     "@sharyn/util": "^1.0.0",
     "lodash": "^4.17.10"
   },

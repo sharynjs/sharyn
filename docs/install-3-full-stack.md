@@ -5,6 +5,7 @@ If your project uses the entire tech stack of Sharyn, we will add:
 ```json
   "dependencies": {
     // +++
+    "@babel/polyfill": "^7.0.0-beta.54",
     "@sharyn/cli": "^2.11.0",
     "@sharyn/db": "^1.4.2",
     "@sharyn/env": "^1.1.0",

@@ -4,26 +4,35 @@
 
 # 🌹 Sharyn
 
-Sharyn in a collection of helpers to build a JS app. At the moment, this is pretty much a personal library for my own projects, and for projects that follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
+Sharyn is a collection of packages that make your life easier and reduce your boilerplate code in a JavaScript project. Some packages are useful for any project (like the Babel, ESLint, or Prettier configurations), and some are specifically made to build a full-stack production-ready React app.
 
-The following packages are available:
+For full-stack projects, Sharyn is almost a framework. _Almost_ because you get to pick which modules you use instead of a monolithic black box, but those modules may sometimes not be as flexible as you would want. For instance the `@sharyn/db` package is specifically made for PostgreSQL. If you want to use a different database, you cannot use that module. All the technical choices are documented on the [**tech stack**](https://github.com/sharynjs/sharyn/blob/master/docs/stack.md) page.
 
-- [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
+Sharyn will work wonders for projects that follow the upcoming [major update](https://github.com/verekia/js-stack-from-scratch/issues/255) of my [**JS Stack from Scratch**](https://github.com/verekia/js-stack-from-scratch) tutorial.
+
+## 🌹 Packages
+
+### Common
+
 - [**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Babel preset
 - [**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – ESLint configuration
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
-- [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
+- [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md) – Env util
+
+### Full-Stack Projects
+
+- [**@sharyn/cli**](https://github.com/sharynjs/sharyn/blob/master/packages/cli/README.md) – Convenient NPM scripts
+- [**@sharyn/webpack-config**](https://github.com/sharynjs/sharyn/blob/master/packages/webpack-config/README.md) – Webpack configuration
 - [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – PostgreSQL and Knex utils, and a Knex configuration
 - [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis util
 - [**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A Koa server
 - [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
 - [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Utils shared between the client and the server
-- [**@sharyn/check-setup**](https://github.com/sharynjs/sharyn/blob/master/packages/check-setup/README.md) – To test whether a package or a file is present in a project
 
 ## 🌹 Getting Started
 
-Sharyn is very modular, you can use just the bits you need. But if you want a full-featured Sharyn project, you have two options: following the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/install-1-common.md) or downloading the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
+To get started follow the [**setup tutorial**](https://github.com/sharynjs/sharyn/blob/master/docs/install-1-common.md) or download the [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate) project.
 
 I recommend following the tutorial the first time you use Sharyn, and starting from the boilerplate once you're familiar with the stack.
 
