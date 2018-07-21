@@ -12,7 +12,7 @@ It will install the following packages:
 
 ## 🌹 Dependencies
 
-- **`@sharyn/util`** – Lodash-like Utils
+- **`@sharyn/util`** – Lodash-like utils
 - **`lodash`** – Utils
 
 ## 🌹 Dev Dependencies
@@ -23,7 +23,7 @@ It will install the following packages:
 
 **`@babel/plugin-proposal-nullish-coalescing-operator`** – To use `undef ?? default`
 
-**`@babel/plugin-proposal-optional-chaining`** – To use `obj?.maybe`
+**`@babel/plugin-proposal-optional-chaining`** – To use `maybe?.property`
 
 **`@babel/plugin-proposal-pipeline-operator`** – To use `'hello' |> console.log`
 
@@ -31,9 +31,11 @@ It will install the following packages:
 
 **`@babel/preset-flow`** – The recommended Babel preset for Flow
 
-**`@sharyn/babel-preset`** – The Sharyn Babel preset that glues everything together
+**`@sharyn/babel-preset`** – Configures all the Babel modules together
 
-**`@sharyn/eslint-config`** – The Sharyn ESLint config that glues everything together
+**`@sharyn/eslint-config`** – Configures all the ESLint modules together
+
+**`@sharyn/prettier-config`** – Configures Prettier
 
 **`babel-core@^7.0.0-0`** – The bridge from Babel 6 to 7, used by Jest
 
@@ -49,9 +51,9 @@ It will install the following packages:
 
 **`eslint-import-resolver-babel-module@5.0.0-beta.0`** – For ESLint to use `babel-plugin-module-resolver`
 
-**`eslint-plugin-flowtype`** – ESLint rules for your Flow annotations
+**`eslint-plugin-flowtype`** – ESLint rules for Flow annotations
 
-**`eslint-plugin-import`** – Add support for `import` syntax to ESLint
+**`eslint-plugin-import`** – Add support for `import` syntax to ESLint and import rules
 
 **`eslint-plugin-prettier`** – Show Prettier errors in ESLint
 
