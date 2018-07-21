@@ -18,7 +18,8 @@ Let's break down what all those packages are.
 
 ## 🌹 Dependencies
 
-**`@sharyn/util`** – Lodash-like utils
+[**`@sharyn/util`**](https://github.com/sharynjs/sharyn/tree/master/packages/util) – Lodash-like utils
+
 **`lodash`** – Utils
 
 ## 🌹 Dev Dependencies
@@ -105,7 +106,7 @@ That's almost enough to get started.
 
 ## 🌹 Just want a simple project?
 
-Before we get into the full-stack setup part, you can branch-off here in case you simply want to make a simple non-web JS project. Because all that stuff we just installed works wonders for any JS project.
+Before we get into the full-stack setup part, you can branch-off here in case you just want to make a simple non-web JS project. Because all that stuff we just installed works wonders for any JS project.
 
 If that's your case, and **only if that's your case**, install `eslint-config-airbnb-base`:
 
