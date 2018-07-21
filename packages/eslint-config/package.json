@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/eslint-config",
   "license": "MIT",
   "dependencies": {
