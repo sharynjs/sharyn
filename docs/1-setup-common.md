@@ -18,13 +18,13 @@ Let's break down what all those packages are.
 
 ## 🌹 Dependencies
 
-[**`@sharyn/util`**](https://github.com/sharynjs/sharyn/tree/master/packages/util) – Lodash-like utils
+[**@sharyn/util**](https://github.com/sharynjs/sharyn/tree/master/packages/util) – Utils
 
-**`lodash`** – Utils
+[**lodash**](https://lodash.com/) – Utils
 
 ## 🌹 Dev Dependencies
 
-**`@babel/cli`** – The `babel` binary to compile files for production
+[**@babel/cli**](https://github.com/babel/babel/tree/master/packages/babel-cli) – The `babel` binary to compile files for production
 
 **`@babel/core`** – Babel (transpiler) core library
 
