@@ -1,10 +1,10 @@
 {
   "name": "@sharyn/babel-preset",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/babel-preset",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/check-setup": "^1.2.0"
+    "@sharyn/check-setup": "^1.2.1"
   },
   "peerDependencies": {
     "@babel/core": ">= 7.0.0-beta"
