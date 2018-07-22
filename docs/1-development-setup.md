@@ -14,7 +14,7 @@ First, let's install the packages that I consider useful for any project by runn
 yarn add @sharyn/util lodash && yarn add --dev @babel/cli @babel/core @babel/node @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow @sharyn/babel-preset @sharyn/eslint-config @sharyn/prettier-config babel-core@^7.0.0-0 babel-eslint babel-jest babel-plugin-module-resolver eslint eslint-config-prettier eslint-import-resolver-babel-module@5.0.0-beta.0 eslint-plugin-flowtype eslint-plugin-import eslint-plugin-prettier flow-bin jest prettier
 ```
 
-> Triple-click to select it all
+> Triple-click to select it all (careful, it gets auto-executed when you paste it into your terminal)
 
 Here we're setting up our development environment, because as you can see, these packages are mostly _development_ dependencies. Let's break these down.
 
