@@ -1,7 +1,6 @@
 const fs = require('fs')
-const path = require('path')
 
-const appRoot = path.resolve(__dirname, '../../../')
+const appRoot = process.cwd()
 
 const hasFile = (filePath, isRequired) => {
   if (fs.existsSync(`${appRoot}/${filePath}`)) {

@@ -1,6 +1,4 @@
-const path = require('path')
-
-const appRoot = path.resolve(__dirname, '../../../')
+const appRoot = process.cwd()
 
 // eslint-disable-next-line import/no-dynamic-require
 const { dependencies, devDependencies } = require(`${appRoot}/package.json`)
