@@ -2,12 +2,12 @@
 
 import fs from 'fs'
 
-const hasFile = (filePath: string, isRequired?: boolean) => {
-  if (fs.existsSync(`${process.cwd()}/${filePath}`)) {
+const hasFile = (path: string, isRequired?: boolean) => {
+  if (fs.existsSync(`${process.cwd()}/${path}`)) {
     return true
   }
   if (isRequired) {
-    throw Error(`File ${filePath} is required`)
+    throw Error(`File ${path} is required`)
   }
   return false
 }
