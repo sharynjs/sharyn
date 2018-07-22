@@ -13,6 +13,10 @@ const packages = [
     name: 'babel-preset',
     modules: ['index.js'],
   },
+  {
+    name: 'check-setup',
+    modules: ['index.js', 'has-file.js', 'has-package.js'],
+  },
 ]
 
 const build = () =>

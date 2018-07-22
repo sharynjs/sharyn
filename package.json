@@ -15,9 +15,6 @@
     "test": "jest",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
-  "eslintConfig": {
-    "extends": "@sharyn"
-  },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.0.0-beta.54",
     "@sharyn/util": "^1.0.0",

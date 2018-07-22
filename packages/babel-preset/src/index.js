@@ -1,3 +1,6 @@
+// @flow
+
+// flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
 
 const config = {
