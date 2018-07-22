@@ -92,7 +92,7 @@ const standardCols = (knex, t) => {
 const userIdCol = t =>
   t
     .uuid('userId')
-    .references(User.id)
+    .references('User.id')
     .onUpdate('cascade')
     .onDelete('cascade')
     .notNullable()
