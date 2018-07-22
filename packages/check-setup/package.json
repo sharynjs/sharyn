@@ -3,5 +3,7 @@
   "version": "1.2.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/check-setup",
   "license": "MIT",
-  "gitHead": "764b6306ac99a6da514e6b2e8313e23ac168afc6"
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54"
+  }
 }
