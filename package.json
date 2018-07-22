@@ -11,7 +11,7 @@
     "pub": "yarn lint && yarn test && babel-node build.js && lerna publish && babel-node build.js --clean",
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
-    "lint": "eslint build.js packages && flow",
+    "lint": "eslint build.js babel.config.js packages && flow",
     "test": "jest"
   },
   "dependencies": {
