@@ -1,4 +1,4 @@
-const { hasPackage } = require('@sharyn/check-setup')
+import { hasPackage } from '@sharyn/check-setup'
 
 const config = {
   presets: [],

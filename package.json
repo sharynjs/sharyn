@@ -1,54 +1,53 @@
 {
-  "name": "sharyn-monorepo",
-  "version": "1.0.0",
-  "repository": "https://github.com/sharynjs/sharyn",
-  "description": "The monorepo of SharynJS",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "diff": "lerna diff",
-    "updated": "lerna updated",
-    "pub": "lerna publish",
-    "start": "babel packages/material-ui/src -d packages/material-ui && babel packages/shared/src -d packages/shared",
-    "clean": "rimraf packages/material-ui/DrawerItem packages/shared/fetch",
-    "lint": "eslint packages && flow && madge --circular packages",
-    "test": "jest --coverage"
+    "updated": "babel-node build.js && lerna updated && babel-node build.js --clean",
+    "pub": "yarn lint && yarn test && babel-node build.js && lerna publish && babel-node build.js --clean",
+    "build": "babel-node build.js",
+    "clean": "babel-node build.js --clean",
+    "lint": "eslint build.js packages && flow",
+    "test": "jest"
   },
-  "eslintConfig": {
-    "extends": "@sharyn"
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.54",
+    "@sharyn/util": "^1.0.0",
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.52",
-    "@babel/core": "^7.0.0-beta.52",
-    "@babel/preset-env": "^7.0.0-beta.52",
-    "@babel/preset-flow": "^7.0.0-beta.52",
-    "@babel/preset-react": "^7.0.0-beta.52",
-    "@sharyn/babel-preset": "1.2.0",
-    "@sharyn/eslint-config": "1.0.2",
-    "@sharyn/prettier-config": "1.0.1",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^8.2.5",
-    "babel-jest": "^23.2.0",
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/node": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-flow": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "@sharyn/prettier-config": "^1.0.3",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.0",
     "babel-plugin-flow-react-proptypes": "^24.0.1",
-    "babel-plugin-module-resolver": "^3.1.1",
-    "eslint": "^5.1.0",
+    "eslint": "^5.2.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-import-resolver-babel-module": "^5.0.0-beta.0",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
-    "flow-bin": "^0.76.0",
-    "jest": "^23.2.0",
+    "flow-bin": "^0.77.0",
+    "jest": "^23.4.1",
     "lerna": "^3.0.0-beta.21",
-    "madge": "^3.2.0",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",
-    "react-hot-loader": "^4.3.3",
     "rimraf": "^2.6.2"
   }
 }
