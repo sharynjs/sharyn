@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/prettier-config",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/prettier-config",
   "license": "MIT"
 }
