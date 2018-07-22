@@ -4,6 +4,7 @@ const { promisifyAll } = require('bluebird')
 const Redis = require('redis')
 const exitHook = require('async-exit-hook')
 
+// flow-disable-next-line
 const { REDIS_URL } = require('@sharyn/env')
 
 promisifyAll(Redis)

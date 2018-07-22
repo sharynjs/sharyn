@@ -28,6 +28,10 @@ const packages = [
       'user-id-col.js',
     ],
   },
+  {
+    name: 'env',
+    modules: ['index.js'],
+  },
 ]
 
 const build = () =>

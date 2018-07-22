@@ -4,6 +4,7 @@ import Knex from 'knex'
 import exitHook from 'async-exit-hook'
 // flow-disable-next-line
 import { hasFile } from '@sharyn/check-setup'
+// flow-disable-next-line
 import { IS_TEST_ENV } from '@sharyn/env'
 import providedKnexConfig from './knex-config'
 

@@ -2,6 +2,7 @@
 
 // flow-disable-next-line
 import { hasPackage, hasFile } from '@sharyn/check-setup'
+// flow-disable-next-line
 import { NODE_ENV, DATABASE_URL, TEST_DATABASE_URL } from '@sharyn/env'
 
 const knexConfig: Object = {
