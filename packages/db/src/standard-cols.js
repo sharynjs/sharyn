@@ -1,4 +1,6 @@
-module.exports = (knex, t) => {
+// @flow
+
+const standardCols = (knex: Function, t: Object) => {
   t.uuid('id').primary()
   t.timestamp('createdAt')
     .notNullable()
@@ -7,3 +9,5 @@ module.exports = (knex, t) => {
     .notNullable()
     .defaultTo(knex.fn.now())
 }
+
+export default standardCols

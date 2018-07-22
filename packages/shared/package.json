@@ -4,6 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/shared",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54",
     "isomorphic-fetch": "^2.2.1"
   }
 }

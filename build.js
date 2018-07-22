@@ -15,7 +15,18 @@ const packages = [
   },
   {
     name: 'check-setup',
-    modules: ['index.js', 'has-file.js', 'has-package.js'],
+    modules: ['has-file.js', 'has-package.js', 'index.js'],
+  },
+  {
+    name: 'db',
+    modules: [
+      'create-query.js',
+      'index.js',
+      'knex-config.js',
+      'knex.js',
+      'standard-cols.js',
+      'user-id-col.js',
+    ],
   },
 ]
 

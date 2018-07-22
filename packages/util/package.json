@@ -2,5 +2,8 @@
   "name": "@sharyn/util",
   "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54"
+  }
 }

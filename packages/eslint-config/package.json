@@ -4,6 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/eslint-config",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54",
     "@sharyn/check-setup": "^1.2.2"
   },
   "peerDependencies": {

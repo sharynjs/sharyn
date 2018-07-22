@@ -5,5 +5,8 @@
   "license": "MIT",
   "peerDependencies": {
     "babel-loader": "^8.0.0-beta.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54"
   }
 }
