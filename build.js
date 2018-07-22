@@ -18,6 +18,10 @@ const packages = [
     modules: ['has-file.js', 'has-package.js', 'index.js'],
   },
   {
+    name: 'cli',
+    modules: ['bin.js', 'commands.js', 'shared.js'],
+  },
+  {
     name: 'db',
     modules: [
       'create-query.js',

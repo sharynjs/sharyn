@@ -1,16 +1,16 @@
 #! /usr/bin/env node
 
 // @flow
-/* eslint-disable no-unused-expressions */
 
-const { EOL } = require('os')
-const { execSync, spawn } = require('child_process')
-const fs = require('fs')
-const { swit } = require('@verekia/lib-lang')
-const colors = require('colors/safe')
+import { EOL } from 'os'
+import { execSync, spawn } from 'child_process'
+import { swit } from '@verekia/lib-lang'
+import colors from 'colors/safe'
+// flow-disable-next-line
+import { hasFile } from '@sharyn/check-setup'
+import { knexConfigPath } from './shared'
 
-const { knexConfigPath } = require('./shared')
-const {
+import {
   DOCKER_UP,
   DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
@@ -33,11 +33,11 @@ const {
   testSequencial,
   lint,
   typecheck,
-} = require('./commands')
+} from './commands'
 
-const hasDocker = fs.existsSync(`${process.cwd()}/docker-compose.yml`)
-const hasHeroku = fs.existsSync(`${process.cwd()}/Procfile`)
-const hasSeeds = fs.existsSync(`${process.cwd()}/src/_db/seeds`)
+const hasDocker = hasFile('docker-compose.yml')
+const hasHeroku = hasFile('Procfile')
+const hasSeeds = hasFile('/src/_db/seeds')
 
 const getDbTestProcessId = () => {
   const dbTestContainerName = 'db-test'
