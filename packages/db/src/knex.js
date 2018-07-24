@@ -10,8 +10,8 @@ import providedKnexConfig from './knex-config'
 
 let customKnexConfig
 if (hasFile('src/_db/knex-config.js')) {
-  // eslint-disable-next-line import/no-unresolved, global-require, flow-disable-next-line
-  customKnexConfig = require('../../../src/_db/knex-config')
+  // eslint-disable-next-line import/no-unresolved, global-require, import/no-dynamic-require, flow-disable-next-line
+  customKnexConfig = require(`${process.cwd()}/src/_db/knex-config`)
 }
 
 const knex = Knex(customKnexConfig || providedKnexConfig)

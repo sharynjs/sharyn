@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "babel-node index.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/node": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "pg": "^7.4.3"
+  }
+}
