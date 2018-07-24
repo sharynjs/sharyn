@@ -1,4 +1,6 @@
-const isEither = require('./is-either')
+// @flow
+
+import isEither from './is-either'
 
 test('isEither', () => {
   expect(isEither(2, [1, 2])).toBe(true)

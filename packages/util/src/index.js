@@ -1,5 +1,5 @@
-/* eslint-disable global-require */
+import isEither from './is-either'
 
 module.exports = {
-  isEither: require('./is-either'),
+  isEither,
 }

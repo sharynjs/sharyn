@@ -1,4 +1,6 @@
-const isEither = (first, ...comparisons) => {
+// @flow
+
+const isEither = (first: any, ...comparisons: any[]) => {
   if (!comparisons.length) {
     throw Error('isEither takes at least a second argument')
   }
