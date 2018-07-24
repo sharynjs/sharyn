@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png">
 </p>
 
-[![build](https://img.shields.io/travis/sharynjs/sharyn.svg)](https://travis-ci.org/sharynjs/sharyn)
+[![build](https://api.travis-ci.org/sharynjs/sharyn.svg?branch=master)](https://travis-ci.org/sharynjs/sharyn)
 
 # 🌹 Sharyn
 
