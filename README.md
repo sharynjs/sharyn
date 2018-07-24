@@ -3,14 +3,14 @@
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png" alt="Sharyn logo">
-  <br />
-  <a href="https://travis-ci.org/sharynjs/sharyn" target="_blank">
+  <br /><br />
+  <a href="https://travis-ci.org/sharynjs/sharyn">
     <img src="https://img.shields.io/travis/sharynjs/sharyn.svg" alt="build">
   </a>
-  <a href="https://david-dm.org/sharynjs/sharyn" target="_blank">
+  <a href="https://david-dm.org/sharynjs/sharyn">
     <img src="https://img.shields.io/david/sharynjs/sharyn.svg" alt="dependencies">
   </a>
-  <a href="https://david-dm.org/sharynjs/sharyn?type=dev" target="_blank">
+  <a href="https://david-dm.org/sharynjs/sharyn?type=dev">
     <img src="https://img.shields.io/david/dev/sharynjs/sharyn.svg" alt="devDependencies">
   </a>
 </div>
