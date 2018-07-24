@@ -28,4 +28,6 @@ DrawerItem.defaultProps = {
   icon: null,
 }
 
-export default withStyles(styles)(DrawerItem)
+const EnhancedDrawerItem = withStyles(styles)(DrawerItem)
+
+export default EnhancedDrawerItem

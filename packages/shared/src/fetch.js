@@ -8,7 +8,7 @@ type Options = {
   cookie?: string,
 }
 
-export const fetchGraphql = async (
+const fetchGraphql = async (
   { query, variables, host, path, cookie }: Options,
   fetchOptions?: Object,
 ) => {
@@ -32,3 +32,5 @@ export const fetchGraphql = async (
 
   return (await fetch(`${host || ''}${path || '/graphql'}`, finalOptions)).json()
 }
+
+export default fetchGraphql

@@ -1,7 +1,5 @@
 {
-  "name": "babel-preset-example",
-  "version": "0.0.0",
-  "license": "MIT",
+  "private": true,
   "scripts": {
     "test": "babel ."
   },

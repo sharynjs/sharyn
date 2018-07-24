@@ -40,11 +40,41 @@ const packages = [
     name: 'eslint-config',
     modules: ['index.js'],
   },
+  {
+    name: 'koa',
+    modules: ['index.js'],
+  },
+  {
+    name: 'material-ui',
+    modules: ['DrawerItem'],
+  },
+  {
+    name: 'prettier-config',
+    modules: ['index.js'],
+  },
+  {
+    name: 'redis',
+    modules: ['index.js'],
+  },
+  {
+    name: 'shared',
+    modules: ['fetch'],
+  },
+  {
+    name: 'util',
+    modules: ['index.js', 'is-either.js', 'is-either.test.js'], // babel --ignore test.js doesnt seem to work
+  },
+  {
+    name: 'webpack-config',
+    modules: ['index.js'],
+  },
 ]
 
 const build = () =>
   packages.forEach(p =>
-    mySpawn(`./node_modules/.bin/babel packages/${p.name}/src -d packages/${p.name}`),
+    mySpawn(
+      `./node_modules/.bin/babel packages/${p.name}/src -d packages/${p.name} --ignore test.js`,
+    ),
   )
 
 const clean = () =>

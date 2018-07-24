@@ -2,8 +2,5 @@
   "name": "sharyn",
   "version": "0.2.2",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/root",
-  "license": "MIT",
-  "scripts": {
-    "postinstall": "node index.js"
-  }
+  "license": "MIT"
 }
