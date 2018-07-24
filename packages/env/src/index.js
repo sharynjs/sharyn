@@ -1,11 +1,9 @@
 // @flow
 
-/* eslint-disable global-require, import/no-unresolved, import/no-dynamic-require */
-
 import 'dotenv/config'
 import readEnv from 'read-env'
 // flow-disable-next-line
-import { appRoot, hasFile } from '@sharyn/check-setup'
+import { requireCascade } from '@sharyn/check-setup'
 
 const parsedEnv = readEnv({ transformKey: false })
 
@@ -17,10 +15,20 @@ parsedEnv.IS_PROD_ENV = parsedEnv.NODE_ENV === 'production'
 parsedEnv.IS_DEV_ENV = parsedEnv.NODE_ENV === 'development'
 parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
-if (hasFile('src/_server/env-check.js')) {
-  // flow-disable-next-line
-  require(`${appRoot}/src/_server/env-check.js`)(parsedEnv)
-}
+const envCheckModule = requireCascade(
+  'src/_server/env-check.js',
+  'src/_server/check-env.js',
+  'src/_server/env.js',
+  'src/_server/.env.js',
+  'src/_server/.env-check.js',
+  'env-check.js',
+  'check-env.js',
+  'env.js',
+  '.env.js',
+  '.env-check.js',
+)
+
+envCheckModule && envCheckModule(parsedEnv)
 
 // CommonJS export required to expose the entire object without explicit named exports
 module.exports = parsedEnv
