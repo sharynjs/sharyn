@@ -34,7 +34,7 @@ const stopServer_ = (options?: Object) => {
     }
     if (hasPackage('@sharyn/redis')) {
       // flow-disable-next-line
-      require('@sharyn/redis').end()
+      require('@sharyn/redis').quit()
     }
     return server.close()
   }
