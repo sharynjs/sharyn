@@ -14,7 +14,9 @@ const Redis = hasPackage('redis', true) && require(`${appRoot}/node_modules/redi
 
 promisifyAll(Redis)
 
-const redis = Redis.createClient(REDIS_URL)
+const DEFAULT_REDIS_URL = 'redis://localhost:8379'
+
+const redis = Redis.createClient(REDIS_URL || DEFAULT_REDIS_URL)
 
 // eslint-disable-next-line no-console
 redis.on('error', err => console.error(err))

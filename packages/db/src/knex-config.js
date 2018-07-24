@@ -2,11 +2,18 @@
 
 // flow-disable-next-line
 import { hasPackage, hasFile } from '@sharyn/check-setup'
+
 // flow-disable-next-line
 import { NODE_ENV, DATABASE_URL, TEST_DATABASE_URL } from '@sharyn/env'
 
+const DEFAULT_DATABASE_URL = 'postgres://postgres@localhost:8432/postgres'
+const DEFAULT_TEST_DATABASE_URL = 'postgres://postgres@localhost:8433/postgres'
+
 const knexConfig: Object = {
-  connection: NODE_ENV === 'test' ? TEST_DATABASE_URL : DATABASE_URL,
+  connection:
+    NODE_ENV === 'test'
+      ? TEST_DATABASE_URL || DEFAULT_TEST_DATABASE_URL
+      : DATABASE_URL || DEFAULT_DATABASE_URL,
   migrations: { directory: './src/_db/migrations' },
 }
 
