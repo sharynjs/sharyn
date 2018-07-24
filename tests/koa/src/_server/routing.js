@@ -4,4 +4,4 @@ const routing = router => {
   })
 }
 
-module.exports = routing
+export default routing

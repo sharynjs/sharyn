@@ -18,8 +18,8 @@ const router = new Router()
 
 const PREFIX = colors.cyan('[sharyn/koa]')
 
-const DEFAULT_PORT = 8020
-const DEFAULT_TESTING_PORT = 8021
+export const DEFAULT_PORT = 8020
+export const DEFAULT_TESTING_PORT = 8021
 
 const port = IS_TEST_ENV ? TESTING_PORT || DEFAULT_TESTING_PORT : PORT || DEFAULT_PORT
 
