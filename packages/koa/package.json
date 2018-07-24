@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/koa",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/koa",
   "license": "MIT",
   "peerDependencies": {
@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
     "@sharyn/check-setup": "^1.3.0",
-    "@sharyn/env": "^1.4.1",
+    "@sharyn/env": "^1.4.2",
     "colors": "^1.3.0",
     "exit-hook": "^2.0.0"
   },
