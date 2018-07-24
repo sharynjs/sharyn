@@ -1,6 +1,6 @@
 // @flow
 
-/* eslint-disable global-require, import/no-unresolved */
+/* eslint-disable global-require, import/no-unresolved, import/no-dynamic-require */
 
 import 'dotenv/config'
 import readEnv from 'read-env'
@@ -19,7 +19,7 @@ parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
 if (hasFile('src/_server/env-check.js')) {
   // flow-disable-next-line
-  require('../../../src/_server/env-check.js')(parsedEnv)
+  require(`${process.cwd()}/src/_server/env-check.js`)(parsedEnv)
 }
 
 // CommonJS export required to expose the entire object without explicit named exports
