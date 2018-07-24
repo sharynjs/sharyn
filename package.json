@@ -2,7 +2,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "examples/*"
     ]
   },
   "scripts": {
@@ -12,7 +13,7 @@
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
     "lint": "eslint build.js babel.config.js packages && flow",
-    "test": "jest",
+    "test": "yarn && babel-node build.js && jest && babel-node build.js --clean",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
   "dependencies": {

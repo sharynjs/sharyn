@@ -1,3 +1,6 @@
+// Babel doesn't seem able to resolve the preset when it's from a workspace,
+// so cannot use @sharyn/babel-preset for the sharyn monorepo
+
 module.exports = {
   presets: ['@babel/preset-env', '@babel/preset-flow', '@babel/preset-react'],
   plugins: [

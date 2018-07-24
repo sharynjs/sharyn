@@ -84,6 +84,8 @@ suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
 
 module.system.node.resolve_dirname=node_modules
 module.system.node.resolve_dirname=src
+
+esproposal.optional_chaining=enable
 ```
 
 - `.gitignore` containing:
