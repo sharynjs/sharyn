@@ -13,7 +13,7 @@
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
     "lint": "eslint build.js babel.config.js packages && flow",
-    "test": "yarn && babel-node build.js && jest && babel-node build.js --clean",
+    "test": "yarn && babel-node build.js && jest --testPathIgnorePatterns packages/*/*.test.js && babel-node build.js --clean",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
   "dependencies": {
