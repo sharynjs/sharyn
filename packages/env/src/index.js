@@ -19,7 +19,8 @@ parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
 if (hasFile('src/_server/env-check.js')) {
   // flow-disable-next-line
-  require(`${appRoot}/src/_server/env-check.js`)(parsedEnv)
+  const envCheckModule = require(`${appRoot}/src/_server/env-check.js`)
+  ;(envCheckModule.default ?? envCheckModule)(parsedEnv)
 }
 
 // CommonJS export required to expose the entire object without explicit named exports
