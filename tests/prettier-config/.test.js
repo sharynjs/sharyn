@@ -3,7 +3,6 @@
 import testSpawn from '../test-spawn'
 
 const expectedOutput = `$ prettier index.js
-// eslint-disable-next-line
 console.log('hi')
 `
 

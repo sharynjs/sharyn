@@ -2,3 +2,5 @@ node_modules
 packages/material-ui/DrawerItem/
 packages/shared/fetch/
 packages/*/*.js
+tests/eslint-config/index.js
+tests/prettier-config/index.js

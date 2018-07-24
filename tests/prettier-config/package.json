@@ -4,7 +4,6 @@
     "test": "prettier index.js"
   },
   "dependencies": {
-    "@sharyn/prettier-config": "^1.0.4",
     "prettier": "^1.13.7"
   }
 }

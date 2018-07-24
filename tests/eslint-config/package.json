@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.2.0",
+    "flow-bin": "^0.77.0"
+  }
+}
