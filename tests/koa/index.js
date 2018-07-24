@@ -9,7 +9,7 @@ const routing = router => {
 
 const main = async () => {
   startServer(routing, { silent: true })
-  const { data } = await axios.get('http://localhost:8000')
+  const { data } = await axios.get('http://localhost:8021')
   console.log(data)
   stopServer({ silent: true })
 }

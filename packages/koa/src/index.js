@@ -6,6 +6,8 @@ import colors from 'colors/safe'
 import exitHook from 'exit-hook'
 
 // flow-disable-next-line
+import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV } from '@sharyn/env'
+// flow-disable-next-line
 import { appRoot, hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
 const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
@@ -15,8 +17,11 @@ const Router = hasPackage('koa-router', true) && require(`${appRoot}/node_module
 const router = new Router()
 
 const PREFIX = colors.cyan('[sharyn/koa]')
-const { NODE_ENV } = process.env
-const PORT = process.env.PORT || 8000
+
+const DEFAULT_PORT = 8020
+const DEFAULT_TESTING_PORT = 8021
+
+const port = IS_TEST_ENV ? TESTING_PORT || DEFAULT_TESTING_PORT : PORT || DEFAULT_PORT
 
 let server
 
@@ -48,7 +53,7 @@ const startServer_ = (routing: Function, options?: Object) => {
 
   if (!options?.silent) {
     // eslint-disable-next-line no-console
-    console.log(`${PREFIX} Server running on port ${PORT} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
+    console.log(`${PREFIX} Server running on port ${port} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
     exitHook(() => stopServer_())
   }
 
@@ -75,7 +80,7 @@ const startServer_ = (routing: Function, options?: Object) => {
   routing(router)
   app.use(router.routes()).use(router.allowedMethods())
 
-  server = app.listen(options?.port || PORT)
+  server = app.listen(options?.port || port)
 }
 
 export const startServer = startServer_
