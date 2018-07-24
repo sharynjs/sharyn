@@ -1,6 +1,6 @@
 // @flow
 
-/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies, global-require */
+/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies, global-require, import/no-dynamic-require */
 
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
@@ -9,9 +9,9 @@ hasPackage('koa', true)
 hasPackage('koa-router', true)
 
 // flow-disable-next-line
-const Koa = require('koa')
+const Koa = require(`${process.cwd()}/node_modules/koa`)
 // flow-disable-next-line
-const router = new (require('koa-router'))()
+const router = new (require(`${process.cwd()}/node_modules/koa-router`))()
 
 const colors = require('colors/safe')
 const exitHook = require('exit-hook')
