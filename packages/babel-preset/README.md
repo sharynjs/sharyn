@@ -37,3 +37,5 @@ The following supported modules are automatically configured for Babel if they a
 - [**babel-plugin-module-resolver**](https://github.com/tleunen/babel-plugin-module-resolver) – To import `from 'foo'` instead of `'../../foo'`
 
 See the [implementation](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/index.js).
+
+> **Note**: Flow [does not support](https://github.com/facebook/flow/issues/5443) the pipeline operator yet.
