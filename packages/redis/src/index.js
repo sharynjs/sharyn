@@ -1,11 +1,16 @@
 // @flow
 
+/* eslint-disable import/no-dynamic-require, global-require */
+
 import { promisifyAll } from 'bluebird'
-import Redis from 'redis'
 import exitHook from 'async-exit-hook'
 
 // flow-disable-next-line
+import { hasPackage } from '@sharyn/check-setup'
+// flow-disable-next-line
 import { REDIS_URL } from '@sharyn/env'
+// flow-disable-next-line
+const Redis = hasPackage('redis', true) && require(`${process.cwd()}/node_modules/redis`)
 
 promisifyAll(Redis)
 

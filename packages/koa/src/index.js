@@ -1,20 +1,18 @@
 // @flow
 
-/* eslint-disable import/no-unresolved, import/no-extraneous-dependencies, global-require, import/no-dynamic-require */
+/* eslint-disable import/no-dynamic-require, global-require */
+
+import colors from 'colors/safe'
+import exitHook from 'exit-hook'
 
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
-
-hasPackage('koa', true)
-hasPackage('koa-router', true)
-
 // flow-disable-next-line
-const Koa = require(`${process.cwd()}/node_modules/koa`)
+const Koa = hasPackage('koa', true) && require(`${process.cwd()}/node_modules/koa`)
 // flow-disable-next-line
-const router = new (require(`${process.cwd()}/node_modules/koa-router`))()
+const Router = hasPackage('koa-router', true) && require(`${process.cwd()}/node_modules/koa-router`)
 
-const colors = require('colors/safe')
-const exitHook = require('exit-hook')
+const router = new Router()
 
 const PREFIX = colors.cyan('[sharyn/koa]')
 const { NODE_ENV } = process.env
