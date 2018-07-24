@@ -15,8 +15,6 @@
   </a>
 </div>
 
-
-
 # 🌹 Sharyn
 
 Sharyn is a library of packages that make your life easier and reduce your boilerplate code. Its **Development** packages are useful for any project, and the **Web** ones provide a wide range of tools and helpers for your web app projects.
