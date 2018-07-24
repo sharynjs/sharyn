@@ -13,7 +13,7 @@
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
     "lint": "eslint build.js babel.config.js packages && flow",
-    "test": "yarn && babel-node build.js && jest --testPathIgnorePatterns packages/*/*.test.js && babel-node build.js --clean",
+    "test": "markdownlint . -i node_modules -c .mdlintrc.json && yarn && babel-node build.js && jest --testPathIgnorePatterns packages/*/*.test.js && babel-node build.js --clean",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
   "dependencies": {
@@ -52,6 +52,8 @@
     "husky": "^0.14.3",
     "jest": "^23.4.1",
     "lerna": "^3.0.0-beta.21",
+    "markdownlint": "^0.11.0",
+    "markdownlint-cli": "^0.11.0",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",
     "rimraf": "^2.6.2"

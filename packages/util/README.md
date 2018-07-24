@@ -31,4 +31,3 @@ import { isEither } from '@sharyn/util'
 isEither(NODE_ENV, 'production', 'test') // true or false
 isEither(NODE_ENV, ['production', 'test']) // true or false
 ```
-

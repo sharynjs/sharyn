@@ -34,9 +34,7 @@ const resp = await fetchGraphql({ query, variables })
 */
 ```
 
-## API
-
-### fetchGraphql
+#### Options
 
 `fetchGraphql(options, fetchOptions)`
 

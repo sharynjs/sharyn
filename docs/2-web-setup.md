@@ -80,7 +80,7 @@ And create the following files:
 
 - `.gitignore` containing:
 
-```
+```gitignore
 .DS_Store
 /*.log
 /.env
@@ -93,7 +93,7 @@ node_modules/
 
 - `Procfile` containing:
 
-```
+```procfile
 web: node lib/_server/server.js
 release: sharyn migrate-db
 ```

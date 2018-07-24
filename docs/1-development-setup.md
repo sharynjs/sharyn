@@ -78,7 +78,7 @@ module.exports = require('@sharyn/prettier-config')
 
 - `.flowconfig` containing:
 
-```
+```flowconfig
 [options]
 suppress_comment= \\(.\\|\n\\)*\\flow-disable-next-line
 
@@ -90,13 +90,15 @@ esproposal.optional_chaining=enable
 
 - `.gitignore` containing:
 
-```
+```gitignore
 .DS_Store
 /*.log
 node_modules/
 ```
 
 That's almost enough to get started.
+
+<!-- markdownlint-disable no-trailing-punctuation -->
 
 ## 🌹 Just want a simple project?
 

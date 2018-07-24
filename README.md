@@ -1,3 +1,5 @@
+<!-- markdownlint-disable no-inline-html -->
+<!-- markdownlint-disable first-line-h1 -->
 <p align="center">
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png">
 </p>
@@ -42,6 +44,8 @@ I recommend the tutorial the first time you use Sharyn, and the boilerplate once
 By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia)
 
 Rose design by [**tiaesther**](https://pngtree.com/tiaesther_4360?type=1)
+
+<!-- markdownlint-disable no-trailing-punctuation -->
 
 ## 🌹 Why _Sharyn_?
 
