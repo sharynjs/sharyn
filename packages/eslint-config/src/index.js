@@ -1,6 +1,9 @@
-const { hasPackage } = require('@sharyn/check-setup')
+// @flow
 
-const config = {
+// flow-disable-next-line
+import { hasPackage } from '@sharyn/check-setup'
+
+const config: Object = {
   extends: [],
   plugins: [],
   env: {
@@ -164,4 +167,4 @@ if (hasPackage('react')) {
   }
 }
 
-module.exports = config
+export default config

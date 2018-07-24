@@ -36,6 +36,10 @@ const packages = [
     name: 'env',
     modules: ['index.js'],
   },
+  {
+    name: 'eslint-config',
+    modules: ['index.js'],
+  },
 ]
 
 const build = () =>
