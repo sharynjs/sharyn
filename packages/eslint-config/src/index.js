@@ -167,4 +167,4 @@ if (hasPackage('react')) {
   }
 }
 
-export default config
+module.exports = config

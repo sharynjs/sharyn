@@ -33,4 +33,4 @@ if (hasFile(seedsPath)) {
   knexConfig.seeds = { directory: seedsPath }
 }
 
-export default knexConfig
+module.exports = knexConfig

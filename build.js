@@ -46,7 +46,7 @@ const packages = [
   },
   {
     name: 'material-ui',
-    modules: ['DrawerItem'],
+    modules: ['DrawerItem.js'],
   },
   {
     name: 'prettier-config',
