@@ -10,4 +10,4 @@ const standardCols = (knex: Function, t: Object) => {
     .defaultTo(knex.fn.now())
 }
 
-export default standardCols
+module.exports = standardCols

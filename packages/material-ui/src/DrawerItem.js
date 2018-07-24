@@ -30,4 +30,4 @@ DrawerItem.defaultProps = {
 
 const EnhancedDrawerItem = withStyles(styles)(DrawerItem)
 
-export default EnhancedDrawerItem
+module.exports = EnhancedDrawerItem

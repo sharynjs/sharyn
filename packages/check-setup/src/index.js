@@ -1,4 +1,11 @@
 // @flow
 
-export { default as hasPackage } from './has-package'
-export { default as hasFile } from './has-file'
+import hasFile from './has-file'
+import hasPackage from './has-package'
+import appRoot from './app-root'
+
+module.exports = {
+  hasFile,
+  hasPackage,
+  appRoot,
+}

@@ -12,11 +12,12 @@
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
     "lint": "markdownlint README.md docs packages -i node_modules -c .mdlintrc.json && eslint build.js babel.config.js packages && flow",
-    "test": "babel-node build.js && jest --testPathIgnorePatterns packages/*/*.test.js && babel-node build.js --clean",
+    "test": "babel-node build.js && cross-env USE_PROCESS_CWD_FOR_APP_ROOT=truthy jest --testPathIgnorePatterns packages/*/*.test.js && babel-node build.js --clean",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
   "dependencies": {
     "@sharyn/util": "^1.0.0",
+    "app-root-path": "^2.1.0",
     "lodash": "^4.17.10",
     "react": "^16.4.1"
   },
@@ -39,6 +40,7 @@
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.0",
     "babel-plugin-flow-react-proptypes": "^24.0.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.2.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-prettier": "^2.9.0",

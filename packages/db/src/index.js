@@ -1,6 +1,15 @@
 // @flow
 
-export { default as createQuery } from './create-query'
-export { default as knex } from './knex'
-export { default as standardCols } from './standard-cols'
-export { default as userIdCol } from './user-id-col'
+import createQuery from './create-query'
+import knex from './knex'
+import knexConfig from './knex-config'
+import standardCols from './standard-cols'
+import userIdCol from './user-id-col'
+
+module.exports = {
+  createQuery,
+  knex,
+  knexConfig,
+  standardCols,
+  userIdCol,
+}

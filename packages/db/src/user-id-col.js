@@ -8,4 +8,4 @@ const userIdCol = (t: Object) =>
     .onDelete('cascade')
     .notNullable()
 
-export default userIdCol
+module.exports = userIdCol

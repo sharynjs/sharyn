@@ -1,9 +1,10 @@
 // @flow
 
 import fs from 'fs'
+import appRoot from './app-root'
 
 const hasFile = (path: string, isRequired?: boolean) => {
-  if (fs.existsSync(`${process.cwd()}/${path}`)) {
+  if (fs.existsSync(`${appRoot}/${path}`)) {
     return true
   }
   if (isRequired) {
@@ -12,4 +13,4 @@ const hasFile = (path: string, isRequired?: boolean) => {
   return false
 }
 
-export default hasFile
+module.exports = hasFile

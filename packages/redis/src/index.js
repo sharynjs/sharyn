@@ -6,11 +6,11 @@ import { promisifyAll } from 'bluebird'
 import exitHook from 'async-exit-hook'
 
 // flow-disable-next-line
-import { hasPackage } from '@sharyn/check-setup'
+import { appRoot, hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
 import { REDIS_URL } from '@sharyn/env'
 // flow-disable-next-line
-const Redis = hasPackage('redis', true) && require(`${process.cwd()}/node_modules/redis`)
+const Redis = hasPackage('redis', true) && require(`${appRoot}/node_modules/redis`)
 
 promisifyAll(Redis)
 

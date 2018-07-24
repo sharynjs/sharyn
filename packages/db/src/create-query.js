@@ -10,4 +10,4 @@ const createQuery = (tableName: string) => (userId: string, trx: Function) => {
   return userId ? table.where(`${tableName}.userId`, userId) : table
 }
 
-export default createQuery
+module.exports = createQuery

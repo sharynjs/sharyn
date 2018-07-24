@@ -1,16 +1,16 @@
 // @flow
 
-/* eslint-disable import/no-dynamic-require, global-require */
+/* eslint-disable import/no-extraneous-dependencies, import/no-dynamic-require, global-require */
 
 import colors from 'colors/safe'
 import exitHook from 'exit-hook'
 
 // flow-disable-next-line
-import { hasPackage } from '@sharyn/check-setup'
+import { appRoot, hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
-const Koa = hasPackage('koa', true) && require(`${process.cwd()}/node_modules/koa`)
+const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
 // flow-disable-next-line
-const Router = hasPackage('koa-router', true) && require(`${process.cwd()}/node_modules/koa-router`)
+const Router = hasPackage('koa-router', true) && require(`${appRoot}/node_modules/koa-router`)
 
 const router = new Router()
 

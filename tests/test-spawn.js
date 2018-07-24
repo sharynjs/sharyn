@@ -3,14 +3,15 @@
 /* eslint-disable no-console */
 
 import { spawnSync } from 'child_process'
+import { path as appRoot } from 'app-root-path'
 
 const testSpawn = (folder: string, cmd: string, returnOutput?: false) => {
   spawnSync('yarn', {
-    cwd: `${process.cwd()}/tests/${folder}`,
+    cwd: `${appRoot}/tests/${folder}`,
     shell: true,
   })
   const { status, stdout, stderr } = spawnSync(cmd, {
-    cwd: `${process.cwd()}/tests/${folder}`,
+    cwd: `${appRoot}/tests/${folder}`,
     shell: true,
   })
   const out = stdout.toString()

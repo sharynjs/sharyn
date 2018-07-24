@@ -2,11 +2,6 @@
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
 var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
 var _assign = _interopRequireDefault(require("@babel/runtime/core-js/object/assign"));
@@ -68,5 +63,4 @@ function () {
   };
 }();
 
-var _default = fetchGraphql;
-exports.default = _default;
+module.exports = fetchGraphql;

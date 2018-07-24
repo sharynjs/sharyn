@@ -5,7 +5,7 @@
 import 'dotenv/config'
 import readEnv from 'read-env'
 // flow-disable-next-line
-import { hasFile } from '@sharyn/check-setup'
+import { appRoot, hasFile } from '@sharyn/check-setup'
 
 const parsedEnv = readEnv({ transformKey: false })
 
@@ -19,7 +19,7 @@ parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
 if (hasFile('src/_server/env-check.js')) {
   // flow-disable-next-line
-  require(`${process.cwd()}/src/_server/env-check.js`)(parsedEnv)
+  require(`${appRoot}/src/_server/env-check.js`)(parsedEnv)
 }
 
 // CommonJS export required to expose the entire object without explicit named exports

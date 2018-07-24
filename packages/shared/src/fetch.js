@@ -33,4 +33,4 @@ const fetchGraphql = async (
   return (await fetch(`${host || ''}${path || '/graphql'}`, finalOptions)).json()
 }
 
-export default fetchGraphql
+module.exports = fetchGraphql
