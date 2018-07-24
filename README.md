@@ -2,6 +2,8 @@
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png">
 </p>
 
+[![build](https://img.shields.io/travis/sharynjs/sharyn.svg)](https://travis-ci.org/sharynjs/sharyn)
+
 # 🌹 Sharyn
 
 Sharyn is a library of packages that make your life easier and reduce your boilerplate code. Its **Development** packages are useful for any project, and the **Web** ones provide a wide range of tools and helpers for your web app projects.
