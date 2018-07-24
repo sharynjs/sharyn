@@ -5,7 +5,7 @@
 import { spawnSync } from 'child_process'
 
 const testSpawn = (folder: string, cmd: string, returnOutput?: false) => {
-  const fullCmd = `cd examples/${folder} && ${cmd}`
+  const fullCmd = `cd tests/${folder} && ${cmd}`
   const { status, stdout, stderr } = spawnSync(fullCmd, { shell: true })
   const output = stdout.toString()
   if (status === 0) {
