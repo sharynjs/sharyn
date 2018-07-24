@@ -4,7 +4,7 @@
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png">
 </p>
 
-[![build](https://api.travis-ci.org/sharynjs/sharyn.svg?branch=master)](https://travis-ci.org/sharynjs/sharyn)
+[![build](https://api.travis-ci.org/sharynjs/sharyn.svg?branch=master)](https://travis-ci.org/sharynjs/sharyn) [![dependencies](https://david-dm.org/sharynjs/sharyn/status.svg)](https://david-dm.org/sharynjs/sharyn) [![devDependencies](https://david-dm.org/sharynjs/sharyn/dev-status.svg)](https://david-dm.org/sharynjs/sharyn?type=dev)
 
 # 🌹 Sharyn
 
