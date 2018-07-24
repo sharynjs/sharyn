@@ -8,7 +8,7 @@ import exitHook from 'exit-hook'
 // flow-disable-next-line
 import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV } from '@sharyn/env'
 // flow-disable-next-line
-import { appRoot, hasPackage } from '@sharyn/check-setup'
+import { appRoot, hasFile, hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
 const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
 // flow-disable-next-line
@@ -46,9 +46,18 @@ const stopServer_ = (options?: Object) => {
   throw Error('Tried to stop the server but no server was running')
 }
 
-const startServer_ = (routing: Function, options?: Object) => {
+const startServer_ = (manualRouting: Function, options?: Object) => {
+  let routing = manualRouting
   if (!routing) {
-    throw Error('You must pass a routing function to startServer')
+    if (hasFile('src/_server/routing.js')) {
+      // flow-disable-next-line
+      const routingModule = require(`${appRoot}/src/_server/routing.js`)
+      routing = routingModule.default ? routingModule.default : routingModule
+    } else {
+      throw Error(
+        'You must pass a routing function to startServer, or have a _server/routing.js file exporting the routing function',
+      )
+    }
   }
 
   if (!(options?.silent || IS_TEST_ENV)) {
