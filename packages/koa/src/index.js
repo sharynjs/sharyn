@@ -27,7 +27,7 @@ let server
 
 const stopServer_ = (options?: Object) => {
   if (server) {
-    if (!options?.silent) {
+    if (!(options?.silent || IS_TEST_ENV)) {
       // eslint-disable-next-line no-console
       console.log() // cross-os newline
       // eslint-disable-next-line no-console
@@ -51,11 +51,12 @@ const startServer_ = (routing: Function, options?: Object) => {
     throw Error('You must pass a routing function to startServer')
   }
 
-  if (!options?.silent) {
+  if (!(options?.silent || IS_TEST_ENV)) {
     // eslint-disable-next-line no-console
     console.log(`${PREFIX} Server running on port ${port} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
-    exitHook(() => stopServer_())
   }
+
+  exitHook(() => stopServer_())
 
   const app = new Koa()
 
