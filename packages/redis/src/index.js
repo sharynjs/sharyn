@@ -1,11 +1,11 @@
 // @flow
 
-const { promisifyAll } = require('bluebird')
-const Redis = require('redis')
-const exitHook = require('async-exit-hook')
+import { promisifyAll } from 'bluebird'
+import Redis from 'redis'
+import exitHook from 'async-exit-hook'
 
 // flow-disable-next-line
-const { REDIS_URL } = require('@sharyn/env')
+import { REDIS_URL } from '@sharyn/env'
 
 promisifyAll(Redis)
 

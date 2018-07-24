@@ -34,6 +34,10 @@ const stopServer_ = (options?: Object) => {
       // flow-disable-next-line
       require('@sharyn/db').knex.destroy()
     }
+    if (hasPackage('@sharyn/redis')) {
+      // flow-disable-next-line
+      require('@sharyn/redis').end()
+    }
     return server.close()
   }
   throw Error('Tried to stop the server but no server was running')
