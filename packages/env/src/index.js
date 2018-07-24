@@ -11,9 +11,15 @@ if (parsedEnv.NODE_ENV === undefined) {
   parsedEnv.NODE_ENV = 'development'
 }
 
+if (parsedEnv.ENV_TYPE === undefined) {
+  parsedEnv.ENV_TYPE = 'local'
+}
+
 parsedEnv.IS_PROD_ENV = parsedEnv.NODE_ENV === 'production'
 parsedEnv.IS_DEV_ENV = parsedEnv.NODE_ENV === 'development'
 parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
+
+parsedEnv.IS_LOCAL_ENV = parsedEnv.ENV_TYPE === 'local'
 
 const envCheckModule = requireCascade(
   'src/_server/env-check.js',
