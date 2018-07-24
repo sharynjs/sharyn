@@ -6,9 +6,9 @@ You might not need all these features for your projects, but it is very easy to 
 
 We are going to compile our code with the new [**Babel 7**](https://medium.freecodecamp.org/were-nearing-the-7-0-babel-release-here-s-all-the-cool-stuff-we-ve-been-doing-8c1ade684039), lint it with [**ESLint 5**](https://eslint.org/docs/user-guide/migrating-to-5.0.0), type-check it with [**Flow**](https://flow.org/en/), test it with [**Jest**](https://jestjs.io/), and auto-format it with [**Prettier**](https://prettier.io/). And we have access to a bunch of utils with [**Lodash**](https://lodash.com/) and [**@sharyn/util**](https://github.com/sharynjs/sharyn/tree/master/packages/util) to make our life easier.
 
-Excited? Let's get started!
+Let's get started!
 
-First, let's install the packages that I consider useful for any project by running the following command:
+- First, let's install the packages that I consider useful for any project by running the following command:
 
 ```bash
 yarn add @sharyn/util lodash && yarn add --dev @babel/cli @babel/core @babel/node @babel/plugin-proposal-do-expressions @babel/plugin-proposal-nullish-coalescing-operator @babel/plugin-proposal-optional-chaining @babel/plugin-proposal-pipeline-operator @babel/preset-env @babel/preset-flow @sharyn/babel-preset @sharyn/eslint-config @sharyn/prettier-config babel-core@^7.0.0-0 babel-eslint babel-jest babel-plugin-module-resolver eslint eslint-config-prettier eslint-import-resolver-babel-module@5.0.0-beta.0 eslint-plugin-flowtype eslint-plugin-import eslint-plugin-prettier flow-bin jest prettier
@@ -104,7 +104,7 @@ That's almost enough to get started.
 
 Before we get into the full-stack setup part, you can branch-off here in case you just want to make a simple non-web JS project. Because all that stuff we just installed works wonders for any project.
 
-If that's your case, and **only if that's your case**, install `eslint-config-airbnb-base`:
+- If that's your case, and **only if that's your case**, install `eslint-config-airbnb-base`:
 
 ```bash
 yarn add --dev eslint-config-airbnb-base
