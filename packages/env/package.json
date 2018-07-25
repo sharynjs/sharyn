@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/env",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/env",
   "license": "MIT",
   "dependencies": {

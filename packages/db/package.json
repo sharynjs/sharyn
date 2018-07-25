@@ -1,12 +1,12 @@
 {
   "name": "@sharyn/db",
-  "version": "1.7.6",
+  "version": "1.7.7",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/db",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
     "@sharyn/check-setup": "^1.5.1",
-    "@sharyn/env": "^1.6.2",
+    "@sharyn/env": "^1.7.0",
     "async-exit-hook": "^2.0.1",
     "knex": "^0.15.1",
     "pg": "^7.4.3"
