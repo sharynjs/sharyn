@@ -22,6 +22,10 @@ const packages = [
     modules: ['bin.js', 'commands.js', 'shared.js'],
   },
   {
+    name: 'client',
+    modules: ['form.js'],
+  },
+  {
     name: 'db',
     modules: [
       'create-query.js',
