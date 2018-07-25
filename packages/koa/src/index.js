@@ -6,7 +6,7 @@ import colors from 'colors/safe'
 import exitHook from 'exit-hook'
 
 // flow-disable-next-line
-import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV } from '@sharyn/env'
+import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV, ENV_TYPE } from '@sharyn/env'
 // flow-disable-next-line
 import { appRoot, hasFile, hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
@@ -62,7 +62,9 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
 
   if (!(options?.silent || IS_TEST_ENV)) {
     // eslint-disable-next-line no-console
-    console.log(`${PREFIX} Server running on port ${port} ${NODE_ENV ? `(${NODE_ENV})` : ''}`)
+    console.log(
+      `\n${PREFIX} 🌹 Server running on PORT: ${port} | NODE_ENV: ${NODE_ENV} | ENV_TYPE: ${ENV_TYPE}`,
+    )
   }
 
   exitHook(() => stopServer_())
