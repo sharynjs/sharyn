@@ -18,6 +18,7 @@ const htmlBase = (windowVarPairs: any[], rootId: string = 'app') => {
     <div id="${rootId}"></div>
     ${windowVarsScriptTags}
     <script src="${WDS_PATH}/static/js/bundle.js"></script>
+  </body>
 </html>`
 }
 
