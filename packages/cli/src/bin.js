@@ -15,7 +15,7 @@ import {
   DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
   DOCKER_WAIT_PG_TEST,
-  NODE_LIB_SERVER,
+  nodeLocalProd,
   dockerDownTest,
   dbMigr,
   dbMigrTest,
@@ -27,7 +27,7 @@ import {
   clientBuild,
   serverWatchSsrOnly,
   serverWatchNoSsr,
-  herokuLocal,
+  herokuLocalProd,
   babel,
   testParallel,
   testSequencial,
@@ -119,7 +119,7 @@ swit(
         knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
         knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(rmLibAndBundle, clientBuild, babel)
-        hasHeroku ? commands.push(herokuLocal) : commands.push(NODE_LIB_SERVER)
+        hasHeroku ? commands.push(herokuLocalProd) : commands.push(nodeLocalProd)
         mySpawn(sequence(commands))
       },
     ],

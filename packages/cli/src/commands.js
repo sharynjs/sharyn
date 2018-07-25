@@ -28,7 +28,9 @@ const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : '
   hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
 }`
 
-export const NODE_LIB_SERVER = 'node lib/_server/server.js'
+export const nodeLocalProd = prefix(
+  'cross-env NODE_ENV=production ENV_TYPE=local-production node lib/_server/server.js',
+)
 export const DOCKER_UP = 'docker-compose up -d'
 export const dockerDownTest = (id: string) => `docker rm -f ${id}`
 export const DOCKER_UP_TEST = 'docker-compose up -d db-test'
@@ -38,7 +40,9 @@ export const babel = prefix('babel src -d lib')
 export const dbMigr = migrate
 export const dbSeed = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`)
 export const dbMigrTest = `${prefix('cross-env NODE_ENV=test')} ${migrate}`
-export const herokuLocal = prefix('cross-env NODE_ENV=production heroku local')
+export const herokuLocalProd = prefix(
+  'cross-env NODE_ENV=production ENV_TYPE=local-production heroku local',
+)
 export const lint = prefix('eslint src --fix --ext .js,.jsx')
 export const typecheck = prefix('flow')
 export const testParallel = prefix(
