@@ -1,11 +1,11 @@
 {
   "name": "@sharyn/eslint-config",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/eslint-config",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
-    "@sharyn/check-setup": "^1.5.0"
+    "@sharyn/check-setup": "^1.5.1"
   },
   "peerDependencies": {
     "eslint": ">= 5.0.0"
