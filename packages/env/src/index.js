@@ -12,14 +12,14 @@ if (parsedEnv.NODE_ENV === undefined) {
 }
 
 if (parsedEnv.ENV_TYPE === undefined) {
-  parsedEnv.ENV_TYPE = 'local'
+  parsedEnv.ENV_TYPE = `local-${parsedEnv.NODE_ENV}`
 }
 
 parsedEnv.IS_PROD_ENV = parsedEnv.NODE_ENV === 'production'
 parsedEnv.IS_DEV_ENV = parsedEnv.NODE_ENV === 'development'
 parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
-parsedEnv.IS_LOCAL_ENV = parsedEnv.ENV_TYPE === 'local'
+parsedEnv.IS_LOCAL_ENV_TYPE = parsedEnv.ENV_TYPE.startsWith('local-')
 
 const envCheckModule = requireCascadeFromSource(
   '_server/env-check.js',

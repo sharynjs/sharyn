@@ -6,7 +6,7 @@ import colors from 'colors/safe'
 import exitHook from 'exit-hook'
 
 // flow-disable-next-line
-import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV, ENV_TYPE } from '@sharyn/env'
+import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV_TYPE, ENV_TYPE } from '@sharyn/env'
 // flow-disable-next-line
 import { appRoot, hasFile, hasPackage, requireCascadeFromSource } from '@sharyn/check-setup'
 // flow-disable-next-line
@@ -70,7 +70,7 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
     // flow-disable-next-line
     const enforceHttps = require('koa-sslify')
     const hasHeroku = hasFile('Procfile')
-    IS_LOCAL_ENV || app.use(enforceHttps({ trustProtoHeader: hasHeroku }))
+    IS_LOCAL_ENV_TYPE || app.use(enforceHttps({ trustProtoHeader: hasHeroku }))
   }
 
   if (hasPackage('koa-compress')) {
