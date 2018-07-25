@@ -2,7 +2,7 @@
 
 import path from 'path'
 
-import WDS_PORT from './wds-port'
+import { WDS_PORT } from './wds-port'
 
 const config: Object = {
   entry: './src/_client/client.js',
