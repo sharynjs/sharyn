@@ -21,6 +21,7 @@ const expected = `<!doctype html>
 <script>window.__C__ = true</script>
 <script>window.__D__ = 666</script>
     <script src="/static/js/bundle.js"></script>
+  </body>
 </html>`
 
 test('htmlBase', () => {
