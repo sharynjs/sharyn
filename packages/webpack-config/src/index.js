@@ -1,6 +1,8 @@
+// @flow
+
 import path from 'path'
 
-const WDS_PORT = 8371
+import WDS_PORT from './wds-port'
 
 module.exports = {
   entry: './src/_client/client.js',
@@ -10,5 +12,8 @@ module.exports = {
     publicPath: `http://localhost:${WDS_PORT}/static`,
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
-  devServer: { port: WDS_PORT, headers: { 'Access-Control-Allow-Origin': '*' } },
+  devServer: {
+    port: WDS_PORT,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+  },
 }
