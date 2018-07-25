@@ -40,6 +40,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Knex configuration and database utils
 - [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis setup
 - [**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A preconfigured Koa server
+- [**@sharyn/server**](https://github.com/sharynjs/sharyn/blob/master/packages/server/README.md) – Server-side helpers
 - [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
 
 ## 🌹 Getting Started

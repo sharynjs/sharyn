@@ -57,6 +57,10 @@ const packages = [
     modules: ['index.js'],
   },
   {
+    name: 'server',
+    modules: ['html-base.js', 'index.js'],
+  },
+  {
     name: 'shared',
     modules: ['fetch'],
   },
@@ -66,7 +70,7 @@ const packages = [
   },
   {
     name: 'webpack-config',
-    modules: ['index.js', 'wds-port.js'],
+    modules: ['index.js', 'wds-util.js'],
   },
 ]
 
