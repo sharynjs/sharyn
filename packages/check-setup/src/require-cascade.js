@@ -5,7 +5,7 @@
 import appRoot from './app-root'
 import hasFile from './has-file'
 
-const NODE_ENV = process.env
+const { NODE_ENV } = process.env
 
 const requireCascade_ = (...filenames: any[]) => {
   if (!filenames.length) {
