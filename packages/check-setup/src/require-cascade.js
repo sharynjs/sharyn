@@ -5,7 +5,9 @@
 import appRoot from './app-root'
 import hasFile from './has-file'
 
-const requireCascade = (...filenames: string[]) => {
+const NODE_ENV = process.env
+
+const requireCascade_ = (...filenames: any[]) => {
   if (!filenames.length) {
     throw Error('requireCascade takes at least one argument')
   }
@@ -24,4 +26,10 @@ const requireCascade = (...filenames: string[]) => {
   return module
 }
 
-module.exports = requireCascade
+const requireCascadeFromSource_ = (...filenames: string[]) =>
+  requireCascade_(
+    filenames.map(f => `${NODE_ENV === 'production' || NODE_ENV === 'test' ? 'lib/' : 'src/'}${f}`),
+  )
+
+export const requireCascade = requireCascade_
+export const requireCascadeFromSource = requireCascadeFromSource_

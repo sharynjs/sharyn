@@ -8,7 +8,7 @@ import exitHook from 'exit-hook'
 // flow-disable-next-line
 import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV, ENV_TYPE } from '@sharyn/env'
 // flow-disable-next-line
-import { appRoot, hasFile, hasPackage } from '@sharyn/check-setup'
+import { appRoot, hasFile, hasPackage, requireCascadeFromSource } from '@sharyn/check-setup'
 // flow-disable-next-line
 const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
 // flow-disable-next-line
@@ -47,17 +47,12 @@ const stopServer_ = (options?: Object) => {
 }
 
 const startServer_ = (manualRouting: Function, options?: Object) => {
-  let routing = manualRouting
+  const routing =
+    manualRouting || requireCascadeFromSource('_server/routing.js', 'server/routing.js')
   if (!routing) {
-    if (hasFile('src/_server/routing.js')) {
-      // flow-disable-next-line
-      const routingModule = require(`${appRoot}/src/_server/routing.js`)
-      routing = routingModule.default ? routingModule.default : routingModule
-    } else {
-      throw Error(
-        'You must pass a routing function to startServer, or have a _server/routing.js file exporting the routing function',
-      )
-    }
+    throw Error(
+      'You must pass a routing function to startServer, or have a _server/routing.js file exporting the routing function',
+    )
   }
 
   if (!(options?.silent || IS_TEST_ENV)) {

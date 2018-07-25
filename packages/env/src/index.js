@@ -3,7 +3,7 @@
 import 'dotenv/config'
 import readEnv from 'read-env'
 // flow-disable-next-line
-import { requireCascade } from '@sharyn/check-setup'
+import { requireCascadeFromSource } from '@sharyn/check-setup'
 
 const parsedEnv = readEnv({ transformKey: false })
 
@@ -21,17 +21,13 @@ parsedEnv.IS_TEST_ENV = parsedEnv.NODE_ENV === 'test'
 
 parsedEnv.IS_LOCAL_ENV = parsedEnv.ENV_TYPE === 'local'
 
-const envCheckModule = requireCascade(
-  'src/_server/env-check.js',
-  'src/_server/check-env.js',
-  'src/_server/env.js',
-  'src/_server/.env.js',
-  'src/_server/.env-check.js',
-  'env-check.js',
-  'check-env.js',
-  'env.js',
-  '.env.js',
-  '.env-check.js',
+const envCheckModule = requireCascadeFromSource(
+  '_server/env-check.js',
+  '_server/check-env.js',
+  '_server/env.js',
+  'server/env-check.js',
+  'server/check-env.js',
+  'server/env.js',
 )
 
 envCheckModule && envCheckModule(parsedEnv)
