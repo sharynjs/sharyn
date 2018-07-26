@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
+    "@sharyn/check-setup": "^1.5.1",
     "@sharyn/webpack-config": "^1.6.2",
     "serialize-javascript": "^1.5.0"
   }

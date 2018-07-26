@@ -3,6 +3,11 @@
 import serialize from 'serialize-javascript'
 // @flow-disable-next-line
 import { WDS_PATH } from '@sharyn/webpack-config/wds-util'
+// @flow-disable-next-line
+import { hasPackage } from '@sharyn/check-setup'
+
+const robotoLink = `
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />`
 
 const htmlBase = (windowVarPairs: any[], rootId: string = 'app') => {
   const windowVarsScriptTags = windowVarPairs.map(
@@ -12,7 +17,7 @@ const htmlBase = (windowVarPairs: any[], rootId: string = 'app') => {
   return `<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8">${hasPackage('@material-ui/core') ? robotoLink : ''}
   </head>
   <body>
     <div id="${rootId}"></div>
