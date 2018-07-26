@@ -7,7 +7,7 @@ This package provides testing helpers.
 ## 🌹 Install
 
 ```bash
-yarn add @sharyn/testing
+yarn add --dev @sharyn/testing
 ```
 
 ## 🌹 Usage
@@ -20,4 +20,6 @@ A short helper to target `data-test` attributes with a selector.
 import { sel } from '@sharyn/testing'
 
 console.log(sel('hey')) // '[data-test="hey"]'
+
+expect(page).toClick(sel('submit-button'))
 ```
