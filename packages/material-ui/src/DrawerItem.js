@@ -1,13 +1,28 @@
+// @flow
+
+/* eslint-disable import/no-extraneous-dependencies */
+
 import React from 'react'
-import PropTypes from 'prop-types'
+// flow-disable-next-line
 import { withStyles } from '@material-ui/core/styles'
+// flow-disable-next-line
 import ListItem from '@material-ui/core/ListItem'
+// flow-disable-next-line
 import ListItemIcon from '@material-ui/core/ListItemIcon'
+// flow-disable-next-line
 import ListItemText from '@material-ui/core/ListItemText'
 
 const styles = { label: { '& > span': { textDecoration: 'none', display: 'inline-block' } } }
 
-const DrawerItem = ({ classes, label, icon: Icon }) => (
+const DrawerItemJSX = ({
+  classes,
+  label,
+  icon: Icon,
+}: {
+  classes: Object,
+  label: string,
+  icon?: Function,
+}) => (
   <ListItem button>
     {Icon && (
       <ListItemIcon>
@@ -18,16 +33,6 @@ const DrawerItem = ({ classes, label, icon: Icon }) => (
   </ListItem>
 )
 
-DrawerItem.propTypes = {
-  classes: PropTypes.shape({ label: PropTypes.string }).isRequired,
-  label: PropTypes.string.isRequired,
-  icon: PropTypes.func,
-}
+const DrawerItem = withStyles(styles)(DrawerItemJSX)
 
-DrawerItem.defaultProps = {
-  icon: null,
-}
-
-const EnhancedDrawerItem = withStyles(styles)(DrawerItem)
-
-module.exports = EnhancedDrawerItem
+module.exports = DrawerItem
