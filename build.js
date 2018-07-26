@@ -66,7 +66,11 @@ const packages = [
   },
   {
     name: 'shared',
-    modules: ['fetch'],
+    modules: ['fetch.js'],
+  },
+  {
+    name: 'testing',
+    modules: ['index.js'],
   },
   {
     name: 'util',
