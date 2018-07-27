@@ -21,7 +21,13 @@ const findMatch = (routesAndCmps: RouteAndCmp[], pathname: string, isLoggedIn: b
       return match
     }) || notFoundRouteAndCmp
   const { path, exact, ...route } = activeRouteAndCmp.route // Removing these properties from route
-  return { match, route, Component: activeRouteAndCmp.component }
+  return {
+    match,
+    route,
+    Component: activeRouteAndCmp.component,
+    // flow-disable-next-line
+    routes: filteredRoutesAndCmps.map(rac => rac.route),
+  }
 }
 
 export default findMatch
