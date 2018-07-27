@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
@@ -8,5 +8,6 @@
     "@sharyn/check-setup": "^1.5.1",
     "@sharyn/webpack-config": "^1.6.2",
     "serialize-javascript": "^1.5.0"
-  }
+  },
+  "gitHead": "b33e451f0b138c082d889ff48a2de631ff279079"
 }
