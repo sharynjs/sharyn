@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/components",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/components",
   "license": "MIT",
   "peerDependencies": {
@@ -10,5 +10,5 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54"
   },
-  "gitHead": "1f6f76d05d95fabb673148d29590dbe0a83139c9"
+  "gitHead": "7e33264aa1404b34efe60bdabc217bd31ad95ab9"
 }
