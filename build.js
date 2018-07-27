@@ -72,7 +72,7 @@ const packages = [
       'fill-title.js',
       'index.js',
       'logged-filter.js',
-      'find-match-and-route.js',
+      'find-match.js',
     ],
   },
   {
