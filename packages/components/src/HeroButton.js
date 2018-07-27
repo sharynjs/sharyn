@@ -49,7 +49,6 @@ const HeroButtonJSX = ({
   newTab?: boolean,
   icon: Function,
   classes: Object,
-  to: string,
   label: string,
 }) => {
   if (typeof dest === 'string') {
