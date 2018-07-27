@@ -66,7 +66,14 @@ const packages = [
   },
   {
     name: 'shared',
-    modules: ['Switch.js', 'fetch.js', 'get-title.js', 'index.js', 'logged-filter.js'],
+    modules: [
+      'Switch.js',
+      'fetch.js',
+      'fill-title.js',
+      'index.js',
+      'logged-filter.js',
+      'find-match-and-route.js',
+    ],
   },
   {
     name: 'testing',
