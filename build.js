@@ -26,6 +26,10 @@ const packages = [
     modules: ['form.js'],
   },
   {
+    name: 'components',
+    modules: ['DrawerItem.js', 'Page.js'],
+  },
+  {
     name: 'db',
     modules: [
       'create-query.js',
@@ -47,10 +51,6 @@ const packages = [
   {
     name: 'koa',
     modules: ['index.js'],
-  },
-  {
-    name: 'material-ui',
-    modules: ['DrawerItem.js', 'Page.js'],
   },
   {
     name: 'prettier-config',

@@ -43,7 +43,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - [**@sharyn/server**](https://github.com/sharynjs/sharyn/blob/master/packages/server/README.md) – Server-side helpers
 - [**@sharyn/testing**](https://github.com/sharynjs/sharyn/blob/master/packages/testing/README.md) – Testing helpers
 - [**@sharyn/client**](https://github.com/sharynjs/sharyn/blob/master/packages/client/README.md) – Client-side helpers
-- [**@sharyn/material-ui**](https://github.com/sharynjs/sharyn/blob/master/packages/material-ui/README.md) – UI components using Material UI
+- [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
 
 ## 🌹 Getting Started
 

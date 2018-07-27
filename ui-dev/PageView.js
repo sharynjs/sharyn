@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react'
-import Page from '../packages/material-ui/src/Page'
+import Page from '../packages/components/src/Page'
 
 const PageView = () => <Page>Hello</Page>
 
