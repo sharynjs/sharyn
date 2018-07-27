@@ -52,7 +52,7 @@
     "flow-bin": "^0.77.0",
     "husky": "^0.14.3",
     "jest": "^23.4.1",
-    "lerna": "^3.0.0-beta.21",
+    "lerna": "^3.0.0-rc.0",
     "markdownlint": "^0.11.0",
     "markdownlint-cli": "^0.11.0",
     "prettier": "^1.13.7",
