@@ -6,6 +6,9 @@
     ]
   },
   "scripts": {
+    "start": "npm-run-all build -p ui-dev-webpack ui-dev-server",
+    "ui-dev-webpack": "webpack-dev-server --mode=development --progress --hot",
+    "ui-dev-server": "babel-node ui-dev/server.js",
     "diff": "lerna diff",
     "updated": "babel-node build.js && lerna updated && babel-node build.js --clean",
     "pub": "yarn lint && yarn test && babel-node build.js && lerna publish && babel-node build.js --clean",
@@ -16,11 +19,17 @@
     "precommit": "yarn clean && yarn lint && yarn test"
   },
   "dependencies": {
+    "@material-ui/core": "^1.4.1",
+    "@material-ui/icons": "^2.0.0",
     "@sharyn/util": "^1.0.0",
     "app-root-path": "^2.1.0",
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0",
     "lodash": "^4.17.10",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.54",
@@ -40,6 +49,7 @@
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.6",
     "babel-jest": "^23.4.0",
+    "babel-loader": "^8.0.0-beta.4",
     "babel-plugin-flow-react-proptypes": "^24.0.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.2.0",
@@ -56,8 +66,12 @@
     "lerna": "^3.0.0-rc.0",
     "markdownlint": "^0.11.0",
     "markdownlint-cli": "^0.11.0",
+    "npm-run-all": "^4.1.3",
     "prettier": "^1.13.7",
     "prop-types": "^15.6.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }

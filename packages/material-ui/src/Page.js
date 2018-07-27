@@ -28,13 +28,18 @@ const styles = ({ breakpoints }) => ({
       padding: '25px 31px 0', // Make 25 customizable when props are supported
     },
   },
-  paperMiddle: { maxWidth: '100%', width: 'auto', margin: 'auto' },
+  paperMiddle: {
+    width: 'auto',
+    maxWidth: '100%',
+    margin: 'auto',
+    [breakpoints.down('xs')]: { width: '100%' },
+  },
   paperPadding: { padding: 30 }, // Make it customizable when props are supported
   noPaper: { background: 'transparent', boxShadow: 'none' },
 })
 
 type Props = {
-  children: any,
+  children?: any,
   classes: Object,
   noPaper?: boolean,
   noPadding?: boolean,
