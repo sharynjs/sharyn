@@ -9,17 +9,28 @@ import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 
 const styles = ({ breakpoints }) => ({
-  // 39px and 31px are for alignment with the burger icon
-  container: { display: 'flex', alignItems: 'flex-start', height: '100%', padding: '30px 39px 0' }, // Make paddingTop customizable when props land in withStyles
-  containerMiddle: { paddingTop: 0 },
-  paper: { width: '100%', margin: '0 auto' },
-  paperMiddle: { maxWidth: '100%', width: 'auto', margin: 'auto' },
-  paperPadding: { padding: 30 }, // Make this customizable when props land in withStyles
-  noPaper: { background: 'transparent', boxShadow: 'none' },
-  [`@media (max-width: ${breakpoints.values.sm - 1}px)`]: {
-    container: { padding: '0' },
-    paper: { height: '100%', width: '100%', boxShadow: 'none', padding: '25px 31px 0' }, // Make paddingTop customizable when props land in withStyles
+  // paddingLeft 39px and 31px are for alignment with the burger icon
+  container: {
+    display: 'flex',
+    alignItems: 'flex-start',
+    height: '100%',
+    padding: '30px 39px 0',
+    [breakpoints.up('xs')]: { padding: '30px 39px 0' }, // Make 30 customizable when props are supported
+    [breakpoints.down('xs')]: { padding: 0 },
   },
+  containerMiddle: { paddingTop: 0 },
+  paper: {
+    width: '100%',
+    margin: '0 auto',
+    [breakpoints.down('xs')]: {
+      height: '100%',
+      boxShadow: 'none',
+      padding: '25px 31px 0', // Make 25 customizable when props are supported
+    },
+  },
+  paperMiddle: { maxWidth: '100%', width: 'auto', margin: 'auto' },
+  paperPadding: { padding: 30 }, // Make it customizable when props are supported
+  noPaper: { background: 'transparent', boxShadow: 'none' },
 })
 
 type Props = {
@@ -33,7 +44,7 @@ type Props = {
   middle?: boolean,
 }
 
-const PaperPageJSX = ({
+const PageJSX = ({
   children,
   classes,
   middle,
@@ -57,6 +68,6 @@ const PaperPageJSX = ({
   </div>
 )
 
-const PaperPage = withStyles(styles)(PaperPageJSX)
+const Page = withStyles(styles)(PageJSX)
 
-export default PaperPage
+export default Page
