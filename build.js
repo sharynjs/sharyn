@@ -74,7 +74,7 @@ const packages = [
   },
   {
     name: 'util',
-    modules: ['index.js', 'is-either.js', 'is-either.test.js'], // babel --ignore test.js doesnt seem to work
+    modules: ['index.js', 'is-either.js', 'is-either.test.js', 'swit.js'], // babel --ignore test.js doesnt seem to work
   },
   {
     name: 'webpack-config',

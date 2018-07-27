@@ -5,6 +5,7 @@ import { render } from 'react-dom'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import PageView from './PageView'
 import PageMiddleView from './PageMiddleView'
+import HeroButtonView from './HeroButtonView'
 import DrawerItemView from './DrawerItemView'
 
 const App = () => (
@@ -49,12 +50,15 @@ const App = () => (
           {' – '}
           <Link to="/PageMiddle">Page Middle</Link>
           {' – '}
+          <Link to="/HeroButton">HeroButton</Link>
+          {' – '}
           <Link to="/DrawerItem">DrawerItem</Link>
         </div>
         <div style={{ height: '100%' }}>
           <Route exact path="/" />
           <Route path="/Page" component={PageView} />
           <Route path="/PageMiddle" component={PageMiddleView} />
+          <Route path="/HeroButton" component={HeroButtonView} />
           <Route path="/DrawerItem" component={DrawerItemView} />
         </div>
       </Fragment>
