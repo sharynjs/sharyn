@@ -9,11 +9,11 @@ import { hasPackage } from '@sharyn/check-setup'
 const robotoLink = `
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />`
 
-const htmlBase = (windowVarPairs: any[], rootId: string = 'app') => {
-  const windowVarsScriptTags = windowVarPairs.map(
-    p => `<script>window.${p[0]} = ${serialize(p[1])}</script>`,
-  ).join(`
+const htmlBase = (windowVarPairs?: any[], rootId: string = 'app') => {
+  const windowVarsScriptTags = windowVarPairs
+    ? windowVarPairs.map(p => `    <script>window.${p[0]} = ${serialize(p[1])}</script>`).join(`
 `)
+    : ''
   return `<!doctype html>
 <html>
   <head>
@@ -21,7 +21,7 @@ const htmlBase = (windowVarPairs: any[], rootId: string = 'app') => {
   </head>
   <body>
     <div id="${rootId}"></div>
-    ${windowVarsScriptTags}
+${windowVarsScriptTags}
     <script src="${WDS_PATH}/static/js/bundle.js"></script>
   </body>
 </html>`
