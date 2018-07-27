@@ -45,7 +45,7 @@ type Props = {
   noPadding?: boolean,
   containerClass?: string,
   paperClass?: string,
-  maxWidth?: number,
+  maxWidth?: any,
   middle?: boolean,
 }
 
