@@ -12,11 +12,35 @@ yarn add @sharyn/shared
 
 ## 🌹 Usage
 
-### fetchGraphql
+### Switch
 
 ```js
-import { fetchGraphql } from '@sharyn/shared/fetch'
+import Switch from '@sharyn/shared/Switch'
+import FooPage from 'foo/cmp-page/foo-page'
+import FooIcon from '@material-ui/icons/Foo'
 
+export const fooRoute: Object = {
+  path: '/foo',
+  exact: true,
+  loggedInOnly: true,
+  title: 'Foo',
+  Icon: FooIcon,
+  inNav: true,
+}
+
+const routesAndCmps = [
+  { route: fooRoute, component: FooPage }
+  { route: barRoute, component: BarPage }
+]
+
+const App = () => (
+  <Switch routesAndCmps={routesAndCmps} />
+)
+```
+
+### fetchGraphql (don't use it)
+
+```js
 // ...
 
 const query = "query ($id: ID!) { getThing(id: $id) { id } }"

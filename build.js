@@ -66,7 +66,7 @@ const packages = [
   },
   {
     name: 'shared',
-    modules: ['fetch.js'],
+    modules: ['Switch.js', 'fetch.js'],
   },
   {
     name: 'testing',
