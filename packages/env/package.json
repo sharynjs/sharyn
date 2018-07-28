@@ -1,11 +1,11 @@
 {
   "name": "@sharyn/env",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/env",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
-    "@sharyn/check-setup": "^1.5.1",
+    "@sharyn/check-setup": "^1.6.0",
     "dotenv": "^6.0.0",
     "read-env": "^1.2.0"
   }
