@@ -27,6 +27,8 @@ import isEither from '@sharyn/util/is-either'
 
 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
 
+An utilily function to replace `if (foo === 'a' || foo === 'b' || foo === 'c')` by `if (isEither(foo, 'a', 'b', 'c'))` or `if (isEither(foo, ['a', 'b', 'c']))`
+
 ```js
 import { isEither } from '@sharyn/util'
 
