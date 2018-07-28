@@ -41,6 +41,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis setup
 - [**@sharyn/koa**](https://github.com/sharynjs/sharyn/blob/master/packages/koa/README.md) – A preconfigured Koa server
 - [**@sharyn/server**](https://github.com/sharynjs/sharyn/blob/master/packages/server/README.md) – Server-side helpers
+- [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Helpers that can be used by both the client and the server
 - [**@sharyn/testing**](https://github.com/sharynjs/sharyn/blob/master/packages/testing/README.md) – Testing helpers
 - [**@sharyn/client**](https://github.com/sharynjs/sharyn/blob/master/packages/client/README.md) – Client-side helpers
 - [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
