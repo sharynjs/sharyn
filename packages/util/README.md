@@ -16,6 +16,7 @@ You can either import the entire library or just one module:
 
 ```js
 import { someUtil } from '@sharyn/util' // More compact if multiple imports (ok on the server)
+
 import someUtil from '@sharyn/util/some-util' // Reduces the bundle size (recommended on the client)
 ```
 
@@ -23,7 +24,7 @@ import someUtil from '@sharyn/util/some-util' // Reduces the bundle size (recomm
 
 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
 
-An utilily function to replace `if (foo === 'a' || foo === 'b' || foo === 'c')` by `if (isEither(foo, 'a', 'b', 'c'))` or `if (isEither(foo, ['a', 'b', 'c']))`
+An utilily function to replace `if (foo === 'a' || foo === 'b' || foo === 'c')` by `if (isEither(foo, 'a', 'b', 'c'))` or `if (isEither(foo, ['a', 'b', 'c']))`.
 
 ```js
 import { isEither } from '@sharyn/util'
