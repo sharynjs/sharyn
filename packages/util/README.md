@@ -10,20 +10,16 @@ Some general utils, like Lodash.
 yarn add @sharyn/util
 ```
 
-## 🌹 Usage
-
-### Import style
+## 🌹 Import style
 
 You can either import the entire library or just one module:
 
 ```js
-
-import { isEither } from '@sharyn/util'
-
-import isEither from '@sharyn/util/is-either'
+import { someUtil } from '@sharyn/util' // More compact if multiple imports (ok on the server)
+import someUtil from '@sharyn/util/some-util' // Reduces the bundle size (recommended on the client)
 ```
 
-### isEither
+## 🌹 isEither
 
 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
 
