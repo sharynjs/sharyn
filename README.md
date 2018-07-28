@@ -52,6 +52,16 @@ To get started, follow the [**setup tutorial**](https://github.com/sharynjs/shar
 
 I recommend the tutorial the first time you use Sharyn, and the boilerplate once you're familiar with the stack.
 
+## 🌹 Structuring Factor
+
+Every module is tagged with a _structuring factor_, which represents how easily it can be integrated into an existing codebase. In general, the more structuring and opinionated the modules are, the more they will reduce your boilerplate code, at the cost of flexibility.
+
+🌲 _Not structuring_ – Means you can use this module in any codebase, it is a very simple unit.
+
+🏠 _Moderately structuring_ – This module has some degree of flexibility, but it serves a more specific purpose than non-structuring ones, so if your need is slightly different, it might be difficult to use it
+
+🏢 _Very structuring_ – This module is not flexible. It does what it does well, but you have to comply to its purpose or you won't be able to take advantage of it. These are kind of imposing a _framework_, which is demonstrated by Sharyn Boilerplate. If these work for your case, that's a big win!
+
 ## 🌹 Credits
 
 By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia)
