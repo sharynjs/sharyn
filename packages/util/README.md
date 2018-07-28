@@ -25,6 +25,8 @@ import isEither from '@sharyn/util/is-either'
 
 ### isEither
 
+> 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
+
 ```js
 import { isEither } from '@sharyn/util'
 

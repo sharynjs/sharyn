@@ -60,7 +60,7 @@ Every module is tagged with a _structuring factor_, which represents how easily 
 >
 > 🏠 **Moderately structuring** – This module has some degree of flexibility, but it serves a more specific purpose than non-structuring ones, so if your need is slightly different, it might be difficult to use it.
 >
-> 🏢 **Very structuring** – This module is not flexible. It does what it does well, but you have to comply to its purpose or you won't be able to take advantage of it. These are kind of imposing a _framework_, which is demonstrated by Sharyn Boilerplate. If these work for your case, that's a big win!
+> 🏢 **Very structuring** – This module is not flexible. It does what it does well, but you have to comply to its purpose or you won't be able to take advantage of it. These are kind of imposing a _framework_, which is demonstrated by [**sharyn-boilerplate**](https://github.com/sharynjs/sharyn-boilerplate). If these work for your case, that's a big win!
 
 ## 🌹 Credits
 
