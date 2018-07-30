@@ -7,6 +7,7 @@ import PageView from './PageView'
 import PageMiddleView from './PageMiddleView'
 import HeroButtonView from './HeroButtonView'
 import DrawerItemView from './DrawerItemView'
+import hideOnScrollView from './hideOnScrollView'
 
 const App = () => (
   <div style={{ height: '100%' }}>
@@ -43,7 +44,15 @@ const App = () => (
     />
     <Router>
       <Fragment>
-        <div style={{ borderBottom: '1px solid black' }}>
+        <div
+          style={{
+            borderTop: '1px solid black',
+            position: 'fixed',
+            bottom: 0,
+            background: 'white',
+            width: '100%',
+          }}
+        >
           <Link to="/">Home</Link>
           {' – '}
           <Link to="/Page">Page</Link>
@@ -53,6 +62,8 @@ const App = () => (
           <Link to="/HeroButton">HeroButton</Link>
           {' – '}
           <Link to="/DrawerItem">DrawerItem</Link>
+          {' – '}
+          <Link to="/hideOnScroll">hideOnScroll</Link>
         </div>
         <div style={{ height: '100%' }}>
           <Route exact path="/" />
@@ -60,6 +71,7 @@ const App = () => (
           <Route path="/PageMiddle" component={PageMiddleView} />
           <Route path="/HeroButton" component={HeroButtonView} />
           <Route path="/DrawerItem" component={DrawerItemView} />
+          <Route path="/hideOnScroll" component={hideOnScrollView} />
         </div>
       </Fragment>
     </Router>

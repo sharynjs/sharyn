@@ -49,6 +49,10 @@ const packages = [
     modules: ['index.js'],
   },
   {
+    name: 'hocs',
+    modules: ['index.js', 'hide-on-scroll.js'],
+  },
+  {
     name: 'koa',
     modules: ['index.js'],
   },

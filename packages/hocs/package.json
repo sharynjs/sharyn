@@ -1,0 +1,11 @@
+{
+  "name": "@sharyn/hocs",
+  "version": "0.0.1",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/hocs",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.54",
+    "lodash.throttle": "^4.1.1",
+    "recompose": "^0.27.1"
+  }
+}
