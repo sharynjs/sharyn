@@ -24,7 +24,7 @@ import someUtil from '@sharyn/util/some-util' // Reduces the bundle size (recomm
 
 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
 
-An utilily function to replace `if (foo === 'a' || foo === 'b' || foo === 'c')` by `if (isEither(foo, 'a', 'b', 'c'))` or `if (isEither(foo, ['a', 'b', 'c']))`.
+A utilily function to replace `if (foo === 'a' || foo === 'b' || foo === 'c')` by `if (isEither(foo, 'a', 'b', 'c'))` or `if (isEither(foo, ['a', 'b', 'c']))`.
 
 ```js
 import { isEither } from '@sharyn/util'
