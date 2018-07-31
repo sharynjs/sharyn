@@ -2,7 +2,7 @@
 
 import knex from './knex'
 
-const createQuery = (tableName: string) => (userId: string, trx: Function) => {
+const createQuery = (tableName: string) => (userId: string, trx?: Function) => {
   if (typeof tableName !== 'string') {
     throw Error('tableName must be a string')
   }
