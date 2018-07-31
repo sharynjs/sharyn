@@ -12,6 +12,11 @@ const HeroButtonView = () => (
     <br />
     <br />
     <div style={{ display: 'inline-block', border: '1px solid blue' }}>
+      <HeroButton style={{ color: '#faa' }} label="Style" icon={HomeIcon} dest="#" hardLink />
+    </div>
+    <br />
+    <br />
+    <div style={{ display: 'inline-block', border: '1px solid blue' }}>
       <HeroButton label="Google New Tab" icon={HomeIcon} dest="http://google.com" newTab />
     </div>
     <br />

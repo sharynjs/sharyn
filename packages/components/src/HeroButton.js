@@ -44,12 +44,15 @@ const HeroButtonJSX = ({
   dest,
   newTab,
   hardLink,
+  icon,
+  label,
   ...rest
 }: {
   dest: any,
   hardLink?: boolean,
   newTab?: boolean,
   icon: Function,
+  label: string,
   classes: Object,
   label: string,
 }) => {
@@ -62,15 +65,15 @@ const HeroButtonJSX = ({
       aProps.target = '_blank'
     }
     return (
-      <a {...aProps}>
-        <Inner classes={classes} {...rest} />
+      <a {...rest} {...aProps}>
+        <Inner icon={icon} label={label} classes={classes} />
       </a>
     )
   }
 
   return (
-    <Link to={dest} className={classes.link}>
-      <Inner classes={classes} {...rest} />
+    <Link {...rest} to={dest} className={classes.link}>
+      <Inner icon={icon} label={label} classes={classes} />
     </Link>
   )
 }
