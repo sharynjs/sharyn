@@ -7,11 +7,11 @@
   <a href="https://travis-ci.org/sharynjs/sharyn">
     <img src="https://travis-ci.org/sharynjs/sharyn.svg?branch=master" alt="build">
   </a>
-  <a href="https://david-dm.org/sharynjs/sharyn">
-    <img src="https://david-dm.org/sharynjs/sharyn/status.svg" alt="dependencies">
+  <a href="https://david-dm.org/sharynjs/sharyn-boilerplate">
+    <img src="https://david-dm.org/sharynjs/sharyn-boilerplate/status.svg" alt="dependencies">
   </a>
-  <a href="https://david-dm.org/sharynjs/sharyn?type=dev">
-    <img src="https://david-dm.org/sharynjs/sharyn/dev-status.svg" alt="devDependencies">
+  <a href="https://david-dm.org/sharynjs/sharyn-boilerplate?type=dev">
+    <img src="https://david-dm.org/sharynjs/sharyn-boilerplate/dev-status.svg" alt="devDependencies">
   </a>
 </div>
 
