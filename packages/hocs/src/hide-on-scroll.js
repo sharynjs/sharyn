@@ -78,6 +78,7 @@ const hideOnScroll = (Cmp: Function) => {
     children,
     height,
     isVisible,
+    style,
     updateIsVisible, // Just to take it out from ...rest
     updateHeight, // Just to take it out from ...rest
     ...rest
@@ -85,6 +86,7 @@ const hideOnScroll = (Cmp: Function) => {
     classes: Object,
     children: any,
     isVisible: boolean,
+    style?: Object,
     height?: number,
     updateIsVisible: Function,
     updateHeight: Function,
@@ -92,6 +94,7 @@ const hideOnScroll = (Cmp: Function) => {
     <Cmp
       classes={classes}
       style={{
+        ...style,
         // eslint-disable-next-line no-nested-ternary
         marginTop: isVisible ? 0 : height ? 0 - height : 0,
       }}
