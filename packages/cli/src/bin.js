@@ -29,8 +29,8 @@ import {
   serverWatchNoSsr,
   herokuLocalProd,
   babel,
-  testParallel,
-  testSequencial,
+  testUnit,
+  testE2E,
   lint,
   typecheck,
 } from './commands'
@@ -133,7 +133,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(rmBundle, clientBuild, testParallel, testSequencial)
+        commands.push(rmBundle, testUnit, clientBuild, testE2E)
         mySpawn(sequence(commands))
       },
     ],
@@ -145,7 +145,7 @@ swit(
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
-        commands.push(rmBundle, clientBuild, testParallel, testSequencial)
+        commands.push(rmBundle, testUnit, clientBuild, testE2E)
         mySpawn(sequence(commands))
       },
     ],

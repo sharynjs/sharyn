@@ -45,11 +45,9 @@ export const herokuLocalProd = prefix(
 )
 export const lint = prefix('eslint src --fix --ext .js,.jsx')
 export const typecheck = prefix('flow')
-export const testParallel = prefix(
-  `jest --testPathIgnorePatterns /lib/* .*\\.seq\\.test.js ${jestOptions}`,
-)
-export const testSequencial = prefix(
-  `jest --preset jest-puppeteer --testPathIgnorePatterns /lib/* --testMatch **/*.seq.test.js --runInBand ${jestOptions}`,
+export const testUnit = prefix(`jest --testMatch **/*.unit.test.js ${jestOptions}`)
+export const testE2E = prefix(
+  `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand ${jestOptions}`,
 )
 export const rmBundle = prefix('rimraf dist/js/bundle.js') // Add .cache when switching back to Parcel
 export const rmLibAndBundle = prefix('rimraf lib dist/js/bundle.js') // Add .cache when switching back to Parcel

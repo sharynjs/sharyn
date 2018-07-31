@@ -131,9 +131,9 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+- `jest --testMatch **/*.unit.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 - `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
-- `jest --testPathIgnorePatterns .*.seq.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
-- `jest --testMatch **/*.seq.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
+- `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 ### `lint-test`
 
@@ -148,8 +148,8 @@ Runs sequencially:
 - If a `knex-config.js` file is present at `src/_db/knex-config.js` or provided via `@sharyn/db`:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
+- `jest --testMatch **/*.unit.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 - `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
-- `jest --testPathIgnorePatterns .*.seq.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
-- `jest --testMatch **/*.seq.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
+- `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 Useful as the `precommit` Git hook or on its own.

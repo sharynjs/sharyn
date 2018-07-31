@@ -1,0 +1,6 @@
+{
+  "name": "@sharyn/jest-config",
+  "version": "0.0.1",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/jest-config",
+  "license": "MIT"
+}

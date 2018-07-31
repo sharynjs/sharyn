@@ -30,6 +30,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - [**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Configures all the detected and supported Babel modules
 - [**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – Configures all the detected and supported ESLint modules
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier-config/README.md) – Prettier configuration
+- [**@sharyn/jest-config**](https://github.com/sharynjs/sharyn/blob/master/packages/jest-config/README.md) – Jest configuration
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
 
 ### Web

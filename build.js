@@ -53,6 +53,10 @@ const packages = [
     modules: ['index.js', 'hide-on-scroll.js'],
   },
   {
+    name: 'jest-config',
+    modules: ['index.js'],
+  },
+  {
     name: 'koa',
     modules: ['index.js'],
   },
