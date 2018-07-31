@@ -18,14 +18,9 @@
     "test": "babel-node build.js && cross-env USE_PROCESS_CWD_FOR_APP_ROOT=truthy jest && babel-node build.js --clean",
     "precommit": "yarn clean && yarn lint && yarn test"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": ["packages/*/*.test.js"]
-  },
   "dependencies": {
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.0",
-    "@sharyn/util": "^1.2.1",
     "app-root-path": "^2.1.0",
     "koa": "^2.5.2",
     "koa-router": "^7.4.0",
@@ -48,9 +43,6 @@
     "@babel/preset-env": "^7.0.0-beta.55",
     "@babel/preset-flow": "^7.0.0-beta.55",
     "@babel/preset-react": "^7.0.0-beta.55",
-    "@sharyn/babel-preset": "^2.3.1",
-    "@sharyn/eslint-config": "^2.2.1",
-    "@sharyn/prettier-config": "^1.2.1",
     "babel-core": "^7.0.0-0",
     "babel-eslint": "^9.0.0-beta.3",
     "babel-jest": "^23.4.2",
