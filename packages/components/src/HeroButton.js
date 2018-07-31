@@ -43,15 +43,17 @@ const HeroButtonJSX = ({
   classes,
   dest,
   newTab,
+  hardLink,
   ...rest
 }: {
   dest: any,
+  hardLink?: boolean,
   newTab?: boolean,
   icon: Function,
   classes: Object,
   label: string,
 }) => {
-  if (typeof dest === 'string') {
+  if (newTab || hardLink) {
     const aProps: Object = {
       href: dest,
       className: classes.link,
@@ -67,7 +69,7 @@ const HeroButtonJSX = ({
   }
 
   return (
-    <Link to={dest.path} className={classes.link}>
+    <Link to={dest} className={classes.link}>
       <Inner classes={classes} {...rest} />
     </Link>
   )
