@@ -9,7 +9,16 @@ type Route = { path?: string, loggedOutOnly?: boolean, loggedInOnly?: boolean }
 type RouteAndCmp = { route: Route, component: Function }
 
 const findMatch = (routesAndCmps: RouteAndCmp[], pathname: string, isLoggedIn: boolean) => {
-  const filteredRoutesAndCmps = routesAndCmps.filter(({ route }) => loggedFilter(route, isLoggedIn))
+  const routesAndCmpsWithGoodPaths = routesAndCmps.map(rac => ({
+    ...rac,
+    route: {
+      ...rac.route,
+      path: typeof rac.route.path === 'function' ? rac.route.path() : rac.route.path,
+    },
+  }))
+  const filteredRoutesAndCmps = routesAndCmpsWithGoodPaths.filter(({ route }) =>
+    loggedFilter(route, isLoggedIn),
+  )
   const notFoundRouteAndCmp = filteredRoutesAndCmps.find(({ route }) => !route.path)
   if (!notFoundRouteAndCmp) {
     throw Error('You need a route without path to render a 404 page')
