@@ -3,16 +3,6 @@
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png" alt="Sharyn logo">
-  <br /><br />
-  <a href="https://travis-ci.org/sharynjs/sharyn">
-    <img src="https://travis-ci.org/sharynjs/sharyn.svg?branch=master" alt="build">
-  </a>
-  <a href="https://david-dm.org/sharynjs/sharyn-boilerplate">
-    <img src="https://david-dm.org/sharynjs/sharyn-boilerplate/status.svg" alt="dependencies">
-  </a>
-  <a href="https://david-dm.org/sharynjs/sharyn-boilerplate?type=dev">
-    <img src="https://david-dm.org/sharynjs/sharyn-boilerplate/dev-status.svg" alt="devDependencies">
-  </a>
 </div>
 
 # 🌹 Sharyn
