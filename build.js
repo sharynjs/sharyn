@@ -15,7 +15,15 @@ const packages = [
   },
   {
     name: 'check-setup',
-    modules: ['app-root.js', 'has-file.js', 'has-package.js', 'index.js', 'require-cascade.js'],
+    modules: [
+      'app-root.js',
+      'has-file.js',
+      'has-package.js',
+      'index.js',
+      'require-cascade.js',
+      'path-cascade.js',
+      'path-cascade.test.js',
+    ],
   },
   {
     name: 'cli',

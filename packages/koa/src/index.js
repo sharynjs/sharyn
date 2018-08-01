@@ -7,8 +7,14 @@ import exitHook from 'exit-hook'
 
 // flow-disable-next-line
 import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV_TYPE, ENV_TYPE } from '@sharyn/env'
-// flow-disable-next-line
-import { appRoot, hasFile, hasPackage, requireCascadeFromSource } from '@sharyn/check-setup'
+import {
+  appRoot,
+  hasFile,
+  hasPackage,
+  requireCascadeFromSource,
+  pathCascade,
+  // flow-disable-next-line
+} from '@sharyn/check-setup'
 // flow-disable-next-line
 const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
 // flow-disable-next-line
@@ -87,8 +93,16 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
   }
 
   if (hasPackage('koa-favicon')) {
-    // flow-disable-next-line
-    app.use(require('koa-favicon')(`./public/img/favicon.ico`))
+    app.use(
+      // flow-disable-next-line
+      require('koa-favicon')(
+        `./${pathCascade(
+          'public/img/favicon/favicon.ico',
+          'public/img/favicon.ico',
+          'public/favicon.ico',
+        )}`,
+      ),
+    )
   }
 
   routing(router)
