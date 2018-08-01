@@ -1,12 +1,12 @@
 {
   "name": "@sharyn/server",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.54",
-    "@sharyn/check-setup": "^1.6.1",
-    "@sharyn/webpack-config": "^1.7.1",
+    "@sharyn/check-setup": "^1.7.0",
+    "@sharyn/webpack-config": "^1.7.2",
     "serialize-javascript": "^1.5.0"
   },
   "gitHead": "b33e451f0b138c082d889ff48a2de631ff279079"
