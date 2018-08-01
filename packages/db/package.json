@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/db",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/db",
   "license": "MIT",
   "dependencies": {
