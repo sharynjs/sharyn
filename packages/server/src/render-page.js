@@ -14,10 +14,10 @@ import { SheetsRegistry } from 'react-jss/lib/jss'
 import JssProvider from 'react-jss/lib/JssProvider'
 // flow-disable-next-line
 import { NO_SSR } from '@sharyn/env'
-// flow-disable-next-line
-import { htmlBase } from '@sharyn/server'
 import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles'
 import { StaticRouter } from 'react-router-dom'
+
+import htmlBase from './html-base'
 
 const renderPage = (
   ctx: Object,
