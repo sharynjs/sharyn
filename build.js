@@ -78,7 +78,7 @@ const packages = [
   },
   {
     name: 'server',
-    modules: ['html-base.js', 'html-base.test.js', 'index.js'],
+    modules: ['html-base.js', 'html-base.test.js', 'index.js', 'render-page.js'],
   },
   {
     name: 'shared',
