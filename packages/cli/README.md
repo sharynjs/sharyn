@@ -22,8 +22,17 @@ In your `package.json`, add the following scripts:
     "local-prod": "sharyn local-prod",
     "lint": "sharyn lint",
     "test": "sharyn test",
-    "heroku-postbuild": "sharyn build-prod",
-    "precommit": "sharyn lint-test"
+    "heroku-postbuild": "sharyn build-prod"
+  },
+```
+
+And if you have Husky:
+
+```json
+  "husky": {
+    "hooks": {
+      "pre-commit": "sharyn lint-test"
+    }
   },
 ```
 
