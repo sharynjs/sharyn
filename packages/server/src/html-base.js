@@ -42,7 +42,7 @@ ${css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}</style>` :
   </head>
   <body ${helmet ? helmet.bodyAttributes.toString() : ''}>
     <div id="${rootId}">${appHtml}</div>
-${windowVarsScriptTags}
+${SSR_ONLY ? '' : windowVarsScriptTags}
 ${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>
 </html>`
