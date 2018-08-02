@@ -17,8 +17,8 @@ In your `package.json`, add the following scripts:
 ```json
   "scripts": {
     "start": "sharyn dev",
-    "dev-ssr-only": "sharyn dev-ssr-only",
-    "dev-no-ssr": "sharyn dev-no-ssr",
+    "ssr-only": "sharyn dev-ssr-only",
+    "no-ssr": "sharyn dev-no-ssr",
     "local-prod": "sharyn local-prod",
     "lint": "sharyn lint",
     "test": "sharyn test",
