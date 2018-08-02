@@ -19,18 +19,31 @@ import { StaticRouter } from 'react-router-dom'
 
 import htmlBase from './html-base'
 
-const renderPage = (
+const renderPage = ({
+  ctx,
+  App,
+  theme,
+  jss,
+  env,
+  data,
+  user,
+}: {
   ctx: Object,
   App: Function,
-  theme: Object,
+  theme?: Object,
+  jss?: any,
   env?: Object,
   data?: Object,
   user?: Object,
-) => {
+}) => {
   const sheetsRegistry = new SheetsRegistry()
   const routerContext = {}
   const appHtml = renderToString(
-    <JssProvider registry={sheetsRegistry} generateClassName={createGenerateClassName()}>
+    <JssProvider
+      {...{ jss }}
+      registry={sheetsRegistry}
+      generateClassName={createGenerateClassName()}
+    >
       <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
         <ReduxProvider store={createStore(() => ({ data, user }))}>
           <StaticRouter location={ctx.req.url} context={routerContext}>
