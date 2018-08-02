@@ -38,7 +38,21 @@ const expectedWithoutVars = `<!doctype html>
   </body>
 </html>`
 
+const expectedWithAppHtml = `<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+  </head>
+  <body>
+    <div id="app">Hello</div>
+
+    <script src="/static/js/bundle.js"></script>
+  </body>
+</html>`
+
 test('htmlBase', () => {
-  expect(htmlBase(exampleWindowVarPairs)).toBe(expectedWithVars)
-  expect(htmlBase()).toBe(expectedWithoutVars)
+  expect(htmlBase({ windowVars: exampleWindowVarPairs })).toBe(expectedWithVars)
+  expect(htmlBase({})).toBe(expectedWithoutVars)
+  expect(htmlBase({ appHtml: 'Hello' })).toBe(expectedWithAppHtml)
 })

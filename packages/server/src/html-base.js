@@ -9,7 +9,9 @@ import { hasPackage } from '@sharyn/check-setup'
 const robotoLink = `
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />`
 
-const htmlBase = (windowVarPairs?: any[], rootId: string = 'app') => {
+type Params = { windowVars?: any[], rootId?: string, appHtml?: string }
+
+const htmlBase = ({ windowVars: windowVarPairs, rootId = 'app', appHtml = '' }: Params) => {
   const windowVarsScriptTags = windowVarPairs
     ? windowVarPairs.map(p => `    <script>window.${p[0]} = ${serialize(p[1])}</script>`).join(`
 `)
@@ -20,7 +22,7 @@ const htmlBase = (windowVarPairs?: any[], rootId: string = 'app') => {
     <meta charset="utf-8">${hasPackage('@material-ui/core') ? robotoLink : ''}
   </head>
   <body>
-    <div id="${rootId}"></div>
+    <div id="${rootId}">${appHtml}</div>
 ${windowVarsScriptTags}
     <script src="${WDS_PATH}/static/js/bundle.js"></script>
   </body>
