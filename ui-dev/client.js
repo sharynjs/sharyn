@@ -7,6 +7,7 @@ import PageView from './PageView'
 import PageMiddleView from './PageMiddleView'
 import HeroButtonView from './HeroButtonView'
 import DrawerItemView from './DrawerItemView'
+import NavListView from './NavListView'
 import hideOnScrollView from './hideOnScrollView'
 
 const App = () => (
@@ -63,6 +64,8 @@ const App = () => (
           {' – '}
           <Link to="/DrawerItem">DrawerItem</Link>
           {' – '}
+          <Link to="/NavList">NavList</Link>
+          {' – '}
           <Link to="/hideOnScroll">hideOnScroll</Link>
         </div>
         <div style={{ height: '100%' }}>
@@ -71,6 +74,7 @@ const App = () => (
           <Route path="/PageMiddle" component={PageMiddleView} />
           <Route path="/HeroButton" component={HeroButtonView} />
           <Route path="/DrawerItem" component={DrawerItemView} />
+          <Route path="/NavList" component={NavListView} />
           <Route path="/hideOnScroll" component={hideOnScrollView} />
         </div>
       </Fragment>
