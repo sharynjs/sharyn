@@ -4,7 +4,7 @@ import serialize from 'serialize-javascript'
 // @flow-disable-next-line
 import { WDS_PATH } from '@sharyn/webpack-config/wds-util'
 // @flow-disable-next-line
-import { SSR_ONLY } from '@sharyn/env'
+import { NO_SSR, SSR_ONLY } from '@sharyn/env'
 // @flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
 import CleanCSS from 'clean-css'
@@ -31,17 +31,17 @@ const htmlBase = ({
 `)
     : ''
   return `<!doctype html>
-<html ${helmet ? helmet.htmlAttributes.toString() : ''}>
+<html ${!NO_SSR && helmet ? helmet.htmlAttributes.toString() : ''}>
   <head>
     <meta charset="utf-8">
-${helmet ? helmet.title.toString() : ''}
-${helmet ? helmet.meta.toString() : ''}
-${helmet ? helmet.link.toString() : ''}
+${!NO_SSR && helmet ? helmet.title.toString() : ''}
+${!NO_SSR && helmet ? helmet.meta.toString() : ''}
+${!NO_SSR && helmet ? helmet.link.toString() : ''}
 ${hasPackage('@material-ui/core') ? robotoLink : ''}
-${css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}</style>` : ''}
+${!NO_SSR && css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}</style>` : ''}
   </head>
-  <body ${helmet ? helmet.bodyAttributes.toString() : ''}>
-    <div id="${rootId}">${appHtml}</div>
+  <body ${!NO_SSR && helmet ? helmet.bodyAttributes.toString() : ''}>
+    <div id="${rootId}">${NO_SSR ? '' : appHtml}</div>
 ${SSR_ONLY ? '' : windowVarsScriptTags}
 ${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>
