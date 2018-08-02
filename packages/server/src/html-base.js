@@ -4,6 +4,8 @@ import serialize from 'serialize-javascript'
 // @flow-disable-next-line
 import { WDS_PATH } from '@sharyn/webpack-config/wds-util'
 // @flow-disable-next-line
+import { SSR_ONLY } from '@sharyn/env'
+// @flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
 import CleanCSS from 'clean-css'
 
@@ -41,7 +43,7 @@ ${css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}</style>` :
   <body ${helmet ? helmet.bodyAttributes.toString() : ''}>
     <div id="${rootId}">${appHtml}</div>
 ${windowVarsScriptTags}
-    <script src="${WDS_PATH}/static/js/bundle.js"></script>
+${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>
 </html>`
 }
