@@ -33,7 +33,7 @@ const webpackProd = prefix(
 const webpackStats = prefix(
   `webpack --mode=production --progress --json ${
     hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
-  }`,
+  } > webpack-stats.json`,
 )
 
 const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${

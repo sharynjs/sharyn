@@ -22,6 +22,7 @@ In your `package.json`, add the following scripts:
     "local-prod": "sharyn local-prod",
     "lint": "sharyn lint",
     "test": "sharyn test",
+    "stats": "sharyn stats",
     "heroku-postbuild": "sharyn build-prod"
   },
 ```
