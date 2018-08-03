@@ -17,6 +17,7 @@ const config: Object = {
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [],
+  performance: { hints: false },
 }
 
 if (hasPackage('compression-webpack-plugin')) {
