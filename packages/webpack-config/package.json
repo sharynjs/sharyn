@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/webpack-config",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/webpack-config",
   "license": "MIT",
   "peerDependencies": {
