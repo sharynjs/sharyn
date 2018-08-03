@@ -30,6 +30,12 @@ const webpackProd = prefix(
   }`,
 )
 
+const webpackStats = prefix(
+  `webpack --mode=production --progress --json ${
+    hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+  }`,
+)
+
 const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
   hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
 }`
@@ -63,6 +69,7 @@ export const clientWatch = prefix(
   }`,
 )
 export const clientBuild = `${prefix('cross-env NODE_ENV=production')} ${webpackProd}`
+export const stats = `${prefix('cross-env NODE_ENV=production')} ${webpackStats}`
 export const serverWatch = nodemon
 export const serverWatchSsrOnly = `${prefix('cross-env SSR_ONLY=true')} ${nodemon}`
 export const serverWatchNoSsr = `${prefix('cross-env NO_SSR=true')} ${nodemon}`

@@ -33,6 +33,7 @@ import {
   testE2E,
   lint,
   typecheck,
+  stats,
 } from './commands'
 
 const hasDocker = hasFile('docker-compose.yml')
@@ -150,6 +151,7 @@ swit(
       },
     ],
     ['migrate-db', () => mySpawn(dbMigr)],
+    ['stats', () => mySpawn(stats)],
   ],
   () => {
     // eslint-disable-next-line no-console

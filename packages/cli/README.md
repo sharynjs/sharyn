@@ -99,7 +99,7 @@ Runs sequencially:
   - If a `src/_db/seeds` folder is present:
     - `knex --knexfile [path-to-knex-config.js] --cwd . seed:run`
 - `rimraf lib dist/js/bundle.js`
-- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
+- `cross-env NODE_ENV=production webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
 - If a `Procfile` file is present:
   - `cross-env NODE_ENV=production heroku local`
@@ -111,7 +111,7 @@ Runs sequencially:
 Runs sequencially:
 
 - `rimraf lib dist/js/bundle.js`
-- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
+- `cross-env NODE_ENV=production webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `babel src -d lib`
 
 ### `migrate-db`
@@ -141,7 +141,7 @@ Runs sequencially:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
 - `jest --testMatch **/*.unit.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
-- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
+- `cross-env NODE_ENV=production webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 ### `lint-test`
@@ -158,7 +158,11 @@ Runs sequencially:
   - `until docker run --rm --link db-test:pg --net sharyn-net postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   - `cross-env NODE_ENV=test knex --knexfile [path-to-knex-config.js] --cwd . migrate:latest`
 - `jest --testMatch **/*.unit.test.js [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
-- `webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
+- `cross-env NODE_ENV=production webpack --mode=production --progress [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed]`
 - `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand [--globalSetup ./src/_testing/global-setup.js --globalTeardown ./src/_testing/global-teardown.js if these files exist]`
 
 Useful as the `precommit` Git hook or on its own.
+
+### `stats`
+
+- `cross-env NODE_ENV=production webpack --mode=production --progress --json [--config node_modules/@sharyn/webpack-config if @sharyn/webpack-config installed] > webpack-stats.json`
