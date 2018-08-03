@@ -26,6 +26,9 @@ hasPackage('@babel/plugin-proposal-nullish-coalescing-operator') &&
 hasPackage('@babel/plugin-proposal-optional-chaining') &&
   config.plugins.push('@babel/plugin-proposal-optional-chaining')
 
+hasPackage('@babel/plugin-syntax-dynamic-import') &&
+  config.plugins.push('@babel/plugin-syntax-dynamic-import')
+
 hasPackage('babel-plugin-module-resolver') &&
   config.plugins.push(['babel-plugin-module-resolver', { root: ['./src'] }])
 

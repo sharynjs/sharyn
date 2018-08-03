@@ -30,6 +30,7 @@ The following supported modules are automatically configured for Babel if they a
 - [**@babel/plugin-proposal-nullish-coalescing-operator**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-nullish-coalescing-operator) – To use `isUndef ?? 'default'`
 - [**@babel/plugin-proposal-optional-chaining**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-optional-chaining) – To use `isUndef?.property`
 - [**@babel/plugin-proposal-pipeline-operator**](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) – To use `'hello' |> console.log`
+- [**@babel/plugin-syntax-dynamic-import**](https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-dynamic-import) – Dynamic `import()`
 - [**@babel/preset-env**](https://github.com/babel/babel/tree/master/packages/babel-preset-env) – The latest Babel preset
 - [**@babel/preset-flow**](https://github.com/babel/babel/tree/master/packages/babel-preset-flow) – The Babel preset for Flow
 - [**@babel/preset-react**](https://github.com/babel/babel/tree/master/packages/babel-preset-react) – The Babel preset for React
