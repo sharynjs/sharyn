@@ -1,6 +1,10 @@
 // @flow
 
+/* eslint-disable import/no-extraneous-dependencies, global-require */
+
 import path from 'path'
+// flow-disable-next-line
+import { hasPackage } from '@sharyn/check-setup'
 
 import { WDS_PORT } from './wds-util'
 
@@ -11,6 +15,13 @@ const config: Object = {
     path: path.resolve('dist'),
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
+  plugins: [],
+}
+
+if (hasPackage('compression-webpack-plugin')) {
+  // flow-disable-next-line
+  const CompressionPlugin = require('compression-webpack-plugin')
+  config.plugins.push(new CompressionPlugin())
 }
 
 if (WDS_PORT) {
