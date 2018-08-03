@@ -24,6 +24,12 @@ const nodemon = prefix('nodemon -w src -i dist -x "babel-node src/_server/server
 
 const migrate = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . migrate:latest`)
 
+const webpackProd = prefix(
+  `webpack --mode=production --progress ${
+    hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+  }`,
+)
+
 const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
   hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
 }`
@@ -56,11 +62,7 @@ export const clientWatch = prefix(
     hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
   }`,
 )
-export const clientBuild = prefix(
-  `webpack --mode=production --progress ${
-    hasSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
-  }`,
-)
+export const clientBuild = `${prefix('cross-env NODE_ENV=production')} ${webpackProd}`
 export const serverWatch = nodemon
 export const serverWatchSsrOnly = `${prefix('cross-env SSR_ONLY=true')} ${nodemon}`
 export const serverWatchNoSsr = `${prefix('cross-env NO_SSR=true')} ${nodemon}`
