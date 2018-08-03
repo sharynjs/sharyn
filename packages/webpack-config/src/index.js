@@ -13,6 +13,7 @@ const config: Object = {
   output: {
     filename: `js/bundle.js`,
     path: path.resolve('dist'),
+    publicPath: '/static/',
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [],
