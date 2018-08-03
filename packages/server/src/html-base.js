@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable import/no-extraneous-dependencies */
+
 import serialize from 'serialize-javascript'
 // @flow-disable-next-line
 import { WDS_PATH } from '@sharyn/webpack-config/wds-util'
