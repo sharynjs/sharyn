@@ -36,32 +36,39 @@ const renderPage = ({
   data?: Object,
   user?: Object,
 }) => {
-  const sheetsRegistry = new SheetsRegistry()
-  const routerContext = {}
-  const appHtml = renderToString(
-    <JssProvider
-      {...{ jss }}
-      registry={sheetsRegistry}
-      generateClassName={createGenerateClassName()}
-    >
-      <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
-        <ReduxProvider store={createStore(() => ({ data, user }))}>
-          <StaticRouter location={ctx.req.url} context={routerContext}>
-            <App />
-          </StaticRouter>
-        </ReduxProvider>
-      </MuiThemeProvider>
-    </JssProvider>,
-  )
-  if (routerContext.action === 'REPLACE') {
-    ctx.redirect(routerContext.url)
-    return null
+  let appHtml
+  let css
+  let helmet
+  if (!NO_SSR) {
+    const sheetsRegistry = new SheetsRegistry()
+    const routerContext = {}
+    appHtml = renderToString(
+      <JssProvider
+        {...{ jss }}
+        registry={sheetsRegistry}
+        generateClassName={createGenerateClassName()}
+      >
+        <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
+          <ReduxProvider store={createStore(() => ({ data, user }))}>
+            <StaticRouter location={ctx.req.url} context={routerContext}>
+              <App />
+            </StaticRouter>
+          </ReduxProvider>
+        </MuiThemeProvider>
+      </JssProvider>,
+    )
+    if (routerContext.action === 'REPLACE') {
+      ctx.redirect(routerContext.url)
+      return null
+    }
+    css = sheetsRegistry.toString()
+    helmet = Helmet.renderStatic()
   }
 
   return htmlBase({
     appHtml,
-    css: sheetsRegistry.toString(),
-    helmet: Helmet.renderStatic(),
+    css,
+    helmet,
     windowVars: [['__ENV__', env], ['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user }]],
   })
 }
