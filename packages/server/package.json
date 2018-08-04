@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/server",
-  "version": "2.6.5",
+  "version": "2.7.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
