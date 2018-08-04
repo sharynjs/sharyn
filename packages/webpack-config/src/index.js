@@ -12,6 +12,7 @@ const config: Object = {
   entry: './src/_client/client.js',
   output: {
     filename: `js/bundle.js`,
+    chunkFilename: '[name].[chunkhash].js',
     path: path.resolve('dist'),
     publicPath: '/static/',
   },
@@ -27,7 +28,7 @@ if (hasPackage('compression-webpack-plugin')) {
 }
 
 if (WDS_PORT) {
-  config.output.publicPath = `http://localhost:${WDS_PORT}/static`
+  config.output.publicPath = `http://localhost:${WDS_PORT}/static/`
   config.devServer = {
     port: WDS_PORT,
     headers: { 'Access-Control-Allow-Origin': '*' },
