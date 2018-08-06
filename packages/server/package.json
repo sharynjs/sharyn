@@ -4,7 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.56",
+    "@babel/runtime-corejs2": "^7.0.0-beta.56",
     "@sharyn/check-setup": "^1.7.0",
     "@sharyn/webpack-config": "^1.9.0",
     "clean-css": "^4.2.0",
