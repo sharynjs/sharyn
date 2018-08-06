@@ -21,6 +21,7 @@ import {
   hasPackage,
   requireCascadeFromSource,
   pathCascade,
+  requireCascade,
   // flow-disable-next-line
 } from '@sharyn/check-setup'
 // flow-disable-next-line
@@ -97,15 +98,13 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
       maxAge: 1000 * 60 * 60 * 24 * 14, // 2 weeks
       rolling: true,
     }
-    if (hasPackage('@sharyn/redis')) {
+    if (hasPackage('@sharyn/redis') || hasPackage('sharyn')) {
       // flow-disable-next-line
-      const redis = require('@sharyn/redis')
+      const redis = requireCascade('@sharyn/redis', 'sharyn/redis')
       sessionOptions.store = {
-        store: {
-          get: async key => JSON.parse(await redis.getAsync(`session:${key}`)),
-          set: (key, sess) => redis.setAsync(`session:${key}`, JSON.stringify(sess)),
-          destroy: key => redis.delAsync(key),
-        },
+        get: async key => JSON.parse(await redis.getAsync(`session:${key}`)),
+        set: (key, sess) => redis.setAsync(`session:${key}`, JSON.stringify(sess)),
+        destroy: key => redis.delAsync(key),
       }
     }
     app.use(session(sessionOptions, app))
