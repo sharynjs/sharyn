@@ -39,9 +39,9 @@ const renderPage = ({
   let appHtml
   let css
   let helmet
+  const routerContext = {}
   if (!NO_SSR) {
     const sheetsRegistry = new SheetsRegistry()
-    const routerContext = {}
     appHtml = renderToString(
       <JssProvider
         {...{ jss }}
@@ -57,20 +57,19 @@ const renderPage = ({
         </MuiThemeProvider>
       </JssProvider>,
     )
-    if (routerContext.action === 'REPLACE') {
-      ctx.redirect(routerContext.url)
-      return null
-    }
     css = sheetsRegistry.toString()
     helmet = Helmet.renderStatic()
   }
-
-  return htmlBase({
-    appHtml,
-    css,
-    helmet,
-    windowVars: [['__ENV__', env], ['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user }]],
-  })
+  if (routerContext.action === 'REPLACE') {
+    ctx.redirect(routerContext.url)
+  } else {
+    ctx.body = htmlBase({
+      appHtml,
+      css,
+      helmet,
+      windowVars: [['__ENV__', env], ['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user }]],
+    })
+  }
 }
 
 export default renderPage
