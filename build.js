@@ -113,7 +113,12 @@ const build = () =>
       } --ignore test.js && flow-copy-source packages/${p.name}/src packages/${
         p.name
       } && mkdir packages/sharyn/${p.name} && ${p.modules
-        .map(m => `cp packages/${p.name}/${m} packages/sharyn/${p.name}/.`)
+        .map(
+          m =>
+            `cp packages/${p.name}/${m} packages/sharyn/${p.name}/. && cp packages/${
+              p.name
+            }/${m}.flow packages/sharyn/${p.name}/.`,
+        )
         .join(' && ')}`,
     ),
   )
