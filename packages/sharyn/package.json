@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -10,7 +10,7 @@
     "@babel/runtime": "^7.0.0-beta.54",
     "@sharyn/check-setup": "1.7.0",
     "@sharyn/env": "1.8.2",
-    "@sharyn/eslint-config": "2.2.2",
+    "@sharyn/eslint-config": "^2.2.3",
     "@sharyn/webpack-config": "1.9.0",
     "@verekia/lib-lang": "^2.4.0",
     "async-exit-hook": "^2.0.1",
