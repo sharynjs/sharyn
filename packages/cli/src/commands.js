@@ -1,12 +1,15 @@
 // @flow
 
 // flow-disable-next-line
-import { hasFile } from '@sharyn/check-setup'
+import { hasFile, pathCascade } from '@sharyn/check-setup'
 
 import { knexConfigPath } from './shared'
 
-const pathToSharynWebpackConfig = 'node_modules/@sharyn/webpack-config'
-const hasSharynWebpackConfig = hasFile(`${pathToSharynWebpackConfig}/index.js`)
+const pathToSharynWebpackConfig = pathCascade(
+  'node_modules/@sharyn/webpack-config',
+  'node_modules/sharyn/webpack-config',
+)
+const hasSharynWebpackConfig = !!pathToSharynWebpackConfig
 
 const pathToGlobalSetup = './src/_testing/global-setup.js'
 const hasGlobalSetup = hasFile(pathToGlobalSetup)
