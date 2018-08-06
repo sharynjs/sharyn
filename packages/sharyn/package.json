@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -13,11 +13,11 @@
     "@sharyn/webpack-config": "1.9.0",
     "@verekia/lib-lang": "^2.4.0",
     "async-exit-hook": "^2.0.1",
-    "babel-preset-sharyn": "2.5.1",
+    "babel-preset-sharyn": "^2.5.2",
     "clean-css": "^4.2.0",
     "colors": "^1.3.0",
     "dotenv": "^6.0.0",
-    "eslint-config-sharyn": "2.2.3",
+    "eslint-config-sharyn": "^2.2.4",
     "exit-hook": "^2.0.0",
     "knex": "^0.15.1",
     "lodash.throttle": "^4.1.1",
