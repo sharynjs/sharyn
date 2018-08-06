@@ -5,8 +5,16 @@
 import colors from 'colors/safe'
 import exitHook from 'exit-hook'
 
-// flow-disable-next-line
-import { NODE_ENV, PORT, TESTING_PORT, IS_TEST_ENV, IS_LOCAL_ENV_TYPE, ENV_TYPE } from '@sharyn/env'
+import {
+  NODE_ENV,
+  PORT,
+  TESTING_PORT,
+  IS_TEST_ENV,
+  IS_LOCAL_ENV_TYPE,
+  ENV_TYPE,
+  SESSION_SECRET_KEY,
+  // flow-disable-next-line
+} from '@sharyn/env'
 import {
   appRoot,
   hasFile,
@@ -71,12 +79,36 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
   exitHook(() => stopServer_())
 
   const app = new Koa()
+  if (hasPackage('koa-session')) {
+    app.keys = [SESSION_SECRET_KEY]
+  }
 
   if (hasPackage('koa-sslify')) {
     // flow-disable-next-line
     const enforceHttps = require('koa-sslify')
     const hasHeroku = hasFile('Procfile')
     IS_LOCAL_ENV_TYPE || app.use(enforceHttps({ trustProtoHeader: hasHeroku }))
+  }
+
+  if (hasPackage('koa-session')) {
+    // flow-disable-next-line
+    const session = require('koa-session')
+    const sessionOptions: Object = {
+      maxAge: 1000 * 60 * 60 * 24 * 14, // 2 weeks
+      rolling: true,
+    }
+    if (hasPackage('@sharyn/redis')) {
+      // flow-disable-next-line
+      const redis = require('@sharyn/redis')
+      sessionOptions.store = {
+        store: {
+          get: async key => JSON.parse(await redis.getAsync(`session:${key}`)),
+          set: (key, sess) => redis.setAsync(`session:${key}`, JSON.stringify(sess)),
+          destroy: key => redis.delAsync(key),
+        },
+      }
+    }
+    app.use(session(sessionOptions, app))
   }
 
   if (hasPackage('koa-compress')) {

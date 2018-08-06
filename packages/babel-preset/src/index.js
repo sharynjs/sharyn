@@ -29,8 +29,6 @@ hasPackage('@babel/plugin-proposal-optional-chaining') &&
 hasPackage('@babel/plugin-syntax-dynamic-import') &&
   config.plugins.push('@babel/plugin-syntax-dynamic-import')
 
-hasPackage('react-loadable') && config.plugins.push('react-loadable/babel')
-
 hasPackage('babel-plugin-module-resolver') &&
   config.plugins.push(['babel-plugin-module-resolver', { root: ['./src'] }])
 
