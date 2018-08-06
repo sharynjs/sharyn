@@ -123,11 +123,11 @@ const build = () => {
     ),
   )
 
-  mySpawn('cp packages/babel-preset/*.js* packages/babel-preset-sharyn')
-  mySpawn('cp packages/eslint-config/*.js* packages/eslint-config-sharyn')
+  mySpawn('cp packages/babel-preset/*.js packages/babel-preset-sharyn/.')
+  mySpawn('cp packages/eslint-config/*.js packages/eslint-config-sharyn/.')
 }
 
-const clean = () =>
+const clean = () => {
   packages.forEach(p =>
     p.modules.forEach(m =>
       mySpawn(
@@ -137,5 +137,8 @@ const clean = () =>
       ),
     ),
   )
+  mySpawn('rimraf packages/babel-preset-sharyn/*.js')
+  mySpawn('rimraf packages/eslint-config-sharyn/*.js')
+}
 
 process.argv[2] === '--clean' ? clean() : build()
