@@ -1,5 +1,7 @@
 // @flow
 
+/* eslint-disable import/no-extraneous-dependencies */
+
 // flow-disable-next-line
 import { startServer } from '@sharyn/koa'
 // flow-disable-next-line
@@ -7,7 +9,7 @@ import { htmlBase } from '@sharyn/server'
 
 const routing = (router: Object) => {
   router.get('*', ctx => {
-    ctx.body = htmlBase()
+    ctx.body = htmlBase({})
   })
 }
 

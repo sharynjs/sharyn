@@ -110,14 +110,22 @@ const build = () =>
     mySpawn(
       `./node_modules/.bin/babel packages/${p.name}/src -d packages/${
         p.name
-      } --ignore test.js && flow-copy-source packages/${p.name}/src packages/${p.name}`,
+      } --ignore test.js && flow-copy-source packages/${p.name}/src packages/${
+        p.name
+      } && mkdir packages/sharyn/${p.name} && ${p.modules
+        .map(m => `cp packages/${p.name}/${m} packages/sharyn/${p.name}/.`)
+        .join(' && ')}`,
     ),
   )
 
 const clean = () =>
   packages.forEach(p =>
     p.modules.forEach(m =>
-      mySpawn(`./node_modules/.bin/rimraf packages/${p.name}/${m} packages/${p.name}/${m}.flow`),
+      mySpawn(
+        `./node_modules/.bin/rimraf packages/${p.name}/${m} packages/${
+          p.name
+        }/${m}.flow packages/sharyn/${p.name}`,
+      ),
     ),
   )
 
