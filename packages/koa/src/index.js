@@ -111,6 +111,11 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
     app.use(session(sessionOptions, app))
   }
 
+  if (hasPackage('koa-body')) {
+    // flow-disable-next-line
+    app.use(require('koa-body')({ multipart: true }))
+  }
+
   if (hasPackage('koa-compress')) {
     // flow-disable-next-line
     app.use(require('koa-compress')())
