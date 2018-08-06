@@ -4,7 +4,6 @@
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.54"
-  },
-  "gitHead": "7e33264aa1404b34efe60bdabc217bd31ad95ab9"
+    "@babel/runtime": "^7.0.0-beta.56"
+  }
 }

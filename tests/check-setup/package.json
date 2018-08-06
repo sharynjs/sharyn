@@ -9,9 +9,9 @@
     ]
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.54",
-    "@babel/node": "^7.0.0-beta.54",
-    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.56",
+    "@babel/node": "^7.0.0-beta.56",
+    "@babel/preset-env": "^7.0.0-beta.56",
     "lodash.noop": "^3.0.1"
   }
 }
