@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -11,8 +11,8 @@
     "@sharyn/check-setup": "^1.7.0",
     "@sharyn/env": "^1.8.2",
     "@verekia/lib-lang": "^2.4.0",
-    "colors": "^1.3.0",
     "async-exit-hook": "^2.0.1",
+    "colors": "^1.3.0",
     "dotenv": "^6.0.0",
     "exit-hook": "^2.0.0",
     "knex": "^0.15.1",
