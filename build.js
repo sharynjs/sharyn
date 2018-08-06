@@ -1,11 +1,11 @@
 // @flow
 
-import { spawn } from 'child_process'
+import { spawnSync } from 'child_process'
 
 const mySpawn = cmd => {
   // eslint-disable-next-line no-console
   console.log(cmd)
-  spawn(cmd, { shell: true, stdio: 'inherit' })
+  spawnSync(cmd, { shell: true, stdio: 'inherit' })
 }
 
 const packages = [
@@ -105,7 +105,7 @@ const packages = [
   },
 ]
 
-const build = () =>
+const build = () => {
   packages.forEach(p =>
     mySpawn(
       `./node_modules/.bin/babel packages/${p.name}/src -d packages/${
@@ -122,6 +122,10 @@ const build = () =>
         .join(' && ')}`,
     ),
   )
+
+  mySpawn('cp packages/babel-preset/*.js* packages/babel-preset-sharyn')
+  mySpawn('cp packages/eslint-config/*.js* packages/eslint-config-sharyn')
+}
 
 const clean = () =>
   packages.forEach(p =>

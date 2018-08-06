@@ -5,3 +5,7 @@ node_modules
 /packages/*/*.js
 /packages/*/*.flow
 /packages/sharyn/*/*
+/packages/babel-preset-sharyn/*.js
+/packages/babel-preset-sharyn/*.flow
+/packages/eslint-config-sharyn/*.js
+/packages/eslint-config-sharyn/*.flow
