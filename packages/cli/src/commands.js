@@ -46,7 +46,7 @@ export const nodeLocalProd = prefix(
 )
 export const DOCKER_UP = 'docker-compose up -d'
 export const dockerDownTest = (id: string) => `docker rm -f ${id}`
-export const DOCKER_UP_TEST = 'docker-compose up -d db-test'
+export const DOCKER_UP_TEST = 'docker-compose up -d db-test redis-test'
 export const DOCKER_WAIT_PG = dockerWaitPg('db')
 export const DOCKER_WAIT_PG_TEST = dockerWaitPg('db-test')
 export const babel = prefix('babel src -d lib')

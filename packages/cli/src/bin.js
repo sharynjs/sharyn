@@ -40,13 +40,11 @@ const hasDocker = hasFile('docker-compose.yml')
 const hasHeroku = hasFile('Procfile')
 const hasSeeds = hasFile('/src/_db/seeds')
 
-const getDbTestProcessId = () => {
-  const dbTestContainerName = 'db-test'
-
-  const result = execSync(`docker ps -q --filter="name=${dbTestContainerName}"`).toString()
+const getDbTestProcessId = containerName => {
+  const result = execSync(`docker ps -q --filter="name=${containerName}"`).toString()
   const ids = result.split(EOL).filter(x => x)
   if (ids.length > 1) {
-    throw Error(`Multiple running processes found for ${dbTestContainerName}`)
+    throw Error(`Multiple running processes found for ${containerName}`)
   }
   return ids[0]
 }
@@ -130,8 +128,10 @@ swit(
       'test',
       () => {
         const commands = []
-        const testDbId = getDbTestProcessId()
+        const testDbId = getDbTestProcessId('db-test')
+        const testRedisId = getDbTestProcessId('redis-test')
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
+        hasDocker && testRedisId && commands.push(dockerDownTest(testRedisId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(rmBundle, testUnit, clientBuild, testE2E)
@@ -142,8 +142,10 @@ swit(
       'lint-test',
       () => {
         const commands = [lint, typecheck]
-        const testDbId = getDbTestProcessId()
+        const testDbId = getDbTestProcessId('db-test')
+        const testRedisId = getDbTestProcessId('redis-test')
         hasDocker && testDbId && commands.push(dockerDownTest(testDbId))
+        hasDocker && testRedisId && commands.push(dockerDownTest(testRedisId))
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(rmBundle, testUnit, clientBuild, testE2E)
