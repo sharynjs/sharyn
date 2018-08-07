@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/redis",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/redis",
   "license": "MIT",
   "peerDependencies": {
@@ -12,6 +12,5 @@
     "@sharyn/env": "^1.8.5",
     "async-exit-hook": "^2.0.1",
     "bluebird": "^3.5.1"
-  },
-  "gitHead": "3beb0d1200285c70186e30dedf3c460741057c2b"
+  }
 }

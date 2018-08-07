@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -27,7 +27,7 @@
     "serialize-javascript": "^1.5.0"
   },
   "devDependencies": {
-    "@sharyn/cli": "^3.2.0",
+    "@sharyn/cli": "^3.2.1",
     "@sharyn/client": "^1.1.2",
     "@sharyn/components": "^1.3.1",
     "@sharyn/db": "^1.8.7",
@@ -36,12 +36,12 @@
     "@sharyn/jest-config": "1.0.0",
     "@sharyn/koa": "^1.14.3",
     "@sharyn/prettier-config": "1.2.1",
-    "@sharyn/redis": "^1.4.0",
+    "@sharyn/redis": "^1.4.1",
     "@sharyn/server": "^2.8.2",
     "@sharyn/shared": "^1.6.3",
     "@sharyn/testing": "^1.1.2",
     "@sharyn/util": "^1.2.2",
     "@sharyn/webpack-config": "1.9.0"
   },
-  "gitHead": "3beb0d1200285c70186e30dedf3c460741057c2b"
+  "gitHead": "d0d4307628b58f64d6ab86c83290c97e02f684c6"
 }
