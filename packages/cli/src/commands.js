@@ -37,9 +37,9 @@ const webpackStats = prefix(
   } > webpack-stats.json`,
 )
 
-const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
-  hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
-}`
+const jestOptions = `testPathIgnorePatterns lib/* ${
+  hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''
+} ${hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''}`
 
 export const nodeLocalProd = prefix(
   'cross-env NODE_ENV=production ENV_TYPE=local-production node lib/_server/server.js',
