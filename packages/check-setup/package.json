@@ -1,10 +1,11 @@
 {
   "name": "@sharyn/check-setup",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/check-setup",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0-beta.56",
     "app-root-path": "^2.1.0"
-  }
+  },
+  "gitHead": "3beb0d1200285c70186e30dedf3c460741057c2b"
 }
