@@ -58,7 +58,9 @@ export const herokuLocalProd = prefix(
 )
 export const lint = prefix('eslint src --fix --ext .js,.jsx')
 export const typecheck = prefix('flow')
-export const testUnit = prefix(`jest --testMatch **/*.unit.test.js ${jestOptions}`)
+export const testUnit = prefix(
+  `jest --testMatch **/*.unit.test.js --testEnvironment node ${jestOptions}`,
+)
 export const testE2E = prefix(
   `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand ${jestOptions}`,
 )
