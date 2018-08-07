@@ -21,7 +21,7 @@ import {
   hasPackage,
   requireCascadeFromSource,
   pathCascade,
-  requireCascade,
+  requireSharyn,
   // flow-disable-next-line
 } from '@sharyn/check-setup'
 // flow-disable-next-line
@@ -48,14 +48,12 @@ const stopServer_ = (options?: Object) => {
       // eslint-disable-next-line no-console
       console.log(`${PREFIX} Server stopped`)
     }
-    if (hasPackage('@sharyn/db')) {
-      // flow-disable-next-line
-      require('@sharyn/db').knex.destroy()
-    }
-    if (hasPackage('@sharyn/redis')) {
-      // flow-disable-next-line
-      require('@sharyn/redis').quit()
-    }
+    const sharynDb = requireSharyn('db')
+    sharynDb && sharynDb.knex.destroy()
+
+    const sharynRedis = requireSharyn('redis')
+    sharynRedis && sharynRedis.quit()
+
     return server.close()
   }
   throw Error('Tried to stop the server but no server was running')
@@ -98,13 +96,12 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
       maxAge: 1000 * 60 * 60 * 24 * 14, // 2 weeks
       rolling: true,
     }
-    if (hasPackage('@sharyn/redis') || hasPackage('sharyn')) {
-      // flow-disable-next-line
-      const redis = requireCascade('@sharyn/redis', 'sharyn/redis')
+    const sharynRedis = requireSharyn('redis')
+    if (sharynRedis) {
       sessionOptions.store = {
-        get: async key => JSON.parse(await redis.getAsync(`session:${key}`)),
-        set: (key, sess) => redis.setAsync(`session:${key}`, JSON.stringify(sess)),
-        destroy: key => redis.delAsync(key),
+        get: async key => JSON.parse(await sharynRedis.getAsync(`session:${key}`)),
+        set: (key, sess) => sharynRedis.setAsync(`session:${key}`, JSON.stringify(sess)),
+        destroy: key => sharynRedis.delAsync(key),
       }
     }
     app.use(session(sessionOptions, app))

@@ -23,6 +23,7 @@ const packages = [
       'require-cascade.js',
       'path-cascade.js',
       'path-cascade.test.js',
+      'require-sharyn.js',
     ],
   },
   {

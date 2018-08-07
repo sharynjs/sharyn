@@ -1,11 +1,14 @@
 // @flow
 
 // flow-disable-next-line
-import { hasFile } from '@sharyn/check-setup'
+import { hasFile, pathCascade } from '@sharyn/check-setup'
 
-const pathToSharynKnexConfig = 'node_modules/@sharyn/db/knex-config.js'
+const pathToSharynKnexConfig = pathCascade(
+  'node_modules/@sharyn/db/knex-config.js',
+  'node_modules/sharyn/db/knex-config.js',
+)
 const pathToCustomKnexConfig = 'src/_db/knex-config.js'
-const hasSharynKnexConfig = hasFile(pathToSharynKnexConfig)
+const hasSharynKnexConfig = !!pathToSharynKnexConfig
 const hasCustomKnexConfig = hasFile(pathToCustomKnexConfig)
 
 let knexConfigPath_

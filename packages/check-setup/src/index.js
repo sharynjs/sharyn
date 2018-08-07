@@ -4,6 +4,7 @@ import hasFile from './has-file'
 import hasPackage from './has-package'
 import appRoot from './app-root'
 import pathCascade from './path-cascade'
+import requireSharyn from './require-sharyn'
 import { requireCascade, requireCascadeFromSource } from './require-cascade'
 
 module.exports = {
@@ -13,4 +14,5 @@ module.exports = {
   appRoot,
   requireCascade,
   requireCascadeFromSource,
+  requireSharyn,
 }
