@@ -37,19 +37,19 @@ const webpackStats = prefix(
   } > webpack-stats.json`,
 )
 
-const jestOptions = `testPathIgnorePatterns lib/* ${
-  hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''
-} ${hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''}`
+const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
+  hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
+}`
 
 export const nodeLocalProd = prefix(
   'cross-env NODE_ENV=production ENV_TYPE=local-production node lib/_server/server.js',
 )
-export const DOCKER_UP = 'docker-compose up -d'
+export const DOCKER_UP = 'docker-compose up -d db redis'
 export const dockerDownTest = (id: string) => `docker rm -f ${id}`
 export const DOCKER_UP_TEST = 'docker-compose up -d db-test redis-test'
 export const DOCKER_WAIT_PG = dockerWaitPg('db')
 export const DOCKER_WAIT_PG_TEST = dockerWaitPg('db-test')
-export const babel = prefix('babel src -d lib')
+export const babel = prefix('babel src -d lib --ignore **/*.test.js')
 export const dbMigr = migrate
 export const dbSeed = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . seed:run`)
 export const dbMigrTest = `${prefix('cross-env NODE_ENV=test')} ${migrate}`
@@ -58,11 +58,9 @@ export const herokuLocalProd = prefix(
 )
 export const lint = prefix('eslint src --fix --ext .js,.jsx')
 export const typecheck = prefix('flow')
-export const testUnit = prefix(
-  `jest --testMatch **/*.unit.test.js --testEnvironment node ${jestOptions}`,
-)
+export const testUnit = prefix(`jest .unit.test.js --testEnvironment node ${jestOptions}`)
 export const testE2E = prefix(
-  `jest --preset jest-puppeteer --testMatch **/*.e2e.test.js --runInBand ${jestOptions}`,
+  `jest .e2e.test.js --preset jest-puppeteer --runInBand ${jestOptions}`,
 )
 export const rmBundle = prefix('rimraf dist/js/bundle.js') // Add .cache when switching back to Parcel
 export const rmLibAndBundle = prefix('rimraf lib dist/js/bundle.js') // Add .cache when switching back to Parcel

@@ -3,7 +3,7 @@
 // @flow
 
 import { EOL } from 'os'
-import { execSync, spawn } from 'child_process'
+import { execSync, spawn, spawnSync } from 'child_process'
 import { swit } from '@verekia/lib-lang'
 import colors from 'colors/safe'
 // flow-disable-next-line
@@ -60,11 +60,22 @@ const mySpawn = cmd => {
   return spawn(cmd, { shell: true, stdio: 'inherit' })
 }
 
+const mySpawnSync = cmd => {
+  // eslint-disable-next-line no-console
+  console.log(
+    `${colors.magenta(`[sharyn/cli]`)} ${colors.gray(cmd)}`.replace(
+      /\.\/node_modules\/\.bin\//g,
+      '',
+    ),
+  )
+  return spawnSync(cmd, { shell: true, stdio: 'inherit' })
+}
+
 const sequence = arr => arr.join(' && ')
 
 const taskName = process.argv[2]
 
-swit(
+const result = swit(
   taskName,
   [
     [
@@ -75,12 +86,9 @@ swit(
         knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
         knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
-        mySpawn(sequence(firstCommands)).on('close', code => {
-          if (code === 0) {
-            mySpawn(serverWatch)
-            mySpawn(clientWatch)
-          }
-        })
+        mySpawnSync(sequence(firstCommands))
+        mySpawn(serverWatch)
+        mySpawn(clientWatch)
       },
     ],
     [
@@ -91,7 +99,7 @@ swit(
         knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
         knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(serverWatchSsrOnly)
-        mySpawn(sequence(commands))
+        mySpawnSync(sequence(commands))
       },
     ],
     [
@@ -102,12 +110,9 @@ swit(
         knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
         knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
-        mySpawn(sequence(firstCommands)).on('close', code => {
-          if (code === 0) {
-            mySpawn(serverWatchNoSsr)
-            mySpawn(clientWatch)
-          }
-        })
+        mySpawnSync(sequence(firstCommands))
+        mySpawn(serverWatchNoSsr)
+        mySpawn(clientWatch)
       },
     ],
     [
@@ -119,11 +124,11 @@ swit(
         knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(rmLibAndBundle, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocalProd) : commands.push(nodeLocalProd)
-        mySpawn(sequence(commands))
+        mySpawnSync(sequence(commands))
       },
     ],
-    ['build-prod', () => mySpawn(sequence([rmLibAndBundle, clientBuild, babel]))],
-    ['lint', () => mySpawn(sequence([lint, typecheck]))],
+    ['build-prod', () => mySpawnSync(sequence([rmLibAndBundle, clientBuild, babel]))],
+    ['lint', () => mySpawnSync(sequence([lint, typecheck]))],
     [
       'test',
       () => {
@@ -135,7 +140,7 @@ swit(
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(rmBundle, testUnit, clientBuild, testE2E)
-        mySpawn(sequence(commands))
+        return mySpawnSync(sequence(commands))
       },
     ],
     [
@@ -149,11 +154,11 @@ swit(
         hasDocker && commands.push(DOCKER_UP_TEST)
         knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(rmBundle, testUnit, clientBuild, testE2E)
-        mySpawn(sequence(commands))
+        return mySpawnSync(sequence(commands))
       },
     ],
-    ['migrate-db', () => mySpawn(dbMigr)],
-    ['stats', () => mySpawn(stats)],
+    ['migrate-db', () => mySpawnSync(dbMigr)],
+    ['stats', () => mySpawnSync(stats)],
   ],
   () => {
     // eslint-disable-next-line no-console
@@ -161,3 +166,7 @@ swit(
     process.exit(1)
   },
 )
+
+if (result) {
+  process.exit(result.status)
+}
