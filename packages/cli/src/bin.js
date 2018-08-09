@@ -146,7 +146,7 @@ const result = swit(
         const cleanupCommands = []
         hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
         hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
-        mySpawnSync(sequence(cleanupCommands))
+        cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
         return cmdResult
       },
     ],
@@ -167,7 +167,7 @@ const result = swit(
         const cleanupCommands = []
         hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
         hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
-        mySpawnSync(sequence(cleanupCommands))
+        cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
         return cmdResult
       },
     ],
