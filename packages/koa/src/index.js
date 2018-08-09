@@ -38,6 +38,8 @@ export const DEFAULT_TESTING_PORT = 8021
 
 const port = IS_TEST_ENV ? TESTING_PORT || DEFAULT_TESTING_PORT : PORT || DEFAULT_PORT
 
+const hasDocker = hasFile('docker-compose.yml')
+
 let server
 
 const stopServer_ = (options?: Object) => {
@@ -51,7 +53,7 @@ const stopServer_ = (options?: Object) => {
     const sharynDb = requireSharyn('db')
     sharynDb && sharynDb.knex.destroy()
 
-    const sharynRedis = requireSharyn('redis')
+    const sharynRedis = hasDocker && requireSharyn('redis')
     sharynRedis && sharynRedis.quit()
 
     return server.close()
@@ -96,7 +98,7 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
       maxAge: 1000 * 60 * 60 * 24 * 14, // 2 weeks
       rolling: true,
     }
-    const sharynRedis = requireSharyn('redis')
+    const sharynRedis = hasDocker && requireSharyn('redis')
     if (sharynRedis) {
       sessionOptions.store = {
         get: async key => JSON.parse(await sharynRedis.getAsync(`session:${key}`)),
