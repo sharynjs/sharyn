@@ -9,6 +9,7 @@ import HeroButtonView from './HeroButtonView'
 import DrawerItemView from './DrawerItemView'
 import NavListView from './NavListView'
 import hideOnScrollView from './hideOnScrollView'
+import NotificationsView from './NotificationsView'
 
 const App = () => (
   <div style={{ height: '100%' }}>
@@ -66,6 +67,8 @@ const App = () => (
           {' – '}
           <Link to="/NavList">NavList</Link>
           {' – '}
+          <Link to="/Notifications">Notifications</Link>
+          {' – '}
           <Link to="/hideOnScroll">hideOnScroll</Link>
         </div>
         <div style={{ height: '100%' }}>
@@ -75,6 +78,7 @@ const App = () => (
           <Route path="/HeroButton" component={HeroButtonView} />
           <Route path="/DrawerItem" component={DrawerItemView} />
           <Route path="/NavList" component={NavListView} />
+          <Route path="/Notifications" component={NotificationsView} />
           <Route path="/hideOnScroll" component={hideOnScrollView} />
         </div>
       </Fragment>

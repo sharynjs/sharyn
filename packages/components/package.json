@@ -5,7 +5,8 @@
   "license": "MIT",
   "peerDependencies": {
     "@material-ui/core": "^1.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "recompose": "^0.27.1"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0-beta.56"

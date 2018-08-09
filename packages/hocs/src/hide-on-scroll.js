@@ -4,7 +4,9 @@
 
 import React from 'react'
 import throttle from 'lodash.throttle'
-import { withState, lifecycle as withLifecycle, compose } from 'recompose'
+import withState from 'recompose/withState'
+import withLifecycle from 'recompose/lifecycle'
+import compose from 'recompose/compose'
 // flow-disable-next-line
 import { withStyles } from '@material-ui/core/styles'
 
