@@ -83,8 +83,8 @@ const result = swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
+        hasDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        hasDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
         mySpawnSync(sequence(firstCommands))
         mySpawn(serverWatch)
@@ -96,8 +96,8 @@ const result = swit(
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        knexConfigPath && hasSeeds && commands.push(dbSeed)
+        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        hasDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(serverWatchSsrOnly)
         mySpawnSync(sequence(commands))
       },
@@ -107,8 +107,8 @@ const result = swit(
       () => {
         const firstCommands = []
         hasDocker && firstCommands.push(DOCKER_UP)
-        knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
+        hasDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        hasDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
         mySpawnSync(sequence(firstCommands))
         mySpawn(serverWatchNoSsr)
@@ -120,8 +120,8 @@ const result = swit(
       () => {
         const commands = []
         hasDocker && commands.push(DOCKER_UP)
-        knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        knexConfigPath && hasSeeds && commands.push(dbSeed)
+        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        hasDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(rmLibAndBundle, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocalProd) : commands.push(nodeLocalProd)
         mySpawnSync(sequence(commands))
