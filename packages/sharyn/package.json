@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@sharyn/cli": "^3.3.4",
-    "@sharyn/client": "^1.3.0",
+    "@sharyn/client": "^1.3.1",
     "@sharyn/components": "^1.4.0",
     "@sharyn/db": "^1.8.7",
     "@sharyn/env": "1.8.2",
@@ -43,5 +43,5 @@
     "@sharyn/util": "^1.2.2",
     "@sharyn/webpack-config": "1.9.0"
   },
-  "gitHead": "a123e485135484dc2c120c860df3bd16c9cead63"
+  "gitHead": "023136e3520c9c32d6418a0f39fe1f8a20e90860"
 }
