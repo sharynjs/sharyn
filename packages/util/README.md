@@ -20,6 +20,40 @@ import { someUtil } from '@sharyn/util' // More compact if multiple imports (ok 
 import someUtil from '@sharyn/util/some-util' // Reduces the bundle size (recommended on the client)
 ```
 
+## 🌹 swit
+
+🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)
+
+An inline `switch` statement.
+
+```js
+const SWITCH_ME = 'hello'
+
+// With values
+
+swit(
+  SWITCH_ME,
+  [
+    ['hi', 'Oh hi'],
+    ['hello', 'Hello fine people'],
+    ['goodbye', 'Bye'],
+  ],
+  'default value',
+) // => 'Hello fine people'
+
+// With functions
+
+swit(
+  SWITCH_ME,
+  [
+    ['good', () => good()],
+    ['bad', bad()], // Don't do that or it will get executed before swit
+    ['hello', () => 'Hello fine people'],
+  ],
+  () => 'default value',
+) // => 'Hello fine people'
+```
+
 ## 🌹 isEither
 
 🌲 [**Not structuring**](https://github.com/sharynjs/sharyn#-structuring-factor)

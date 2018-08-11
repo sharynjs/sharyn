@@ -15,7 +15,7 @@
     "build": "babel-node build.js",
     "clean": "babel-node build.js --clean",
     "lint": "markdownlint README.md docs packages -i node_modules -c .mdlintrc.json && eslint build.js babel.config.js packages && flow",
-    "test": "babel-node build.js && cross-env USE_PROCESS_CWD_FOR_APP_ROOT=truthy jest && babel-node build.js --clean"
+    "test": "yarn clean && babel-node build.js && cross-env USE_PROCESS_CWD_FOR_APP_ROOT=truthy jest && yarn clean"
   },
   "husky": {
     "hooks": {
