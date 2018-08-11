@@ -32,7 +32,14 @@ const packages = [
   },
   {
     name: 'client',
-    modules: ['form.js', 'actions.js', 'data-reductions.js', 'ui-reductions.js'],
+    modules: [
+      'form.js',
+      'actions.js',
+      'data-reductions.js',
+      'data-reductions.test.js',
+      'ui-reductions.js',
+      'ui-reductions.test.js',
+    ],
   },
   {
     name: 'components',
