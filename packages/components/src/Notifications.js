@@ -23,22 +23,18 @@ const handleExited = (updateIsOpen, handleDismissNotification) => {
 const NotificationsJSX = ({
   notifications,
   handleDismissNotification,
-  keepClickAway,
-  dismissable = true,
   isOpen,
   updateIsOpen,
 }: {
   notifications: Object[],
   handleDismissNotification: Function,
   currentSnackbar?: Object,
-  keepClickAway?: boolean,
-  dismissable?: boolean,
   isOpen: boolean,
   updateIsOpen: Function,
 }) => {
   const currentSnackbar = notifications[0]
   if (currentSnackbar) {
-    const { mainAction, ...muiProps } = currentSnackbar
+    const { mainAction, dismissable = true, keepClickAway, ...muiProps } = currentSnackbar
     const actions = mainAction
       ? [
           // eslint-disable-next-line
