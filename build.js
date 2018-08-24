@@ -97,8 +97,6 @@ const packages = [
       'index.js',
       'logged-filter.js',
       'find-match.js',
-      'parse-fields.js',
-      'parse-fields.test.js',
     ],
   },
   {
@@ -108,7 +106,15 @@ const packages = [
   {
     name: 'util',
     // babel --ignore test.js doesnt seem to work
-    modules: ['index.js', 'is-either.js', 'is-either.test.js', 'swit.js', 'swit.test.js'],
+    modules: [
+      'index.js',
+      'is-either.js',
+      'is-either.test.js',
+      'swit.js',
+      'swit.test.js',
+      'parse-object.js',
+      'parse-object.test.js',
+    ],
   },
   {
     name: 'webpack-config',
