@@ -5806,6 +5806,10 @@ lodash.flatten@~4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flatten/-/lodash.flatten-4.4.0.tgz#f31c22225a9632d2bbf8e4addbef240aa765a61f"
 
+lodash.forown@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.forown/-/lodash.forown-4.4.0.tgz#85115cf04f73ef966eced52511d3893cc46683af"
+
 lodash.isequal@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
@@ -8770,6 +8774,10 @@ validate-npm-package-name@^3.0.0:
   resolved "https://registry.yarnpkg.com/validate-npm-package-name/-/validate-npm-package-name-3.0.0.tgz#5fa912d81eb7d0c74afc140de7317f0ca7df437e"
   dependencies:
     builtins "^1.0.3"
+
+validator@^10.7.0:
+  version "10.7.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-10.7.0.tgz#2d6443badcf942c86c19dc3deac7b87c0bd9b60d"
 
 value-equal@^0.4.0:
   version "0.4.0"

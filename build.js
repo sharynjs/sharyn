@@ -97,6 +97,8 @@ const packages = [
       'index.js',
       'logged-filter.js',
       'find-match.js',
+      'parse-fields.js',
+      'parse-fields.test.js',
     ],
   },
   {

@@ -21,11 +21,13 @@
     "exit-hook": "^2.0.0",
     "knex": "^0.15.1",
     "lodash.curryright": "^4.1.1",
+    "lodash.forown": "^4.4.0",
     "lodash.throttle": "^4.1.1",
     "pg": "^7.4.3",
     "read-env": "^1.2.0",
     "recompose": "^0.27.1",
-    "serialize-javascript": "^1.5.0"
+    "serialize-javascript": "^1.5.0",
+    "validator": "^10.7.0"
   },
   "devDependencies": {
     "@sharyn/cli": "^3.3.4",
