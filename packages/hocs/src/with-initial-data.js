@@ -11,7 +11,7 @@ import mapProps from 'recompose/mapProps'
 
 const lifecycle = {
   componentDidMount() {
-    const { getQuery: query, getQueryMapResp: mapRespData } = this.props.route
+    const { mainQuery: query, mainQueryMapResp: mapRespData } = this.props.route
     this.props.dispatch(
       this.props.fetchPageData({ query, mapRespData, variables: this.props.variables }),
     )
@@ -23,7 +23,7 @@ const withInitialData = (fetchPageData_: Function) =>
     connect(() => ({})),
     // flow-disable-next-line
     withProps(({ route, match }) => ({
-      variables: route.getQueryMapParams ? route.getQueryMapParams(match.params) : match.params,
+      variables: route.mainQueryMapParams ? route.mainQueryMapParams(match.params) : match.params,
       fetchPageData: fetchPageData_,
     })),
     withLifecycle(lifecycle),
