@@ -22,6 +22,7 @@
     "knex": "^0.15.1",
     "lodash.curryright": "^4.1.1",
     "lodash.forown": "^4.4.0",
+    "lodash.isempty": "^4.4.0",
     "lodash.throttle": "^4.1.1",
     "pg": "^7.4.3",
     "read-env": "^1.2.0",
