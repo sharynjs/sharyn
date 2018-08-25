@@ -20,6 +20,9 @@ test('deactivatePageLoading', () => {
 })
 
 test('activateComponentLoading', () => {
+  expect(activateComponentLoading({ foo: 'foo' }, undefined)).toEqual({
+    foo: 'foo',
+  })
   expect(activateComponentLoading({ foo: 'foo' }, 'blep')).toEqual({
     foo: 'foo',
     loadingComponents: { blep: true },
@@ -37,6 +40,9 @@ test('activateComponentLoading', () => {
 })
 
 test('deactivateComponentLoading', () => {
+  expect(
+    deactivateComponentLoading({ foo: 'foo', loadingComponents: { blep: true } }, undefined),
+  ).toEqual({ foo: 'foo', loadingComponents: { blep: true } })
   expect(
     deactivateComponentLoading({ foo: 'foo', loadingComponents: { blep: true } }, 'blep'),
   ).toEqual({ foo: 'foo' })

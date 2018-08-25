@@ -9,18 +9,22 @@ export const deactivatePageLoading = (uiState: Object) => {
   return newUiState
 }
 
-export const activateComponentLoading = curryRight((uiState: Object, name: string) => ({
+export const activateComponentLoading = curryRight((uiState: Object, name?: string) => ({
   ...uiState,
-  loadingComponents: {
-    ...uiState.loadingComponents,
-    [name]: true,
-  },
+  ...(uiState.loadingComponents || name
+    ? {
+        loadingComponents: {
+          ...uiState.loadingComponents,
+          ...(name ? { [name]: true } : {}),
+        },
+      }
+    : {}),
 }))
 
-export const deactivateComponentLoading = curryRight((uiState: Object, name: string) => {
+export const deactivateComponentLoading = curryRight((uiState: Object, name?: string) => {
   const uiStateClone = { ...uiState }
   const { loadingComponents, ...uiStateCloneRest } = uiStateClone
-  if (loadingComponents) {
+  if (loadingComponents && name) {
     delete loadingComponents[name]
   }
   return {
