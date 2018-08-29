@@ -108,6 +108,8 @@ const packages = [
     // babel --ignore test.js doesnt seem to work
     modules: [
       'index.js',
+      'cond.js',
+      'cond.test.js',
       'is-either.js',
       'is-either.test.js',
       'swit.js',
