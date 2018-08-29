@@ -10,6 +10,7 @@ import DrawerItemView from './DrawerItemView'
 import NavListView from './NavListView'
 import hideOnScrollView from './hideOnScrollView'
 import NotificationsView from './NotificationsView'
+import FontWeightView from './FontWeightView'
 
 const App = () => (
   <div style={{ height: '100%' }}>
@@ -63,6 +64,8 @@ const App = () => (
           {' – '}
           <Link to="/HeroButton">HeroButton</Link>
           {' – '}
+          <Link to="/FontWeight">FontWeight</Link>
+          {' – '}
           <Link to="/DrawerItem">DrawerItem</Link>
           {' – '}
           <Link to="/NavList">NavList</Link>
@@ -76,6 +79,7 @@ const App = () => (
           <Route path="/Page" component={PageView} />
           <Route path="/PageMiddle" component={PageMiddleView} />
           <Route path="/HeroButton" component={HeroButtonView} />
+          <Route path="/FontWeight" component={FontWeightView} />
           <Route path="/DrawerItem" component={DrawerItemView} />
           <Route path="/NavList" component={NavListView} />
           <Route path="/Notifications" component={NotificationsView} />

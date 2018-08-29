@@ -43,7 +43,14 @@ const packages = [
   },
   {
     name: 'components',
-    modules: ['DrawerItem.js', 'Page.js', 'HeroButton.js', 'NavList.js', 'Notifications.js'],
+    modules: [
+      'DrawerItem.js',
+      'Page.js',
+      'HeroButton.js',
+      'NavList.js',
+      'Notifications.js',
+      'FontWeight.js',
+    ],
   },
   {
     name: 'db',
