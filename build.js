@@ -123,6 +123,8 @@ const packages = [
       'swit.test.js',
       'parse-object.js',
       'parse-object.test.js',
+      'run.js',
+      'run.test.js',
     ],
   },
   {

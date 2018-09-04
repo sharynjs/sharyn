@@ -1,6 +1,6 @@
 import cond from './cond'
 
-test('swit', () => {
+test('cond', () => {
   expect(cond([])).toBe(undefined)
   expect(cond([], () => 2)).toBe(2)
   expect(cond([], 2)).toBe(2)
