@@ -17,6 +17,7 @@ const FontWeightJSX = ({
   light,
   bolder,
   children,
+  ...rest
 }: {
   classes: Object,
   light?: boolean,
@@ -30,7 +31,11 @@ const FontWeightJSX = ({
   if (bolder) {
     className = classes.bolder
   }
-  return <span {...{ className }}>{children}</span>
+  return (
+    <span {...{ className }} {...rest}>
+      {children}
+    </span>
+  )
 }
 
 const FontWeight = withStyles(styles)(FontWeightJSX)
