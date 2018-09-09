@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "3.3.3",
+  "version": "3.4.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -38,7 +38,7 @@
     "@sharyn/env": "1.8.2",
     "@sharyn/hocs": "^1.2.1",
     "@sharyn/jest-config": "1.0.0",
-    "@sharyn/koa": "^1.14.5",
+    "@sharyn/koa": "^1.15.0",
     "@sharyn/prettier-config": "1.2.1",
     "@sharyn/redis": "^1.4.1",
     "@sharyn/server": "^2.8.4",
