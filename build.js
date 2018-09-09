@@ -73,7 +73,7 @@ const packages = [
   },
   {
     name: 'hocs',
-    modules: ['index.js', 'hide-on-scroll.js', 'with-initial-data.js'],
+    modules: ['index.js', 'hide-on-scroll.js', 'with-initial-data.js', 'with-default.js'],
   },
   {
     name: 'jest-config',
