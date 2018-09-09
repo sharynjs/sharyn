@@ -24,17 +24,13 @@ const renderPage = ({
   App,
   theme,
   jss,
-  env,
-  data,
-  user,
+  preloadedState = {},
 }: {
   ctx: Object,
   App: Function,
   theme?: Object,
   jss?: any,
-  env?: Object,
-  data?: Object,
-  user?: Object,
+  preloadedState?: Object,
 }) => {
   let appHtml
   let css
@@ -49,7 +45,7 @@ const renderPage = ({
         generateClassName={createGenerateClassName()}
       >
         <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
-          <ReduxProvider store={createStore(() => ({ data, user }))}>
+          <ReduxProvider store={createStore(() => preloadedState)}>
             <StaticRouter location={ctx.req.url} context={routerContext}>
               <App />
             </StaticRouter>
@@ -63,11 +59,12 @@ const renderPage = ({
   if (routerContext.action === 'REPLACE') {
     ctx.redirect(routerContext.url)
   } else {
+    const { data, ...rest } = preloadedState
     ctx.body = htmlBase({
       appHtml,
       css,
       helmet,
-      windowVars: [['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user, env }]],
+      windowVars: [['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, ...rest }]],
     })
   }
 }
