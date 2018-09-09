@@ -140,6 +140,13 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
     )
   }
 
+  if (hasPackage('apollo-server-koa')) {
+    // flow-disable-next-line
+    const { ApolloServer } = require('apollo-server-koa')
+    const apolloServer = new ApolloServer(options?.apolloConfig ?? {})
+    apolloServer.applyMiddleware({ app })
+  }
+
   routing(router)
   app.use(router.routes()).use(router.allowedMethods())
 
