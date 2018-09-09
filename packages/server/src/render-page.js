@@ -67,7 +67,7 @@ const renderPage = ({
       appHtml,
       css,
       helmet,
-      windowVars: [['__ENV__', env], ['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user }]],
+      windowVars: [['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, user, env }]],
     })
   }
 }
