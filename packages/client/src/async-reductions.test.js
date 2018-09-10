@@ -1,34 +1,16 @@
 import { compose } from 'recompose'
-import {
-  setAsyncRequest,
-  setAsyncSuccess,
-  setAsyncFailure,
-  delAsync,
-  clearAsync,
-} from './async-reductions'
+import { setAsyncEntry, delAsyncEntry, clearAsync } from './async-reductions'
 
-test('setAsyncRequest', () => {
+test('setAsyncEntry', () => {
   const asyncState = { foo: 'foo' }
-  expect(setAsyncRequest(asyncState, 'bar')).toEqual({ foo: 'foo', bar: 'REQUEST' })
-  expect(compose(setAsyncRequest('bar'))(asyncState)).toEqual({ foo: 'foo', bar: 'REQUEST' })
+  expect(setAsyncEntry(asyncState, 'bar', 'BAR')).toEqual({ foo: 'foo', bar: 'BAR' })
+  expect(compose(setAsyncEntry('baz', 'BAZ'))(asyncState)).toEqual({ foo: 'foo', baz: 'BAZ' })
 })
 
-test('setAsyncSuccess', () => {
+test('delAsyncEntry', () => {
   const asyncState = { foo: 'foo' }
-  expect(setAsyncSuccess(asyncState, 'bar')).toEqual({ foo: 'foo', bar: 'SUCCESS' })
-  expect(compose(setAsyncSuccess('bar'))(asyncState)).toEqual({ foo: 'foo', bar: 'SUCCESS' })
-})
-
-test('setAsyncFailure', () => {
-  const asyncState = { foo: 'foo' }
-  expect(setAsyncFailure(asyncState, 'bar')).toEqual({ foo: 'foo', bar: 'FAILURE' })
-  expect(compose(setAsyncFailure('bar'))(asyncState)).toEqual({ foo: 'foo', bar: 'FAILURE' })
-})
-
-test('delAsync', () => {
-  const asyncState = { foo: 'foo' }
-  expect(delAsync(asyncState, 'foo')).toEqual({})
-  expect(compose(delAsync('foo'))(asyncState)).toEqual({})
+  expect(delAsyncEntry(asyncState, 'foo')).toEqual({})
+  expect(compose(delAsyncEntry('foo'))(asyncState)).toEqual({})
 })
 
 test('clearAsync', () => {

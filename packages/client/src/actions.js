@@ -21,3 +21,6 @@ export const SHARYN_ASYNC_FAILURE = 'SHARYN_ASYNC_FAILURE'
 export const asyncRequest = createAction(SHARYN_ASYNC_REQUEST)
 export const asyncSuccess = createAction(SHARYN_ASYNC_SUCCESS)
 export const asyncFailure = createAction(SHARYN_ASYNC_FAILURE)
+
+export const SHARYN_DELETE_ASYNC = 'SHARYN_DELETE_ASYNC'
+export const deleteAsync = createAction(SHARYN_DELETE_ASYNC)
