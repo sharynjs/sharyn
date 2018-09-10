@@ -39,6 +39,8 @@ const packages = [
       'data-reductions.test.js',
       'ui-reductions.js',
       'ui-reductions.test.js',
+      'async-reductions.js',
+      'async-reductions.test.js',
     ],
   },
   {
