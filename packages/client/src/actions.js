@@ -14,3 +14,10 @@ export const navigation = createAction(SHARYN_NAVIGATION)
 
 export const SHARYN_DISMISS_FIRST_NOTIFICATION = 'SHARYN_DISMISS_FIRST_NOTIFICATION'
 export const dismissFirstNotification = createAction(SHARYN_DISMISS_FIRST_NOTIFICATION)
+
+export const SHARYN_ASYNC_REQUEST = 'SHARYN_ASYNC_REQUEST'
+export const SHARYN_ASYNC_SUCCESS = 'SHARYN_ASYNC_SUCCESS'
+export const SHARYN_ASYNC_FAILURE = 'SHARYN_ASYNC_FAILURE'
+export const asyncRequest = createAction(SHARYN_ASYNC_REQUEST)
+export const asyncSuccess = createAction(SHARYN_ASYNC_SUCCESS)
+export const asyncFailure = createAction(SHARYN_ASYNC_FAILURE)
