@@ -53,8 +53,8 @@ test('delAsyncEntry', () => {
 })
 
 test('clearAsync', () => {
-  const asyncState = { foo: 'foo' }
-  expect(clearAsync()).toEqual({})
-  expect(clearAsync(asyncState)).toEqual({})
-  expect(compose(clearAsync)(asyncState)).toEqual({})
+  const asyncState = { foo: 'foo', bar: 'bar' }
+  expect(clearAsync(asyncState, null)).toEqual({})
+  expect(clearAsync(asyncState, 'foo')).toEqual({ foo: 'foo' })
+  expect(compose(clearAsync('foo'))(asyncState)).toEqual({ foo: 'foo' })
 })

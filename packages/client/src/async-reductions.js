@@ -42,4 +42,7 @@ export const setAsyncFailure = curryRight((asyncState: Object, params: Object) =
 
 export const delAsyncEntry = curryRight((asyncState: Object, key: string) => del(asyncState, key))
 
-export const clearAsync = () => ({})
+export const clearAsync = curryRight(
+  (asyncState: Object, exceptKey?: string) =>
+    exceptKey ? { [exceptKey]: asyncState[exceptKey] } : {},
+)
