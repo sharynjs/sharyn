@@ -1,6 +1,6 @@
 // @flow
 
-const spread = (param: any, ...rest: any) => {
+const spread = (param: any, ...rest: any): any => {
   // Arrays cases
   if (Array.isArray(param)) {
     return param.filter(x => x !== undefined)
