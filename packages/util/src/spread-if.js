@@ -1,6 +1,6 @@
 // @flow
 
-const spreadIf = (cond: Function, ...rest: any): any => {
+const spreadIf = (cond: any, ...rest: any): any => {
   const condResult = cond instanceof Function ? cond() : cond
   // Arrays cases
   if (Array.isArray(rest[0])) {
