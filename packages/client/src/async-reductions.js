@@ -40,7 +40,7 @@ export const setAsyncFailure = curryRight((asyncState: Object, params: Object) =
     : del(asyncState, params.key)
 })
 
-export const delAsyncEntry = (param1: any, param2?: any) => {
+export const delAsyncEntry = (param1: any, param2?: any): any => {
   if (!param1) {
     throw Error('delAsyncEntry() requires key and state arguments')
   }
@@ -58,7 +58,7 @@ export const delAsyncEntry = (param1: any, param2?: any) => {
   throw Error('Incorrect parameters for delAsyncEntry()')
 }
 
-export const clearAsync = (param1?: any, param2?: any) => {
+export const clearAsync = (param1?: any, param2?: any): any => {
   if (typeof param1 === 'string' && typeof param2 === 'object' && param2 !== null) {
     return { [param1]: param2[param1] }
   }
