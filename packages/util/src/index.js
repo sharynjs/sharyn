@@ -4,6 +4,7 @@ import cond from './cond'
 import parseObject from './parse-object'
 import run from './run'
 import spread from './spread'
+import curryOptional from './curry-optional'
 
 module.exports = {
   isEither,
@@ -12,4 +13,5 @@ module.exports = {
   parseObject,
   run,
   spread,
+  curryOptional,
 }

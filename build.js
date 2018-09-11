@@ -119,6 +119,8 @@ const packages = [
       'index.js',
       'cond.js',
       'cond.test.js',
+      'curry-optional.js',
+      'curry-optional.test.js',
       'is-either.js',
       'is-either.test.js',
       'spread.js',
