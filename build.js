@@ -125,6 +125,8 @@ const packages = [
       'is-either.test.js',
       'spread.js',
       'spread.test.js',
+      'spread-if.js',
+      'spread-if.test.js',
       'swit.js',
       'swit.test.js',
       'parse-object.js',
