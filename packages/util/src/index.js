@@ -3,6 +3,7 @@ import swit from './swit'
 import cond from './cond'
 import parseObject from './parse-object'
 import run from './run'
+import spread from './spread'
 
 module.exports = {
   isEither,
@@ -10,4 +11,5 @@ module.exports = {
   cond,
   parseObject,
   run,
+  spread,
 }
