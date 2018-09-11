@@ -40,36 +40,16 @@ export const setAsyncFailure = curryRight((asyncState: Object, params: Object) =
     : del(asyncState, params.key)
 })
 
-export const delAsyncEntry = (param1: any, param2?: any): any => {
-  if (!param1) {
-    throw Error('delAsyncEntry() requires key and state arguments')
+export const delAsyncEntry = (key: string): any => {
+  if (!key) {
+    throw Error('delAsyncEntry() requires a key argument')
   }
-  if (typeof param1 === 'string' && typeof param2 === 'object' && param2 !== null) {
-    return del(param2, param1)
-  }
-  if (typeof param1 === 'string' && !param2) {
-    return (x: Object) => {
-      if (!x) {
-        throw Error("You called delAsyncEntry('foo')(state) with an undefined state")
-      }
-      return del(x, param1)
-    }
+  if (typeof key === 'string') {
+    return state => del(state, key)
   }
   throw Error('Incorrect parameters for delAsyncEntry()')
 }
 
-export const clearAsync = (param1?: any, param2?: any): any => {
-  if (typeof param1 === 'string' && typeof param2 === 'object' && param2 !== null) {
-    return { [param1]: param2[param1] }
-  }
-  if (typeof param1 === 'string' && !param2) {
-    return (x: Object) => {
-      if (!x) {
-        throw Error("You called clearAsync('foo')(state) with an undefined state")
-      }
-      // flow-disable-next-line
-      return { [param1]: x[param1] }
-    }
-  }
-  return {}
-}
+export const clearAsync = (key?: string): any =>
+  // flow-disable-next-line
+  typeof key === 'string' ? state => ({ [key]: state[key] }) : {}
