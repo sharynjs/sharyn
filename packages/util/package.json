@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/util",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "license": "MIT",
   "dependencies": {
