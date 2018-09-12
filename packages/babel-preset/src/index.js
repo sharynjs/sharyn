@@ -25,6 +25,8 @@ hasPackage('@babel/plugin-proposal-nullish-coalescing-operator') &&
   config.plugins.push('@babel/plugin-proposal-nullish-coalescing-operator')
 hasPackage('@babel/plugin-proposal-optional-chaining') &&
   config.plugins.push('@babel/plugin-proposal-optional-chaining')
+hasPackage('@babel/plugin-proposal-optional-catch-binding') &&
+  config.plugins.push('@babel/plugin-proposal-optional-catch-binding')
 
 hasPackage('@babel/plugin-syntax-dynamic-import') &&
   config.plugins.push('@babel/plugin-syntax-dynamic-import')
