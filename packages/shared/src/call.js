@@ -6,26 +6,26 @@ import spread from '@sharyn/util/spread'
 // flow-disable-next-line
 import spreadIf from '@sharyn/util/spread-if'
 
-const graphqlCall = ({
+const call = ({
   urlBase,
   urlPath = '/graphql',
-  jwt,
-  query,
-  variables,
+  body,
+  authorizationBearer,
   cookie,
 }: {
   urlBase: string,
   urlPath?: string,
-  jwt?: string,
-  query: string,
-  variables?: Object,
+  body?: any,
+  authorizationBearer?: string,
   cookie?: string,
 }) =>
-  axios.post(`${urlBase}${urlPath}`, spread({ query, variables }), {
+  axios.post(`${urlBase}${urlPath}`, body, {
     headers: {
-      ...spreadIf(jwt, { Authorization: `Bearer ${jwt ?? 'undefined'}` }),
+      ...spreadIf(authorizationBearer, {
+        Authorization: `Bearer ${authorizationBearer ?? 'undefined'}`,
+      }),
       ...spread({ cookie }),
     },
   })
 
-export default graphqlCall
+export default call

@@ -100,7 +100,7 @@ const packages = [
   {
     name: 'shared',
     modules: [
-      'graphql-call.js',
+      'call.js',
       'Switch.js',
       'fetch.js',
       'fill-title.js',
