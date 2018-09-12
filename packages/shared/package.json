@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/shared",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/shared",
   "license": "MIT",
   "dependencies": {
