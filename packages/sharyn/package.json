@@ -12,6 +12,7 @@
     "@sharyn/env": "^1.8.5",
     "@sharyn/webpack-config": "^1.9.3",
     "@verekia/lib-lang": "^2.4.0",
+    "axios": "^0.18.0",
     "async-exit-hook": "^2.0.1",
     "babel-preset-sharyn": "^2.5.7",
     "clean-css": "^4.2.0",
