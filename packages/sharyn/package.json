@@ -10,8 +10,8 @@
     "@babel/runtime-corejs2": "^7.0.0-beta.56",
     "@sharyn/check-setup": "^1.8.1",
     "@sharyn/env": "^1.8.5",
+    "@sharyn/util": "^1.9.2",
     "@sharyn/webpack-config": "^1.9.3",
-    "@verekia/lib-lang": "^2.4.0",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
     "babel-preset-sharyn": "^2.5.7",
@@ -45,7 +45,6 @@
     "@sharyn/server": "^2.8.4",
     "@sharyn/shared": "^1.9.1",
     "@sharyn/testing": "^1.1.2",
-    "@sharyn/util": "^1.9.2",
     "@sharyn/webpack-config": "1.9.0"
   },
   "gitHead": "023136e3520c9c32d6418a0f39fe1f8a20e90860"

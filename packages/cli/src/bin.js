@@ -4,7 +4,9 @@
 
 import { EOL } from 'os'
 import { execSync, spawn, spawnSync } from 'child_process'
-import { swit } from '@verekia/lib-lang'
+// flow-disable-next-line
+import swit from '@sharyn/util/swit'
+
 import colors from 'colors/safe'
 // flow-disable-next-line
 import { hasFile } from '@sharyn/check-setup'

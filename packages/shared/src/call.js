@@ -1,12 +1,10 @@
 // @flow
 
-// flow-disable-next-line
-import { requireSharyn } from '@sharyn/check-setup'
-
 import axios from 'axios'
-
-const spread = requireSharyn('util/spread')
-const spreadIf = requireSharyn('util/spread-if')
+// flow-disable-next-line
+import spread from '@sharyn/util/spread'
+// flow-disable-next-line
+import spreadIf from '@sharyn/util/spread-if'
 
 const call = ({
   urlBase,
