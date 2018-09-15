@@ -35,4 +35,4 @@ const DrawerItemJSX = ({
 
 const DrawerItem = withStyles(styles)(DrawerItemJSX)
 
-module.exports = DrawerItem
+export default DrawerItem

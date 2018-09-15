@@ -7,7 +7,7 @@
     "sharyn": "cli/bin.js"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "^7.0.0-beta.56",
+    "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/check-setup": "^1.8.1",
     "@sharyn/env": "^1.8.5",
     "@sharyn/util": "^1.9.2",
@@ -15,19 +15,19 @@
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
     "babel-preset-sharyn": "^2.6.0",
-    "clean-css": "^4.2.0",
-    "colors": "^1.3.0",
+    "clean-css": "^4.2.1",
+    "colors": "^1.3.2",
     "dotenv": "^6.0.0",
     "eslint-config-sharyn": "^2.2.8",
     "exit-hook": "^2.0.0",
-    "knex": "^0.15.1",
+    "knex": "^0.15.2",
     "lodash.curryright": "^4.1.1",
     "lodash.forown": "^4.4.0",
     "lodash.isempty": "^4.4.0",
     "lodash.throttle": "^4.1.1",
     "pg": "^7.4.3",
-    "read-env": "^1.2.0",
-    "recompose": "^0.27.1",
+    "read-env": "^1.3.0",
+    "recompose": "^0.30.0",
     "serialize-javascript": "^1.5.0",
     "validator": "^10.7.0"
   },
@@ -46,6 +46,5 @@
     "@sharyn/shared": "^1.9.2",
     "@sharyn/testing": "^1.1.2",
     "@sharyn/webpack-config": "1.9.0"
-  },
-  "gitHead": "dc71dd2ec1e4acaff050dc046c8e7bbf808d0258"
+  }
 }

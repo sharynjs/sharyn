@@ -8,11 +8,10 @@
     "koa-router": "7.x"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "^7.0.0-beta.56",
+    "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/check-setup": "^1.8.1",
     "@sharyn/env": "^1.8.5",
-    "colors": "^1.3.0",
+    "colors": "^1.3.2",
     "exit-hook": "^2.0.0"
-  },
-  "gitHead": "a123e485135484dc2c120c860df3bd16c9cead63"
+  }
 }

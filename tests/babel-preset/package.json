@@ -4,13 +4,13 @@
     "test": "babel index.js"
   },
   "dependencies": {
-    "@babel/cli": "^7.0.0-beta.56",
-    "@babel/core": "^7.0.0-beta.56",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0-beta.56",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0-beta.56",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0-beta.56",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.56",
-    "@babel/preset-env": "^7.0.0-beta.56",
-    "@babel/preset-flow": "^7.0.0-beta.56"
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0"
   }
 }

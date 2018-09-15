@@ -4,13 +4,13 @@ import React from 'react'
 // flow-disable-next-line
 import AppBar from '@material-ui/core/AppBar'
 // flow-disable-next-line
-import ToolBar from '@material-ui/core/ToolBar'
+import ToolBar from '@material-ui/core/Toolbar'
 // flow-disable-next-line
 import { withStyles } from '@material-ui/core/styles'
 // flow-disable-next-line
 import Typography from '@material-ui/core/Typography'
 
-import hideOnScroll from '../packages/hocs/src/hide-on-scroll'
+import hideOnScroll from '../../packages/hocs/src/hide-on-scroll'
 
 const styles = ({ mixins }) => ({ appBarPusher: mixins.toolbar })
 
@@ -162,6 +162,6 @@ const App = withStyles(styles)(({ classes }: { classes: Object }) => (
   </div>
 ))
 
-const PageView = () => <App foo="foo" />
+const HideOnScrollView = () => <App foo="foo" />
 
-export default PageView
+export default HideOnScrollView
