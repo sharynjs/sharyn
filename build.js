@@ -52,6 +52,7 @@ const packages = [
       'NavList.js',
       'Notifications.js',
       'FontWeight.js',
+      'ProgressButton.js',
     ],
   },
   {

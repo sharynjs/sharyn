@@ -14,6 +14,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import HomeIcon from '@material-ui/icons/Home'
 import HeroButton from '../../packages/components/src/HeroButton'
+import ProgressButton from '../../packages/components/src/ProgressButton'
 import DrawerItem from '../../packages/components/src/DrawerItem'
 import FontWeight from '../../packages/components/src/FontWeight'
 import NavList from '../../packages/components/src/NavList'
@@ -48,6 +49,8 @@ storiesOf('Components', module)
       </div>
     </BrowserRouter>
   ))
+  .add('ProgressButton/Normal', () => <ProgressButton>Progress Button</ProgressButton>)
+  .add('ProgressButton/Loading', () => <ProgressButton isLoading>Progress Button</ProgressButton>)
   .add('DrawerItem', () => (
     <div style={{ width: 400 }}>
       <DrawerItem label="Hello" icon={HomeIcon} />
