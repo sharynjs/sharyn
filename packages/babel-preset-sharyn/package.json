@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-sharyn",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/babel-preset",
   "license": "MIT",
   "dependencies": {
@@ -8,6 +8,6 @@
     "@sharyn/check-setup": "^2.0.2"
   },
   "devDependencies": {
-    "@sharyn/babel-preset": "^3.0.2"
+    "@sharyn/babel-preset": "^3.0.3"
   }
 }
