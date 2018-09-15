@@ -1,11 +1,11 @@
 {
   "name": "@sharyn/client",
-  "version": "2.4.2",
+  "version": "3.0.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/client",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@sharyn/util": "^1.9.2",
+    "@sharyn/util": "^2.0.0",
     "lodash.curryright": "^4.1.1",
     "lodash.isempty": "^4.4.0",
     "recompose": "^0.30.0",
