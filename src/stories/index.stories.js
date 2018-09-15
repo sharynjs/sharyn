@@ -50,6 +50,9 @@ storiesOf('Components', module)
     </BrowserRouter>
   ))
   .add('ProgressButton/Normal', () => <ProgressButton>Progress Button</ProgressButton>)
+  .add('ProgressButton/Style', () => (
+    <ProgressButton style={{ color: 'red' }}>Progress Button</ProgressButton>
+  ))
   .add('ProgressButton/Loading', () => <ProgressButton isLoading>Progress Button</ProgressButton>)
   .add('DrawerItem', () => (
     <div style={{ width: 400 }}>
