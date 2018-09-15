@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@sharyn/check-setup": "^2.0.0",
-    "@sharyn/env": "^2.0.0",
-    "@sharyn/util": "^2.0.0",
-    "@sharyn/webpack-config": "^2.0.0",
+    "@sharyn/check-setup": "^2.0.1",
+    "@sharyn/env": "^2.0.1",
+    "@sharyn/util": "^2.0.1",
+    "@sharyn/webpack-config": "^2.0.1",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
-    "babel-preset-sharyn": "^3.0.0",
+    "babel-preset-sharyn": "^3.0.1",
     "clean-css": "^4.2.1",
     "colors": "^1.3.2",
     "dotenv": "^6.0.0",
-    "eslint-config-sharyn": "^3.0.0",
+    "eslint-config-sharyn": "^3.0.1",
     "exit-hook": "^2.0.0",
     "knex": "^0.15.2",
     "lodash.curryright": "^4.1.1",
@@ -32,17 +32,17 @@
     "validator": "^10.7.0"
   },
   "devDependencies": {
-    "@sharyn/cli": "^4.0.0",
-    "@sharyn/client": "^3.0.0",
-    "@sharyn/components": "^2.0.0",
-    "@sharyn/db": "^2.0.0",
-    "@sharyn/hocs": "^2.0.0",
-    "@sharyn/jest-config": "1.0.0",
-    "@sharyn/koa": "^2.0.0",
-    "@sharyn/prettier-config": "1.2.1",
-    "@sharyn/redis": "^2.0.0",
-    "@sharyn/server": "^3.0.0",
-    "@sharyn/shared": "^2.0.0",
-    "@sharyn/testing": "^2.0.0"
+    "@sharyn/cli": "^4.0.1",
+    "@sharyn/client": "^3.0.1",
+    "@sharyn/components": "^2.0.1",
+    "@sharyn/db": "^2.0.1",
+    "@sharyn/hocs": "^2.0.1",
+    "@sharyn/jest-config": "^1.0.1",
+    "@sharyn/koa": "^2.0.1",
+    "@sharyn/prettier-config": "^1.2.2",
+    "@sharyn/redis": "^2.0.1",
+    "@sharyn/server": "^3.0.1",
+    "@sharyn/shared": "^2.0.1",
+    "@sharyn/testing": "^2.0.1"
   }
 }
