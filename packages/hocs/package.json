@@ -7,5 +7,6 @@
     "@babel/runtime-corejs2": "^7.0.0",
     "lodash.throttle": "^4.1.1",
     "recompose": "^0.30.0"
-  }
+  },
+  "gitHead": "996bbc7f537e9f11d205a1d79e07fc32be190b96"
 }

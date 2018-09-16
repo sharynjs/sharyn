@@ -2,5 +2,6 @@
   "name": "@sharyn/css",
   "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/css",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "996bbc7f537e9f11d205a1d79e07fc32be190b96"
 }
