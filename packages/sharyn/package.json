@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "4.3.1",
+  "version": "4.4.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -11,7 +11,7 @@
     "@sharyn/check-setup": "^2.0.3",
     "@sharyn/env": "^2.0.3",
     "@sharyn/util": "^2.0.3",
-    "@sharyn/webpack-config": "^2.0.3",
+    "@sharyn/webpack-config": "^2.1.0",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
     "babel-preset-sharyn": "^3.0.5",
@@ -42,7 +42,7 @@
     "@sharyn/koa": "^2.0.3",
     "@sharyn/prettier-config": "^1.2.4",
     "@sharyn/redis": "^2.0.3",
-    "@sharyn/server": "^3.0.3",
+    "@sharyn/server": "^3.1.0",
     "@sharyn/shared": "^2.0.3",
     "@sharyn/testing": "^2.0.3"
   },
