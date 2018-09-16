@@ -18,6 +18,7 @@ const config: Object = {
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [],
+  resolve: { alias: { joi: 'joi-browser' } },
   performance: { hints: false },
 }
 
