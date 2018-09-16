@@ -23,6 +23,7 @@ import Page from '../../packages/components/src/Page'
 import HideOnScrollView from './hide-on-scroll-view'
 import NotificationsView from './notifications-view'
 import { clearfix, middle } from '../../packages/css/src/util'
+import withFields from '../../packages/hocs/src/with-fields'
 
 storiesOf('Components', module)
   .addDecorator(withKnobs)
@@ -91,6 +92,11 @@ storiesOf('Components', module)
       </FontWeight>
     </div>
   ))
+  .add('HOC/withFields', () => {
+    const Input = ({ fields, setField }: Object) => <input value={fields.a} onChange={setField} />
+    const InputWithFields = withFields(Input)
+    return <InputWithFields />
+  })
 
 storiesOf('Full Page', module)
   .addDecorator(withKnobs)
