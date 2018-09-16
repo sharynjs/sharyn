@@ -12,6 +12,9 @@ export const fetchPageFailure = createAction(SHARYN_FETCH_PAGE_FAILURE)
 export const SHARYN_INVALIDATE_FIELDS = 'SHARYN_INVALIDATE_FIELDS'
 export const invalidateFields = createAction(SHARYN_INVALIDATE_FIELDS)
 
+export const SHARYN_CLEAR_INVALID_FIELDS = 'SHARYN_CLEAR_INVALID_FIELDS'
+export const clearInvalidFields = createAction(SHARYN_CLEAR_INVALID_FIELDS)
+
 export const SHARYN_NAVIGATION = 'SHARYN_NAVIGATION'
 export const navigation = createAction(SHARYN_NAVIGATION)
 
