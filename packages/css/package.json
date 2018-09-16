@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/css",
   "license": "MIT"
 }
