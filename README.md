@@ -37,6 +37,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - [**@sharyn/testing**](https://github.com/sharynjs/sharyn/blob/master/packages/testing/README.md) – Testing helpers
 - [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
 - [**@sharyn/hocs**](https://github.com/sharynjs/sharyn/blob/master/packages/hocs/README.md) – React High-Order Components
+- [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
 
 ## 🌹 Getting Started
 

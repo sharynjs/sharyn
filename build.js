@@ -56,6 +56,10 @@ const packages = [
     ],
   },
   {
+    name: 'css',
+    modules: ['global.js', 'util.js'],
+  },
+  {
     name: 'db',
     modules: [
       'create-query.js',

@@ -11,6 +11,7 @@ import { withKnobs } from '@storybook/addon-knobs/react'
 import { host } from 'storybook-host'
 import { Route } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
 
 import HomeIcon from '@material-ui/icons/Home'
 import HeroButton from '../../packages/components/src/HeroButton'
@@ -21,6 +22,7 @@ import NavList from '../../packages/components/src/NavList'
 import Page from '../../packages/components/src/Page'
 import HideOnScrollView from './hide-on-scroll-view'
 import NotificationsView from './notifications-view'
+import { clearfix, middle } from '../../packages/css/src/util'
 
 storiesOf('Components', module)
   .addDecorator(withKnobs)
@@ -103,3 +105,19 @@ storiesOf('Full Page', module)
   .add('Page Middle', () => <Page middle>Hello middle</Page>)
   .add('Hide on Scroll', () => <HideOnScrollView />)
   .add('Notifications', () => <NotificationsView />)
+  .add('CSS/middle', () => {
+    const MiddleJSX = ({ classes }: { classes: Object }) => (
+      <div className={classes.middle}>Middle</div>
+    )
+    const Middle = withStyles({ middle })(MiddleJSX)
+    return <Middle />
+  })
+  .add('CSS/clearfix', () => {
+    const ContainerJSX = ({ classes }: { classes: Object }) => (
+      <div style={{ border: '1px solid blue' }} className={classes.clearfix}>
+        <div style={{ float: 'left' }}>Float</div>
+      </div>
+    )
+    const Container = withStyles({ clearfix })(ContainerJSX)
+    return <Container />
+  })
