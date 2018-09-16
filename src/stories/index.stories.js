@@ -51,7 +51,9 @@ storiesOf('Components', module)
   ))
   .add('ProgressButton/Normal', () => <ProgressButton>Progress Button</ProgressButton>)
   .add('ProgressButton/Style', () => (
-    <ProgressButton style={{ color: 'red' }}>Progress Button</ProgressButton>
+    <ProgressButton style={{ color: 'red' }} data-test="test">
+      Progress Button
+    </ProgressButton>
   ))
   .add('ProgressButton/Loading', () => <ProgressButton isLoading>Progress Button</ProgressButton>)
   .add('DrawerItem', () => (
