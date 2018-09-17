@@ -8,8 +8,15 @@ const withFields = (Cmp: Function) =>
   compose(
     withState('fields', 'setFields', {}),
     withHandlers({
-      setField: ({ fields, setFields }) => ({ target }) =>
-        setFields({ ...fields, [target.name]: target.value }),
+      setField: ({ fields, setFields }) => ({ target }) => {
+        const newFields = { ...fields }
+        if (target.value === '') {
+          delete newFields[target.name]
+        } else {
+          newFields[target.name] = target.value
+        }
+        setFields(newFields)
+      },
     }),
   )(Cmp)
 
