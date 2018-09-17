@@ -4,16 +4,16 @@ import compose from 'recompose/compose'
 import withState from 'recompose/withState'
 import withHandlers from 'recompose/withHandlers'
 
-const withFields = (Cmp: Function) =>
+const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
   compose(
-    withState('fields', 'setFields', {}),
+    withState('fields', 'setFields', initialStateFn || {}),
     withHandlers({
-      setField: ({ fields, setFields }) => ({ target }) => {
+      setField: ({ fields, setFields }) => ({ target }, checked) => {
         const newFields = { ...fields }
-        if (target.value === '') {
+        if (checked !== undefined ? checked === false : target.value === '') {
           delete newFields[target.name]
         } else {
-          newFields[target.name] = target.value
+          newFields[target.name] = checked ? 'on' : target.value
         }
         setFields(newFields)
       },

@@ -94,7 +94,7 @@ storiesOf('Components', module)
   ))
   .add('HOC/withFields', () => {
     const Input = ({ fields, setField }: Object) => <input value={fields.a} onChange={setField} />
-    const InputWithFields = withFields(Input)
+    const InputWithFields = withFields()(Input)
     return <InputWithFields />
   })
 
