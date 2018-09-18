@@ -108,7 +108,7 @@ const packages = [
       'call.js',
       'Switch.js',
       'fetch.js',
-      'fill-title.js',
+      'get-page-info.js',
       'index.js',
       'logged-filter.js',
       'find-match.js',
