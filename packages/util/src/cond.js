@@ -1,6 +1,6 @@
 // @flow
 
-const cond = (cases: any[][], defaultCase?: any) => {
+const cond = (cases: any[][], defaultCase?: any): any => {
   const foundCase = cases.find(c => {
     if (Array.isArray(c[0])) {
       return c[0]

@@ -1,6 +1,6 @@
 // @flow
 
-const swit = (val: any, cases: any[][], defaultCase?: any) => {
+const swit = (val: any, cases: any[][], defaultCase?: any): any => {
   const foundCase = cases.find(c => {
     if (Array.isArray(c[0])) {
       return c[0].includes(val)
