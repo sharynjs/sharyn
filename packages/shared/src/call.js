@@ -7,13 +7,13 @@ import spread from '@sharyn/util/spread'
 import spreadIf from '@sharyn/util/spread-if'
 
 const call = ({
-  urlBase,
+  urlBase = '',
   urlPath = '/graphql',
   body,
   authorizationBearer,
   cookie,
 }: {
-  urlBase: string,
+  urlBase?: string,
   urlPath?: string,
   body?: any,
   authorizationBearer?: string,
