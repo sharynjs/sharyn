@@ -106,6 +106,7 @@ const packages = [
     name: 'shared',
     modules: [
       'call.js',
+      'graphql-call.js',
       'Switch.js',
       'fetch.js',
       'get-page-info.js',
