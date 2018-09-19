@@ -13,7 +13,11 @@ const globalStyles = ({ palette }: { palette: Object }) => ({
     body: { height: '100%', margin: 0 },
     '*, *:before, *:after': { boxSizing: 'inherit' },
     '#app': { height: '100%', display: 'flex', flexDirection: 'column' },
-    a: { color: palette.primary.main, textDecoration: 'none' },
+    a: {
+      color: palette.primary.main,
+      textDecoration: 'none',
+      '&:hover': { borderBottom: `1px solid ${palette.primary.main}` },
+    },
   },
 })
 
