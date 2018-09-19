@@ -9,15 +9,15 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
   compose(
     withState('fields', 'setFields', initialStateFn || {}),
     withProps({
-      setField: ({ fields, setFields }) => (key, value) => setFields({ ...fields, [key]: value }),
+      setField: (key, value) => ({ fields, setFields }) => setFields({ ...fields, [key]: value }),
     }),
     withHandlers({
-      handleFieldChange: ({ fields, setFields }) => ({ target }, checked) => {
+      handleFieldChange: ({ fields, setFields }) => ({ target }, secondParam) => {
         const newFields = { ...fields }
-        if (checked !== undefined ? checked === false : target.value === '') {
+        if (secondParam !== undefined ? secondParam === false : target.value === '') {
           delete newFields[target.name]
         } else {
-          newFields[target.name] = checked ? 'on' : target.value
+          newFields[target.name] = secondParam === true ? 'on' : target.value
         }
         setFields(newFields)
       },
