@@ -8,7 +8,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
   compose(
     withState('fields', 'setFields', initialStateFn || {}),
     withHandlers({
-      setField: ({ fields, setFields }) => ({ target }, checked) => {
+      fieldChangeHandler: ({ fields, setFields }) => ({ target }, checked) => {
         const newFields = { ...fields }
         if (checked !== undefined ? checked === false : target.value === '') {
           delete newFields[target.name]
