@@ -11,7 +11,7 @@ const graphqlCall = async ({
   mapResp,
   cookie,
 }: {
-  urlBase: string,
+  urlBase?: string,
   query: string,
   variables: Object,
   mapResp?: Function,
