@@ -16,7 +16,7 @@ const globalStyles = ({ palette }: { palette: Object }) => ({
     a: {
       color: palette.primary.main,
       textDecoration: 'none',
-      '&:hover': { borderBottom: `1px solid ${palette.primary.main}` },
+      '&:hover': { textDecoration: 'none', textUnderlinePosition: 'under' },
     },
   },
 })
