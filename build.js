@@ -48,6 +48,7 @@ const packages = [
     name: 'components',
     modules: [
       'DrawerItem.js',
+      'DelayedProgress.js',
       'LoadingPage.js',
       'Page.js',
       'HeroButton.js',

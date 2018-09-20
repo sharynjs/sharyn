@@ -16,6 +16,7 @@ import { withStyles } from '@material-ui/core/styles'
 import HomeIcon from '@material-ui/icons/Home'
 import HeroButton from '../../packages/components/src/HeroButton'
 import ProgressButton from '../../packages/components/src/ProgressButton'
+import DelayedProgress from '../../packages/components/src/DelayedProgress'
 import DrawerItem from '../../packages/components/src/DrawerItem'
 import FontWeight from '../../packages/components/src/FontWeight'
 import NavList from '../../packages/components/src/NavList'
@@ -92,6 +93,7 @@ storiesOf('Components', module)
       </FontWeight>
     </div>
   ))
+  .add('DelayedProgress', () => <DelayedProgress />)
   .add('HOC/withFields', () => {
     const Input = ({ fields, setField }: Object) => <input value={fields.a} onChange={setField} />
     const InputWithFields = withFields()(Input)
