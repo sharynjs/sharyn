@@ -15,20 +15,22 @@ export const configureWithClientMainQuery = (fetchPageThunk: Function) => {
 
 const lifecycle = {
   componentDidMount() {
-    if (!configuredFetchPageThunk) {
-      throw Error('You must configure a fetchPageThunk with configureWithClientMainQuery')
-    }
-    const { dispatch, route } = this.props
-    if (route.mainQuery) {
-      const urlParams = this.props.match.params
-      const { query, mapUrlParams, mapResp } = route.mainQuery
-      dispatch(configuredFetchPageThunk({ query, urlParams, mapUrlParams, mapResp }))
+    if (!this.props.isFirstRender) {
+      if (!configuredFetchPageThunk) {
+        throw Error('You must configure a fetchPageThunk with configureWithClientMainQuery')
+      }
+      const { dispatch, route } = this.props
+      if (route.mainQuery) {
+        const urlParams = this.props.match.params
+        const { query, mapUrlParams, mapResp } = route.mainQuery
+        dispatch(configuredFetchPageThunk({ query, urlParams, mapUrlParams, mapResp }))
+      }
     }
   },
 }
 
 const withClientMainQuery = compose(
-  connect(() => ({})),
+  connect(({ env }) => ({ isFirstRender: env.isFirstRender })),
   withLifecycle(lifecycle),
 )
 
