@@ -15,7 +15,7 @@ import compose from 'recompose/compose'
 
 const lifecycle = {
   componentDidMount() {
-    setTimeout(() => this.props.setShow(true), this.props.delay ?? 1000)
+    setTimeout(() => this.props.setShow(true), this.props.delay ?? 400)
   },
 }
 
