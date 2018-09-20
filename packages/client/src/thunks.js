@@ -2,6 +2,8 @@
 
 // flow-disable-next-line
 import graphqlCall from '@sharyn/shared/graphql-call'
+// flow-disable-next-line
+import spread from '@sharyn/util/spread'
 
 let configuredGraphqlRequest
 let configuredGraphqlSuccess
@@ -25,7 +27,7 @@ export const configureGraphqlThunk = ({
   configuredGraphqlFailure = failure
 }
 
-export const configurefetchPageThunk = ({
+export const configureFetchPageThunk = ({
   request,
   success,
   failure,
@@ -64,7 +66,7 @@ export const graphqlThunk = ({
   mapFields?: Function,
   query: string,
   mapResp?: Function,
-  asyncKey: string,
+  asyncKey?: string,
   request?: Function,
   success?: Function,
   failure?: Function,
@@ -89,12 +91,14 @@ export const graphqlThunk = ({
       query,
       mapResp,
     })
-    dispatch(success({ data, asyncKey }))
+    dispatch(success({ data, ...spread({ asyncKey }) }))
+    return data
   } catch (error) {
-    dispatch(failure({ error, asyncKey }))
+    dispatch(failure({ error, ...spread({ asyncKey }) }))
     if (throwErr) {
       throw error
     }
+    return error
   }
 }
 
