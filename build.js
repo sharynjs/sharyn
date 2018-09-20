@@ -38,6 +38,8 @@ const packages = [
       'thunks.js',
       'data-reductions.js',
       'data-reductions.test.js',
+      'env-reductions.js',
+      'env-reductions.test.js',
       'ui-reductions.js',
       'ui-reductions.test.js',
       'async-reductions.js',
