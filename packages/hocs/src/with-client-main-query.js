@@ -27,10 +27,9 @@ const lifecycle = {
   },
 }
 
-const withClientMainQuery = () =>
-  compose(
-    connect(() => ({})),
-    withLifecycle(lifecycle),
-  )
+const withClientMainQuery = compose(
+  connect(() => ({})),
+  withLifecycle(lifecycle),
+)
 
 export default withClientMainQuery
