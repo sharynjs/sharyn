@@ -48,6 +48,7 @@ const packages = [
     name: 'components',
     modules: [
       'DrawerItem.js',
+      'LoadingPage.js',
       'Page.js',
       'HeroButton.js',
       'NavList.js',
@@ -81,12 +82,7 @@ const packages = [
   },
   {
     name: 'hocs',
-    modules: [
-      'hide-on-scroll.js',
-      'with-client-main-query.js',
-      'with-default.js',
-      'with-fields.js',
-    ],
+    modules: ['hide-on-scroll.js', 'with-client-main-query.js', 'render-if.js', 'with-fields.js'],
   },
   {
     name: 'jest-config',
