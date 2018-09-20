@@ -6,22 +6,26 @@ import call from './call'
 
 const graphqlCall = async ({
   urlBase,
-  query,
+  urlPath,
+  authorizationBearer,
+  cookie,
   urlParams = {},
   mapUrlParams,
   fields = {},
   mapFields,
+  query,
   mapResp,
-  cookie,
 }: {
   urlBase?: string,
-  query: string,
+  urlPath?: string,
+  authorizationBearer?: string,
+  cookie?: string,
   urlParams?: Object,
   mapUrlParams?: Function,
   fields?: Object,
   mapFields?: Function,
+  query: string,
   mapResp?: Function,
-  cookie?: string,
 }) => {
   let callResp
   const variables = {
@@ -29,7 +33,13 @@ const graphqlCall = async ({
     ...(mapFields ? mapFields(fields) : fields),
   }
   try {
-    callResp = await call({ urlBase, cookie, body: { query, variables } })
+    callResp = await call({
+      urlBase,
+      urlPath,
+      authorizationBearer,
+      cookie,
+      body: { query, variables },
+    })
   } catch (err) {
     throw err.response?.data?.errors ? err.response.data.errors[0] : err
   }

@@ -9,15 +9,15 @@ import spreadIf from '@sharyn/util/spread-if'
 const call = ({
   urlBase = '',
   urlPath = '/graphql',
-  body,
   authorizationBearer,
   cookie,
+  body,
 }: {
   urlBase?: string,
   urlPath?: string,
-  body?: any,
   authorizationBearer?: string,
   cookie?: string,
+  body?: any,
 }) =>
   axios.post(`${urlBase}${urlPath}`, body, {
     headers: {
