@@ -43,9 +43,16 @@ const graphqlCall = async ({
   } catch (err) {
     throw err.response?.data?.errors ? err.response.data.errors[0] : err
   }
+  let dataResp = {}
+  try {
+    dataResp = mapResp ? mapResp(callResp?.data?.data) : callResp?.data?.data
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(err)
+  }
   return {
     ...spread({ errors: callResp?.data?.errors }),
-    ...(mapResp ? mapResp(callResp?.data?.data) : callResp?.data?.data),
+    ...dataResp,
   }
 }
 
