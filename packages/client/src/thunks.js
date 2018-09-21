@@ -68,6 +68,9 @@ export const graphqlThunk = ({
   query,
   mapResp,
   successRedirect,
+  onSuccess,
+  onDataErrors,
+  onInvalidFields,
   routerHistory,
   asyncKey,
   request = configuredGraphqlRequest,
@@ -86,6 +89,9 @@ export const graphqlThunk = ({
   query: string,
   mapResp?: Function,
   successRedirect?: Function | string,
+  onSuccess?: Function,
+  onDataErrors?: Function,
+  onInvalidFields?: Function,
   routerHistory?: Object,
   asyncKey?: string,
   request?: Function,
@@ -115,15 +121,24 @@ export const graphqlThunk = ({
       ...optionsFn(),
     })
     dispatch(success({ data, ...spread({ asyncKey }) }))
-    if (successRedirect && !data.errors && !data.invalidFields) {
-      if (!routerHistory) {
-        throw Error(
-          'In order to use successRedirect, you need to provide a routerHistory to graphqlThunk',
+    if (data.errors) {
+      onDataErrors && onDataErrors(data)
+    }
+    if (data.invalidFields) {
+      onInvalidFields && onInvalidFields(data)
+    }
+    if (!data.errors && !data.invalidFields) {
+      if (successRedirect) {
+        if (!routerHistory) {
+          throw Error(
+            'In order to use successRedirect, you need to provide a routerHistory to graphqlThunk',
+          )
+        }
+        routerHistory.push(
+          successRedirect instanceof Function ? successRedirect(data, fields) : successRedirect,
         )
       }
-      routerHistory.push(
-        successRedirect instanceof Function ? successRedirect(data, fields) : successRedirect,
-      )
+      onSuccess && onSuccess(data)
     }
     return data
   } catch (error) {
