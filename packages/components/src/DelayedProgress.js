@@ -13,13 +13,18 @@ import withState from 'recompose/withState'
 // flow-disable-next-line
 import compose from 'recompose/compose'
 
+let timerId
+
 const lifecycle = {
   componentDidMount() {
-    setTimeout(() => this.props.setShow(true), this.props.delay ?? 200)
+    timerId = setTimeout(() => this.props.setShow(true), this.props.delay ?? 200)
+  },
+  componentWillUnmount() {
+    clearTimeout(timerId)
   },
 }
 
-const DelayedProgressJSX = ({ show, ...rest }: { show: boolean }) =>
+const DelayedProgressJSX = ({ show, setShow, ...rest }: { show: boolean, setShow: Function }) =>
   show ? <Progress {...rest} /> : null
 
 const DelayedProgress = compose(
