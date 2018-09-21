@@ -12,6 +12,8 @@ let configuredGraphqlRequest
 let configuredGraphqlSuccess
 let configuredGraphqlFailure
 
+let configuredOptionsFn
+
 let configuredFetchPageRequest
 let configuredFetchPageSuccess
 let configuredFetchPageFailure
@@ -22,18 +24,21 @@ export const configureGraphqlThunk = ({
   failure,
   urlBase,
   urlPath,
+  options = () => ({}),
 }: {
   request: Function,
   success: Function,
   failure: Function,
   urlBase?: string,
   urlPath?: string,
+  options?: Function,
 }) => {
   configuredGraphqlRequest = request
   configuredGraphqlSuccess = success
   configuredGraphqlFailure = failure
   configuredUrlBase = urlBase
   configuredUrlPath = urlPath
+  configuredOptionsFn = options
 }
 
 export const configureFetchPageThunk = ({
@@ -66,6 +71,7 @@ export const graphqlThunk = ({
   request = configuredGraphqlRequest,
   success = configuredGraphqlSuccess,
   failure = configuredGraphqlFailure,
+  options: optionsFn = configuredOptionsFn,
   throwErr = true,
 }: {
   urlBase?: string,
@@ -82,6 +88,7 @@ export const graphqlThunk = ({
   success?: Function,
   failure?: Function,
   throwErr?: boolean,
+  options: Function,
 }) => async (dispatch: Function) => {
   if (!(request && success && failure)) {
     throw Error(
@@ -101,6 +108,7 @@ export const graphqlThunk = ({
       mapFields,
       query,
       mapResp,
+      ...optionsFn(),
     })
     dispatch(success({ data, ...spread({ asyncKey }) }))
     return data
