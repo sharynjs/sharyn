@@ -41,7 +41,10 @@ const lifecycle = {
 
 const withClientMainQuery = (fetchPageOptions?: Object) =>
   compose(
-    withProps({ fetchPageOptions }),
+    withProps(props => ({
+      fetchPageOptions:
+        fetchPageOptions instanceof Function ? fetchPageOptions(props) : fetchPageOptions,
+    })),
     connect(({ env }) => ({ isFirstRender: env.isFirstRender })),
     withLifecycle(lifecycle),
     mapProps((props: Object) => {
