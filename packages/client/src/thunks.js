@@ -98,7 +98,7 @@ export const graphqlThunk = ({
   success?: Function,
   failure?: Function,
   throwErr?: boolean,
-  options: Function,
+  options?: Function,
 }) => async (dispatch: Function) => {
   if (!(request && success && failure)) {
     throw Error(
