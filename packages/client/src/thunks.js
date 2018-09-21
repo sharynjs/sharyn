@@ -5,6 +5,9 @@ import graphqlCall from '@sharyn/shared/graphql-call'
 // flow-disable-next-line
 import spread from '@sharyn/util/spread'
 
+let configuredUrlBase
+let configuredUrlPath
+
 let configuredGraphqlRequest
 let configuredGraphqlSuccess
 let configuredGraphqlFailure
@@ -17,14 +20,20 @@ export const configureGraphqlThunk = ({
   request,
   success,
   failure,
+  urlBase,
+  urlPath,
 }: {
   request: Function,
   success: Function,
   failure: Function,
+  urlBase?: string,
+  urlPath?: string,
 }) => {
   configuredGraphqlRequest = request
   configuredGraphqlSuccess = success
   configuredGraphqlFailure = failure
+  configuredUrlBase = urlBase
+  configuredUrlPath = urlPath
 }
 
 export const configureFetchPageThunk = ({
@@ -42,8 +51,10 @@ export const configureFetchPageThunk = ({
 }
 
 export const graphqlThunk = ({
-  urlBase,
-  urlPath,
+  // flow-disable-next-line
+  urlBase = configuredUrlBase,
+  // flow-disable-next-line
+  urlPath = configuredUrlPath,
   authorizationBearer,
   urlParams,
   mapUrlParams,

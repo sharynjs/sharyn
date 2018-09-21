@@ -6,6 +6,8 @@
 import { connect } from 'react-redux'
 import withLifecycle from 'recompose/lifecycle'
 import compose from 'recompose/compose'
+import mapProps from 'recompose/mapProps'
+import withProps from 'recompose/withProps'
 
 let configuredFetchPageThunk
 
@@ -19,19 +21,34 @@ const lifecycle = {
       if (!configuredFetchPageThunk) {
         throw Error('You must configure a fetchPageThunk with configureWithClientMainQuery')
       }
-      const { dispatch, route } = this.props
+      const { dispatch, route, fetchPageOptions } = this.props
       if (route.mainQuery) {
         const urlParams = this.props.match.params
         const { query, mapUrlParams, mapResp } = route.mainQuery
-        dispatch(configuredFetchPageThunk({ query, urlParams, mapUrlParams, mapResp }))
+        dispatch(
+          configuredFetchPageThunk({
+            query,
+            urlParams,
+            mapUrlParams,
+            mapResp,
+            ...fetchPageOptions,
+          }),
+        )
       }
     }
   },
 }
 
-const withClientMainQuery = compose(
-  connect(({ env }) => ({ isFirstRender: env.isFirstRender })),
-  withLifecycle(lifecycle),
-)
+const withClientMainQuery = (fetchPageOptions?: Object) =>
+  compose(
+    withProps({ fetchPageOptions }),
+    connect(({ env }) => ({ isFirstRender: env.isFirstRender })),
+    withLifecycle(lifecycle),
+    mapProps((props: Object) => {
+      const newProps = { ...props }
+      delete newProps.fetchPageOptions
+      return newProps
+    }),
+  )
 
 export default withClientMainQuery
