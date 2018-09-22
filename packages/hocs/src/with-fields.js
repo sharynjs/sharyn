@@ -10,9 +10,16 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
     withHandlers({
       handleFieldChange: ({ fields, setFields }) => ({ target }) => {
         const newFields = { ...fields }
-        newFields[target.name] = { value: target.value }
         if (target.type === 'checkbox') {
-          newFields[target.name].checked = target.checked
+          if (target.checked) {
+            newFields[target.name] = target.value
+          } else {
+            delete newFields[target.name]
+          }
+        } else if (target.value !== '') {
+          newFields[target.name] = target.value
+        } else {
+          delete newFields[target.name]
         }
         setFields(newFields)
       },

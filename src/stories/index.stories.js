@@ -98,15 +98,15 @@ storiesOf('Components', module)
   .add('HOC/withFields', () => {
     const Input = ({ fields, handleFieldChange }: Object) => (
       <>
-        <input name="a" value={fields.a?.value ?? ''} onChange={handleFieldChange} />
+        <input name="a" value={fields.a ?? ''} onChange={handleFieldChange} />
         <input
           name="b"
           value="hey"
           type="checkbox"
-          checked={fields.b?.checked ?? false}
+          checked={fields.b ?? false}
           onChange={handleFieldChange}
         />
-        <select name="c" value={fields.c?.value ?? ''} onChange={handleFieldChange}>
+        <select name="c" value={fields.c ?? ''} onChange={handleFieldChange}>
           <option value="">Default</option>
           <option value="1">1</option>
           <option value="2">2</option>
