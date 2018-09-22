@@ -134,7 +134,10 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
     const mount = require('koa-mount')
     // flow-disable-next-line
     const serveStatic = require('koa-static')
-    app.use(mount('/static', serveStatic('dist'))).use(mount('/static', serveStatic('public')))
+    app
+      .use(mount('/static', serveStatic('dist')))
+      .use(mount('/static', serveStatic('public')))
+      .use(mount('/', serveStatic('public/root')))
   }
 
   if (hasPackage('koa-favicon')) {
