@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/koa",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/koa",
   "license": "MIT",
   "peerDependencies": {
