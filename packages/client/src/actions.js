@@ -21,6 +21,11 @@ export const navigation = createAction(SHARYN_NAVIGATION)
 export const SHARYN_START_CLIENT_NAVIGATION = 'SHARYN_START_CLIENT_NAVIGATION'
 export const startClientNavigation = createAction(SHARYN_START_CLIENT_NAVIGATION)
 
+export const SHARYN_ONLINE = 'SHARYN_ONLINE'
+export const SHARYN_OFFLINE = 'SHARYN_OFFLINE'
+export const online = createAction(SHARYN_ONLINE)
+export const offline = createAction(SHARYN_OFFLINE)
+
 export const SHARYN_DISMISS_FIRST_NOTIFICATION = 'SHARYN_DISMISS_FIRST_NOTIFICATION'
 export const dismissFirstNotification = createAction(SHARYN_DISMISS_FIRST_NOTIFICATION)
 
