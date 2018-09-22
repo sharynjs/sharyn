@@ -61,6 +61,9 @@ storiesOf('Components', module)
     </ProgressButton>
   ))
   .add('ProgressButton/Loading', () => <ProgressButton isLoading>Progress Button</ProgressButton>)
+  .add('ProgressButton/Offline', () => (
+    <ProgressButton isOnline={false}>Progress Button</ProgressButton>
+  ))
   .add('DrawerItem', () => (
     <div style={{ width: 400 }}>
       <DrawerItem label="Hello" icon={HomeIcon} />
