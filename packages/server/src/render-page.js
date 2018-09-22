@@ -25,12 +25,14 @@ const renderPage = ({
   theme,
   jss,
   preloadedState = {},
+  swPath,
 }: {
   ctx: Object,
   App: Function,
   theme?: Object,
   jss?: any,
   preloadedState?: Object,
+  swPath?: string,
 }) => {
   let appHtml
   let css
@@ -64,6 +66,7 @@ const renderPage = ({
       appHtml,
       css,
       helmet,
+      swPath,
       windowVars: [['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, ...rest }]],
     })
   }

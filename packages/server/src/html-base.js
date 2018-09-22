@@ -19,6 +19,7 @@ type Params = {
   appHtml?: string,
   css?: string,
   helmet?: Object,
+  swPath?: string,
 }
 
 const htmlBase = ({
@@ -27,6 +28,7 @@ const htmlBase = ({
   appHtml = '',
   css,
   helmet,
+  swPath,
 }: Params) => {
   const windowVarsScriptTags = windowVarPairs
     ? windowVarPairs.map(p => `    <script>window.${p[0]} = ${serialize(p[1])}</script>`).join(`
@@ -44,6 +46,11 @@ ${!NO_SSR && css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}
   </head>
   <body ${!NO_SSR && helmet ? helmet.bodyAttributes.toString() : ''}>
     <div id="${rootId}">${NO_SSR ? '' : appHtml}</div>
+${
+    swPath
+      ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}')</script>`
+      : ''
+  }
 ${SSR_ONLY ? '' : windowVarsScriptTags}
 ${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>

@@ -21,10 +21,29 @@ const expectedWithVars = `<!doctype html>
   </head>
   <body >
     <div id="app"></div>
+
     <script>window.__A__ = {"a":"\\u003Cscript\\u003Ealert('xss')\\u003C\\u002Fscript\\u003E"}</script>
     <script>window.__B__ = "plop"</script>
     <script>window.__C__ = true</script>
     <script>window.__D__ = 666</script>
+    <script src="/static/js/bundle.js"></script>
+  </body>
+</html>`
+
+const expectedWithSwPath = `<!doctype html>
+<html >
+  <head>
+    <meta charset="utf-8">
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+
+  </head>
+  <body >
+    <div id="app"></div>
+    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js')</script>
+
     <script src="/static/js/bundle.js"></script>
   </body>
 </html>`
@@ -41,6 +60,7 @@ const expectedWithoutVars = `<!doctype html>
   </head>
   <body >
     <div id="app"></div>
+
 
     <script src="/static/js/bundle.js"></script>
   </body>
@@ -59,6 +79,7 @@ const expectedWithAppHtml = `<!doctype html>
   <body >
     <div id="app">Hello</div>
 
+
     <script src="/static/js/bundle.js"></script>
   </body>
 </html>`
@@ -75,6 +96,7 @@ const expectedWithCss = `<!doctype html>
   </head>
   <body >
     <div id="app"></div>
+
 
     <script src="/static/js/bundle.js"></script>
   </body>
@@ -93,6 +115,7 @@ const expectedWithHelmet = `<!doctype html>
   <body foo="foo">
     <div id="app"></div>
 
+
     <script src="/static/js/bundle.js"></script>
   </body>
 </html>`
@@ -100,6 +123,7 @@ const expectedWithHelmet = `<!doctype html>
 test('htmlBase', () => {
   expect(htmlBase({ windowVars: exampleWindowVarPairs })).toBe(expectedWithVars)
   expect(htmlBase({})).toBe(expectedWithoutVars)
+  expect(htmlBase({ swPath: '/sw.js' })).toBe(expectedWithSwPath)
   expect(htmlBase({ appHtml: 'Hello' })).toBe(expectedWithAppHtml)
   expect(htmlBase({ css: 'body { color: red }' })).toBe(expectedWithCss)
   expect(
