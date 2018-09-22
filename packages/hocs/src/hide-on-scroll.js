@@ -70,7 +70,7 @@ const lifecycle = {
           lowest = current + headroom
         }
       }
-    }, 100)
+    }, 10)
   },
 }
 
