@@ -84,6 +84,16 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
     app.keys = [SESSION_SECRET_KEY]
   }
 
+  app.use(async (ctx, next) => {
+    try {
+      await next()
+    } catch (err) {
+      ctx.status = err.status || 500
+      ctx.redirect('/error')
+      ctx.app.emit('error', err, ctx)
+    }
+  })
+
   if (hasPackage('koa-sslify')) {
     // flow-disable-next-line
     const enforceHttps = require('koa-sslify')
@@ -149,6 +159,8 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
 
   routing(router)
   app.use(router.routes()).use(router.allowedMethods())
+
+  app.on('error', err => console.error(err))
 
   server = app.listen(options?.port || port)
 }

@@ -7,7 +7,7 @@ import loggedFilter from './logged-filter'
 
 type Route = { path?: string, loggedOutOnly?: boolean, loggedInOnly?: boolean }
 
-const findMatch = (routes: Route[], pathname: string, isLoggedIn: boolean) => {
+const findMatch = (routes: Object[], pathname: string, isLoggedIn: boolean) => {
   const routesWithPlainPaths: Route[] = routes.map(r => ({
     ...r,
     path: typeof r.path === 'function' ? r.path() : r.path,
