@@ -42,7 +42,7 @@ const expectedWithSwPath = `<!doctype html>
   </head>
   <body >
     <div id="app"></div>
-    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js')</script>
+    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'))</script>
 
     <script src="/static/js/bundle.js"></script>
   </body>

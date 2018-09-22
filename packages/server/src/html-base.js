@@ -48,7 +48,7 @@ ${!NO_SSR && css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}
     <div id="${rootId}">${NO_SSR ? '' : appHtml}</div>
 ${
     swPath
-      ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}')</script>`
+      ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}'))</script>`
       : ''
   }
 ${SSR_ONLY ? '' : windowVarsScriptTags}
