@@ -10,7 +10,7 @@ import DrawerItem from './DrawerItem'
 type RouteWithOptions = {
   path: string,
   title: string,
-  Icon?: Function,
+  icon?: Function,
   hardLink?: boolean,
   newTab?: boolean,
 }
@@ -21,14 +21,14 @@ const mergeNavItems = (navItemPairs: any[]): RouteWithOptions[] =>
 const NavList = ({ navItems }: { navItems: any[] }) => (
   <List>
     {mergeNavItems(navItems).map(
-      ({ path, title: label, Icon, hardLink, newTab }) =>
+      ({ path, title: label, icon, hardLink, newTab }) =>
         hardLink || newTab ? (
           <a href={path} key={path} {...(newTab ? { target: '_blank' } : {})}>
-            <DrawerItem label={label} icon={Icon} />
+            <DrawerItem {...{ label, icon }} />
           </a>
         ) : (
           <Link to={path} key={path}>
-            <DrawerItem label={label} icon={Icon} />
+            <DrawerItem {...{ label, icon }} />
           </Link>
         ),
     )}

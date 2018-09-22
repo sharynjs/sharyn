@@ -15,6 +15,7 @@ const styles = {
     color: '#ddd',
     '&:hover': {
       color: '#ccc',
+      textDecoration: 'none',
     },
   },
   container: { textAlign: 'center' },
@@ -66,14 +67,14 @@ const HeroButtonJSX = ({
     }
     return (
       <a {...rest} {...aProps}>
-        <Inner icon={icon} label={label} classes={classes} />
+        <Inner {...{ icon, label, classes }} />
       </a>
     )
   }
 
   return (
     <Link {...rest} to={dest} className={classes.link}>
-      <Inner icon={icon} label={label} classes={classes} />
+      <Inner {...{ icon, label, classes }} />
     </Link>
   )
 }

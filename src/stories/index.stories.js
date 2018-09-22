@@ -96,7 +96,23 @@ storiesOf('Components', module)
   ))
   .add('DelayedProgress', () => <DelayedProgress />)
   .add('HOC/withFields', () => {
-    const Input = ({ fields, setField }: Object) => <input value={fields.a} onChange={setField} />
+    const Input = ({ fields, handleFieldChange }: Object) => (
+      <>
+        <input name="a" value={fields.a?.value ?? ''} onChange={handleFieldChange} />
+        <input
+          name="b"
+          value="hey"
+          type="checkbox"
+          checked={fields.b?.checked ?? false}
+          onChange={handleFieldChange}
+        />
+        <select name="c" value={fields.c?.value ?? ''} onChange={handleFieldChange}>
+          <option value="">Default</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </>
+    )
     const InputWithFields = withFields()(Input)
     return <InputWithFields />
   })
