@@ -21,12 +21,12 @@ const handleExited = (updateIsOpen, handleDismissNotification) => {
 }
 
 const NotificationsJSX = ({
-  notifications,
+  notifications = [],
   handleDismissNotification,
   isOpen,
   updateIsOpen,
 }: {
-  notifications: Object[],
+  notifications?: Object[],
   handleDismissNotification: Function,
   currentSnackbar?: Object,
   isOpen: boolean,

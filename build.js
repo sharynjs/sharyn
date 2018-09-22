@@ -58,6 +58,7 @@ const packages = [
       'Notifications.js',
       'FontWeight.js',
       'ProgressButton.js',
+      'StoryHost.js',
     ],
   },
   {

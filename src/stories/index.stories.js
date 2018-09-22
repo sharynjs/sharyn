@@ -14,6 +14,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 
 import HomeIcon from '@material-ui/icons/Home'
+import StoryHost from '../../packages/components/src/StoryHost'
 import HeroButton from '../../packages/components/src/HeroButton'
 import ProgressButton from '../../packages/components/src/ProgressButton'
 import DelayedProgress from '../../packages/components/src/DelayedProgress'
@@ -109,6 +110,13 @@ storiesOf('Full Page', module)
     ]),
   )
   .addDecorator(muiTheme())
+  .add('StoryHost', () => <StoryHost>StoryHost</StoryHost>)
+  .add('StoryHost Border', () => <StoryHost border>StoryHost</StoryHost>)
+  .add('StoryHost Width', () => (
+    <StoryHost border width={200}>
+      StoryHost
+    </StoryHost>
+  ))
   .add('Page Normal', () => <Page>Hello</Page>)
   .add('Page Middle', () => <Page middle>Hello middle</Page>)
   .add('Hide on Scroll', () => <HideOnScrollView />)
