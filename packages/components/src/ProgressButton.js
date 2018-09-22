@@ -19,11 +19,23 @@ const styles = {
   },
 }
 
-type Props = { classes: Object, children: any, isLoading?: boolean }
+type Props = { classes: Object, children: any, isLoading?: boolean, isOnline?: boolean }
 
-const ProgressButtonJSX = ({ classes: css, isLoading, children, ...rest }: Props) => (
+const ProgressButtonJSX = ({
+  classes: css,
+  isLoading,
+  isOnline = true,
+  children,
+  ...rest
+}: Props) => (
   <span className={css.progressButtonWrapper} style={{ verticalAlign: 'bottom' }}>
-    <Button disabled={isLoading} variant="raised" color="primary" type="submit" {...rest}>
+    <Button
+      disabled={isLoading || !isOnline}
+      variant="raised"
+      color="primary"
+      type="submit"
+      {...rest}
+    >
       {children}
     </Button>
     {isLoading && <Progress className={css.progressButton} size={28} thickness={4} />}
