@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "4.26.1",
+  "version": "4.27.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@sharyn/cli": "^4.0.4",
-    "@sharyn/client": "^3.8.1",
+    "@sharyn/client": "^3.9.0",
     "@sharyn/components": "^2.4.0",
     "@sharyn/css": "^1.1.2",
     "@sharyn/db": "^2.0.3",
