@@ -6,6 +6,8 @@ import webpack from 'webpack'
 import path from 'path'
 // flow-disable-next-line
 import { hasPackage, dirChecksum } from '@sharyn/check-setup'
+// flow-disable-next-line
+import { NO_VERSION_VALIDATION } from '@sharyn/env'
 
 import { WDS_PORT } from './wds-util'
 
@@ -20,7 +22,7 @@ const config: Object = {
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [
     new webpack.DefinePlugin({
-      CLIENT_VERSION: JSON.stringify(dirChecksum('.')),
+      CLIENT_VERSION: NO_VERSION_VALIDATION ? null : JSON.stringify(dirChecksum('.')),
     }),
   ],
   resolve: { alias: { joi: 'joi-browser' } },
