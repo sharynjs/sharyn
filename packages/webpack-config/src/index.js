@@ -5,9 +5,7 @@
 import webpack from 'webpack'
 import path from 'path'
 // flow-disable-next-line
-import { hasPackage } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { dirChecksum } from '@sharyn/server'
+import { hasPackage, dirChecksum } from '@sharyn/check-setup'
 
 import { WDS_PORT } from './wds-util'
 

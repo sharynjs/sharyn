@@ -6,6 +6,7 @@ import appRoot from './app-root'
 import pathCascade from './path-cascade'
 import requireSharyn from './require-sharyn'
 import { requireCascade, requireCascadeFromSource } from './require-cascade'
+import dirChecksum from './dir-checksum'
 
 module.exports = {
   hasFile,
@@ -15,4 +16,5 @@ module.exports = {
   requireCascade,
   requireCascadeFromSource,
   requireSharyn,
+  dirChecksum,
 }
