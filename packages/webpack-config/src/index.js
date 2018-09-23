@@ -2,13 +2,15 @@
 
 /* eslint-disable import/no-extraneous-dependencies, global-require */
 
-import fs from 'fs'
 import webpack from 'webpack'
 import path from 'path'
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
 
 import { WDS_PORT } from './wds-util'
+
+const sourceVersion = process.env.SOURCE_VERSION
+console.log(sourceVersion)
 
 const config: Object = {
   entry: './src/_client/client.js',
@@ -21,7 +23,7 @@ const config: Object = {
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [
     new webpack.DefinePlugin({
-      CLIENT_GIT_HASH: JSON.stringify(fs.readFileSync('.git/refs/heads/master').toString()),
+      CLIENT_VERSION: JSON.stringify(sourceVersion),
     }),
   ],
   resolve: { alias: { joi: 'joi-browser' } },
