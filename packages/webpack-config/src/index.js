@@ -6,11 +6,10 @@ import webpack from 'webpack'
 import path from 'path'
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
+// flow-disable-next-line
+import dirChecksum from '@sharyn/server'
 
 import { WDS_PORT } from './wds-util'
-
-const sourceVersion = process.env.SOURCE_VERSION
-console.log(sourceVersion)
 
 const config: Object = {
   entry: './src/_client/client.js',
@@ -23,7 +22,7 @@ const config: Object = {
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [
     new webpack.DefinePlugin({
-      CLIENT_VERSION: JSON.stringify(sourceVersion),
+      CLIENT_VERSION: JSON.stringify(dirChecksum('.')),
     }),
   ],
   resolve: { alias: { joi: 'joi-browser' } },

@@ -107,7 +107,7 @@ const packages = [
   },
   {
     name: 'server',
-    modules: ['html-base.js', 'html-base.test.js', 'index.js', 'render-page.js'],
+    modules: ['html-base.js', 'html-base.test.js', 'index.js', 'render-page.js', 'dir-checksum.js'],
   },
   {
     name: 'shared',
