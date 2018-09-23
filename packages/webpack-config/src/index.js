@@ -1,13 +1,12 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies, global-require, import/no-dynamic-require, no-empty */
+/* eslint-disable import/no-extraneous-dependencies, global-require */
 
+import fs from 'fs'
 import webpack from 'webpack'
 import path from 'path'
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
-
-import { path as appRootPath } from 'app-root-path'
 
 import { WDS_PORT } from './wds-util'
 
@@ -20,20 +19,13 @@ const config: Object = {
     publicPath: '/static/',
   },
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
-  plugins: [],
+  plugins: [
+    new webpack.DefinePlugin({
+      CLIENT_GIT_HASH: JSON.stringify(fs.readFileSync('.git/refs/heads/master').toString()),
+    }),
+  ],
   resolve: { alias: { joi: 'joi-browser' } },
   performance: { hints: false },
-}
-
-let packageJson
-try {
-  // flow-disable-next-line
-  packageJson = require(`${appRootPath}/package.json`)
-} catch (err) {}
-if (packageJson && packageJson.version) {
-  config.plugins.push(
-    new webpack.DefinePlugin({ CLIENT_VERSION: JSON.stringify(packageJson.version) }),
-  )
 }
 
 if (hasPackage('compression-webpack-plugin')) {
