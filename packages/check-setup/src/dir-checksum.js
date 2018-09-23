@@ -7,18 +7,10 @@ const klawSync = require('klaw-sync')
 // flow-disable-next-line
 const md5 = require('md5')
 
-const dirChecksum = (dirPath: string) => {
-  const basePath = pathModule.resolve(dirPath)
-  const files = klawSync(dirPath, {
-    nodir: true,
-    filter: ({ path }) =>
-      !RegExp(`^${basePath}/node_modules/`).test(path) &&
-      !RegExp(`^${basePath}/dist/`).test(path) &&
-      !RegExp(`^${basePath}/.git/`).test(path) &&
-      !RegExp(`^${basePath}/coverage/`).test(path) &&
-      !RegExp(`^${basePath}/lib/`).test(path) &&
-      !RegExp(`^${basePath}/data/`).test(path),
-  }).map(f => f.path)
+const dirChecksum = (dirPath: string, extraPaths: string[] = []) => {
+  let files = klawSync(pathModule.resolve(dirPath), { nodir: true }).map(f => f.path)
+  const extraFiles = extraPaths.map(p => pathModule.resolve(p))
+  files = files.concat(extraFiles)
   const md5s = files.map(f => fs.readFileSync(f))
   const concatenatedMd5s = md5s.join()
   const finalMd5 = md5(concatenatedMd5s)

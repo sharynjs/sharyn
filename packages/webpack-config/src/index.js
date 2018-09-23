@@ -22,7 +22,9 @@ const config: Object = {
   module: { rules: [{ test: /\.js$/, exclude: /node_modules/, use: { loader: 'babel-loader' } }] },
   plugins: [
     new webpack.DefinePlugin({
-      CLIENT_VERSION: NO_VERSION_VALIDATION ? null : JSON.stringify(dirChecksum('.')),
+      CLIENT_VERSION: NO_VERSION_VALIDATION
+        ? null
+        : JSON.stringify(dirChecksum('src', ['package.json', 'yarn.lock'])),
     }),
   ],
   resolve: { alias: { joi: 'joi-browser' } },
