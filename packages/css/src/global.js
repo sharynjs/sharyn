@@ -13,12 +13,12 @@ const globalStyles = ({ palette }: { palette: Object }) => ({
     body: { height: '100%', margin: 0 },
     '*, *:before, *:after': { boxSizing: 'inherit' },
     '#app': { height: '100%', display: 'flex', flexDirection: 'column' },
-    '@media all and (display-mode: standalone)': { overscrollBehavior: 'none' },
     a: {
       color: palette.primary.main,
       textDecoration: 'none',
       '&:hover': { textDecoration: 'underline', textUnderlinePosition: 'under' },
     },
+    '@media all and (display-mode: standalone)': { body: { overscrollBehavior: 'none' } },
   },
 })
 
