@@ -36,6 +36,7 @@ const packages = [
       'form-data.js',
       'actions.js',
       'thunks.js',
+      'purge-cache.js',
       'data-reductions.js',
       'data-reductions.test.js',
       'env-reductions.js',
