@@ -13,6 +13,7 @@ const globalStyles = ({ palette }: { palette: Object }) => ({
     body: { height: '100%', margin: 0 },
     '*, *:before, *:after': { boxSizing: 'inherit' },
     '#app': { height: '100%', display: 'flex', flexDirection: 'column' },
+    '@media all and (display-mode: standalone)': { overscrollBehaviorY: 'contain' },
     a: {
       color: palette.primary.main,
       textDecoration: 'none',
