@@ -7,7 +7,7 @@ import path from 'path'
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
 // flow-disable-next-line
-import dirChecksum from '@sharyn/server'
+import { dirChecksum } from '@sharyn/server'
 
 import { WDS_PORT } from './wds-util'
 
