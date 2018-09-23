@@ -1,12 +1,12 @@
 {
   "name": "@sharyn/server",
-  "version": "3.2.4",
+  "version": "3.3.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/check-setup": "^2.0.3",
-    "@sharyn/webpack-config": "^2.3.1",
+    "@sharyn/webpack-config": "^2.4.0",
     "clean-css": "^4.2.1",
     "klaw-sync": "^5.0.0",
     "md5": "^2.2.1",
