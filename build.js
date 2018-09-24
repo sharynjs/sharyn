@@ -59,6 +59,7 @@ const packages = [
       'NavList.js',
       'Notifications.js',
       'FontWeight.js',
+      'Favicons.js',
       'ProgressButton.js',
       'StoryHost.js',
     ],
