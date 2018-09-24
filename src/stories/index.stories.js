@@ -7,7 +7,7 @@ import React from 'react'
 import HomeIcon from '@material-ui/icons/Home'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
-import { withKnobs } from '@storybook/addon-knobs/react'
+import { boolean, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import { Route } from 'react-router'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
@@ -21,6 +21,7 @@ import HeroButton from '../../packages/components/src/HeroButton'
 import Page from '../../packages/components/src/Page'
 import ProgressButton from '../../packages/components/src/ProgressButton'
 import NavList from '../../packages/components/src/NavList'
+import { RefreshButtonCmp } from '../../packages/components/src/RefreshButton'
 import StoryHost from '../../packages/components/src/StoryHost'
 import { clearfix, middle } from '../../packages/css/src/util'
 import withFields from '../../packages/hocs/src/with-fields'
@@ -98,6 +99,9 @@ storiesOf('Components', module)
     </div>
   ))
   .add('DelayedProgress', () => <DelayedProgress />)
+  .add('RefreshButtonCmp', () => (
+    <RefreshButtonCmp alwaysShow isRefreshing={boolean('isRefreshing', false)} />
+  ))
   .add('HOC/withFields', () => {
     const Input = ({ fields, handleFieldChange }: Object) => (
       <>
