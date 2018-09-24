@@ -1,9 +1,9 @@
 import { compose } from 'recompose'
-import { disableIsFirstRender, setIsOnline } from './env-reductions'
+import { disableIsSsrRender, setIsOnline } from './env-reductions'
 
 test('disableIsFirstRender', () => {
-  const envState = { foo: 'foo', isFirstRender: true }
-  expect(disableIsFirstRender(envState)).toEqual({ foo: 'foo', isFirstRender: false })
+  const envState = { foo: 'foo', isSsrRender: true }
+  expect(disableIsSsrRender(envState)).toEqual({ foo: 'foo', isSsrRender: false })
 })
 
 test('setIsOnline', () => {

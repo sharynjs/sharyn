@@ -2,7 +2,7 @@
 
 import curryRight from 'lodash.curryright'
 
-export const disableIsFirstRender = (envState: Object) => ({ ...envState, isFirstRender: false })
+export const disableIsSsrRender = (envState: Object) => ({ ...envState, isSsrRender: false })
 
 export const setIsOnline = curryRight((envState: Object, isOnline: boolean) => ({
   ...envState,
