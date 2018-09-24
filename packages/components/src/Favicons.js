@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-const Favicons = ({ color, path = '/static/img/favicon/' }: { color: string, path: string }) => [
+const Favicons = ({ color, path = '/static/img/favicon/' }: { color: string, path?: string }) => [
   <link
     key="apple-touch-icon"
     rel="apple-touch-icon"
