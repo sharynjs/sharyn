@@ -2,4 +2,4 @@ src
 *.test.js
 *.test.js.flow
 
-# lerna bump 6
+# lerna bump 7
