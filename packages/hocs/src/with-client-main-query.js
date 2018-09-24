@@ -17,7 +17,7 @@ export const configureWithClientMainQuery = (fetchPageThunk: Function) => {
 
 const lifecycle = {
   componentDidMount() {
-    if (!this.props.isFirstRender) {
+    if (!this.props.isServerRender) {
       if (!configuredFetchPageThunk) {
         throw Error('You must configure a fetchPageThunk with configureWithClientMainQuery')
       }
@@ -45,7 +45,7 @@ const withClientMainQuery = (fetchPageOptions?: Object) =>
       fetchPageOptions:
         fetchPageOptions instanceof Function ? fetchPageOptions(props) : fetchPageOptions,
     })),
-    connect(({ env }) => ({ isFirstRender: env.isFirstRender })),
+    connect(({ env }) => ({ isServerRender: env.isServerRender })),
     withLifecycle(lifecycle),
     mapProps((props: Object) => {
       const newProps = { ...props }
