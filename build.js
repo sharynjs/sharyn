@@ -60,6 +60,7 @@ const packages = [
       'Notifications.js',
       'FontWeight.js',
       'ProgressButton.js',
+      'RefreshButton.js',
       'StoryHost.js',
       'favicons.js',
     ],
