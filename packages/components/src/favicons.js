@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-const Favicons = ({ color, path = '/static/img/favicon/' }: { color: string, path?: string }) => [
+const favicons = (color: string, path?: string = '/static/img/favicon/') => [
   <link
     key="apple-touch-icon"
     rel="apple-touch-icon"
@@ -32,4 +32,4 @@ const Favicons = ({ color, path = '/static/img/favicon/' }: { color: string, pat
   <meta key="theme" name="theme-color" content={color} />,
 ]
 
-export default Favicons
+export default favicons
