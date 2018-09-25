@@ -161,40 +161,32 @@ const packages = [
   },
 ]
 
-const build = () => {
-  packages.forEach(p =>
-    mySpawn(
-      `./node_modules/.bin/babel packages/${p.name}/src -d packages/${
-        p.name
-      } --ignore test.js && flow-copy-source packages/${p.name}/src packages/${
-        p.name
-      } && mkdir packages/sharyn/${p.name} && ${p.modules
-        .map(
-          m =>
-            `cp packages/${p.name}/${m} packages/sharyn/${p.name}/. && cp packages/${
-              p.name
-            }/${m}.flow packages/sharyn/${p.name}/.`,
-        )
-        .join(' && ')}`,
-    ),
+const build = () =>
+  mySpawn(
+    `${packages
+      .map(
+        p =>
+          `./node_modules/.bin/babel packages/${p.name}/src -d packages/${
+            p.name
+          } --ignore test.js && flow-copy-source packages/${p.name}/src packages/${
+            p.name
+          } && mkdir packages/sharyn/${p.name} && ${p.modules
+            .map(m => `cp packages/${p.name}/${m}* packages/sharyn/${p.name}/.`)
+            .join(' && ')}`,
+      )
+      .join(
+        ' && ',
+      )} && cp packages/babel-preset/*.js packages/babel-preset-sharyn/. && cp packages/eslint-config/*.js packages/eslint-config-sharyn/.`,
   )
 
-  mySpawn('cp packages/babel-preset/*.js packages/babel-preset-sharyn/.')
-  mySpawn('cp packages/eslint-config/*.js packages/eslint-config-sharyn/.')
-}
-
-const clean = () => {
-  packages.forEach(p =>
-    p.modules.forEach(m =>
-      mySpawn(
-        `./node_modules/.bin/rimraf packages/${p.name}/${m} packages/${
-          p.name
-        }/${m}.flow packages/sharyn/${p.name}`,
-      ),
-    ),
+const clean = () =>
+  mySpawn(
+    `./node_modules/.bin/rimraf ${packages
+      .map(
+        p =>
+          `${p.modules.map(m => `packages/${p.name}/${m}*`).join(' ')} packages/sharyn/${p.name}`,
+      )
+      .join(' ')} packages/babel-preset-sharyn/*.js packages/eslint-config-sharyn/*.js`,
   )
-  mySpawn('rimraf packages/babel-preset-sharyn/*.js')
-  mySpawn('rimraf packages/eslint-config-sharyn/*.js')
-}
 
 process.argv[2] === '--clean' ? clean() : build()
