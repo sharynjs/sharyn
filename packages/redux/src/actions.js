@@ -38,3 +38,8 @@ export const asyncFailure = createAction(SHARYN_ASYNC_FAILURE)
 
 export const SHARYN_DELETE_ASYNC = 'SHARYN_DELETE_ASYNC'
 export const deleteAsync = createAction(SHARYN_DELETE_ASYNC)
+
+export const SHARYN_LOG_USER_IN = 'SHARYN_LOG_USER_IN'
+export const SHARYN_LOG_USER_OUT = 'SHARYN_LOG_USER_OUT'
+export const logUserIn = createAction(SHARYN_LOG_USER_IN)
+export const logUserOut = createAction(SHARYN_LOG_USER_OUT)
