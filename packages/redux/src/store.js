@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 import asyncReducer from './async-reducer'
 import envReducer from './env-reducer'
 import dataReducer from './data-reducer'
+import uiReducer from './ui-reducer'
 import userReducer from './user-reducer'
 
 const createSharynStore = (options?: { preloadedState?: Object, isDevEnv?: boolean }) => {
@@ -20,7 +21,7 @@ const createSharynStore = (options?: { preloadedState?: Object, isDevEnv?: boole
       async: asyncReducer,
       data: dataReducer,
       env: envReducer,
-      ui: (s = {}) => s,
+      ui: uiReducer,
       user: userReducer,
     }),
     options?.preloadedState ?? composedEnhancers,

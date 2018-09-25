@@ -1,60 +1,14 @@
 // @flow
 
-import curryRight from 'lodash.curryright'
-import isEmpty from 'lodash.isempty'
-
-export const activatePageLoading = (uiState: Object) => ({ ...uiState, isPageLoading: true })
-export const deactivatePageLoading = (uiState: Object) => {
-  const { isPageLoading, ...newUiState } = uiState
-  return newUiState
-}
-
-export const activateComponentLoading = curryRight((uiState: Object, name?: string) => ({
+export const addOneNotification = (uiState: Object, notification?: Object) => ({
   ...uiState,
-  ...(uiState.loadingComponents || name
-    ? {
-        loadingComponents: {
-          ...uiState.loadingComponents,
-          ...(name ? { [name]: true } : {}),
-        },
-      }
-    : {}),
-}))
-
-export const deactivateComponentLoading = curryRight((uiState: Object, name?: string) => {
-  const uiStateClone = { ...uiState }
-  const { loadingComponents, ...uiStateCloneRest } = uiStateClone
-  if (loadingComponents && name) {
-    delete loadingComponents[name]
-  }
-  return {
-    ...uiStateCloneRest,
-    ...(!isEmpty(loadingComponents) ? { loadingComponents } : {}),
-  }
+  notifications: [...uiState.notifications, ...(notification ? [notification] : [])],
 })
 
-export const addOneNotification = curryRight((uiState: Object, notification?: Object) => ({
+export const addMultipleNotifications = (uiState: Object, notifications?: Object[] = []) => ({
   ...uiState,
-  notifications: [
-    ...uiState.notifications,
-    ...(notification
-      ? [typeof notification === 'string' ? { message: notification } : notification]
-      : []),
-  ],
-}))
-
-export const addMultipleNotifications = curryRight(
-  (uiState: Object, notifications?: Object[] = []) => ({
-    ...uiState,
-    notifications: [
-      ...uiState.notifications,
-      ...notifications.map(
-        notification =>
-          typeof notification === 'string' ? { message: notification } : notification,
-      ),
-    ],
-  }),
-)
+  notifications: [...uiState.notifications, ...notifications],
+})
 
 export const removeFirstNotification = (uiState: Object) => ({
   ...uiState,

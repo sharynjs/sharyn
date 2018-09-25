@@ -7,7 +7,6 @@
     "@sharyn/shared": "^2.6.1",
     "@sharyn/util": "^2.0.4",
     "lodash.curryright": "^4.1.1",
-    "lodash.isempty": "^4.4.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
