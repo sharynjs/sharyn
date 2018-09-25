@@ -107,6 +107,8 @@ const packages = [
       'env-reductions.test.js',
       'ui-reductions.js',
       'ui-reductions.test.js',
+      'async-cases.js',
+      'async-reducer.js',
       'async-reductions.js',
       'async-reductions.test.js',
     ],
