@@ -59,13 +59,12 @@ const renderPage = ({
   if (routerContext.action === 'REPLACE') {
     ctx.redirect(routerContext.url)
   } else {
-    const { data, ...rest } = store.getState()
     ctx.body = htmlBase({
       appHtml,
       css,
       helmet,
       swPath,
-      windowVars: [['__PRELOADED_STATE__', { data: NO_SSR ? {} : data, ...rest }]],
+      windowVars: [['__PRELOADED_STATE__', store.getState()]],
     })
   }
 }
