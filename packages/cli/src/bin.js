@@ -180,6 +180,7 @@ const result = swit(
       'deploy-staging',
       () => mySpawnSync(sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER])),
     ],
+    ['promote', () => mySpawnSync(HEROKU_PIPELINE_PROMOTE)],
     [
       'deploy-prod',
       () =>
@@ -187,7 +188,7 @@ const result = swit(
           sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER, HEROKU_PIPELINE_PROMOTE]),
         ),
     ],
-    [('migrate-db', () => mySpawnSync(dbMigr))],
+    ['migrate-db', () => mySpawnSync(dbMigr)],
     ['stats', () => mySpawnSync(stats)],
   ],
   () => {
