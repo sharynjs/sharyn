@@ -101,6 +101,8 @@ const packages = [
       'store.js',
       'actions.js',
       'thunks.js',
+      'data-cases.js',
+      'data-reducer.js',
       'data-reductions.js',
       'data-reductions.test.js',
       'env-reductions.js',
