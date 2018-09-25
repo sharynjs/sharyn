@@ -9,14 +9,9 @@ import asyncReducer from './async-reducer'
 import envReducer from './env-reducer'
 import dataReducer from './data-reducer'
 
-const createSharynStore = ({
-  preloadedState,
-  isDevEnv,
-}: {
-  preloadedState?: Object,
-  isDevEnv?: boolean,
-}) => {
-  const composeEnhancers = (isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+const createSharynStore = (options?: { preloadedState?: Object, isDevEnv?: boolean }) => {
+  const composeEnhancers =
+    (options?.isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const composedEnhancers = composeEnhancers(applyMiddleware(thunk))
 
   return createStore(
@@ -27,8 +22,8 @@ const createSharynStore = ({
       ui: (s = {}) => s,
       user: (s = null) => s,
     }),
-    preloadedState ?? composedEnhancers,
-    preloadedState ? composedEnhancers : undefined,
+    options?.preloadedState ?? composedEnhancers,
+    options?.preloadedState ? composedEnhancers : undefined,
   )
 }
 
