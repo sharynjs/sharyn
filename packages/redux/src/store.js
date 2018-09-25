@@ -22,7 +22,7 @@ const createSharynStore = (options?: {
     (options?.isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const composedEnhancers = composeEnhancers(
     applyMiddleware(thunk),
-    options?.persistUser ? persistState('user') : undefined,
+    options?.persistUser ? persistState('user') : x => x,
   )
 
   return createStore(

@@ -7,8 +7,6 @@ import { renderToString } from 'react-dom/server'
 // flow-disable-next-line
 import { Provider as ReduxProvider } from 'react-redux'
 // flow-disable-next-line
-import { createStore } from 'redux'
-// flow-disable-next-line
 import Helmet from 'react-helmet'
 import { SheetsRegistry } from 'react-jss/lib/jss'
 import JssProvider from 'react-jss/lib/JssProvider'
@@ -24,14 +22,14 @@ const renderPage = ({
   App,
   theme,
   jss,
-  preloadedState = {},
+  store,
   swPath,
 }: {
   ctx: Object,
   App: Function,
   theme?: Object,
   jss?: any,
-  preloadedState?: Object,
+  store: Object,
   swPath?: string,
 }) => {
   let appHtml
@@ -47,7 +45,7 @@ const renderPage = ({
         generateClassName={createGenerateClassName()}
       >
         <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
-          <ReduxProvider store={createStore(() => preloadedState)}>
+          <ReduxProvider {...{ store }}>
             <StaticRouter location={ctx.req.url} context={routerContext}>
               <App />
             </StaticRouter>
@@ -61,7 +59,7 @@ const renderPage = ({
   if (routerContext.action === 'REPLACE') {
     ctx.redirect(routerContext.url)
   } else {
-    const { data, ...rest } = preloadedState
+    const { data, ...rest } = store.getState()
     ctx.body = htmlBase({
       appHtml,
       css,
