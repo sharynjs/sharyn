@@ -19,7 +19,7 @@ const createSharynStore = ({
   const composeEnhancers = (isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const composedEnhancers = composeEnhancers(applyMiddleware(thunk))
 
-  createStore(
+  return createStore(
     combineReducers({
       async: asyncReducer,
       data: dataReducer,
