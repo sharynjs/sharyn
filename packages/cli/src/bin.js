@@ -13,6 +13,9 @@ import { hasFile } from '@sharyn/check-setup'
 import { knexConfigPath } from './shared'
 
 import {
+  PUSH_ORIGIN_MASTER,
+  PUSH_HEROKU_STAGING_MASTER,
+  HEROKU_PIPELINE_PROMOTE,
   DOCKER_UP,
   DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
@@ -173,7 +176,18 @@ const result = swit(
         return cmdResult
       },
     ],
-    ['migrate-db', () => mySpawnSync(dbMigr)],
+    [
+      'deploy-staging',
+      () => mySpawnSync(sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER])),
+    ],
+    [
+      'deploy-prod',
+      () =>
+        mySpawnSync(
+          sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER, HEROKU_PIPELINE_PROMOTE]),
+        ),
+    ],
+    [('migrate-db', () => mySpawnSync(dbMigr))],
     ['stats', () => mySpawnSync(stats)],
   ],
   () => {

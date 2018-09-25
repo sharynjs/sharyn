@@ -41,6 +41,10 @@ const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : '
   hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
 }`
 
+export const PUSH_ORIGIN_MASTER = 'git push origin master'
+export const PUSH_HEROKU_STAGING_MASTER = 'git push heroku-staging master'
+export const HEROKU_PIPELINE_PROMOTE = 'heroku pipelines:promote'
+
 export const nodeLocalProd = prefix(
   'cross-env NODE_ENV=production ENV_TYPE=local-production node lib/_server/server.js',
 )
