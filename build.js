@@ -33,20 +33,7 @@ const packages = [
   },
   {
     name: 'client',
-    modules: [
-      'form-data.js',
-      'actions.js',
-      'thunks.js',
-      'purge-cache.js',
-      'data-reductions.js',
-      'data-reductions.test.js',
-      'env-reductions.js',
-      'env-reductions.test.js',
-      'ui-reductions.js',
-      'ui-reductions.test.js',
-      'async-reductions.js',
-      'async-reductions.test.js',
-    ],
+    modules: ['form-data.js', 'purge-cache.js'],
   },
   {
     name: 'components',
@@ -110,7 +97,19 @@ const packages = [
   },
   {
     name: 'redux',
-    modules: ['store.js'],
+    modules: [
+      'store.js',
+      'actions.js',
+      'thunks.js',
+      'data-reductions.js',
+      'data-reductions.test.js',
+      'env-reductions.js',
+      'env-reductions.test.js',
+      'ui-reductions.js',
+      'ui-reductions.test.js',
+      'async-reductions.js',
+      'async-reductions.test.js',
+    ],
   },
   {
     name: 'server',
