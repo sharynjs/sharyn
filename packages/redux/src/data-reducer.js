@@ -1,7 +1,7 @@
 // @flow
 
 // flow-disable-next-line
-import swit from 'sharyn/util/swit'
+import swit from '@sharyn/util/swit'
 
 import {
   dataAsyncSuccessOrFetchPageSuccessCase,
