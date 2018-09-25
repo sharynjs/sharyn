@@ -2,6 +2,8 @@
 
 // flow-disable-next-line
 import { hasFile, pathCascade } from '@sharyn/check-setup'
+// flow-disable-next-line
+import { STORYBOOK_PORT } from '@sharyn/env'
 
 import { knexConfigPath } from './shared'
 
@@ -40,6 +42,10 @@ const webpackStats = prefix(
 const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : ''} ${
   hasGlobalTeardown ? `--globalTeardown ${pathToGlobalTeardown}` : ''
 }`
+
+export const startStorybook = `start-storybook -p ${STORYBOOK_PORT ?? 8025}`
+export const BUILD_STORYBOOK = 'build-storybook -o public/storybook'
+export const GIT_ADD_STORYBOOK = 'git add public/storybook'
 
 export const PUSH_ORIGIN_MASTER = 'git push origin master'
 export const PUSH_HEROKU_STAGING_MASTER = 'git push heroku-staging master'

@@ -16,10 +16,12 @@ import { HEROKU_DEPLOYMENT_SOUND, TESTING_SOUND } from '@sharyn/env'
 import { knexConfigPath } from './shared'
 
 import {
+  BUILD_STORYBOOK,
   DOCKER_UP,
   DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
   DOCKER_WAIT_PG_TEST,
+  GIT_ADD_STORYBOOK,
   HEROKU_PIPELINE_PROMOTE,
   PUSH_ORIGIN_MASTER,
   PUSH_HEROKU_STAGING_MASTER,
@@ -42,6 +44,7 @@ import {
   testE2E,
   lint,
   typecheck,
+  startStorybook,
   stats,
 } from './commands'
 
@@ -183,6 +186,29 @@ const result = swit(
       },
     ],
     [
+      'lint-test-storybook',
+      () => {
+        const commands = [lint, typecheck, rmBundle, testUnit, clientBuild]
+        const testDbIdInitial = getDbTestProcessId('db-test')
+        const testRedisIdInitial = getDbTestProcessId('redis-test')
+        hasDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
+        hasDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
+        hasDocker && commands.push(DOCKER_UP_TEST)
+        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        commands.push(testE2E)
+        const cmdResult = mySpawnSync(sequence(commands))
+        const testDbIdFinal = getDbTestProcessId('db-test')
+        const testRedisIdFinal = getDbTestProcessId('redis-test')
+        const cleanupCommands = []
+        hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
+        hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
+        cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
+        mySpawnSync(sequence([BUILD_STORYBOOK, GIT_ADD_STORYBOOK]))
+        TESTING_SOUND && mySpawnSync(SAY_DONE)
+        return cmdResult
+      },
+    ],
+    [
       'deploy-staging',
       () => {
         const commands = [PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER]
@@ -208,6 +234,9 @@ const result = swit(
     ],
     ['migrate-db', () => mySpawnSync(dbMigr)],
     ['stats', () => mySpawnSync(stats)],
+    ['sound', () => mySpawnSync(SAY_DONE)],
+    ['storybook', () => mySpawnSync(startStorybook)],
+    ['build-storybook', () => mySpawnSync(BUILD_STORYBOOK)],
   ],
   () => {
     // eslint-disable-next-line no-console
