@@ -109,6 +109,10 @@ const packages = [
     modules: ['index.js'],
   },
   {
+    name: 'redux',
+    modules: ['store.js'],
+  },
+  {
     name: 'server',
     modules: ['html-base.js', 'html-base.test.js', 'index.js', 'render-page.js'],
   },
