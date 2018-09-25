@@ -11,7 +11,7 @@ import colors from 'colors/safe'
 // flow-disable-next-line
 import { hasFile } from '@sharyn/check-setup'
 // flow-disable-next-line
-import { HEROKU_DEPLOYMENT_SOUND } from '@sharyn/env'
+import { HEROKU_DEPLOYMENT_SOUND, TESTING_SOUND } from '@sharyn/env'
 
 import { knexConfigPath } from './shared'
 
@@ -156,6 +156,7 @@ const result = swit(
         hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
         hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
         cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
+        TESTING_SOUND && mySpawnSync(SAY_DONE)
         return cmdResult
       },
     ],
@@ -177,6 +178,7 @@ const result = swit(
         hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
         hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
         cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
+        TESTING_SOUND && mySpawnSync(SAY_DONE)
         return cmdResult
       },
     ],
