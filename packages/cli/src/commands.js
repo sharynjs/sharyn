@@ -43,6 +43,7 @@ const jestOptions = `${hasGlobalSetup ? `--globalSetup ${pathToGlobalSetup}` : '
 
 export const PUSH_ORIGIN_MASTER = 'git push origin master'
 export const PUSH_HEROKU_STAGING_MASTER = 'git push heroku-staging master'
+export const SAY_DONE = 'say done'
 export const HEROKU_PIPELINE_PROMOTE = 'heroku pipelines:promote'
 
 export const nodeLocalProd = prefix(

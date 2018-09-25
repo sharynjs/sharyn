@@ -10,16 +10,20 @@ import swit from '@sharyn/util/swit'
 import colors from 'colors/safe'
 // flow-disable-next-line
 import { hasFile } from '@sharyn/check-setup'
+// flow-disable-next-line
+import { PUSHED_TO_STAGING_SOUND } from '@sharyn/env'
+
 import { knexConfigPath } from './shared'
 
 import {
-  PUSH_ORIGIN_MASTER,
-  PUSH_HEROKU_STAGING_MASTER,
-  HEROKU_PIPELINE_PROMOTE,
   DOCKER_UP,
   DOCKER_UP_TEST,
   DOCKER_WAIT_PG,
   DOCKER_WAIT_PG_TEST,
+  HEROKU_PIPELINE_PROMOTE,
+  PUSH_ORIGIN_MASTER,
+  PUSH_HEROKU_STAGING_MASTER,
+  SAY_DONE,
   nodeLocalProd,
   dockerDownTest,
   dbMigr,
@@ -178,7 +182,11 @@ const result = swit(
     ],
     [
       'deploy-staging',
-      () => mySpawnSync(sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER])),
+      () => {
+        const commands = [PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER]
+        PUSHED_TO_STAGING_SOUND && commands.push(SAY_DONE)
+        mySpawnSync(sequence(commands))
+      },
     ],
     ['promote', () => mySpawnSync(HEROKU_PIPELINE_PROMOTE)],
     [
