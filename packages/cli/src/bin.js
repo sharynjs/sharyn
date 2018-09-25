@@ -11,7 +11,7 @@ import colors from 'colors/safe'
 // flow-disable-next-line
 import { hasFile } from '@sharyn/check-setup'
 // flow-disable-next-line
-import { PUSHED_TO_STAGING_SOUND } from '@sharyn/env'
+import { HEROKU_DEPLOYMENT_SOUND } from '@sharyn/env'
 
 import { knexConfigPath } from './shared'
 
@@ -184,17 +184,25 @@ const result = swit(
       'deploy-staging',
       () => {
         const commands = [PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER]
-        PUSHED_TO_STAGING_SOUND && commands.push(SAY_DONE)
+        HEROKU_DEPLOYMENT_SOUND && commands.push(SAY_DONE)
         mySpawnSync(sequence(commands))
       },
     ],
-    ['promote', () => mySpawnSync(HEROKU_PIPELINE_PROMOTE)],
+    [
+      'promote',
+      () => {
+        const commands = [HEROKU_PIPELINE_PROMOTE]
+        HEROKU_DEPLOYMENT_SOUND && commands.push(SAY_DONE)
+        mySpawnSync(sequence(commands))
+      },
+    ],
     [
       'deploy-prod',
-      () =>
-        mySpawnSync(
-          sequence([PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER, HEROKU_PIPELINE_PROMOTE]),
-        ),
+      () => {
+        const commands = [PUSH_ORIGIN_MASTER, PUSH_HEROKU_STAGING_MASTER, HEROKU_PIPELINE_PROMOTE]
+        HEROKU_DEPLOYMENT_SOUND && commands.push(SAY_DONE)
+        mySpawnSync(sequence(commands))
+      },
     ],
     ['migrate-db', () => mySpawnSync(dbMigr)],
     ['stats', () => mySpawnSync(stats)],
