@@ -1,13 +1,6 @@
 // @flow
 
-import {
-  SHARYN_FETCH_PAGE_SUCCESS,
-  SHARYN_FETCH_PAGE_FAILURE,
-  SHARYN_ASYNC_SUCCESS,
-  SHARYN_ASYNC_FAILURE,
-  SHARYN_DISMISS_FIRST_NOTIFICATION,
-  SHARYN_NOTIFY,
-} from './actions'
+import { SHARYN_DISMISS_FIRST_NOTIFICATION, SHARYN_NOTIFY, SHARYN_NOTIFY_MULTIPLE } from './actions'
 import {
   addOneNotification,
   addMultipleNotifications,
@@ -25,12 +18,7 @@ export const notifyCase = (uiState: Object, payload: Object) => [
   () => addOneNotification(uiState, payload),
 ]
 
-export const fetchPageOrAsyncFailureCase = (uiState: Object, payload: Object) => [
-  [SHARYN_FETCH_PAGE_FAILURE, SHARYN_ASYNC_FAILURE],
-  () => addOneNotification(uiState, payload.notification),
-]
-
-export const fetchPageOrAsyncSuccessCase = (uiState: Object, payload: Object) => [
-  [SHARYN_FETCH_PAGE_SUCCESS, SHARYN_ASYNC_SUCCESS],
-  () => addMultipleNotifications(uiState, payload.notifications),
+export const notifyMultipleCase = (uiState: Object, payload: Object[]) => [
+  SHARYN_NOTIFY_MULTIPLE,
+  () => addMultipleNotifications(uiState, payload),
 ]

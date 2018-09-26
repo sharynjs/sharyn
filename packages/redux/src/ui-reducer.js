@@ -3,12 +3,7 @@
 // flow-disable-next-line
 import swit from '@sharyn/util/swit'
 
-import {
-  dismissFirstNotificationCase,
-  fetchPageOrAsyncFailureCase,
-  fetchPageOrAsyncSuccessCase,
-  notifyCase,
-} from './ui-cases'
+import { dismissFirstNotificationCase, notifyCase, notifyMultipleCase } from './ui-cases'
 
 const initialState = { notifications: [] }
 
@@ -18,12 +13,7 @@ const uiReducer = (
 ) =>
   swit(
     type,
-    [
-      notifyCase,
-      dismissFirstNotificationCase,
-      fetchPageOrAsyncFailureCase,
-      fetchPageOrAsyncSuccessCase,
-    ].map(c => c(uiState, payload)),
+    [dismissFirstNotificationCase, notifyCase, notifyMultipleCase].map(c => c(uiState, payload)),
     uiState,
   )
 
