@@ -199,11 +199,14 @@ const result = swit(
         const cmdResult = mySpawnSync(sequence(commands))
         const testDbIdFinal = getDbTestProcessId('db-test')
         const testRedisIdFinal = getDbTestProcessId('redis-test')
-        const cleanupCommands = []
-        hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
-        hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
-        cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
-        mySpawnSync(sequence([BUILD_STORYBOOK, GIT_ADD_STORYBOOK]))
+        const postTestsCommands = []
+        hasDocker && testDbIdFinal && postTestsCommands.push(dockerDownTest(testDbIdFinal))
+        hasDocker && testRedisIdFinal && postTestsCommands.push(dockerDownTest(testRedisIdFinal))
+        if (cmdResult?.status === 0) {
+          postTestsCommands.push(BUILD_STORYBOOK)
+          postTestsCommands.push(GIT_ADD_STORYBOOK)
+        }
+        postTestsCommands.length > 0 && mySpawnSync(sequence(postTestsCommands))
         TESTING_SOUND && mySpawnSync(SAY_DONE)
         return cmdResult
       },
