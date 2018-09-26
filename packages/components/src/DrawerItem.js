@@ -18,12 +18,13 @@ const DrawerItemJSX = ({
   classes,
   label,
   icon: Icon,
+  ...rest
 }: {
   classes: Object,
   label: string,
   icon?: Function,
 }) => (
-  <ListItem button>
+  <ListItem button {...rest}>
     {Icon && (
       <ListItemIcon>
         <Icon />

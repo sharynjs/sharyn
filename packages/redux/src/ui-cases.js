@@ -6,6 +6,7 @@ import {
   SHARYN_ASYNC_SUCCESS,
   SHARYN_ASYNC_FAILURE,
   SHARYN_DISMISS_FIRST_NOTIFICATION,
+  SHARYN_NOTIFY,
 } from './actions'
 import {
   addOneNotification,
@@ -17,6 +18,11 @@ import {
 export const dismissFirstNotificationCase = (uiState: Object, payload?: any) => [
   SHARYN_DISMISS_FIRST_NOTIFICATION,
   () => removeFirstNotification(uiState),
+]
+
+export const notifyCase = (uiState: Object, payload: Object) => [
+  SHARYN_NOTIFY,
+  () => addOneNotification(uiState, payload),
 ]
 
 export const fetchPageOrAsyncFailureCase = (uiState: Object, payload: Object) => [

@@ -7,6 +7,7 @@ import {
   dismissFirstNotificationCase,
   fetchPageOrAsyncFailureCase,
   fetchPageOrAsyncSuccessCase,
+  notifyCase,
 } from './ui-cases'
 
 const initialState = { notifications: [] }
@@ -17,9 +18,12 @@ const uiReducer = (
 ) =>
   swit(
     type,
-    [dismissFirstNotificationCase, fetchPageOrAsyncFailureCase, fetchPageOrAsyncSuccessCase].map(
-      c => c(uiState, payload),
-    ),
+    [
+      notifyCase,
+      dismissFirstNotificationCase,
+      fetchPageOrAsyncFailureCase,
+      fetchPageOrAsyncSuccessCase,
+    ].map(c => c(uiState, payload)),
     uiState,
   )
 
