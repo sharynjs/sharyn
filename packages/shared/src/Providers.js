@@ -17,6 +17,8 @@ import StaticRouter from 'react-router-dom/StaticRouter'
 import nest from 'recompose/nest'
 import withProps from 'recompose/withProps'
 // flow-disable-next-line
+import createSharynStore from '@sharyn/redux/store'
+// flow-disable-next-line
 import spread from '@sharyn/util/spread'
 // flow-disable-next-line
 import spreadIf from '@sharyn/util/spread-if'
@@ -29,7 +31,7 @@ const Providers = ({
   App,
   theme,
   globalStyles,
-  store,
+  store = createSharynStore(),
   isSsr,
   url,
   jss = defaultJss,
@@ -38,7 +40,7 @@ const Providers = ({
 }: {
   children?: any,
   App?: Function,
-  store: Object,
+  store?: Object,
   theme: Object,
   globalStyles?: any,
   jss?: Object,
