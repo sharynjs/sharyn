@@ -20,7 +20,6 @@ import FontWeight from '../../packages/components/src/FontWeight'
 import HeroButton from '../../packages/components/src/HeroButton'
 import Page from '../../packages/components/src/Page'
 import ProgressButton from '../../packages/components/src/ProgressButton'
-import NavList from '../../packages/components/src/NavList'
 import { RefreshButtonCmp } from '../../packages/components/src/RefreshButton'
 import StoryHost from '../../packages/components/src/StoryHost'
 import { clearfix, middle } from '../../packages/css/src/util'
@@ -70,20 +69,6 @@ storiesOf('Components', module)
       <DrawerItem label="Hello" icon={HomeIcon} />
       <DrawerItem label="Hello without icon" />
     </div>
-  ))
-  .add('NavList', () => (
-    <BrowserRouter>
-      <div style={{ width: 400 }}>
-        <Route exact path="/test" component={() => 'OK'} />
-        <NavList
-          navItems={[
-            { path: '/test', title: 'Home' },
-            [{ path: 'http://google.com', title: 'Google Same Tab' }, { hardLink: true }],
-            [{ path: 'http://google.fr', title: 'Google New Tab' }, { newTab: true }],
-          ]}
-        />
-      </div>
-    </BrowserRouter>
   ))
   .add('FontWeight', () => (
     <div>

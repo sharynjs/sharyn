@@ -2,7 +2,10 @@
 
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
+
 import { Link } from 'react-router-dom'
+// flow-disable-next-line
+import cond from '@sharyn/util/cond'
 
 import List from '@material-ui/core/List'
 import DrawerItem from './DrawerItem'
@@ -13,6 +16,7 @@ type RouteWithOptions = {
   icon?: Function,
   hardLink?: boolean,
   newTab?: boolean,
+  component: any,
 }
 
 const mergeNavItems = (navItemPairs: any[]): RouteWithOptions[] =>
@@ -21,15 +25,24 @@ const mergeNavItems = (navItemPairs: any[]): RouteWithOptions[] =>
 const NavList = ({ navItems }: { navItems: any[] }) => (
   <List>
     {mergeNavItems(navItems).map(
-      ({ path, title: label, icon, hardLink, newTab }) =>
-        hardLink || newTab ? (
-          <a href={path} key={path} {...(newTab ? { target: '_blank' } : {})}>
-            <DrawerItem {...{ label, icon }} />
-          </a>
-        ) : (
-          <Link to={path} key={path}>
-            <DrawerItem {...{ label, icon }} />
-          </Link>
+      ({ path, title: label, icon, hardLink, newTab, component: Component }) =>
+        cond(
+          [
+            [Component, () => <Component />],
+            [
+              hardLink || newTab,
+              () => (
+                <a href={path} key={path} {...(newTab ? { target: '_blank' } : {})}>
+                  <DrawerItem {...{ label, icon }} />
+                </a>
+              ),
+            ],
+          ],
+          () => (
+            <Link to={path} key={path}>
+              <DrawerItem {...{ label, icon }} />
+            </Link>
+          ),
         ),
     )}
   </List>

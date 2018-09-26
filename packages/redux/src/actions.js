@@ -26,6 +26,9 @@ export const SHARYN_OFFLINE = 'SHARYN_OFFLINE'
 export const online = createAction(SHARYN_ONLINE)
 export const offline = createAction(SHARYN_OFFLINE)
 
+export const SHARYN_NOTIFY = 'SHARYN_NOTIFY'
+export const notify = createAction(SHARYN_NOTIFY)
+
 export const SHARYN_DISMISS_FIRST_NOTIFICATION = 'SHARYN_DISMISS_FIRST_NOTIFICATION'
 export const dismissFirstNotification = createAction(SHARYN_DISMISS_FIRST_NOTIFICATION)
 
