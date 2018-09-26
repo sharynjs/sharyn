@@ -18,6 +18,9 @@ let configuredFetchPageRequest
 let configuredFetchPageSuccess
 let configuredFetchPageFailure
 
+let configuredOnDataErrors
+let configuredOnCallError
+
 export const configureGraphqlThunk = ({
   request,
   success,
@@ -25,6 +28,8 @@ export const configureGraphqlThunk = ({
   urlBase,
   urlPath,
   options = () => ({}),
+  onDataErrors,
+  onCallError,
 }: {
   request: Function,
   success: Function,
@@ -32,6 +37,8 @@ export const configureGraphqlThunk = ({
   urlBase?: string,
   urlPath?: string,
   options?: Function,
+  onDataErrors?: Function,
+  onCallError?: Function,
 }) => {
   configuredGraphqlRequest = request
   configuredGraphqlSuccess = success
@@ -39,6 +46,8 @@ export const configureGraphqlThunk = ({
   configuredUrlBase = urlBase
   configuredUrlPath = urlPath
   configuredOptionsFn = options
+  configuredOnDataErrors = onDataErrors
+  configuredOnCallError = onCallError
 }
 
 export const configureFetchPageThunk = ({
@@ -69,8 +78,11 @@ export const graphqlThunk = ({
   mapResp,
   successRedirect,
   onSuccess,
-  onDataErrors,
   onInvalidFields,
+  // flow-disable-next-line
+  onDataErrors = configuredOnDataErrors,
+  // flow-disable-next-line
+  onCallError = configuredOnCallError,
   routerHistory,
   asyncKey,
   request = configuredGraphqlRequest,
@@ -92,6 +104,7 @@ export const graphqlThunk = ({
   onSuccess?: Function,
   onDataErrors?: Function,
   onInvalidFields?: Function,
+  onCallError?: Function,
   routerHistory?: Object,
   asyncKey?: string,
   request?: Function,
@@ -143,6 +156,7 @@ export const graphqlThunk = ({
     return data
   } catch (error) {
     dispatch(failure({ error, ...spread({ asyncKey }) }))
+    onCallError && onCallError(error)
     if (throwErr) {
       throw error
     }
