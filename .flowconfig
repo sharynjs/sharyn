@@ -5,3 +5,4 @@ esproposal.optional_chaining=enable
 
 [ignore]
 .*/node_modules/config-chain/.*
+.*/node_modules/jss/.*

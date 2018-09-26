@@ -138,6 +138,7 @@ const packages = [
       'index.js',
       'logged-filter.js',
       'find-match.js',
+      'AppWithProviders.js',
     ],
   },
   {
