@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/components",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/components",
   "license": "MIT",
   "peerDependencies": {
