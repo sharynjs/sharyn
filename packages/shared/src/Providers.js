@@ -20,6 +20,7 @@ import withProps from 'recompose/withProps'
 import spread from '@sharyn/util/spread'
 // flow-disable-next-line
 import spreadIf from '@sharyn/util/spread-if'
+import GlobalStylesProvider from './GlobalStylesProvider'
 
 const defaultJss = globalJss.setup(jssPreset())
 
@@ -27,6 +28,7 @@ const Providers = ({
   children,
   App,
   theme,
+  globalStyles,
   store,
   isSsr,
   url,
@@ -34,10 +36,11 @@ const Providers = ({
   routerContext,
   sheetsRegistry,
 }: {
-  children: any,
+  children?: any,
   App?: Function,
   store: Object,
   theme: Object,
+  globalStyles?: any,
   jss?: Object,
   isSsr?: boolean,
   url?: string,
@@ -55,6 +58,7 @@ const Providers = ({
     })(JssProvider),
     withProps({ store })(Provider),
     withProps({ theme, ...spreadIf(isSsr, { sheetsManager: new Map() }) })(MuiThemeProvider),
+    withProps({ globalStyles })(GlobalStylesProvider),
   )
   return <NestedProviders>{App ? <App /> : children}</NestedProviders>
 }

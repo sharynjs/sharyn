@@ -146,6 +146,7 @@ const packages = [
       'logged-filter.js',
       'find-match.js',
       'Providers.js',
+      'GlobalStylesProvider.js',
     ],
   },
   {
