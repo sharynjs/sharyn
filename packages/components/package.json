@@ -5,12 +5,18 @@
   "license": "MIT",
   "peerDependencies": {
     "@material-ui/core": "^3.0.3",
-    "react-router-dom": "^4.3.1",
     "recompose": "^0.30.0"
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/css": "^1.2.2",
-    "@sharyn/util": "^2.0.4"
+    "@sharyn/util": "^2.0.4",
+    "jss": "^9.8.7",
+    "jss-preset-default": "^4.5.0",
+    "react-hot-loader": "^4.3.11",
+    "react-jss": "^8.6.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1"
   }
 }

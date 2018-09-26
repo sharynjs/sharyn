@@ -50,6 +50,9 @@ const packages = [
       'RefreshButton.js',
       'StoryHost.js',
       'favicons.js',
+      'Switch.js',
+      'Providers.js',
+      'GlobalStylesProvider.js',
     ],
   },
   {
@@ -139,14 +142,10 @@ const packages = [
     modules: [
       'call.js',
       'graphql-call.js',
-      'Switch.js',
-      'fetch.js',
       'get-page-info.js',
       'index.js',
       'logged-filter.js',
       'find-match.js',
-      'Providers.js',
-      'GlobalStylesProvider.js',
     ],
   },
   {

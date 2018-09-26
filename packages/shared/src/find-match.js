@@ -2,7 +2,8 @@
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { matchPath } from 'react-router-dom'
+import { matchPath } from 'react-router'
+
 import loggedFilter from './logged-filter'
 
 type Route = { path?: string, loggedOutOnly?: boolean, loggedInOnly?: boolean }
