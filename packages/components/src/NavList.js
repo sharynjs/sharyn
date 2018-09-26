@@ -25,10 +25,11 @@ const mergeNavItems = (navItemPairs: any[]): RouteWithOptions[] =>
 const NavList = ({ navItems }: { navItems: any[] }) => (
   <List>
     {mergeNavItems(navItems).map(
-      ({ path, title: label, icon, hardLink, newTab, component: Component }) =>
+      ({ path, title: label, icon, hardLink, newTab, component: Component }, index) =>
         cond(
           [
-            [Component, () => <Component />],
+            // eslint-disable-next-line react/no-array-index-key
+            [Component, () => <Component key={index} />],
             [
               hardLink || newTab,
               () => (
