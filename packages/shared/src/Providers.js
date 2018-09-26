@@ -23,7 +23,8 @@ import spreadIf from '@sharyn/util/spread-if'
 
 const defaultJss = globalJss.setup(jssPreset())
 
-const AppWithProviders = ({
+const Providers = ({
+  children,
   App,
   theme,
   store,
@@ -33,7 +34,8 @@ const AppWithProviders = ({
   routerContext,
   sheetsRegistry,
 }: {
-  App: Function,
+  children: any,
+  App?: Function,
   store: Object,
   theme: Object,
   jss?: Object,
@@ -42,7 +44,7 @@ const AppWithProviders = ({
   routerContext?: Object,
   sheetsRegistry?: Object,
 }) => {
-  const NestedApp = nest(
+  const NestedProviders = nest(
     isSsr
       ? withProps(spread({ location: url, context: routerContext }))(StaticRouter)
       : BrowserRouter,
@@ -53,9 +55,8 @@ const AppWithProviders = ({
     })(JssProvider),
     withProps({ store })(Provider),
     withProps({ theme, ...spreadIf(isSsr, { sheetsManager: new Map() }) })(MuiThemeProvider),
-    App,
   )
-  return <NestedApp />
+  return <NestedProviders>{App ? <App /> : children}</NestedProviders>
 }
 
-export default hot(module)(AppWithProviders)
+export default hot(module)(Providers)

@@ -11,20 +11,20 @@ import { SheetsRegistry } from 'react-jss/lib/jss'
 // flow-disable-next-line
 import { NO_SSR } from '@sharyn/env'
 // flow-disable-next-line
-import DefaultAppWithProviders from '@sharyn/shared/AppWithProviders'
+import DefaultProviders from '@sharyn/shared/Providers'
 
 import htmlBase from './html-base'
 
 const renderPage = (
   ctx: Object,
   {
-    AppWithProviders = DefaultAppWithProviders,
+    Providers = DefaultProviders,
     App,
     theme,
     store,
     swPath,
   }: {
-    AppWithProviders?: Function,
+    Providers?: Function,
     App: Function,
     theme: Object,
     store: Object,
@@ -38,11 +38,9 @@ const renderPage = (
   if (!NO_SSR) {
     const sheetsRegistry = new SheetsRegistry()
     appHtml = renderToString(
-      <AppWithProviders
-        url={ctx.req.url}
-        {...{ App, theme, store, routerContext, sheetsRegistry }}
-        isSsr
-      />,
+      <Providers url={ctx.req.url} {...{ theme, store, routerContext, sheetsRegistry }} isSsr>
+        <App />
+      </Providers>,
     )
     css = sheetsRegistry.toString()
     helmet = Helmet.renderStatic()
