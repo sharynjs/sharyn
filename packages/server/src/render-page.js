@@ -11,7 +11,7 @@ import { SheetsRegistry } from 'react-jss/lib/jss'
 // flow-disable-next-line
 import { NO_SSR } from '@sharyn/env'
 // flow-disable-next-line
-import DefaultProviders from '@sharyn/shared/Providers'
+import DefaultProviders from '@sharyn/components/Providers'
 
 import htmlBase from './html-base'
 
