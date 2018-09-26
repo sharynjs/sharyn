@@ -3,32 +3,24 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React from 'react'
+
 import { renderToString } from 'react-dom/server'
-// flow-disable-next-line
-import { Provider as ReduxProvider } from 'react-redux'
 // flow-disable-next-line
 import Helmet from 'react-helmet'
 import { SheetsRegistry } from 'react-jss/lib/jss'
-import JssProvider from 'react-jss/lib/JssProvider'
 // flow-disable-next-line
 import { NO_SSR } from '@sharyn/env'
-import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles'
-import { StaticRouter } from 'react-router-dom'
 
 import htmlBase from './html-base'
 
 const renderPage = (
   ctx: Object,
   {
-    App,
-    theme,
-    jss,
+    AppWithProviders,
     store,
     swPath,
   }: {
-    App: Function,
-    theme?: Object,
-    jss?: any,
+    AppWithProviders: Function,
     store: Object,
     swPath?: string,
   },
@@ -40,19 +32,7 @@ const renderPage = (
   if (!NO_SSR) {
     const sheetsRegistry = new SheetsRegistry()
     appHtml = renderToString(
-      <JssProvider
-        {...{ jss }}
-        registry={sheetsRegistry}
-        generateClassName={createGenerateClassName()}
-      >
-        <MuiThemeProvider {...{ theme }} sheetsManager={new Map()}>
-          <ReduxProvider {...{ store }}>
-            <StaticRouter location={ctx.req.url} context={routerContext}>
-              <App />
-            </StaticRouter>
-          </ReduxProvider>
-        </MuiThemeProvider>
-      </JssProvider>,
+      <AppWithProviders url={ctx.req.url} {...{ store, routerContext, sheetsRegistry }} isSsr />,
     )
     css = sheetsRegistry.toString()
     helmet = Helmet.renderStatic()
