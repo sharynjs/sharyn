@@ -7,6 +7,8 @@
 
 # 🌹 Sharyn
 
+> ⚠️ Hi :) Don't use the library yet. The documentation is not up-to-date at all.
+
 Sharyn is a library of packages that make your life easier and reduce your boilerplate code. Its **Development** packages are useful for any project, and the **Web** ones provide a wide range of tools and helpers for your web app projects.
 
 The default kick-ass tech stack that Sharyn supports is: **Babel 7**, **ESLint 5**, **Flow**, **Prettier**, **Jest**, **React with server-side rendering**, **Redux**, **Webpack with HMR**, **Material UI**, **Koa**, **GraphQL with Apollo**, **Knex**, **PostgreSQL**, **Redis**, **E2E tests with Puppeteer**, **Docker**, and **Heroku**. These bricks are all optional and replaceable.
