@@ -17,21 +17,22 @@ import { StaticRouter } from 'react-router-dom'
 
 import htmlBase from './html-base'
 
-const renderPage = ({
-  ctx,
-  App,
-  theme,
-  jss,
-  store,
-  swPath,
-}: {
+const renderPage = (
   ctx: Object,
-  App: Function,
-  theme?: Object,
-  jss?: any,
-  store: Object,
-  swPath?: string,
-}) => {
+  {
+    App,
+    theme,
+    jss,
+    store,
+    swPath,
+  }: {
+    App: Function,
+    theme?: Object,
+    jss?: any,
+    store: Object,
+    swPath?: string,
+  },
+) => {
   let appHtml
   let css
   let helmet
