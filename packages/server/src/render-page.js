@@ -22,12 +22,14 @@ const renderPage = (
     App,
     theme,
     store,
+    globalStyles,
     swPath,
   }: {
     Providers?: Function,
     App: Function,
     theme: Object,
     store: Object,
+    globalStyles?: any,
     swPath?: string,
   },
 ) => {
@@ -38,7 +40,11 @@ const renderPage = (
   if (!NO_SSR) {
     const sheetsRegistry = new SheetsRegistry()
     appHtml = renderToString(
-      <Providers url={ctx.req.url} {...{ theme, store, routerContext, sheetsRegistry }} isSsr>
+      <Providers
+        url={ctx.req.url}
+        {...{ theme, store, globalStyles, routerContext, sheetsRegistry }}
+        isSsr
+      >
         <App />
       </Providers>,
     )
