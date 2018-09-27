@@ -9,7 +9,6 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 // flow-disable-next-line
 import globalJss from 'jss'
 import jssPreset from 'jss-preset-default'
-import { hot } from 'react-hot-loader'
 import JssProvider from 'react-jss/lib/JssProvider'
 import { Provider } from 'react-redux'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
@@ -65,4 +64,4 @@ const Providers = ({
   return <NestedProviders>{App ? <App /> : children}</NestedProviders>
 }
 
-export default hot(module)(Providers)
+export default Providers
