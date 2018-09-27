@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "5.21.0",
+  "version": "5.21.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -19,7 +19,7 @@
     "@sharyn/webpack-config": "^2.4.5",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
-    "babel-preset-sharyn": "^3.0.9",
+    "babel-preset-sharyn": "^3.1.0",
     "clean-css": "^4.2.1",
     "colors": "^1.3.2",
     "dotenv": "^6.0.0",
