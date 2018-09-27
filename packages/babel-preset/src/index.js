@@ -2,6 +2,8 @@
 
 // flow-disable-next-line
 import { hasPackage } from '@sharyn/check-setup'
+// flow-disable-next-line
+import { NO_HMR } from '@sharyn/env'
 
 const config = {
   presets: [],
@@ -37,6 +39,6 @@ hasPackage('babel-plugin-module-resolver') &&
 hasPackage('babel-plugin-flow-react-proptypes') &&
   config.env.development.plugins.push('babel-plugin-flow-react-proptypes')
 
-hasPackage('react-hot-loader') && config.env.development.plugins.push('react-hot-loader/babel')
+NO_HMR || config.env.development.plugins.push('react-hot-loader/babel')
 
 module.exports = () => config
