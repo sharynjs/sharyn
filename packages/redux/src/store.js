@@ -7,16 +7,21 @@ import thunk from 'redux-thunk'
 // flow-disable-next-line
 import persistState from 'redux-localstorage'
 
-import asyncReducer from './async-reducer'
-import envReducer from './env-reducer'
-import dataReducer from './data-reducer'
-import uiReducer from './ui-reducer'
-import userReducer from './user-reducer'
+import defaultAsyncReducer from './async-reducer'
+import defaultDataReducer from './data-reducer'
+import defaultEnvReducer from './env-reducer'
+import defaultUiReducer from './ui-reducer'
+import defaultUserReducer from './user-reducer'
 
 const createSharynStore = (options?: {
   preloadedState?: Object,
   isDevEnv?: boolean,
   persistUser?: boolean,
+  asyncReducer?: Function,
+  dataReducer?: Function,
+  envReducer?: Function,
+  uiReducer?: Function,
+  userReducer?: Function,
 }) => {
   const composeEnhancers =
     (options?.isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
@@ -27,11 +32,11 @@ const createSharynStore = (options?: {
 
   return createStore(
     combineReducers({
-      async: asyncReducer,
-      data: dataReducer,
-      env: envReducer,
-      ui: uiReducer,
-      user: userReducer,
+      async: options?.asyncReducer ?? defaultAsyncReducer,
+      data: options?.dataReducer ?? defaultDataReducer,
+      env: options?.envReducer ?? defaultEnvReducer,
+      ui: options?.uiReducer ?? defaultUiReducer,
+      user: options?.userReducer ?? defaultUserReducer,
     }),
     options?.preloadedState ?? composedEnhancers,
     options?.preloadedState ? composedEnhancers : undefined,
