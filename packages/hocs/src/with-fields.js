@@ -1,12 +1,18 @@
 // @flow
 
 import compose from 'recompose/compose'
-import withState from 'recompose/withState'
+import withStateHandlers from 'recompose/withStateHandlers'
 import withHandlers from 'recompose/withHandlers'
 
 const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
   compose(
-    withState('fields', 'setFields', initialStateFn || {}),
+    withStateHandlers(
+      { fields: initialStateFn || {} },
+      {
+        setFields: () => payload => ({ fields: payload }),
+        setField: ({ fields }) => (key, value) => ({ ...fields, [key]: value }),
+      },
+    ),
     withHandlers({
       handleFieldChange: ({ fields, setFields }) => ({ target }) => {
         const newFields = { ...fields }
