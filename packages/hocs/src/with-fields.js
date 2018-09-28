@@ -10,7 +10,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
       { fields: initialStateFn || {} },
       {
         setFields: () => payload => ({ fields: payload }),
-        setField: ({ fields }) => (key, value) => ({ ...fields, [key]: value }),
+        setField: ({ fields }) => (key, value) => ({ fields: { ...fields, [key]: value } }),
       },
     ),
     withHandlers({
