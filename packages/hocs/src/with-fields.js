@@ -11,6 +11,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
       {
         setFields: () => payload => ({ fields: payload }),
         setField: ({ fields }) => (key, value) => ({ fields: { ...fields, [key]: value } }),
+        mergeFields: ({ fields }) => payload => ({ fields: { ...fields, ...payload } }),
       },
     ),
     withHandlers({
