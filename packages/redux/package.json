@@ -1,11 +1,11 @@
 {
   "name": "@sharyn/redux",
-  "version": "1.12.0",
+  "version": "1.12.1",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/redux",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/shared": "^3.4.0",
-    "@sharyn/util": "^2.0.4",
+    "@sharyn/shared": "^3.4.1",
+    "@sharyn/util": "^2.1.0",
     "lodash.curryright": "^4.1.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
