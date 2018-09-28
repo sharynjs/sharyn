@@ -1,17 +1,30 @@
 // @flow
 
+import omitBy from 'lodash.omitby'
 import compose from 'recompose/compose'
 import withStateHandlers from 'recompose/withStateHandlers'
 import withHandlers from 'recompose/withHandlers'
+
+const isNil = val => val === null || val === undefined
+const del = (fields, key) => {
+  const newFields = { ...fields }
+  delete newFields[key]
+  return newFields
+}
 
 const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
   compose(
     withStateHandlers(
       { fields: initialStateFn || {} },
       {
-        setFields: () => payload => ({ fields: payload }),
-        setField: ({ fields }) => (key, value) => ({ fields: { ...fields, [key]: value } }),
-        mergeFields: ({ fields }) => payload => ({ fields: { ...fields, ...payload } }),
+        clearFields: () => () => ({ fields: {} }),
+        setFields: () => payload => ({ fields: omitBy(payload, isNil) }),
+        setField: ({ fields }) => (key, value) =>
+          isNil(value) ? { fields: del(fields, key) } : { fields: { ...fields, [key]: value } },
+        deleteField: ({ fields }) => key => ({ fields: del(fields, key) }),
+        mergeFields: ({ fields }) => payload => ({
+          fields: omitBy({ ...fields, ...payload }, isNil),
+        }),
       },
     ),
     withHandlers({
@@ -28,7 +41,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
         } else {
           delete newFields[target.name]
         }
-        setFields(newFields)
+        setFields(omitBy(newFields, isNil))
       },
     }),
   )(Cmp)

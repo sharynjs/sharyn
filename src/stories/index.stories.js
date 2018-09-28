@@ -88,21 +88,69 @@ storiesOf('Components', module)
     <RefreshButtonCmp alwaysShow isRefreshing={boolean('isRefreshing', false)} />
   ))
   .add('HOC/withFields', () => {
-    const Input = ({ fields, handleFieldChange }: Object) => (
+    const Input = ({
+      fields,
+      handleFieldChange,
+      deleteField,
+      clearFields,
+      setField,
+      setFields,
+      mergeFields,
+    }: Object) => (
       <>
-        <input name="a" value={fields.a ?? ''} onChange={handleFieldChange} />
+        <input name="text" value={fields.text ?? ''} onChange={handleFieldChange} />
         <input
-          name="b"
+          name="checkboxwithvalue"
           value="hey"
           type="checkbox"
-          checked={fields.b ?? false}
+          checked={fields.checkboxwithvalue ?? false}
           onChange={handleFieldChange}
         />
-        <select name="c" value={fields.c ?? ''} onChange={handleFieldChange}>
+        <input
+          name="checkboxwithoutvalue"
+          type="checkbox"
+          checked={fields.checkboxwithoutvalue ?? false}
+          onChange={handleFieldChange}
+        />
+        <select name="select" value={fields.select ?? ''} onChange={handleFieldChange}>
           <option value="">Default</option>
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
+        {/* eslint-disable-next-line no-console */}
+        <button type="button" onClick={() => console.log(fields)}>
+          Log fields
+        </button>
+        <button type="button" onClick={() => deleteField('text')}>
+          Delete text field
+        </button>
+        <button type="button" onClick={() => clearFields()}>
+          Clear fields
+        </button>
+        <button type="button" onClick={() => setField('text', 'Banana')}>
+          Set text
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setFields({
+              text: 'Banana',
+              checkboxwithvalue: 'hey',
+              checkboxwithoutvalue: 'on',
+              select: '2',
+            })
+          }
+        >
+          Set all fields
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            mergeFields({ text: 'Avocado', checkboxwithoutvalue: undefined, select: '1' })
+          }
+        >
+          Merge fields
+        </button>
       </>
     )
     const InputWithFields = withFields()(Input)
