@@ -1,3 +1,4 @@
+import arr from './arr'
 import isEither from './is-either'
 import swit from './swit'
 import cond from './cond'
@@ -8,6 +9,7 @@ import spreadIf from './spread-if'
 import curryOptional from './curry-optional'
 
 module.exports = {
+  arr,
   isEither,
   swit,
   cond,

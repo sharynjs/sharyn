@@ -157,6 +157,8 @@ const packages = [
     // babel --ignore test.js doesnt seem to work
     modules: [
       'index.js',
+      'arr.js',
+      'arr.test.js',
       'cond.js',
       'cond.test.js',
       'curry-optional.js',
