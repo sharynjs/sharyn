@@ -1,8 +1,5 @@
 // @flow
 
-// flow-disable-next-line
-import swit from '@sharyn/util/swit'
-
 import {
   asyncAsyncRequestCase,
   asyncAsyncSuccessOrFailureCase,
@@ -10,18 +7,14 @@ import {
   asyncFetchPageSuccessOrFailureCase,
   asyncNavigationCase,
 } from './async-cases'
+import createReducer from './create-reducer'
 
-const asyncReducer = (asyncState: Object = {}, { type, payload }: { type: string, payload: any }) =>
-  swit(
-    type,
-    [
-      asyncFetchPageRequestCase,
-      asyncAsyncRequestCase,
-      asyncNavigationCase,
-      asyncAsyncSuccessOrFailureCase,
-      asyncFetchPageSuccessOrFailureCase,
-    ].map(c => c(asyncState, payload)),
-    asyncState,
-  )
+const asyncReducer = createReducer([
+  asyncAsyncRequestCase,
+  asyncAsyncSuccessOrFailureCase,
+  asyncFetchPageRequestCase,
+  asyncFetchPageSuccessOrFailureCase,
+  asyncNavigationCase,
+])
 
 export default asyncReducer

@@ -9,32 +9,26 @@ import {
   SHARYN_FETCH_PAGE_FAILURE,
   SHARYN_NAVIGATION,
 } from './actions'
-import { clearAsync, delAsyncEntry, setAsyncRequest } from './async-reductions'
+import {
+  setAsyncTrueReduction,
+  setAsyncPageTrueReduction,
+  delAsyncPageReduction,
+  delAsyncReductionFromAsyncKeyProp,
+  clearAsyncExceptPageReduction,
+} from './async-reductions'
 
-// eslint-disable-next-line no-unused-vars
-export const asyncNavigationCase = (asyncState: Object, payload?: any) => [
-  SHARYN_NAVIGATION,
-  () => clearAsync('page')(asyncState),
-]
+export const asyncNavigationCase = [SHARYN_NAVIGATION, clearAsyncExceptPageReduction]
 
-// eslint-disable-next-line no-unused-vars
-export const asyncFetchPageRequestCase = (asyncState: Object, payload?: any) => [
-  SHARYN_FETCH_PAGE_REQUEST,
-  () => setAsyncRequest(asyncState, { key: 'page' }),
-]
+export const asyncFetchPageRequestCase = [SHARYN_FETCH_PAGE_REQUEST, setAsyncPageTrueReduction]
 
-export const asyncAsyncRequestCase = (asyncState: Object, payload: string) => [
-  SHARYN_ASYNC_REQUEST,
-  () => setAsyncRequest(asyncState, { key: payload }),
-]
+export const asyncAsyncRequestCase = [SHARYN_ASYNC_REQUEST, setAsyncTrueReduction]
 
-export const asyncAsyncSuccessOrFailureCase = (asyncState: Object, payload: Object) => [
+export const asyncAsyncSuccessOrFailureCase = [
   [SHARYN_ASYNC_SUCCESS, SHARYN_ASYNC_FAILURE],
-  () => delAsyncEntry(payload.asyncKey)(asyncState),
+  delAsyncReductionFromAsyncKeyProp,
 ]
 
-// eslint-disable-next-line no-unused-vars
-export const asyncFetchPageSuccessOrFailureCase = (asyncState: Object, payload?: any) => [
+export const asyncFetchPageSuccessOrFailureCase = [
   [SHARYN_FETCH_PAGE_SUCCESS, SHARYN_FETCH_PAGE_FAILURE],
-  () => delAsyncEntry('page')(asyncState),
+  delAsyncPageReduction,
 ]

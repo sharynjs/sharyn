@@ -1,62 +1,131 @@
 import { compose } from 'recompose'
 import {
-  setAsyncRequest,
-  setAsyncSuccess,
-  setAsyncFailure,
-  delAsyncEntry,
-  clearAsync,
+  REQUEST,
+  SUCCESS,
+  FAILURE,
+  setAsyncHelper,
+  setAsyncTrueReduction,
+  setAsyncPageTrueReduction,
+  setAsyncTrueReductionFromAsyncKeyProp,
+  setAsyncRequestReduction,
+  setAsyncRequestReductionFromAsyncKeyProp,
+  setAsyncSuccessReduction,
+  setAsyncSuccessReductionFromAsyncKeyProp,
+  setAsyncFailureReduction,
+  setAsyncFailureReductionFromAsyncKeyProp,
+  setAsyncCustomReductionFromProps,
+  delAsyncHelper,
+  delAsyncReduction,
+  delAsyncPageReduction,
+  delAsyncReductionFromAsyncKeyProp,
+  clearAsyncHelper,
+  clearAsyncExceptPageReduction,
 } from './async-reductions'
 
-test('setAsyncRequest', () => {
-  const asyncState = {}
-  expect(setAsyncRequest(asyncState, { key: 'foo' })).toEqual({ foo: true })
-  expect(setAsyncRequest(asyncState, { key: 'foo', useStatus: true })).toEqual({ foo: 'REQUEST' })
-  expect(setAsyncRequest(asyncState, { key: 'foo', status: 'CUSTOM' })).toEqual({ foo: 'CUSTOM' })
-  expect(() =>
-    setAsyncRequest(asyncState, { key: 'foo', useStatus: false, status: 'CUSTOM' }),
-  ).toThrow()
-  expect(compose(setAsyncRequest({ key: 'foo', status: 'CUSTOM' }))(asyncState)).toEqual({
-    foo: 'CUSTOM',
+test('setAsyncHelper', () => {
+  expect(setAsyncHelper({}, 'a')).toEqual({ a: true })
+  expect(setAsyncHelper({}, 'a', 'custom')).toEqual({ a: 'custom' })
+})
+
+test('setAsyncTrueReduction', () => {
+  expect(setAsyncTrueReduction('a')({})).toEqual({ a: true })
+  expect(compose(setAsyncTrueReduction('a'))({})).toEqual({ a: true })
+})
+test('setAsyncPageTrueReduction', () => {
+  expect(setAsyncPageTrueReduction()({})).toEqual({ page: true })
+  expect(compose(setAsyncPageTrueReduction())({})).toEqual({ page: true })
+})
+
+test('setAsyncTrueReductionFromAsyncKeyProp', () => {
+  expect(setAsyncTrueReductionFromAsyncKeyProp({ asyncKey: 'a' })({})).toEqual({ a: true })
+  expect(compose(setAsyncTrueReductionFromAsyncKeyProp({ asyncKey: 'a' }))({})).toEqual({ a: true })
+})
+
+test('setAsyncRequestReduction', () => {
+  expect(setAsyncRequestReduction('a')({})).toEqual({ a: REQUEST })
+  expect(compose(setAsyncRequestReduction('a'))({})).toEqual({ a: REQUEST })
+})
+
+test('setAsyncRequestReductionFromAsyncKeyProp', () => {
+  expect(setAsyncRequestReductionFromAsyncKeyProp({ asyncKey: 'a' })({})).toEqual({ a: REQUEST })
+  expect(compose(setAsyncRequestReductionFromAsyncKeyProp({ asyncKey: 'a' }))({})).toEqual({
+    a: REQUEST,
   })
 })
 
-test('setAsyncSuccess', () => {
-  const asyncState = { foo: true }
-  expect(setAsyncSuccess(asyncState, { key: 'foo' })).toEqual({})
-  expect(setAsyncSuccess(asyncState, { key: 'foo', useStatus: true })).toEqual({ foo: 'SUCCESS' })
-  expect(setAsyncSuccess(asyncState, { key: 'foo', status: 'CUSTOM' })).toEqual({ foo: 'CUSTOM' })
-  expect(() =>
-    setAsyncSuccess(asyncState, { key: 'foo', useStatus: false, status: 'CUSTOM' }),
-  ).toThrow()
-  expect(compose(setAsyncSuccess({ key: 'foo', status: 'CUSTOM' }))(asyncState)).toEqual({
-    foo: 'CUSTOM',
+test('setAsyncSuccessReduction', () => {
+  expect(setAsyncSuccessReduction('a')({})).toEqual({ a: SUCCESS })
+  expect(compose(setAsyncSuccessReduction('a'))({})).toEqual({ a: SUCCESS })
+})
+
+test('setAsyncSuccessReductionFromAsyncKeyProp', () => {
+  expect(setAsyncSuccessReductionFromAsyncKeyProp({ asyncKey: 'a' })({})).toEqual({ a: SUCCESS })
+  expect(compose(setAsyncSuccessReductionFromAsyncKeyProp({ asyncKey: 'a' }))({})).toEqual({
+    a: SUCCESS,
   })
 })
 
-test('setAsyncFailure', () => {
-  const asyncState = { foo: true }
-  expect(setAsyncFailure(asyncState, { key: 'foo' })).toEqual({})
-  expect(setAsyncFailure(asyncState, { key: 'foo', useStatus: true })).toEqual({ foo: 'FAILURE' })
-  expect(setAsyncFailure(asyncState, { key: 'foo', status: 'CUSTOM' })).toEqual({ foo: 'CUSTOM' })
-  expect(() =>
-    setAsyncFailure(asyncState, { key: 'foo', useStatus: false, status: 'CUSTOM' }),
-  ).toThrow()
-  expect(compose(setAsyncFailure({ key: 'foo', status: 'CUSTOM' }))(asyncState)).toEqual({
-    foo: 'CUSTOM',
+test('setAsyncFailureReduction', () => {
+  expect(setAsyncFailureReduction('a')({})).toEqual({ a: FAILURE })
+  expect(compose(setAsyncFailureReduction('a'))({})).toEqual({ a: FAILURE })
+})
+
+test('setAsyncFailureReductionFromAsyncKeyProp', () => {
+  expect(setAsyncFailureReductionFromAsyncKeyProp({ asyncKey: 'a' })({})).toEqual({ a: FAILURE })
+  expect(compose(setAsyncFailureReductionFromAsyncKeyProp({ asyncKey: 'a' }))({})).toEqual({
+    a: FAILURE,
   })
 })
 
-test('delAsyncEntry', () => {
-  const asyncState = { foo: 'foo' }
-  expect(() => delAsyncEntry()).toThrow()
-  expect(() => delAsyncEntry(1)).toThrow()
-  expect(delAsyncEntry('foo')(asyncState)).toEqual({})
-  expect(compose(delAsyncEntry('foo'))(asyncState)).toEqual({})
+test('setAsyncCustomReductionFromProps', () => {
+  expect(setAsyncCustomReductionFromProps({ asyncKey: 'a', asyncValue: 'custom' })({})).toEqual({
+    a: 'custom',
+  })
+  expect(
+    compose(
+      setAsyncCustomReductionFromProps({
+        asyncKey: 'a',
+        asyncValue: 'custom',
+      }),
+    )({}),
+  ).toEqual({
+    a: 'custom',
+  })
 })
 
-test('clearAsync', () => {
+test('delAsyncHelper', () => {
   const asyncState = { foo: 'foo', bar: 'bar' }
-  expect(clearAsync()).toEqual({})
-  expect(clearAsync('foo')(asyncState)).toEqual({ foo: 'foo' })
-  expect(compose(clearAsync('foo'))(asyncState)).toEqual({ foo: 'foo' })
+  expect(delAsyncHelper(asyncState, 'foo')).toEqual({ bar: 'bar' })
+})
+
+test('delAsyncReduction', () => {
+  const asyncState = { foo: 'foo', bar: 'bar' }
+  expect(delAsyncReduction('foo')(asyncState)).toEqual({ bar: 'bar' })
+  expect(compose(delAsyncReduction('foo'))(asyncState)).toEqual({ bar: 'bar' })
+})
+
+test('delAsyncPageReduction', () => {
+  const asyncState = { page: 'page', bar: 'bar' }
+  expect(delAsyncPageReduction()(asyncState)).toEqual({ bar: 'bar' })
+  expect(compose(delAsyncPageReduction())(asyncState)).toEqual({ bar: 'bar' })
+})
+
+test('delAsyncReductionFromAsyncKeyProp', () => {
+  const asyncState = { foo: 'foo', bar: 'bar' }
+  expect(delAsyncReductionFromAsyncKeyProp({ asyncKey: 'foo' })(asyncState)).toEqual({ bar: 'bar' })
+  expect(compose(delAsyncReductionFromAsyncKeyProp({ asyncKey: 'foo' }))(asyncState)).toEqual({
+    bar: 'bar',
+  })
+})
+
+test('clearAsyncHelper', () => {
+  const asyncState = { foo: 'foo', bar: 'bar' }
+  expect(clearAsyncHelper(asyncState)).toEqual({})
+  expect(clearAsyncHelper(asyncState, 'foo')).toEqual({ foo: 'foo' })
+})
+
+test('clearAsyncExceptPageReduction', () => {
+  const asyncState = { page: 'page', foo: 'foo' }
+  expect(clearAsyncExceptPageReduction()(asyncState)).toEqual({ page: 'page' })
+  expect(compose(clearAsyncExceptPageReduction())(asyncState)).toEqual({ page: 'page' })
 })
