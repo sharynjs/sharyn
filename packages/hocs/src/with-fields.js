@@ -28,6 +28,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
       },
     ),
     withHandlers({
+      field: ({ fields }) => (key: string) => fields[key] ?? '',
       handleFieldChange: ({ fields, setFields }) => ({ target }) => {
         const newFields = { ...fields }
         if (target.type === 'checkbox') {
