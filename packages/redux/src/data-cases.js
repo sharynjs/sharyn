@@ -8,26 +8,23 @@ import {
   SHARYN_CLEAR_INVALID_FIELDS,
   SHARYN_NAVIGATION,
 } from './actions'
-import { addData, delData, clearData } from './data-reductions'
+import {
+  addDataReductionFromDataProp,
+  addInvalidFieldsDataReduction,
+  clearInvalidFieldsReduction,
+  clearDataReduction,
+} from './data-reductions'
 
-export const dataAsyncSuccessOrFetchPageSuccessCase = (dataState: Object, payload: Object) => [
+export const dataAsyncSuccessOrFetchPageSuccessCase = [
   [SHARYN_FETCH_PAGE_SUCCESS, SHARYN_ASYNC_SUCCESS],
-  () => addData(dataState, payload.data),
+  addDataReductionFromDataProp,
 ]
 
-// eslint-disable-next-line no-unused-vars
-export const dataNavigationOrFetchPageRequestCase = (dataState?: any, payload?: any) => [
+export const dataNavigationOrFetchPageRequestCase = [
   [SHARYN_NAVIGATION, SHARYN_FETCH_PAGE_REQUEST],
-  () => clearData(),
+  clearDataReduction,
 ]
 
-export const dataInvalidateFieldsCase = (dataState: Object, payload: Object) => [
-  SHARYN_INVALIDATE_FIELDS,
-  () => addData(dataState, { invalidFields: payload }),
-]
+export const dataInvalidateFieldsCase = [SHARYN_INVALIDATE_FIELDS, addInvalidFieldsDataReduction]
 
-// eslint-disable-next-line no-unused-vars
-export const clearInvalidFieldsCase = (dataState: Object, payload?: any) => [
-  SHARYN_CLEAR_INVALID_FIELDS,
-  () => delData('invalidFields')(dataState),
-]
+export const clearInvalidFieldsCase = [SHARYN_CLEAR_INVALID_FIELDS, clearInvalidFieldsReduction]

@@ -1,26 +1,16 @@
 // @flow
 
-import curryRight from 'lodash.curryright'
+import { addDataOperation, delDataOperation, clearDataOperation } from './data-operations'
 
-const del = (state, key) => {
-  const newState = { ...state }
-  delete newState[key]
-  return newState
-}
+export const addDataReductionFromDataProp = (payload: Object) => (state: Object) =>
+  addDataOperation(state, { ...payload.data })
 
-export const addData = curryRight((dataState: Object, newData?: Object) => ({
-  ...dataState,
-  ...newData,
-}))
+export const addInvalidFieldsDataReduction = (payload: Object) => (state: Object) =>
+  addDataOperation(state, { invalidFields: payload })
 
-export const delData = (key: string): any => {
-  if (!key) {
-    throw Error('delData() requires a key argument')
-  }
-  if (typeof key === 'string') {
-    return state => del(state, key)
-  }
-  throw Error('Incorrect parameters for delData()')
-}
+export const delDataReduction = (key: string) => (state: Object) => delDataOperation(state, key)
 
-export const clearData = () => ({})
+export const clearInvalidFieldsReduction = () => (state: Object) =>
+  delDataOperation(state, 'invalidFields')
+
+export const clearDataReduction = () => () => clearDataOperation()
