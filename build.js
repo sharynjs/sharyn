@@ -105,6 +105,8 @@ const packages = [
       'actions.js',
       'thunks.js',
       'async-cases.js',
+      'async-operations.js',
+      'async-operations.test.js',
       'async-reducer.js',
       'async-reducer.test.js',
       'async-reductions.js',

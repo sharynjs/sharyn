@@ -1,8 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import swit from '@sharyn/util/swit'
-
+import createReducer from './create-reducer'
 import {
   dataAsyncSuccessOrFetchPageSuccessCase,
   dataNavigationOrFetchPageRequestCase,
@@ -10,16 +8,11 @@ import {
   clearInvalidFieldsCase,
 } from './data-cases'
 
-const dataReducer = (dataState: Object = {}, { payload, type }: Object) =>
-  swit(
-    type,
-    [
-      dataAsyncSuccessOrFetchPageSuccessCase,
-      dataNavigationOrFetchPageRequestCase,
-      dataInvalidateFieldsCase,
-      clearInvalidFieldsCase,
-    ].map(c => c(dataState, payload)),
-    dataState,
-  )
+const dataReducer = createReducer([
+  dataAsyncSuccessOrFetchPageSuccessCase,
+  dataNavigationOrFetchPageRequestCase,
+  dataInvalidateFieldsCase,
+  clearInvalidFieldsCase,
+])
 
 export default dataReducer

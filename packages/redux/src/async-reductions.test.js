@@ -3,7 +3,6 @@ import {
   REQUEST,
   SUCCESS,
   FAILURE,
-  setAsyncHelper,
   setAsyncTrueReduction,
   setAsyncPageTrueReduction,
   setAsyncTrueReductionFromAsyncKeyProp,
@@ -14,18 +13,11 @@ import {
   setAsyncFailureReduction,
   setAsyncFailureReductionFromAsyncKeyProp,
   setAsyncCustomReductionFromProps,
-  delAsyncHelper,
   delAsyncReduction,
   delAsyncPageReduction,
   delAsyncReductionFromAsyncKeyProp,
-  clearAsyncHelper,
   clearAsyncExceptPageReduction,
 } from './async-reductions'
-
-test('setAsyncHelper', () => {
-  expect(setAsyncHelper({}, 'a')).toEqual({ a: true })
-  expect(setAsyncHelper({}, 'a', 'custom')).toEqual({ a: 'custom' })
-})
 
 test('setAsyncTrueReduction', () => {
   expect(setAsyncTrueReduction('a')({})).toEqual({ a: true })
@@ -93,11 +85,6 @@ test('setAsyncCustomReductionFromProps', () => {
   })
 })
 
-test('delAsyncHelper', () => {
-  const asyncState = { foo: 'foo', bar: 'bar' }
-  expect(delAsyncHelper(asyncState, 'foo')).toEqual({ bar: 'bar' })
-})
-
 test('delAsyncReduction', () => {
   const asyncState = { foo: 'foo', bar: 'bar' }
   expect(delAsyncReduction('foo')(asyncState)).toEqual({ bar: 'bar' })
@@ -116,12 +103,6 @@ test('delAsyncReductionFromAsyncKeyProp', () => {
   expect(compose(delAsyncReductionFromAsyncKeyProp({ asyncKey: 'foo' }))(asyncState)).toEqual({
     bar: 'bar',
   })
-})
-
-test('clearAsyncHelper', () => {
-  const asyncState = { foo: 'foo', bar: 'bar' }
-  expect(clearAsyncHelper(asyncState)).toEqual({})
-  expect(clearAsyncHelper(asyncState, 'foo')).toEqual({ foo: 'foo' })
 })
 
 test('clearAsyncExceptPageReduction', () => {
