@@ -1,15 +1,10 @@
 // @flow
 
-// flow-disable-next-line
-import swit from '@sharyn/util/swit'
-
+import createReducer from './create-reducer'
 import { offlineCase, onlineCase, startClientNavigationCase } from './env-cases'
 
-const envReducer = (envState: Object = {}, { payload, type }: Object) =>
-  swit(
-    type,
-    [startClientNavigationCase, onlineCase, offlineCase].map(c => c(envState, payload)),
-    envState,
-  )
+const dataReducer = createReducer([offlineCase, onlineCase, startClientNavigationCase], {
+  isOnline: true,
+})
 
-export default envReducer
+export default dataReducer

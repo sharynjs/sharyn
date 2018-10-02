@@ -1,10 +1,9 @@
 // @flow
 
-import curryRight from 'lodash.curryright'
+export const disableIsServerRenderReduction = () => (state: Object) => ({
+  ...state,
+  isServerRender: false,
+})
 
-export const disableIsServerRender = (envState: Object) => ({ ...envState, isServerRender: false })
-
-export const setIsOnline = curryRight((envState: Object, isOnline: boolean) => ({
-  ...envState,
-  isOnline,
-}))
+export const onlineReduction = () => (state: Object) => ({ ...state, isOnline: true })
+export const offlineReduction = () => (state: Object) => ({ ...state, isOnline: false })

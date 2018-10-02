@@ -1,22 +1,13 @@
 // @flow
 
 import { SHARYN_START_CLIENT_NAVIGATION, SHARYN_ONLINE, SHARYN_OFFLINE } from './actions'
-import { disableIsServerRender, setIsOnline } from './env-reductions'
+import { disableIsServerRenderReduction, onlineReduction, offlineReduction } from './env-reductions'
 
-// eslint-disable-next-line no-unused-vars
-export const startClientNavigationCase = (envState: Object, payload?: any) => [
+export const startClientNavigationCase = [
   SHARYN_START_CLIENT_NAVIGATION,
-  () => disableIsServerRender(envState),
+  disableIsServerRenderReduction,
 ]
 
-// eslint-disable-next-line no-unused-vars
-export const onlineCase = (envState: Object, payload?: any) => [
-  SHARYN_ONLINE,
-  () => setIsOnline(envState, true),
-]
+export const onlineCase = [SHARYN_ONLINE, onlineReduction]
 
-// eslint-disable-next-line no-unused-vars
-export const offlineCase = (envState: Object, payload?: any) => [
-  SHARYN_OFFLINE,
-  () => setIsOnline(envState, false),
-]
+export const offlineCase = [SHARYN_OFFLINE, offlineReduction]
