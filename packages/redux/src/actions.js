@@ -48,3 +48,8 @@ export const SHARYN_LOG_USER_IN = 'SHARYN_LOG_USER_IN'
 export const SHARYN_LOG_USER_OUT = 'SHARYN_LOG_USER_OUT'
 export const logUserIn = createAction(SHARYN_LOG_USER_IN)
 export const logUserOut = createAction(SHARYN_LOG_USER_OUT)
+
+export const SHARYN_SET_LOCAL = 'SHARYN_SET_LOCAL'
+export const setLocal = createAction(SHARYN_SET_LOCAL)
+export const SHARYN_DELETE_LOCAL = 'SHARYN_DELETE_LOCAL'
+export const deleteLocal = createAction(SHARYN_DELETE_LOCAL)

@@ -10,36 +10,53 @@ import persistState from 'redux-localstorage'
 import defaultAsyncReducer from './async-reducer'
 import defaultDataReducer from './data-reducer'
 import defaultEnvReducer from './env-reducer'
+import defaultLocalReducer from './local-reducer'
 import defaultUiReducer from './ui-reducer'
 import defaultUserReducer from './user-reducer'
 
-const createSharynStore = (options?: {
+const createSharynStore = ({
+  preloadedState,
+  isDevEnv,
+  persistLocal,
+  persistUser,
+  asyncReducer = defaultAsyncReducer,
+  dataReducer = defaultDataReducer,
+  envReducer = defaultEnvReducer,
+  localReducer = defaultLocalReducer,
+  uiReducer = defaultUiReducer,
+  userReducer = defaultUserReducer,
+}: {
   preloadedState?: Object,
   isDevEnv?: boolean,
+  persistLocal?: boolean,
   persistUser?: boolean,
   asyncReducer?: Function,
   dataReducer?: Function,
   envReducer?: Function,
+  localReducer?: Function,
   uiReducer?: Function,
   userReducer?: Function,
-}) => {
-  const composeEnhancers =
-    (options?.isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
+} = {}) => {
+  const reducerKeysToPersist = []
+  persistLocal && reducerKeysToPersist.push('local')
+  persistUser && reducerKeysToPersist.push('user')
+  const composeEnhancers = (isDevEnv && window?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose
   const composedEnhancers = composeEnhancers(
     applyMiddleware(thunk),
-    options?.persistUser ? persistState('user') : x => x,
+    reducerKeysToPersist.length ? persistState(reducerKeysToPersist) : x => x,
   )
 
   return createStore(
     combineReducers({
-      async: options?.asyncReducer ?? defaultAsyncReducer,
-      data: options?.dataReducer ?? defaultDataReducer,
-      env: options?.envReducer ?? defaultEnvReducer,
-      ui: options?.uiReducer ?? defaultUiReducer,
-      user: options?.userReducer ?? defaultUserReducer,
+      async: asyncReducer,
+      data: dataReducer,
+      env: envReducer,
+      ...(persistLocal ? { local: localReducer } : {}),
+      ui: uiReducer,
+      user: userReducer,
     }),
-    options?.preloadedState ?? composedEnhancers,
-    options?.preloadedState ? composedEnhancers : undefined,
+    preloadedState ?? composedEnhancers,
+    preloadedState ? composedEnhancers : undefined,
   )
 }
 
