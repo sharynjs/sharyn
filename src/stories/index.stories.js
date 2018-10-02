@@ -113,6 +113,13 @@ storiesOf('Components', module)
           checked={field('checkboxwithoutvalue')}
           onChange={handleFieldChange}
         />
+        <input
+          name="checkboxemptystring"
+          type="checkbox"
+          value=""
+          checked={field('checkboxemptystring', true)}
+          onChange={handleFieldChange}
+        />
         <select name="select" value={field('select')} onChange={handleFieldChange}>
           <option value="">Default</option>
           <option value="1">1</option>
@@ -138,6 +145,7 @@ storiesOf('Components', module)
               text: 'Banana',
               checkboxwithvalue: 'hey',
               checkboxwithoutvalue: 'on',
+              checkboxemptystring: '',
               select: '2',
             })
           }
