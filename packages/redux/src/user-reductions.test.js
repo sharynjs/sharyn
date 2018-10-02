@@ -1,9 +1,9 @@
-import { setUser, deleteUser } from './user-reductions'
+import { setUserReduction, deleteUserReduction } from './user-reductions'
 
 test('setUser', () => {
-  expect(setUser({ foo: 'foo' })).toEqual({ foo: 'foo' })
+  expect(setUserReduction({ foo: 'foo' })()).toEqual({ foo: 'foo' })
 })
 
 test('deleteUser', () => {
-  expect(deleteUser('anything')).toEqual(null)
+  expect(deleteUserReduction()('anything')).toEqual(null)
 })

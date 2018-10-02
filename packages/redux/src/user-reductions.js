@@ -1,5 +1,5 @@
 // @flow
 
-export const setUser = (user: Object) => user
+export const setUserReduction = (payload: Object) => () => payload
 
-export const deleteUser = () => null
+export const deleteUserReduction = () => () => null

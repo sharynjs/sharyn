@@ -4,6 +4,8 @@ import uiReducer from './ui-reducer'
 test('uiReducer', () => {
   let state
 
+  expect(uiReducer(state)).toEqual({ notifications: [] })
+
   state = uiReducer(state, notify('a'))
   expect(state).toEqual({ notifications: ['a'] })
 

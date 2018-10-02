@@ -132,6 +132,7 @@ const packages = [
       'ui-reductions.test.js',
       'user-cases.js',
       'user-reducer.js',
+      'user-reducer.test.js',
       'user-reductions.js',
       'user-reductions.test.js',
     ],
