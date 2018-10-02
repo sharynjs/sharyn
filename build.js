@@ -80,7 +80,13 @@ const packages = [
   },
   {
     name: 'hocs',
-    modules: ['hide-on-scroll.js', 'with-client-main-query.js', 'render-if.js', 'with-fields.js'],
+    modules: [
+      'hide-on-scroll.js',
+      'with-client-main-query.js',
+      'render-if.js',
+      'with-fields.js',
+      'with-navigation.js',
+    ],
   },
   {
     name: 'jest-config',
