@@ -33,7 +33,7 @@ const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
         const newFields = { ...fields }
         if (target.type === 'checkbox') {
           if (target.checked) {
-            newFields[target.name] = target.value || 'on'
+            newFields[target.name] = target.value
           } else {
             delete newFields[target.name]
           }
