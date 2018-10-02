@@ -2,23 +2,16 @@
 
 import { SHARYN_DISMISS_FIRST_NOTIFICATION, SHARYN_NOTIFY, SHARYN_NOTIFY_MULTIPLE } from './actions'
 import {
-  addOneNotification,
-  addMultipleNotifications,
-  removeFirstNotification,
+  addOneNotificationReduction,
+  addMultipleNotificationsReduction,
+  removeFirstNotificationReduction,
 } from './ui-reductions'
 
-// eslint-disable-next-line no-unused-vars
-export const dismissFirstNotificationCase = (uiState: Object, payload?: any) => [
+export const dismissFirstNotificationCase = [
   SHARYN_DISMISS_FIRST_NOTIFICATION,
-  () => removeFirstNotification(uiState),
+  removeFirstNotificationReduction,
 ]
 
-export const notifyCase = (uiState: Object, payload: Object) => [
-  SHARYN_NOTIFY,
-  () => addOneNotification(uiState, payload),
-]
+export const notifyCase = [SHARYN_NOTIFY, addOneNotificationReduction]
 
-export const notifyMultipleCase = (uiState: Object, payload: Object[]) => [
-  SHARYN_NOTIFY_MULTIPLE,
-  () => addMultipleNotifications(uiState, payload),
-]
+export const notifyMultipleCase = [SHARYN_NOTIFY_MULTIPLE, addMultipleNotificationsReduction]

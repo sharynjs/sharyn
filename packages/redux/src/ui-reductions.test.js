@@ -1,20 +1,20 @@
 import {
-  addOneNotification,
-  addMultipleNotifications,
-  removeFirstNotification,
+  addOneNotificationReduction,
+  addMultipleNotificationsReduction,
+  removeFirstNotificationReduction,
 } from './ui-reductions'
 
-test('addOneNotification', () =>
-  expect(addOneNotification({ notifications: [] }, 'notif')).toEqual({
+test('addOneNotificationReduction', () =>
+  expect(addOneNotificationReduction('notif')({ notifications: [] })).toEqual({
     notifications: ['notif'],
   }))
 
-test('addMultipleNotifications', () =>
-  expect(addMultipleNotifications({ notifications: [] }, ['a', 'b'])).toEqual({
+test('addMultipleNotificationsReduction', () =>
+  expect(addMultipleNotificationsReduction(['a', 'b'])({ notifications: [] })).toEqual({
     notifications: ['a', 'b'],
   }))
 
-test('removeFirstNotification', () =>
-  expect(removeFirstNotification({ notifications: ['a', 'b'] })).toEqual({
+test('removeFirstNotificationReduction', () =>
+  expect(removeFirstNotificationReduction()({ notifications: ['a', 'b'] })).toEqual({
     notifications: ['b'],
   }))

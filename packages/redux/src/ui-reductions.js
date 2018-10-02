@@ -1,16 +1,16 @@
 // @flow
 
-export const addOneNotification = (uiState: Object, notification?: Object) => ({
-  ...uiState,
-  notifications: [...uiState.notifications, ...(notification ? [notification] : [])],
+export const addOneNotificationReduction = (payload: Object) => (state: Object) => ({
+  ...state,
+  notifications: [...state.notifications, payload],
 })
 
-export const addMultipleNotifications = (uiState: Object, notifications?: Object[] = []) => ({
-  ...uiState,
-  notifications: [...uiState.notifications, ...notifications],
+export const addMultipleNotificationsReduction = (payload: Object[]) => (state: Object) => ({
+  ...state,
+  notifications: [...state.notifications, ...payload],
 })
 
-export const removeFirstNotification = (uiState: Object) => ({
-  ...uiState,
-  notifications: uiState.notifications.splice(1),
+export const removeFirstNotificationReduction = () => (state: Object) => ({
+  ...state,
+  notifications: state.notifications.splice(1),
 })

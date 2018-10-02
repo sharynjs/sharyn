@@ -127,6 +127,7 @@ const packages = [
       'env-reductions.test.js',
       'ui-cases.js',
       'ui-reducer.js',
+      'ui-reducer.test.js',
       'ui-reductions.js',
       'ui-reductions.test.js',
       'user-cases.js',
