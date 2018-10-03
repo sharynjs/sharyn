@@ -8,6 +8,7 @@ const standardCols = (knex: Function, t: Object) => {
   t.timestamp('updatedAt')
     .notNullable()
     .defaultTo(knex.fn.now())
+  t.timestamp('deletedAt')
 }
 
 module.exports = standardCols
