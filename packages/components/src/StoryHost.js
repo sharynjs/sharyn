@@ -7,9 +7,11 @@ const StoryHost = ({
   border,
   width,
   children,
+  white,
 }: {
   border?: boolean,
   width?: number | string,
+  white?: boolean,
   children: any,
 }) => (
   <div
@@ -18,6 +20,7 @@ const StoryHost = ({
       height: '100%',
       justifyContent: 'center',
       alignItems: 'center',
+      ...(white ? { background: 'white' } : {}),
     }}
   >
     {border || width ? (
