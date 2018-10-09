@@ -84,6 +84,7 @@ const packages = [
       'hide-on-scroll.js',
       'with-client-main-query.js',
       'render-if.js',
+      'with-css.js',
       'with-fields.js',
       'with-navigation.js',
     ],

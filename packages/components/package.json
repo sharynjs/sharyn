@@ -3,12 +3,9 @@
   "version": "3.2.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/components",
   "license": "MIT",
-  "peerDependencies": {
-    "@material-ui/core": "^3.0.3",
-    "recompose": "^0.30.0"
-  },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
+    "@material-ui/core": "^3.0.3",
     "@sharyn/css": "^1.2.2",
     "@sharyn/redux": "^3.0.0",
     "@sharyn/util": "^2.1.0",
@@ -17,6 +14,7 @@
     "react-jss": "^8.6.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "recompose": "^0.30.0"
   }
 }
