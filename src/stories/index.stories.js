@@ -91,7 +91,7 @@ storiesOf('Components', module)
     const Input = ({
       field,
       fields,
-      handleFieldChange,
+      onChange,
       deleteField,
       clearFields,
       setField,
@@ -99,28 +99,28 @@ storiesOf('Components', module)
       mergeFields,
     }: Object) => (
       <>
-        <input name="text" value={field('text')} onChange={handleFieldChange} />
+        <input name="text" value={field('text')} {...{ onChange }} />
         <input
           name="checkboxwithvalue"
           value="hey"
           type="checkbox"
           checked={field('checkboxwithvalue')}
-          onChange={handleFieldChange}
+          {...{ onChange }}
         />
         <input
           name="checkboxwithoutvalue"
           type="checkbox"
           checked={field('checkboxwithoutvalue')}
-          onChange={handleFieldChange}
+          {...{ onChange }}
         />
         <input
           name="checkboxemptystring"
           type="checkbox"
           value=""
           checked={field('checkboxemptystring', true)}
-          onChange={handleFieldChange}
+          {...{ onChange }}
         />
-        <select name="select" value={field('select')} onChange={handleFieldChange}>
+        <select name="select" value={field('select')} {...{ onChange }}>
           <option value="">Default</option>
           <option value="1">1</option>
           <option value="2">2</option>
