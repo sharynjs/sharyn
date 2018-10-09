@@ -1,13 +1,15 @@
 // @flow
 
+/* eslint-disable import/no-extraneous-dependencies */
+
 import withStyles from '@material-ui/core/styles/withStyles'
 import compose from 'recompose/compose'
-import renameProp from 'recompose/renameProp'
+import withProps from 'recompose/withProps'
 
-const withCss = (params: any) => (BaseCmp: Function) =>
+const withCss = (params: any) =>
   compose(
     withStyles(params),
-    renameProp('classes', 'css'),
-  )(BaseCmp)
+    withProps(({ classes }) => ({ css: classes })),
+  )
 
 export default withCss
