@@ -163,6 +163,7 @@ const packages = [
       'render-page.js',
       'base-env.js',
       'ssr-data.js',
+      'process-request.js',
     ],
   },
   {
