@@ -15,34 +15,31 @@ const getSsrData = async (ctx: Object, allRoutes: Object[]) => {
       const { cookie } = ctx.req.headers
       const urlBase = `http${IS_LOCAL_ENV_TYPE ? '' : 's'}://${ctx.request.host}`
       if (ctx.request.method === 'GET' && route.mainQuery) {
-        const { query, mapResp, mapUrlParams } = route.mainQuery
+        const { query, variables, mapRespData } = route.mainQuery
         data = await graphqlCall({
           urlBase,
           query,
-          urlParams: match.params,
-          mapUrlParams,
-          mapResp,
+          variables: variables instanceof Function ? variables(match.params) : variables,
+          mapRespData,
           cookie,
         })
       }
       if (ctx.request.method === 'POST' && route.mainMutation) {
-        const { query, mapFields, mapUrlParams, mapResp, successRedirect } = route.mainMutation
+        const { query, variables, mapRespData, successRedirect } = route.mainMutation
         data =
           (await graphqlCall({
             urlBase,
             query,
-            urlParams: match.params,
-            mapUrlParams,
-            fields: ctx.request.body,
-            mapFields,
-            mapResp,
+            variables:
+              variables instanceof Function ? variables(match.params, ctx.request.body) : variables,
+            mapRespData,
             cookie,
           })) ?? {}
         data.previousFields = ctx.request.body
         if (!data.errors && !data.invalidFields && successRedirect) {
           ctx.redirect(
             successRedirect instanceof Function
-              ? successRedirect(data, ctx.request.body)
+              ? successRedirect(data, ctx.request.body, match.params)
               : successRedirect,
           )
           return {}

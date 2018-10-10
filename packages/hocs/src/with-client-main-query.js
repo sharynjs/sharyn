@@ -23,14 +23,13 @@ const lifecycle = {
       }
       const { dispatch, route, fetchPageOptions } = this.props
       if (route.mainQuery) {
-        const urlParams = this.props.match.params
-        const { query, mapUrlParams, mapResp } = route.mainQuery
+        const { query, variables, mapRespData } = route.mainQuery
         dispatch(
           configuredFetchPageThunk({
             query,
-            urlParams,
-            mapUrlParams,
-            mapResp,
+            variables:
+              variables instanceof Function ? variables(this.props.match.params) : variables,
+            mapRespData,
             ...fetchPageOptions,
           }),
         )

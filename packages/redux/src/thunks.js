@@ -70,12 +70,9 @@ export const graphqlThunk = ({
   // flow-disable-next-line
   urlPath = configuredUrlPath,
   authorizationBearer,
-  urlParams,
-  mapUrlParams,
-  fields,
-  mapFields,
   query,
-  mapResp,
+  variables,
+  mapRespData,
   successRedirect,
   onSuccess,
   onInvalidFields,
@@ -96,10 +93,9 @@ export const graphqlThunk = ({
   authorizationBearer?: string,
   urlParams?: Object,
   mapUrlParams?: Function,
-  fields?: Object,
-  mapFields?: Function,
   query: string,
-  mapResp?: Function,
+  variables?: Object,
+  mapRespData?: Function,
   successRedirect?: Function | string,
   onSuccess?: Function,
   onDataErrors?: Function,
@@ -125,12 +121,9 @@ export const graphqlThunk = ({
       urlBase,
       urlPath,
       authorizationBearer,
-      urlParams,
-      mapUrlParams,
-      fields,
-      mapFields,
       query,
-      mapResp,
+      variables,
+      mapRespData,
       ...optionsFn(),
     })
     dispatch(success({ data, ...spread({ asyncKey }) }))
@@ -148,7 +141,7 @@ export const graphqlThunk = ({
           )
         }
         routerHistory.push(
-          successRedirect instanceof Function ? successRedirect(data, fields) : successRedirect,
+          successRedirect instanceof Function ? successRedirect(data, variables) : successRedirect,
         )
       }
       onSuccess && onSuccess(data)

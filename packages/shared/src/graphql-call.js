@@ -9,29 +9,19 @@ const graphqlCall = async ({
   urlPath,
   authorizationBearer,
   cookie,
-  urlParams = {},
-  mapUrlParams,
-  fields = {},
-  mapFields,
+  variables = {},
   query,
-  mapResp,
+  mapRespData,
 }: {
   urlBase?: string,
   urlPath?: string,
   authorizationBearer?: string,
   cookie?: string,
-  urlParams?: Object,
-  mapUrlParams?: Function,
-  fields?: Object,
-  mapFields?: Function,
+  variables?: Object,
   query: string,
-  mapResp?: Function,
+  mapRespData?: Function,
 }) => {
   let callResp
-  const variables = {
-    ...(mapUrlParams ? mapUrlParams(urlParams) : urlParams),
-    ...(mapFields ? mapFields(fields) : fields),
-  }
   try {
     callResp = await call({
       urlBase,
@@ -45,7 +35,7 @@ const graphqlCall = async ({
   }
   let dataResp = {}
   try {
-    dataResp = mapResp ? mapResp(callResp?.data?.data) : callResp?.data?.data
+    dataResp = mapRespData ? mapRespData(callResp?.data?.data) : callResp?.data?.data
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error(err)
