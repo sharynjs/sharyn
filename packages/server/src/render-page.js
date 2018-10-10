@@ -15,24 +15,23 @@ import DefaultProviders from '@sharyn/components/Providers'
 
 import htmlBase from './html-base'
 
-const renderPage = (
-  ctx: Object,
-  {
-    Providers = DefaultProviders,
-    App,
-    theme,
-    store,
-    globalStyles,
-    swPath,
-  }: {
-    Providers?: Function,
-    App: Function,
-    theme: Object,
-    store: Object,
-    globalStyles?: any,
-    swPath?: string,
-  },
-) => {
+const renderPage = ({
+  Providers = DefaultProviders,
+  App,
+  theme,
+  store,
+  url,
+  globalStyles,
+  swPath,
+}: {
+  Providers?: Function,
+  App: Function,
+  theme: Object,
+  store: Object,
+  url: string,
+  globalStyles?: any,
+  swPath?: string,
+}) => {
   let appHtml
   let css
   let helmet
@@ -40,27 +39,22 @@ const renderPage = (
   if (!NO_SSR) {
     const sheetsRegistry = new SheetsRegistry()
     appHtml = renderToString(
-      <Providers
-        url={ctx.req.url}
-        {...{ theme, store, globalStyles, routerContext, sheetsRegistry }}
-        isSsr
-      >
+      <Providers {...{ theme, store, url, globalStyles, routerContext, sheetsRegistry }} isSsr>
         <App />
       </Providers>,
     )
     css = sheetsRegistry.toString()
     helmet = Helmet.renderStatic()
   }
-  if (routerContext.action === 'REPLACE') {
-    ctx.redirect(routerContext.url)
-  } else {
-    ctx.body = htmlBase({
+  return {
+    routerContext,
+    html: htmlBase({
       appHtml,
       css,
       helmet,
       swPath,
       windowVars: [['__PRELOADED_STATE__', store.getState()]],
-    })
+    }),
   }
 }
 

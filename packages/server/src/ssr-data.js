@@ -5,16 +5,29 @@ import { IS_LOCAL_ENV_TYPE, NO_SSR } from '@sharyn/env'
 // flow-disable-next-line
 import { graphqlCall, findMatch } from '@sharyn/shared'
 
-const getSsrData = async (ctx: Object, allRoutes: Object[]) => {
+const getSsrData = async ({
+  user,
+  allRoutes,
+  url,
+  cookie,
+  host,
+  method,
+  body,
+}: {
+  user?: Object,
+  allRoutes: Object[],
+  url: string,
+  host: string,
+  method: string,
+  body?: Object,
+  cookie?: string,
+}) => {
   let data
-  const { user } = ctx.session
-
   if (!NO_SSR) {
-    const { match, route } = findMatch(allRoutes, ctx.req.url, !!user)
+    const { match, route } = findMatch(allRoutes, url, !!user)
     if (match) {
-      const { cookie } = ctx.req.headers
-      const urlBase = `http${IS_LOCAL_ENV_TYPE ? '' : 's'}://${ctx.request.host}`
-      if (ctx.request.method === 'GET' && route.mainQuery) {
+      const urlBase = `http${IS_LOCAL_ENV_TYPE ? '' : 's'}://${host}`
+      if (method === 'GET' && route.mainQuery) {
         const { query, variables, mapRespData } = route.mainQuery
         data = await graphqlCall({
           urlBase,
@@ -24,33 +37,32 @@ const getSsrData = async (ctx: Object, allRoutes: Object[]) => {
           cookie,
         })
       }
-      if (ctx.request.method === 'POST' && route.mainMutation) {
+      if (method === 'POST' && route.mainMutation) {
         const { query, variables, mapRespData, successRedirect } = route.mainMutation
         data =
           (await graphqlCall({
             urlBase,
             query,
-            variables:
-              variables instanceof Function ? variables(match.params, ctx.request.body) : variables,
+            variables: variables instanceof Function ? variables(match.params, body) : variables,
             mapRespData,
             cookie,
           })) ?? {}
-        data.previousFields = ctx.request.body
+        data.previousFields = body
         if (!data.errors && !data.invalidFields && successRedirect) {
-          ctx.redirect(
-            successRedirect instanceof Function
-              ? successRedirect(data, ctx.request.body, match.params)
-              : successRedirect,
-          )
-          return {}
+          return {
+            redirectTo:
+              successRedirect instanceof Function
+                ? successRedirect(data, body, match.params)
+                : successRedirect,
+          }
         }
       }
     } else {
-      ctx.status = 404
+      return { is404: true }
     }
   }
 
-  return data
+  return { data }
 }
 
 export default getSsrData
