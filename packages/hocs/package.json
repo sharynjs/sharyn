@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/hocs",
-  "version": "4.0.1",
+  "version": "4.1.0-alpha.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/hocs",
   "license": "MIT",
   "dependencies": {

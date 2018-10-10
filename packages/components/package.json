@@ -1,12 +1,12 @@
 {
   "name": "@sharyn/components",
-  "version": "3.2.2",
+  "version": "3.2.3-alpha.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/components",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/css": "^1.2.2",
-    "@sharyn/redux": "^3.0.0",
+    "@sharyn/redux": "^4.0.0-alpha.0",
     "@sharyn/util": "^2.1.0",
     "jss": "^9.8.7",
     "jss-preset-default": "^4.5.0",
