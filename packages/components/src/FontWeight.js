@@ -10,12 +10,14 @@ const styles = {
   light: { fontWeight: 100 },
   bold: { fontWeight: 500 },
   bolder: { fontWeight: 900 },
+  normal: { fontWeight: 'normal' },
 }
 
 const FontWeightJSX = ({
   classes,
   light,
   bolder,
+  normal,
   children,
   className,
   ...rest
@@ -23,6 +25,7 @@ const FontWeightJSX = ({
   classes: Object,
   light?: boolean,
   bolder?: boolean,
+  normal?: boolean,
   className?: string,
   children: any,
 }) => {
@@ -32,6 +35,9 @@ const FontWeightJSX = ({
   }
   if (bolder) {
     fwClassName = classes.bolder
+  }
+  if (normal) {
+    fwClassName = classes.normal
   }
   return (
     <span className={className ? `${fwClassName} ${className}` : fwClassName} {...rest}>
