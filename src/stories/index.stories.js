@@ -5,6 +5,7 @@
 import React from 'react'
 
 import HomeIcon from '@material-ui/icons/Home'
+import Button from '@material-ui/core/Button'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { boolean, withKnobs } from '@storybook/addon-knobs/react'
@@ -36,6 +37,7 @@ import I from '../../packages/components/src/I'
 import Li from '../../packages/components/src/Li'
 import P from '../../packages/components/src/P'
 import Span from '../../packages/components/src/Span'
+import Ul from '../../packages/components/src/Ul'
 import { clearfix, middle } from '../../packages/css/src/util'
 import withFields from '../../packages/hocs/src/with-fields'
 import HideOnScrollView from './hide-on-scroll-view'
@@ -194,8 +196,12 @@ storiesOf('Components', module)
       <H5>h5</H5>
       <H6>h6</H6>
       <I>i</I>
-      <El tag="ul">
+      <Ul>
         <Li>i</Li>
+      </Ul>
+      <El tag="blockquote">Blockquote</El>
+      <El component={Button} color="primary" variant="contained">
+        Button
       </El>
       <P>p</P>
       <Span>span</Span>

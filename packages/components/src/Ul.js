@@ -9,7 +9,6 @@ import withStyles from '@material-ui/core/styles/withStyles'
 
 import atomicStyles, { transformRest } from './atomic-styles'
 
-const El = ({ children, tag, component, ...rest }: Object) =>
-  React.createElement(component ?? tag, transformRest(rest), children)
+const Ul = ({ children, ...rest }: Object) => <ul {...transformRest(rest)}>{children}</ul>
 
-export default withStyles(atomicStyles)(El)
+export default withStyles(atomicStyles)(Ul)
