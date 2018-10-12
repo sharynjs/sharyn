@@ -22,7 +22,20 @@ import Page from '../../packages/components/src/Page'
 import ProgressButton from '../../packages/components/src/ProgressButton'
 import { RefreshButtonCmp } from '../../packages/components/src/RefreshButton'
 import StoryHost from '../../packages/components/src/StoryHost'
-import El from '../../packages/components/src/Element'
+import A from '../../packages/components/src/A'
+import B from '../../packages/components/src/B'
+import Div from '../../packages/components/src/Div'
+import El from '../../packages/components/src/El'
+import H1 from '../../packages/components/src/H1'
+import H2 from '../../packages/components/src/H2'
+import H3 from '../../packages/components/src/H3'
+import H4 from '../../packages/components/src/H4'
+import H5 from '../../packages/components/src/H5'
+import H6 from '../../packages/components/src/H6'
+import I from '../../packages/components/src/I'
+import Li from '../../packages/components/src/Li'
+import P from '../../packages/components/src/P'
+import Span from '../../packages/components/src/Span'
 import { clearfix, middle } from '../../packages/css/src/util'
 import withFields from '../../packages/hocs/src/with-fields'
 import HideOnScrollView from './hide-on-scroll-view'
@@ -166,35 +179,39 @@ storiesOf('Components', module)
     const InputWithFields = withFields()(Input)
     return <InputWithFields />
   })
-  .add('Text', () => (
+  .add('Elements', () => (
     <div>
-      <El h1>h1</El>
-      <El h2>h2</El>
-      <El h3>h3</El>
-      <El h4>h4</El>
-      <El h5>h5</El>
-      <El h6>h6</El>
-      <El p>p</El>
-      <El div>div</El>
-      <ul>
-        <El li>li</El>
-      </ul>
-      <El bolder>bolder</El>
+      <A href="#" target="_blank">
+        a
+      </A>
       <br />
-      <El bold>bold</El>
-      <br />
-      <El normal>normal</El>
-      <br />
-      <El thin>thin</El>
-      <br />
-      <El italic>italic</El>
-      <br />
-      <El underline>underline</El>
-      <br />
-      <El a noDecoration target="_blank" href="google.com">
-        link no decoration
+      <B>b</B>
+      <Div>div</Div>
+      <H1>h1</H1>
+      <H2>h2</H2>
+      <H3>h3</H3>
+      <H4>h4</H4>
+      <H5>h5</H5>
+      <H6>h6</H6>
+      <I>i</I>
+      <El tag="ul">
+        <Li>i</Li>
       </El>
+      <P>p</P>
+      <Span>span</Span>
       <br />
+    </div>
+  ))
+  .add('Styled Elements', () => (
+    <div>
+      <Div light>light</Div>
+      <Div fontWeightNormal>fontWeightNormal</Div>
+      <Div bold>bold</Div>
+      <Div bolder>bolder</Div>
+      <Div italic>italic</Div>
+      <Div noDecoration>noDecoration</Div>
+      <Div underline>underline</Div>
+      <Div m3>m3</Div>
     </div>
   ))
 
