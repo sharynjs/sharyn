@@ -3,11 +3,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 // flow-disable-next-line
 import Button from '@material-ui/core/Button'
 // flow-disable-next-line
-import { withStyles } from '@material-ui/core/styles'
+import withStyles from '@material-ui/core/styles/withStyles'
 
 const styles = {
   link: {

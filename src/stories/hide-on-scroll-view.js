@@ -6,7 +6,7 @@ import AppBar from '@material-ui/core/AppBar'
 // flow-disable-next-line
 import ToolBar from '@material-ui/core/Toolbar'
 // flow-disable-next-line
-import { withStyles } from '@material-ui/core/styles'
+import withStyles from '@material-ui/core/styles/withStyles'
 // flow-disable-next-line
 import Typography from '@material-ui/core/Typography'
 

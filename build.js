@@ -50,7 +50,7 @@ const packages = [
       'RefreshButton.js',
       'StoryHost.js',
       'favicons.js',
-      'Switch.js',
+      'Element.js',
       'Providers.js',
       'GlobalStylesProvider.js',
     ],

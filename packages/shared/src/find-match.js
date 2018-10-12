@@ -2,7 +2,7 @@
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { matchPath } from 'react-router'
+import matchPath from 'react-router/matchPath'
 
 import loggedFilter from './logged-filter'
 

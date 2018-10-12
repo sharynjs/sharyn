@@ -3,7 +3,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 
-import { Link } from 'react-router-dom'
+import Link from 'react-router-dom/Link'
 // flow-disable-next-line
 import cond from '@sharyn/util/cond'
 

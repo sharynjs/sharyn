@@ -1,4 +1,4 @@
-import { compose } from 'recompose'
+import compose from 'recompose/compose'
 import { globalDataSetReduction, globalDataDeleteReduction } from './global-data-reductions'
 
 test('globalDataSetReduction', () => {

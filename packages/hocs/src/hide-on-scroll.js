@@ -8,7 +8,7 @@ import withState from 'recompose/withState'
 import withLifecycle from 'recompose/lifecycle'
 import compose from 'recompose/compose'
 // flow-disable-next-line
-import { withStyles } from '@material-ui/core/styles'
+import withStyles from '@material-ui/core/styles/withStyles'
 
 const styles = ({ breakpoints }) => ({
   root: { transition: 'margin-top 0.2s', [breakpoints.up('sm')]: { marginTop: '0 !important' } },

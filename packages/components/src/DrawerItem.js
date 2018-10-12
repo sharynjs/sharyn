@@ -4,7 +4,7 @@
 
 import React from 'react'
 // flow-disable-next-line
-import { withStyles } from '@material-ui/core/styles'
+import withStyles from '@material-ui/core/styles/withStyles'
 // flow-disable-next-line
 import ListItem from '@material-ui/core/ListItem'
 // flow-disable-next-line

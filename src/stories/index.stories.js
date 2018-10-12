@@ -9,7 +9,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { boolean, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
-import { Route } from 'react-router'
+import Route from 'react-router/Route'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
 import { muiTheme } from 'storybook-addon-material-ui'
 import { host } from 'storybook-host'
@@ -22,6 +22,7 @@ import Page from '../../packages/components/src/Page'
 import ProgressButton from '../../packages/components/src/ProgressButton'
 import { RefreshButtonCmp } from '../../packages/components/src/RefreshButton'
 import StoryHost from '../../packages/components/src/StoryHost'
+import El from '../../packages/components/src/Element'
 import { clearfix, middle } from '../../packages/css/src/util'
 import withFields from '../../packages/hocs/src/with-fields'
 import HideOnScrollView from './hide-on-scroll-view'
@@ -165,6 +166,37 @@ storiesOf('Components', module)
     const InputWithFields = withFields()(Input)
     return <InputWithFields />
   })
+  .add('Text', () => (
+    <div>
+      <El h1>h1</El>
+      <El h2>h2</El>
+      <El h3>h3</El>
+      <El h4>h4</El>
+      <El h5>h5</El>
+      <El h6>h6</El>
+      <El p>p</El>
+      <El div>div</El>
+      <ul>
+        <El li>li</El>
+      </ul>
+      <El bolder>bolder</El>
+      <br />
+      <El bold>bold</El>
+      <br />
+      <El normal>normal</El>
+      <br />
+      <El thin>thin</El>
+      <br />
+      <El italic>italic</El>
+      <br />
+      <El underline>underline</El>
+      <br />
+      <El a noDecoration target="_blank" href="google.com">
+        link no decoration
+      </El>
+      <br />
+    </div>
+  ))
 
 storiesOf('Full Page', module)
   .addDecorator(withKnobs)

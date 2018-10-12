@@ -1,4 +1,4 @@
-import { compose } from 'recompose'
+import compose from 'recompose/compose'
 import {
   REQUEST,
   SUCCESS,
