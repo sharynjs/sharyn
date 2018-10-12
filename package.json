@@ -70,7 +70,7 @@
     "flow-copy-source": "^2.0.2",
     "husky": "^1.0.0-rc.14",
     "jest": "^23.6.0",
-    "lerna": "^3.4.0",
+    "lerna": "^3.4.3",
     "markdownlint": "^0.11.0",
     "markdownlint-cli": "^0.13.0",
     "prettier": "^1.14.2",

@@ -10,6 +10,5 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "recompose": "^0.30.0"
-  },
-  "gitHead": "996bbc7f537e9f11d205a1d79e07fc32be190b96"
+  }
 }
