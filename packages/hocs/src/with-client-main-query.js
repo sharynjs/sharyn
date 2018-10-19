@@ -16,7 +16,7 @@ export const configureWithClientMainQuery = (fetchPageThunk: Function) => {
 }
 
 const lifecycle = {
-  componentDidMount() {
+  async componentDidMount() {
     if (!this.props.isServerRender) {
       if (!configuredFetchPageThunk) {
         throw Error('You must configure a fetchPageThunk with configureWithClientMainQuery')
@@ -24,7 +24,7 @@ const lifecycle = {
       const { dispatch, route, fetchPageOptions } = this.props
       if (route.mainQuery) {
         const { query, variables, mapRespData } = route.mainQuery
-        dispatch(
+        const result = await dispatch(
           configuredFetchPageThunk({
             query,
             variables:
@@ -33,12 +33,17 @@ const lifecycle = {
             ...fetchPageOptions,
           }),
         )
+        if (fetchPageOptions?.onFinished) {
+          fetchPageOptions.onFinished({ ...this.props, result })
+        }
       }
+    } else if (this.props.fetchPageOptions?.onFinished) {
+      this.props.fetchPageOptions.onFinished(this.props)
     }
   },
 }
 
-const withClientMainQuery = (fetchPageOptions?: Object) =>
+const withClientMainQuery = (fetchPageOptions?: any) =>
   compose(
     withProps(props => ({
       fetchPageOptions:
