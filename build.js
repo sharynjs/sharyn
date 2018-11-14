@@ -220,6 +220,8 @@ const packages = [
       'parse-object.test.js',
       'run.js',
       'run.test.js',
+      'seq.js',
+      'seq.test.js',
     ],
   },
   {

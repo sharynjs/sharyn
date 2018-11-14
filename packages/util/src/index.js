@@ -7,6 +7,7 @@ import run from './run'
 import spread from './spread'
 import spreadIf from './spread-if'
 import curryOptional from './curry-optional'
+import seq from './seq'
 
 module.exports = {
   arr,
@@ -18,4 +19,5 @@ module.exports = {
   spread,
   spreadIf,
   curryOptional,
+  seq,
 }
