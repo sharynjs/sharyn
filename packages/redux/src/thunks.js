@@ -72,6 +72,7 @@ export const graphqlThunk = ({
   authorizationBearer,
   query,
   variables,
+  extraBody,
   mapRespData,
   fields = {},
   urlParams = {},
@@ -97,6 +98,7 @@ export const graphqlThunk = ({
   mapUrlParams?: Function,
   query: string,
   variables?: Object,
+  extraBody?: Object,
   mapRespData?: Function,
   fields?: Object,
   urlParams?: Object,
@@ -127,6 +129,7 @@ export const graphqlThunk = ({
       authorizationBearer,
       query,
       variables: variables instanceof Function ? variables(urlParams, fields) : variables,
+      extraBody,
       mapRespData,
       ...optionsFn(),
     })
