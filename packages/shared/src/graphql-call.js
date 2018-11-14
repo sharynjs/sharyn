@@ -24,13 +24,19 @@ const graphqlCall = async ({
   extraBody?: Object,
 }) => {
   let callResp
+
+  const formData = new FormData()
+  formData.append('query', query)
+  formData.append('variables', JSON.stringify(variables))
+  Object.keys(extraBody).forEach(key => formData.append(key, extraBody[key]))
+
   try {
     callResp = await call({
       urlBase,
       urlPath,
       authorizationBearer,
       cookie,
-      body: { query, variables, ...extraBody },
+      body: formData,
     })
   } catch (err) {
     throw err.response?.data?.errors ? err.response.data.errors[0] : err
