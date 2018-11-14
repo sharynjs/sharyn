@@ -1,14 +1,14 @@
 {
   "name": "@sharyn/server",
-  "version": "5.1.2",
+  "version": "5.1.3",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/server",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/check-setup": "^2.0.8",
-    "@sharyn/components": "^4.1.1",
+    "@sharyn/components": "^4.1.2",
     "@sharyn/env": "^2.0.8",
-    "@sharyn/shared": "^4.1.0",
+    "@sharyn/shared": "^4.2.0-alpha.0",
     "@sharyn/webpack-config": "^2.4.6",
     "clean-css": "^4.2.1",
     "serialize-javascript": "^1.5.0"

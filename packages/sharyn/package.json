@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "10.2.0",
+  "version": "10.3.0-alpha.0",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -9,12 +9,12 @@
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
     "@sharyn/check-setup": "^2.0.8",
-    "@sharyn/components": "^4.1.1",
+    "@sharyn/components": "^4.1.2",
     "@sharyn/css": "^1.3.2",
     "@sharyn/env": "^2.0.8",
-    "@sharyn/redux": "^4.1.0",
-    "@sharyn/server": "^5.1.2",
-    "@sharyn/shared": "^4.1.0",
+    "@sharyn/redux": "^4.1.1",
+    "@sharyn/server": "^5.1.3",
+    "@sharyn/shared": "^4.2.0-alpha.0",
     "@sharyn/util": "^2.1.1",
     "@sharyn/webpack-config": "^2.4.6",
     "async-exit-hook": "^2.0.1",
