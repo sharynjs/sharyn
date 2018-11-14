@@ -40,6 +40,7 @@ import Span from '../../packages/components/src/Span'
 import Ul from '../../packages/components/src/Ul'
 import { clearfix, middle } from '../../packages/css/src/util'
 import withFields from '../../packages/hocs/src/with-fields'
+import withFilePickers from '../../packages/hocs/src/with-file-pickers'
 import HideOnScrollView from './hide-on-scroll-view'
 import NotificationsView from './notifications-view'
 
@@ -180,6 +181,19 @@ storiesOf('Components', module)
     )
     const InputWithFields = withFields()(Input)
     return <InputWithFields />
+  })
+  .add('HOC/withFilePickers', () => {
+    const Input = ({ filePickers, filePickerHandler }: Object) => (
+      <>
+        <input type="file" name="foo" onChange={filePickerHandler} />
+        <input type="file" name="bar" onChange={filePickerHandler} />
+        <button type="button" onClick={() => console.log(filePickers)}>
+          Log fields
+        </button>
+      </>
+    )
+    const InputWithFilePickers = withFilePickers()(Input)
+    return <InputWithFilePickers />
   })
   .add('Elements', () => (
     <div>

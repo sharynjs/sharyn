@@ -101,6 +101,7 @@ const packages = [
       'render-if.js',
       'with-css.js',
       'with-fields.js',
+      'with-file-pickers.js',
       'with-navigation.js',
     ],
   },
