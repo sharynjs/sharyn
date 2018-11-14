@@ -12,6 +12,7 @@ const graphqlCall = async ({
   variables = {},
   query,
   mapRespData,
+  extraBody = {},
 }: {
   urlBase?: string,
   urlPath?: string,
@@ -20,6 +21,7 @@ const graphqlCall = async ({
   variables?: Object,
   query: string,
   mapRespData?: Function,
+  extraBody?: Object,
 }) => {
   let callResp
   try {
@@ -28,7 +30,7 @@ const graphqlCall = async ({
       urlPath,
       authorizationBearer,
       cookie,
-      body: { query, variables },
+      body: { query, variables, ...extraBody },
     })
   } catch (err) {
     throw err.response?.data?.errors ? err.response.data.errors[0] : err
