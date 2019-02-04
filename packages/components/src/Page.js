@@ -23,7 +23,7 @@ const styles = ({ breakpoints }) => ({
     width: '100%',
     margin: '0 auto',
     [breakpoints.down('xs')]: {
-      height: '100%',
+      minHeight: '100%',
       boxShadow: 'none',
       padding: '25px 31px 0', // Make 25 customizable when props are supported
     },
