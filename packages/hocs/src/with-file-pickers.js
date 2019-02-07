@@ -12,10 +12,13 @@ const del = (fields, key) => {
   return newFields
 }
 
-const withFilePickers = (initialStateFn?: Function) => (Cmp: Function) =>
+const withFilePickers = (initialFilePickers?: any = {}) => (Cmp: Function) =>
   compose(
     withStateHandlers(
-      { filePickers: initialStateFn || {} },
+      props => ({
+        filePickers:
+          typeof initialFilePickers === 'function' ? initialFilePickers(props) : initialFilePickers,
+      }),
       {
         clearFilePickers: () => () => ({ filePickers: {} }),
         setFilePickers: () => payload => ({ filePickers: omitBy(payload, isNil) }),

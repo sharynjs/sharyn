@@ -12,10 +12,12 @@ const del = (fields, key) => {
   return newFields
 }
 
-const withFields = (initialStateFn?: Function) => (Cmp: Function) =>
+const withFields = (initialFields?: any = {}) => (Cmp: Function) =>
   compose(
     withStateHandlers(
-      { fields: initialStateFn || {} },
+      props => ({
+        fields: typeof initialFields === 'function' ? initialFields(props) : initialFields,
+      }),
       {
         clearFields: () => () => ({ fields: {} }),
         setFields: () => payload => ({ fields: omitBy(payload, isNil) }),
