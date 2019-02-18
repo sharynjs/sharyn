@@ -7,6 +7,8 @@ import { STORYBOOK_PORT } from '@sharyn/env'
 
 import { knexConfigPath } from './shared'
 
+const hasCustomWebpackConfig = hasFile('webpack.config.js')
+
 const pathToSharynWebpackConfig = pathCascade(
   'node_modules/@sharyn/webpack-config',
   'node_modules/sharyn/webpack-config',
@@ -29,13 +31,13 @@ const migrate = prefix(`knex --knexfile ${knexConfigPath || ''} --cwd . migrate:
 
 const webpackProd = prefix(
   `webpack --mode=production --progress ${
-    pathToSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    hasCustomWebpackConfig ? '' : `--config ${pathToSharynWebpackConfig}`
   }`,
 )
 
 const webpackStats = prefix(
   `webpack --mode=production --progress --json ${
-    pathToSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    hasCustomWebpackConfig ? '' : `--config ${pathToSharynWebpackConfig}`
   } > webpack-stats.json`,
 )
 
@@ -77,7 +79,7 @@ export const rmBundle = prefix('rimraf dist/js/bundle.js') // Add .cache when sw
 export const rmLibAndBundle = prefix('rimraf lib dist/js/bundle.js') // Add .cache when switching back to Parcel
 export const clientWatch = prefix(
   `webpack-dev-server --mode=development --progress --hot ${
-    pathToSharynWebpackConfig ? `--config ${pathToSharynWebpackConfig}` : ''
+    hasCustomWebpackConfig ? '' : `--config ${pathToSharynWebpackConfig}`
   }`,
 )
 export const clientBuild = `${prefix('cross-env NODE_ENV=production')} ${webpackProd}`
