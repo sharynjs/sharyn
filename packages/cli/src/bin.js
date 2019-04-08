@@ -86,7 +86,8 @@ const mySpawnSync = cmd => {
 const sequence = arr => arr.join(' && ')
 
 const taskName = process.argv[2]
-const useDocker = hasDocker && process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true
+const useDocker =
+  hasDocker && (process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true)
 
 const result = swit(
   taskName,
