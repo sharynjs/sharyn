@@ -86,6 +86,7 @@ const mySpawnSync = cmd => {
 const sequence = arr => arr.join(' && ')
 
 const taskName = process.argv[2]
+const useDocker = hasDocker && process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true
 
 const result = swit(
   taskName,
@@ -94,9 +95,9 @@ const result = swit(
       'dev',
       () => {
         const firstCommands = []
-        hasDocker && firstCommands.push(DOCKER_UP)
-        hasDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        hasDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
+        useDocker && firstCommands.push(DOCKER_UP)
+        useDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        useDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
         mySpawnSync(sequence(firstCommands))
         mySpawn(serverWatch)
@@ -107,9 +108,9 @@ const result = swit(
       'dev-ssr-only',
       () => {
         const commands = []
-        hasDocker && commands.push(DOCKER_UP)
-        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        hasDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
+        useDocker && commands.push(DOCKER_UP)
+        useDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        useDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(serverWatchSsrOnly)
         mySpawnSync(sequence(commands))
       },
@@ -118,9 +119,9 @@ const result = swit(
       'dev-no-ssr',
       () => {
         const firstCommands = []
-        hasDocker && firstCommands.push(DOCKER_UP)
-        hasDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
-        hasDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
+        useDocker && firstCommands.push(DOCKER_UP)
+        useDocker && knexConfigPath && firstCommands.push(DOCKER_WAIT_PG, dbMigr)
+        useDocker && knexConfigPath && hasSeeds && firstCommands.push(dbSeed)
         firstCommands.push(rmBundle)
         mySpawnSync(sequence(firstCommands))
         mySpawn(serverWatchNoSsr)
@@ -131,9 +132,9 @@ const result = swit(
       'local-prod',
       () => {
         const commands = []
-        hasDocker && commands.push(DOCKER_UP)
-        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
-        hasDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
+        useDocker && commands.push(DOCKER_UP)
+        useDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG, dbMigr)
+        useDocker && knexConfigPath && hasSeeds && commands.push(dbSeed)
         commands.push(rmLibAndBundle, clientBuild, babel)
         hasHeroku ? commands.push(herokuLocalProd) : commands.push(nodeLocalProd)
         mySpawnSync(sequence(commands))
@@ -147,17 +148,17 @@ const result = swit(
         const commands = [rmBundle, testUnit, clientBuild]
         const testDbIdInitial = getDbTestProcessId('db-test')
         const testRedisIdInitial = getDbTestProcessId('redis-test')
-        hasDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
-        hasDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
-        hasDocker && commands.push(DOCKER_UP_TEST)
-        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        useDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
+        useDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
+        useDocker && commands.push(DOCKER_UP_TEST)
+        useDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(testE2E)
         const cmdResult = mySpawnSync(sequence(commands))
         const testDbIdFinal = getDbTestProcessId('db-test')
         const testRedisIdFinal = getDbTestProcessId('redis-test')
         const cleanupCommands = []
-        hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
-        hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
+        useDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
+        useDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
         cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
         TESTING_SOUND && mySpawnSync(SAY_DONE)
         return cmdResult
@@ -169,17 +170,17 @@ const result = swit(
         const commands = [lint, typecheck, rmBundle, testUnit, clientBuild]
         const testDbIdInitial = getDbTestProcessId('db-test')
         const testRedisIdInitial = getDbTestProcessId('redis-test')
-        hasDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
-        hasDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
-        hasDocker && commands.push(DOCKER_UP_TEST)
-        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        useDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
+        useDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
+        useDocker && commands.push(DOCKER_UP_TEST)
+        useDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(testE2E)
         const cmdResult = mySpawnSync(sequence(commands))
         const testDbIdFinal = getDbTestProcessId('db-test')
         const testRedisIdFinal = getDbTestProcessId('redis-test')
         const cleanupCommands = []
-        hasDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
-        hasDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
+        useDocker && testDbIdFinal && cleanupCommands.push(dockerDownTest(testDbIdFinal))
+        useDocker && testRedisIdFinal && cleanupCommands.push(dockerDownTest(testRedisIdFinal))
         cleanupCommands.length > 0 && mySpawnSync(sequence(cleanupCommands))
         TESTING_SOUND && mySpawnSync(SAY_DONE)
         return cmdResult
@@ -191,17 +192,17 @@ const result = swit(
         const commands = [lint, typecheck, rmBundle, testUnit, clientBuild]
         const testDbIdInitial = getDbTestProcessId('db-test')
         const testRedisIdInitial = getDbTestProcessId('redis-test')
-        hasDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
-        hasDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
-        hasDocker && commands.push(DOCKER_UP_TEST)
-        hasDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
+        useDocker && testDbIdInitial && commands.push(dockerDownTest(testDbIdInitial))
+        useDocker && testRedisIdInitial && commands.push(dockerDownTest(testRedisIdInitial))
+        useDocker && commands.push(DOCKER_UP_TEST)
+        useDocker && knexConfigPath && commands.push(DOCKER_WAIT_PG_TEST, dbMigrTest)
         commands.push(testE2E)
         const cmdResult = mySpawnSync(sequence(commands))
         const testDbIdFinal = getDbTestProcessId('db-test')
         const testRedisIdFinal = getDbTestProcessId('redis-test')
         const postTestsCommands = []
-        hasDocker && testDbIdFinal && postTestsCommands.push(dockerDownTest(testDbIdFinal))
-        hasDocker && testRedisIdFinal && postTestsCommands.push(dockerDownTest(testRedisIdFinal))
+        useDocker && testDbIdFinal && postTestsCommands.push(dockerDownTest(testDbIdFinal))
+        useDocker && testRedisIdFinal && postTestsCommands.push(dockerDownTest(testRedisIdFinal))
         if (cmdResult?.status === 0) {
           postTestsCommands.push(BUILD_STORYBOOK)
           postTestsCommands.push(GIT_ADD_STORYBOOK)
