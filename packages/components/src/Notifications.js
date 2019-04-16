@@ -25,6 +25,7 @@ const NotificationsJSX = ({
   handleDismissNotification,
   isOpen,
   updateIsOpen,
+  ...props
 }: {
   notifications?: Object[],
   handleDismissNotification: Function,
@@ -63,6 +64,7 @@ const NotificationsJSX = ({
         autoHideDuration={6000}
         action={actions}
         {...muiProps}
+        {...props}
       />
     )
   }
