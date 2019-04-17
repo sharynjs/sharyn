@@ -1,6 +1,6 @@
 // @flow
 
-const toggle = (value, option1, option2, isStrict) => {
+const toggle = (value: any, option1: any, option2: any, isStrict?: boolean) => {
   if (option1 === undefined || option2 === undefined) {
     throw new Error(
       "You must pass at least 3 values to toggle. Example: toggle(color, 'red', 'blue')",
