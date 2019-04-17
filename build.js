@@ -222,6 +222,8 @@ const packages = [
       'run.test.js',
       'seq.js',
       'seq.test.js',
+      'toggle.js',
+      'toggle.test.js',
       'wait.js',
     ],
   },

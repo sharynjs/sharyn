@@ -8,6 +8,7 @@ import spread from './spread'
 import spreadIf from './spread-if'
 import curryOptional from './curry-optional'
 import seq from './seq'
+import toggle from './toggle'
 import wait from './wait'
 
 module.exports = {
@@ -21,5 +22,6 @@ module.exports = {
   spreadIf,
   curryOptional,
   seq,
+  toggle,
   wait,
 }
