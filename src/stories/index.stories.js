@@ -8,7 +8,7 @@ import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { withBackgrounds } from '@storybook/addon-backgrounds'
-import { boolean, withKnobs } from '@storybook/addon-knobs/react'
+import { boolean, number, withKnobs } from '@storybook/addon-knobs/react'
 import { storiesOf } from '@storybook/react'
 import Route from 'react-router/Route'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
@@ -246,6 +246,18 @@ storiesOf('Full Page', module)
   .addDecorator(muiTheme())
   .add('StoryHost', () => <StoryHost>StoryHost</StoryHost>)
   .add('StoryHost Border', () => <StoryHost border>StoryHost</StoryHost>)
+  .add('StoryHost Border/Dimensions', () => {
+    const border = boolean('Border', true)
+    const dimensions = boolean('Dimensions', true)
+    const width = number('Width', 100)
+    const height = number('height', 30)
+
+    return (
+      <StoryHost {...{ border, dimensions }}>
+        <div style={{ width, height }}>StoryHost</div>
+      </StoryHost>
+    )
+  })
   .add('StoryHost Width', () => (
     <StoryHost border width={200}>
       StoryHost
