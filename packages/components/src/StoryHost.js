@@ -7,15 +7,47 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import compose from 'recompose/compose'
 import withState from 'recompose/withState'
 
+const Dimensions = compose(
+  withState('divHeight', 'setDivHeight', 0),
+  withState('divWidth', 'setDivWidth', 0),
+)(
+  ({
+    classes,
+    children,
+    setDivWidth,
+    setDivHeight,
+    divWidth,
+    divHeight,
+  }: {
+    classes: Object,
+    children: any,
+    setDivWidth: Function,
+    setDivHeight: Function,
+    divWidth: number,
+    divHeight: number,
+  }) => (
+    <div
+      ref={el => {
+        if (el) {
+          el.clientWidth !== divWidth && setDivWidth(el.clientWidth)
+          el.clientHeight !== divHeight && setDivHeight(el.clientHeight)
+        }
+      }}
+      style={{ position: 'relative' }}
+    >
+      <div className={classes.dimensions}>
+        {divWidth} x {divHeight}
+      </div>
+      {children}
+    </div>
+  ),
+)
+
 const StoryHostJSX = ({
   classes,
   border,
   width,
   dimensions,
-  setDivWidth,
-  setDivHeight,
-  divWidth,
-  divHeight,
   children,
   white,
 }: {
@@ -23,10 +55,6 @@ const StoryHostJSX = ({
   border?: boolean,
   width?: number | string,
   dimensions?: boolean,
-  setDivWidth: Function,
-  setDivHeight: Function,
-  divWidth: number,
-  divHeight: number,
   white?: boolean,
   children: any,
 }) => (
@@ -36,33 +64,21 @@ const StoryHostJSX = ({
       ...(white ? { background: 'white' } : {}),
     }}
   >
-    {border || width ? (
+    {((border || width) && (
       <div
-        ref={e => {
-          if (e) {
-            e.clientWidth !== divWidth && setDivWidth(e.clientWidth)
-            e.clientHeight !== divHeight && setDivHeight(e.clientHeight)
-          }
-        }}
         style={{
-          ...(border ? { border: '1px dashed #bbb', position: 'relative' } : {}),
+          ...(border ? { border: '1px dashed #bbb' } : {}),
           ...(width ? { width } : {}),
         }}
       >
-        {border && dimensions ? (
-          <div className={classes.dimensions}>
-            {divWidth} x {divHeight}
-          </div>
-        ) : null}
-        {children}
+        {dimensions ? <Dimensions {...{ classes }}>{children}</Dimensions> : children}
       </div>
-    ) : (
-      children
-    )}
+    )) ||
+      (dimensions ? <Dimensions {...{ classes }}>{children}</Dimensions> : children)}
   </div>
 )
 
-const StoryHostCmp = withStyles({
+const StoryHost = withStyles({
   container: {
     display: 'flex',
     height: '100%',
@@ -80,10 +96,5 @@ const StoryHostCmp = withStyles({
     padding: 10,
   },
 })(StoryHostJSX)
-
-const StoryHost = compose(
-  withState('divHeight', 'setDivHeight', 0),
-  withState('divWidth', 'setDivWidth', 0),
-)(StoryHostCmp)
 
 export default StoryHost

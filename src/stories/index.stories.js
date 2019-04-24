@@ -246,11 +246,18 @@ storiesOf('Full Page', module)
   .addDecorator(muiTheme())
   .add('StoryHost', () => <StoryHost>StoryHost</StoryHost>)
   .add('StoryHost Border', () => <StoryHost border>StoryHost</StoryHost>)
-  .add('StoryHost Border/Dimensions', () => (
-    <StoryHost border dimensions>
-      StoryHost
-    </StoryHost>
-  ))
+  .add('StoryHost Border/Dimensions', () => {
+    const border = boolean('Border', true)
+    const dimensions = boolean('Dimensions', true)
+    const width = number('Width', 100)
+    const height = number('height', 30)
+
+    return (
+      <StoryHost {...{ border, dimensions }}>
+        <div style={{ width, height }}>StoryHost</div>
+      </StoryHost>
+    )
+  })
   .add('StoryHost Width', () => (
     <StoryHost border width={200}>
       StoryHost
