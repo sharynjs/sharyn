@@ -52,13 +52,20 @@ const hasDocker = hasFile('docker-compose.yml')
 const hasHeroku = hasFile('Procfile')
 const hasSeeds = hasFile('/src/_db/seeds')
 
+const taskName = process.argv[2]
+const useDocker =
+  hasDocker && (process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true)
+
 const getDbTestProcessId = containerName => {
-  const result = execSync(`docker ps -q --filter="name=${containerName}"`).toString()
-  const ids = result.split(EOL).filter(x => x)
-  if (ids.length > 1) {
-    throw Error(`Multiple running processes found for ${containerName}`)
+  if (useDocker) {
+    const result = execSync(`docker ps -q --filter="name=${containerName}"`).toString()
+    const ids = result.split(EOL).filter(x => x)
+    if (ids.length > 1) {
+      throw Error(`Multiple running processes found for ${containerName}`)
+    }
+    return ids[0]
   }
-  return ids[0]
+  return null
 }
 
 const mySpawn = cmd => {
@@ -84,10 +91,6 @@ const mySpawnSync = cmd => {
 }
 
 const sequence = arr => arr.join(' && ')
-
-const taskName = process.argv[2]
-const useDocker =
-  hasDocker && (process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true)
 
 const result = swit(
   taskName,
