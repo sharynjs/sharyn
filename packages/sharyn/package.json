@@ -1,6 +1,6 @@
 {
   "name": "sharyn",
-  "version": "10.10.0",
+  "version": "10.10.1",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "bin": {
@@ -8,23 +8,23 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "@sharyn/check-setup": "^2.0.8",
-    "@sharyn/components": "^4.2.0",
+    "@sharyn/check-setup": "^2.0.9",
+    "@sharyn/components": "^4.2.1",
     "@sharyn/css": "^1.3.2",
-    "@sharyn/env": "^2.0.8",
+    "@sharyn/env": "^2.0.9",
     "@sharyn/redux": "^4.1.7",
-    "@sharyn/server": "^5.1.12",
+    "@sharyn/server": "^5.1.13",
     "@sharyn/shared": "^4.3.1",
     "@sharyn/util": "^2.4.0",
-    "@sharyn/webpack-config": "^2.4.6",
+    "@sharyn/webpack-config": "^2.4.7",
     "async-exit-hook": "^2.0.1",
     "axios": "^0.18.0",
-    "babel-preset-sharyn": "^3.1.2",
+    "babel-preset-sharyn": "^3.1.3",
     "clean-css": "^4.2.1",
     "colors": "^1.3.2",
     "cross-env": "^5.2.0",
     "dotenv": "^6.0.0",
-    "eslint-config-sharyn": "^3.0.9",
+    "eslint-config-sharyn": "^3.0.10",
     "exit-hook": "^2.0.0",
     "jss": "^9.8.7",
     "jss-preset-default": "^4.5.0",
@@ -51,14 +51,14 @@
     "webpack": "^4.19.1"
   },
   "devDependencies": {
-    "@sharyn/cli": "^4.7.3",
+    "@sharyn/cli": "^4.7.4",
     "@sharyn/client": "^4.0.1",
-    "@sharyn/db": "^3.0.1",
+    "@sharyn/db": "^3.0.2",
     "@sharyn/hocs": "^4.4.1",
     "@sharyn/jest-config": "^1.0.4",
-    "@sharyn/koa": "^2.2.5",
+    "@sharyn/koa": "^2.2.6",
     "@sharyn/prettier-config": "^1.2.5",
-    "@sharyn/redis": "^2.0.8",
+    "@sharyn/redis": "^2.0.9",
     "@sharyn/testing": "^2.0.4"
   }
 }
