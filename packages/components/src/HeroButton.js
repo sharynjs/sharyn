@@ -34,7 +34,7 @@ const Inner = ({
   <div className={classes.container}>
     <Icon className={classes.icon} />
     <br />
-    <Button color="primary" variant="raised">
+    <Button color="primary" variant="contained">
       {label}
     </Button>
   </div>

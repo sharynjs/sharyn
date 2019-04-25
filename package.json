@@ -25,12 +25,12 @@
     }
   },
   "dependencies": {
-    "@material-ui/core": "^3.0.3",
-    "@material-ui/icons": "^3.0.1",
-    "app-root-path": "^2.1.0",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "app-root-path": "^2.2.1",
     "lodash": "^4.17.11",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1"
   },
@@ -76,7 +76,7 @@
     "prettier": "^1.14.2",
     "prop-types": "^15.6.2",
     "rimraf": "^2.6.2",
-    "storybook-addon-material-ui": "^0.9.0-alpha.15",
+    "storybook-addon-material-ui": "^0.9.0-alpha.18",
     "storybook-host": "^5.0.0"
   }
 }

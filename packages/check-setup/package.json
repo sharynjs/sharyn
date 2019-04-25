@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs2": "^7.0.0",
-    "app-root-path": "^2.1.0",
+    "app-root-path": "^2.2.1",
     "klaw-sync": "^5.0.0",
     "md5": "^2.2.1"
   }

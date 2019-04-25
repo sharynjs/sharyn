@@ -20,7 +20,7 @@ const App = withStyles(styles)(({ classes }: { classes: Object }) => (
   <div>
     <AutoHideAppBar className="hide-on-scroll">
       <ToolBar>
-        <Typography variant="title" color="inherit">
+        <Typography variant="h6" color="inherit">
           Hello
         </Typography>
       </ToolBar>

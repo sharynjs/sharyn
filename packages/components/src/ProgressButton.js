@@ -31,7 +31,7 @@ const ProgressButtonJSX = ({
   <span className={css.progressButtonWrapper} style={{ verticalAlign: 'bottom' }}>
     <Button
       disabled={isLoading || !isOnline}
-      variant="raised"
+      variant="contained"
       color="primary"
       type="submit"
       {...rest}
