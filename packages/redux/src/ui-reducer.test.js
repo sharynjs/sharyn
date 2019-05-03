@@ -1,4 +1,4 @@
-import { notify, notifyMultiple, dismissFirstNotification } from './actions'
+import { notify, notifyMultiple, dismissFirstNotification, setUi, deleteUi } from './actions'
 import uiReducer from './ui-reducer'
 
 test('uiReducer', () => {
@@ -13,5 +13,11 @@ test('uiReducer', () => {
   expect(state).toEqual({ notifications: ['a', 'b', 'c'] })
 
   state = uiReducer(state, dismissFirstNotification())
+  expect(state).toEqual({ notifications: ['b', 'c'] })
+
+  state = uiReducer(state, setUi({ popup: true }))
+  expect(state).toEqual({ notifications: ['b', 'c'], popup: true })
+
+  state = uiReducer(state, deleteUi('popup'))
   expect(state).toEqual({ notifications: ['b', 'c'] })
 })

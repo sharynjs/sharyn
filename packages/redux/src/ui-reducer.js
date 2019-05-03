@@ -1,10 +1,19 @@
 // @flow
 
 import createReducer from './create-reducer'
-import { dismissFirstNotificationCase, notifyCase, notifyMultipleCase } from './ui-cases'
+import {
+  dismissFirstNotificationCase,
+  notifyCase,
+  notifyMultipleCase,
+  setUiCase,
+  deleteUiCase,
+} from './ui-cases'
 
-const uiReducer = createReducer([dismissFirstNotificationCase, notifyCase, notifyMultipleCase], {
-  notifications: [],
-})
+const uiReducer = createReducer(
+  [dismissFirstNotificationCase, notifyCase, notifyMultipleCase, setUiCase, deleteUiCase],
+  {
+    notifications: [],
+  },
+)
 
 export default uiReducer

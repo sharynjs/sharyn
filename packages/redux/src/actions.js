@@ -58,3 +58,8 @@ export const SHARYN_SET_LOCAL = 'SHARYN_SET_LOCAL'
 export const setLocal = createAction(SHARYN_SET_LOCAL)
 export const SHARYN_DELETE_LOCAL = 'SHARYN_DELETE_LOCAL'
 export const deleteLocal = createAction(SHARYN_DELETE_LOCAL)
+
+export const SHARYN_SET_UI = 'SHARYN_SET_UI'
+export const setUi = createAction(SHARYN_SET_UI)
+export const SHARYN_DELETE_UI = 'SHARYN_DELETE_UI'
+export const deleteUi = createAction(SHARYN_DELETE_UI)
