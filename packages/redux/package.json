@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/redux",
-  "version": "4.1.7",
+  "version": "4.2.0",
   "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/redux",
   "license": "MIT",
   "dependencies": {
