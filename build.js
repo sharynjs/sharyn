@@ -173,6 +173,7 @@ const packages = [
   {
     name: 'server',
     modules: [
+      'create-html.js',
       'html-base.js',
       'html-base.test.js',
       'index.js',
