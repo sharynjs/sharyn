@@ -11,7 +11,7 @@
     "prepublishOnly": "run-s clean lint test build",
     "postpublish": "yon clean",
     "build": "babel src -d .",
-    "clean": "rimraf babel-preset babel-preset-sharyn check-setup cli client components css db env eslint-config eslint-config-sharyn hocs jest-config koa prettier-config redis redux server shared testing util webpack-config",
+    "clean": "rimraf _stories babel-preset babel-preset-sharyn check-setup cli client components css db env eslint-config eslint-config-sharyn hocs jest-config koa prettier-config redis redux server shared testing util webpack-config",
     "lint": "markdownlint README.md docs -i node_modules -c .mdlintrc.json && eslint build.js babel.config.js src && flow",
     "test": "jest"
   },
