@@ -2,11 +2,7 @@
 
 import React from 'react'
 
-/* eslint-disable import/no-unresolved */
-// flow-disable-next-line
 import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
-/* eslint-enable import/no-unresolved */
-
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 // flow-disable-next-line
 import globalJss from 'jss'

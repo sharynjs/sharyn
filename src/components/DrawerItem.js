@@ -17,7 +17,7 @@ const DrawerItemJSX = ({
 }: {
   classes: Object,
   label: string,
-  icon?: Object,
+  icon?: Function,
 }) => (
   <ListItem button {...rest}>
     {Icon && (

@@ -26,7 +26,7 @@ const Inner = ({
 }: {
   classes: Object,
   label: string,
-  icon: Object,
+  icon: Function,
 }) => (
   <div className={classes.container}>
     <Icon className={classes.icon} />
@@ -49,7 +49,7 @@ const HeroButtonJSX = ({
   dest: any,
   hardLink?: boolean,
   newTab?: boolean,
-  icon: Object,
+  icon: Function,
   label: string,
   classes: Object,
   label: string,
