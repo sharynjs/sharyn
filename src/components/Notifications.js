@@ -31,7 +31,7 @@ const NotificationsJSX = ({
   isOpen: boolean,
   updateIsOpen: Function,
 }) => {
-  const currentSnackbar = notifications[0]
+  const [currentSnackbar] = notifications
   if (currentSnackbar) {
     const { mainAction, dismissable = true, keepClickAway, ...muiProps } = currentSnackbar
     const actions = mainAction

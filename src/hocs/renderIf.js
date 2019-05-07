@@ -4,6 +4,7 @@
 
 import React from 'react'
 
+// eslint-disable-next-line react/display-name
 const renderIf = (propCheck: Function, AltCmp?: Function) => (BaseCmp: Function) => (
   props: Object,
 ) => {

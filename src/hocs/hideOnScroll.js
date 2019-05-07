@@ -16,7 +16,7 @@ const styles = ({ breakpoints }) => ({
 const lifecycle = {
   componentDidMount() {
     const { updateIsVisible, updateHeight } = this.props
-    const cmp = document.getElementsByClassName('hide-on-scroll')[0]
+    const [cmp] = document.getElementsByClassName('hide-on-scroll')
     if (!cmp) {
       throw Error('You use hideOnScroll but no element with the hide-on-scroll was found')
     }

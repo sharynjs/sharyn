@@ -26,10 +26,11 @@ const NavList = ({ navItems }: { navItems: any[] }) => (
       ({ path, title: label, icon, hardLink, newTab, component: Component }, index) =>
         cond(
           [
-            // eslint-disable-next-line react/no-array-index-key
+            // eslint-disable-next-line react/no-array-index-key, react/display-name
             [Component, () => <Component key={index} />],
             [
               hardLink || newTab,
+              // eslint-disable-next-line react/display-name
               () => (
                 <a href={path} key={path} {...(newTab ? { target: '_blank' } : {})}>
                   <DrawerItem {...{ label, icon }} />

@@ -51,6 +51,7 @@ const hasDocker = hasFile('docker-compose.yml')
 const hasHeroku = hasFile('Procfile')
 const hasSeeds = hasFile('/src/_db/seeds')
 
+// eslint-disable-next-line prefer-destructuring
 const taskName = process.argv[2]
 const useDocker =
   hasDocker && (process.argv.length > 2 ? !(process.argv[3] === '--no-docker') : true)
