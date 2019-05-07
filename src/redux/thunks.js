@@ -1,9 +1,7 @@
 // @flow
 
-// flow-disable-next-line
-import graphqlCall from '@sharyn/shared/graphql-call'
-// flow-disable-next-line
-import spread from '@sharyn/util/spread'
+import graphqlCall from '../shared/graphql-call'
+import spread from '../util/spread'
 
 let configuredUrlBase
 let configuredUrlPath

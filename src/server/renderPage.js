@@ -1,19 +1,15 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
 
 import { renderToString } from 'react-dom/server'
-// flow-disable-next-line
 import Helmet from 'react-helmet'
 import { SheetsRegistry } from 'react-jss/lib/jss'
-// flow-disable-next-line
-import { NO_SSR } from '@sharyn/env'
-// flow-disable-next-line
-import DefaultProviders from '@sharyn/components/Providers'
 
-import htmlBase from './html-base'
+import DefaultProviders from '../components/Providers'
+import { NO_SSR } from '../env'
+
+import htmlBase from './htmlBase'
 
 const renderPage = ({
   Providers = DefaultProviders,

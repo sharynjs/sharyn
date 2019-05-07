@@ -1,7 +1,5 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
 
 import Progress from '@material-ui/core/CircularProgress'

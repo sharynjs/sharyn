@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import Notifications from '../../packages/components/src/Notifications'
+import Notifications from '../components/Notifications'
 
 const notifications = [
   { message: 'First quick', autoHideDuration: 2000 },

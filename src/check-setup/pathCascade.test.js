@@ -1,4 +1,4 @@
-import pathCascade from './path-cascade'
+import pathCascade from './pathCascade'
 
 test('pathCascade', () => {
   expect(pathCascade('doesntexist.txt')).toBe(undefined)

@@ -1,7 +1,7 @@
 // @flow
 
+import forOwn from 'lodash/forown'
 import isInt from 'validator/lib/isInt'
-import forOwn from 'lodash.forown'
 
 const parseObject = (obj: Object, { integer: integerParam, toggle: toggleParam }: Object = {}) => {
   const parsedObject = {}

@@ -1,6 +1,6 @@
 // @flow
 
-import renderPage from './render-page'
+import renderPage from './renderPage'
 
 const processRequest = async (
   ctx: Object,

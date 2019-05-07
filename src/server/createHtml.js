@@ -2,8 +2,7 @@
 
 import serialize from 'serialize-javascript'
 
-// flow-disable-next-line
-import { dirChecksum } from '@sharyn/check-setup'
+import { dirChecksum } from '../check-setup'
 import {
   API_URL, // Note: Not used in Sharyn boilerplate, but useful for SPAs
   IS_DEV_ENV,
@@ -11,8 +10,7 @@ import {
   NODE_ENV,
   TURN_OFF_SW,
   WDS_PORT,
-  // flow-disable-next-line
-} from '@sharyn/env'
+} from '../env'
 
 const preloadedState = serialize({
   env: {

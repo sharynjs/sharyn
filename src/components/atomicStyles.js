@@ -1,6 +1,6 @@
 // @flow
 
-import forOwn from 'lodash.forown'
+import forOwn from 'lodash/forOwn'
 
 const atomicStyles = ({ spacing }: Object) => ({
   light: { fontWeight: 'lighter' },

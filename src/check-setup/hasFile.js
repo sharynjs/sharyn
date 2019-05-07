@@ -1,7 +1,8 @@
 // @flow
 
 import fs from 'fs'
-import appRoot from './app-root'
+
+import appRoot from './appRoot'
 
 const hasFile = (path: string, isRequired?: boolean) => {
   if (fs.existsSync(`${appRoot}/${path}`)) {

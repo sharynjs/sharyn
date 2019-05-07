@@ -2,9 +2,7 @@
 
 const pathModule = require('path')
 const fs = require('fs')
-// flow-disable-next-line
 const klawSync = require('klaw-sync')
-// flow-disable-next-line
 const md5 = require('md5')
 
 const dirChecksum = (dirPath: string, extraPaths: string[] = []) => {

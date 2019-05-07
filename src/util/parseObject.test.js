@@ -1,4 +1,4 @@
-import parseObject from './parse-object'
+import parseObject from './parseObject'
 
 test('parseObject', () => {
   expect(parseObject({})).toEqual({})

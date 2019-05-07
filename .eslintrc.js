@@ -13,6 +13,7 @@ module.exports = {
     jest: true,
   },
   rules: {
+    'import/named': 0,
     'no-unused-expressions': 0,
     'no-underscore-dangle': 0,
     'func-names': 0,

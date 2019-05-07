@@ -2,16 +2,15 @@
 
 // @flow
 
-import { EOL } from 'os'
 import { execSync, spawn, spawnSync } from 'child_process'
-// flow-disable-next-line
-import swit from '@sharyn/util/swit'
+import { EOL } from 'os'
 
 import colors from 'colors/safe'
-// flow-disable-next-line
-import { hasFile } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { HEROKU_DEPLOYMENT_SOUND, TESTING_SOUND } from '@sharyn/env'
+
+import swit from '../util/swit'
+
+import { hasFile } from '../check-setup'
+import { HEROKU_DEPLOYMENT_SOUND, TESTING_SOUND } from '../env'
 
 import { knexConfigPath } from './shared'
 

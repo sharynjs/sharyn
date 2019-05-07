@@ -1,17 +1,8 @@
 // @flow
 
-import baseEnv from './base-env'
-import createHtml from './create-html'
-import getSsrData from './ssr-data'
-import htmlBase from './html-base'
-import renderPage from './render-page'
-import processRequest from './process-request'
-
-module.exports = {
-  baseEnv,
-  createHtml,
-  getSsrData,
-  htmlBase,
-  renderPage,
-  processRequest,
-}
+export { default as baseEnv } from './baseEnv'
+export { default as createHtml } from './createHtml'
+export { default as getSsrData } from './getSsrData'
+export { default as htmlBase } from './htmlBase'
+export { default as renderPage } from './renderPage'
+export { default as processRequest } from './processRequest'

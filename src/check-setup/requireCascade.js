@@ -2,8 +2,8 @@
 
 /* eslint-disable global-require, import/no-dynamic-require */
 
-import appRoot from './app-root'
-import hasFile from './has-file'
+import appRoot from './appRoot'
+import hasFile from './hasFile'
 
 const { NODE_ENV } = process.env
 

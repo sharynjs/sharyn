@@ -1,6 +1,6 @@
 // @flow
 
-import omitBy from 'lodash.omitby'
+import omitBy from 'lodash/omitby'
 import compose from 'recompose/compose'
 import withStateHandlers from 'recompose/withStateHandlers'
 import withHandlers from 'recompose/withHandlers'

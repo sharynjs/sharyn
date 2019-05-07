@@ -1,7 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import spread from '@sharyn/util/spread'
+import spread from '../util/spread'
 import call from './call'
 
 const graphqlCall = async ({

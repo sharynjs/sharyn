@@ -1,6 +1,6 @@
 // @flow
 
-import hasFile from './has-file'
+import hasFile from './hasFile'
 
 const pathCascade = (...filenames: any[]) => {
   if (!filenames.length) {

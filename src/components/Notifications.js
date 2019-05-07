@@ -1,13 +1,11 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
-import withState from 'recompose/withState'
 
 import Snackbar from '@material-ui/core/Snackbar'
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close'
+import withState from 'recompose/withState'
 
 const handleClose = (updateIsOpen, keepClickAway, reason) => {
   if (keepClickAway || reason !== 'clickaway') {

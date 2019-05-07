@@ -1,9 +1,7 @@
 // @flow
 
-// flow-disable-next-line
-import { IS_LOCAL_ENV_TYPE, NO_SSR } from '@sharyn/env'
-// flow-disable-next-line
-import { graphqlCall, findMatch } from '@sharyn/shared'
+import { IS_LOCAL_ENV_TYPE, NO_SSR } from '../env'
+import { graphqlCall, findMatch } from '../shared'
 
 const getSsrData = async ({
   user,

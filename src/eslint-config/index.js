@@ -1,7 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import { hasPackage } from '@sharyn/check-setup'
+import { hasPackage } from '../check-setup'
 
 const config: Object = {
   extends: [],

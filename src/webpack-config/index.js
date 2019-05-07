@@ -1,14 +1,12 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies, global-require */
+/* eslint-disable global-require */
 
 import webpack from 'webpack'
 import path from 'path'
-// flow-disable-next-line
-import { hasPackage, dirChecksum } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { NO_VERSION_VALIDATION } from '@sharyn/env'
 
+import { hasPackage, dirChecksum } from '../check-setup'
+import { NO_VERSION_VALIDATION } from '../env'
 import { WDS_PORT } from './wds-util'
 
 const config: Object = {

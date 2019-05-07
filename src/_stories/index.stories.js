@@ -12,35 +12,33 @@ import { boolean, number, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import Route from 'react-router/Route'
 import BrowserRouter from 'react-router-dom/BrowserRouter'
-import { muiTheme } from 'storybook-addon-material-ui'
-import { host } from 'storybook-host'
 
-import DelayedProgress from '../../packages/components/src/DelayedProgress'
-import DrawerItem from '../../packages/components/src/DrawerItem'
-import FontWeight from '../../packages/components/src/FontWeight'
-import HeroButton from '../../packages/components/src/HeroButton'
-import Page from '../../packages/components/src/Page'
-import ProgressButton from '../../packages/components/src/ProgressButton'
-import { RefreshButtonCmp } from '../../packages/components/src/RefreshButton'
-import StoryHost from '../../packages/components/src/StoryHost'
-import A from '../../packages/components/src/A'
-import B from '../../packages/components/src/B'
-import Div from '../../packages/components/src/Div'
-import El from '../../packages/components/src/El'
-import H1 from '../../packages/components/src/H1'
-import H2 from '../../packages/components/src/H2'
-import H3 from '../../packages/components/src/H3'
-import H4 from '../../packages/components/src/H4'
-import H5 from '../../packages/components/src/H5'
-import H6 from '../../packages/components/src/H6'
-import I from '../../packages/components/src/I'
-import Li from '../../packages/components/src/Li'
-import P from '../../packages/components/src/P'
-import Span from '../../packages/components/src/Span'
-import Ul from '../../packages/components/src/Ul'
-import { clearfix, middle } from '../../packages/css/src/util'
-import withFields from '../../packages/hocs/src/with-fields'
-import withFilePickers from '../../packages/hocs/src/with-file-pickers'
+import DelayedProgress from '../components/DelayedProgress'
+import DrawerItem from '../components/DrawerItem'
+import FontWeight from '../components/FontWeight'
+import HeroButton from '../components/HeroButton'
+import Page from '../components/Page'
+import ProgressButton from '../components/ProgressButton'
+import { RefreshButtonCmp } from '../components/RefreshButton'
+import StoryHost from '../components/StoryHost'
+import A from '../components/A'
+import B from '../components/B'
+import Div from '../components/Div'
+import El from '../components/El'
+import H1 from '../components/H1'
+import H2 from '../components/H2'
+import H3 from '../components/H3'
+import H4 from '../components/H4'
+import H5 from '../components/H5'
+import H6 from '../components/H6'
+import I from '../components/I'
+import Li from '../components/Li'
+import P from '../components/P'
+import Span from '../components/Span'
+import Ul from '../components/Ul'
+import { clearfix, middle } from '../css/util'
+import withFields from '../hocs/with-fields'
+import withFilePickers from '../hocs/with-file-pickers'
 import HideOnScrollView from './hide-on-scroll-view'
 import NotificationsView from './notifications-view'
 
@@ -52,8 +50,6 @@ storiesOf('Components', module)
       { name: 'Gray', value: '#f2f2f2' },
     ]),
   )
-  .addDecorator(muiTheme())
-  .addDecorator(host({ align: 'center middle', backdrop: 'transparent' }))
   .add('HeroButton/Hard Link', () => (
     <HeroButton label="Google" icon={HomeIcon} dest="http://google.com" hardLink />
   ))
@@ -243,7 +239,6 @@ storiesOf('Full Page', module)
       { name: 'White', value: '#fff' },
     ]),
   )
-  .addDecorator(muiTheme())
   .add('StoryHost', () => <StoryHost>StoryHost</StoryHost>)
   .add('StoryHost Border', () => <StoryHost border>StoryHost</StoryHost>)
   .add('StoryHost Border/Dimensions', () => {

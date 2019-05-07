@@ -1,10 +1,7 @@
 // @flow
 
-// flow-disable-next-line
-import { hasPackage, hasFile } from '@sharyn/check-setup'
-
-// flow-disable-next-line
-import { NODE_ENV, DATABASE_URL, TEST_DATABASE_URL } from '@sharyn/env'
+import { hasPackage, hasFile } from '../check-setup'
+import { NODE_ENV, DATABASE_URL, TEST_DATABASE_URL } from '../env'
 
 const DEFAULT_DATABASE_URL = 'postgres://postgres@localhost:8432/postgres'
 const DEFAULT_TEST_DATABASE_URL = 'postgres://postgres@localhost:8433/postgres'

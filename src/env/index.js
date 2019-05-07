@@ -2,8 +2,8 @@
 
 import 'dotenv/config'
 import readEnv from 'read-env'
-// flow-disable-next-line
-import { requireCascadeFromSource } from '@sharyn/check-setup'
+
+import { requireCascadeFromSource } from '../check-setup'
 
 const parsedEnv = readEnv({ transformKey: false })
 

@@ -1,14 +1,12 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 
 import Link from 'react-router-dom/Link'
-// flow-disable-next-line
-import cond from '@sharyn/util/cond'
-
 import List from '@material-ui/core/List'
+
 import DrawerItem from './DrawerItem'
+import cond from '../util/cond'
 
 type RouteWithOptions = {
   path: string,

@@ -1,6 +1,6 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies, import/no-dynamic-require, global-require */
+/* eslint-disable import/no-dynamic-require, global-require */
 
 import colors from 'colors/safe'
 import exitHook from 'exit-hook'
@@ -22,8 +22,7 @@ import {
   requireCascadeFromSource,
   pathCascade,
   requireSharyn,
-  // flow-disable-next-line
-} from '@sharyn/check-setup'
+} from '../check-setup'
 // flow-disable-next-line
 const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
 // flow-disable-next-line

@@ -1,6 +1,6 @@
 // @flow
 
-import isEither from './is-either'
+import isEither from './isEither'
 
 test('isEither', () => {
   expect(isEither(2, [1, 2])).toBe(true)

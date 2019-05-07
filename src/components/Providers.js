@@ -1,7 +1,5 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
 
 import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
@@ -15,12 +13,10 @@ import BrowserRouter from 'react-router-dom/BrowserRouter'
 import StaticRouter from 'react-router-dom/StaticRouter'
 import nest from 'recompose/nest'
 import withProps from 'recompose/withProps'
-// flow-disable-next-line
-import createSharynStore from '@sharyn/redux/store'
-// flow-disable-next-line
-import spread from '@sharyn/util/spread'
-// flow-disable-next-line
-import spreadIf from '@sharyn/util/spread-if'
+
+import createSharynStore from '../redux/store'
+import spread from '../util/spread'
+import spreadIf from '../util/spread-if'
 import GlobalStylesProvider from './GlobalStylesProvider'
 
 const defaultJss = globalJss.setup(jssPreset())

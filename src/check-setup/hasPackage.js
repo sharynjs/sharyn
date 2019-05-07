@@ -1,6 +1,6 @@
 // @flow
 
-import appRoot from './app-root'
+import appRoot from './appRoot'
 
 // eslint-disable-next-line import/no-dynamic-require, flow-disable-next-line
 const { dependencies, devDependencies } = require(`${appRoot}/package.json`)

@@ -1,4 +1,4 @@
-import spreadIf from './spread-if'
+import spreadIf from './spreadIf'
 
 test('spreadIf', () => {
   expect(spreadIf(true, 1)).toEqual([1])

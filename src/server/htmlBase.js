@@ -1,15 +1,11 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
-import serialize from 'serialize-javascript'
-// @flow-disable-next-line
-import { WDS_PATH } from '@sharyn/webpack-config/wds-util'
-// @flow-disable-next-line
-import { NO_SSR, SSR_ONLY } from '@sharyn/env'
-// @flow-disable-next-line
-import { hasPackage } from '@sharyn/check-setup'
 import CleanCSS from 'clean-css'
+import serialize from 'serialize-javascript'
+
+import { hasPackage } from '../check-setup'
+import { NO_SSR, SSR_ONLY } from '../env'
+import { WDS_PATH } from '../webpack-config/wds-util'
 
 const robotoLink = `    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />`
 
@@ -47,10 +43,10 @@ ${!NO_SSR && css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}
   <body ${!NO_SSR && helmet ? helmet.bodyAttributes.toString() : ''}>
     <div id="${rootId}">${NO_SSR ? '' : appHtml}</div>
 ${
-    swPath
-      ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}'))</script>`
-      : ''
-  }
+  swPath
+    ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}'))</script>`
+    : ''
+}
 ${SSR_ONLY ? '' : windowVarsScriptTags}
 ${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>

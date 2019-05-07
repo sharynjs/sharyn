@@ -1,6 +1,7 @@
 // @flow
 
-import values from 'lodash.values'
+import values from 'lodash/values'
+
 import cond from './cond'
 
 const arr = (...args: any[]) =>

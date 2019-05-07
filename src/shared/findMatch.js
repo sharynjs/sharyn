@@ -1,10 +1,8 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import matchPath from 'react-router/matchPath'
 
-import loggedFilter from './logged-filter'
+import loggedFilter from './loggedFilter'
 
 type Route = { path?: string, loggedOutOnly?: boolean, loggedInOnly?: boolean }
 

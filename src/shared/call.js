@@ -1,10 +1,9 @@
 // @flow
 
 import axios from 'axios'
-// flow-disable-next-line
-import spread from '@sharyn/util/spread'
-// flow-disable-next-line
-import spreadIf from '@sharyn/util/spread-if'
+
+import spread from '../util/spread'
+import spreadIf from '../util/spread-if'
 
 const call = ({
   urlBase = '',

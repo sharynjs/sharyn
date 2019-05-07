@@ -1,10 +1,7 @@
 // @flow
 
-// flow-disable-next-line
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-// flow-disable-next-line
 import thunk from 'redux-thunk'
-// flow-disable-next-line
 import persistState from 'redux-localstorage'
 
 import defaultAsyncMapReducer from './async-map-reducer'

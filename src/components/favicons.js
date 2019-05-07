@@ -1,7 +1,5 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
 
 const favicons = (color: string, path?: string = '/static/img/favicon/') => [

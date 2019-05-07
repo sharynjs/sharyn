@@ -1,9 +1,7 @@
 // @flow
 
-// flow-disable-next-line
-import { dirChecksum } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { IS_DEV_ENV, NO_SSR, NO_VERSION_VALIDATION, SENTRY_DSN_PUBLIC } from '@sharyn/env'
+import { dirChecksum } from '../check-setup'
+import { IS_DEV_ENV, NO_SSR, NO_VERSION_VALIDATION, SENTRY_DSN_PUBLIC } from '../env'
 
 const baseEnv = {
   IS_DEV_ENV,

@@ -1,20 +1,9 @@
 // @flow
 
-import hasFile from './has-file'
-import hasPackage from './has-package'
-import appRoot from './app-root'
-import pathCascade from './path-cascade'
-import requireSharyn from './require-sharyn'
-import { requireCascade, requireCascadeFromSource } from './require-cascade'
-import dirChecksum from './dir-checksum'
-
-module.exports = {
-  hasFile,
-  hasPackage,
-  pathCascade,
-  appRoot,
-  requireCascade,
-  requireCascadeFromSource,
-  requireSharyn,
-  dirChecksum,
-}
+export { default as appRoot } from './appRoot'
+export { default as dirChecksum } from './dirChecksum'
+export { default as hasFile } from './hasFile'
+export { default as hasPackage } from './hasPackage'
+export { default as pathCascade } from './pathCascade'
+export { requireCascade, requireCascadeFromSource } from './requireCascade'
+export { default as requireSharyn } from './requireSharyn'

@@ -1,7 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import { hasFile, pathCascade } from '@sharyn/check-setup'
+import { hasFile, pathCascade } from '../check-setup'
 
 const pathToSharynKnexConfig = pathCascade(
   'node_modules/@sharyn/db/knex-config.js',

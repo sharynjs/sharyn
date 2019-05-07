@@ -3,12 +3,10 @@
 import Knex from 'knex'
 import exitHook from 'async-exit-hook'
 
-// flow-disable-next-line
-import { appRoot, hasFile } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { IS_TEST_ENV } from '@sharyn/env'
+import { appRoot, hasFile } from '../check-setup'
+import { IS_TEST_ENV } from '../env'
 
-import baseConfig from './knex-config'
+import baseConfig from './knexConfig'
 
 let customConfig = {}
 if (hasFile('src/_db/knex-config.js')) {

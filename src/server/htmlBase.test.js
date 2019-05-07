@@ -1,6 +1,6 @@
 // @flow
 
-import htmlBase from './html-base'
+import htmlBase from './htmlBase'
 
 const exampleWindowVarPairs = [
   ['__A__', { a: "<script>alert('xss')</script>" }],

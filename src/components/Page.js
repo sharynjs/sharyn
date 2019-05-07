@@ -1,11 +1,8 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
-
 import React from 'react'
-// flow-disable-next-line
+
 import withStyles from '@material-ui/core/styles/withStyles'
-// flow-disable-next-line
 import Paper from '@material-ui/core/Paper'
 
 const styles = ({ breakpoints }) => ({

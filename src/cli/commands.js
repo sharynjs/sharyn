@@ -1,9 +1,7 @@
 // @flow
 
-// flow-disable-next-line
-import { hasFile, pathCascade } from '@sharyn/check-setup'
-// flow-disable-next-line
-import { STORYBOOK_PORT } from '@sharyn/env'
+import { hasFile, pathCascade } from '../check-setup'
+import { STORYBOOK_PORT } from '../env'
 
 import { knexConfigPath } from './shared'
 

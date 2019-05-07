@@ -1,6 +1,5 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles'
