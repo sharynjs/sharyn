@@ -6,7 +6,7 @@ import ToolBar from '@material-ui/core/Toolbar'
 import withStyles from '@material-ui/core/styles/withStyles'
 import Typography from '@material-ui/core/Typography'
 
-import hideOnScroll from '../hocs/hide-on-scroll'
+import hideOnScroll from '../hocs/hideOnScroll'
 
 const styles = ({ mixins }) => ({ appBarPusher: mixins.toolbar })
 

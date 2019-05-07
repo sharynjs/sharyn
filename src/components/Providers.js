@@ -9,14 +9,13 @@ import globalJss from 'jss'
 import jssPreset from 'jss-preset-default'
 import JssProvider from 'react-jss/lib/JssProvider'
 import { Provider } from 'react-redux'
-import BrowserRouter from 'react-router-dom/BrowserRouter'
-import StaticRouter from 'react-router-dom/StaticRouter'
+import { BrowserRouter, StaticRouter } from 'react-router-dom'
 import nest from 'recompose/nest'
 import withProps from 'recompose/withProps'
 
 import createSharynStore from '../redux/store'
 import spread from '../util/spread'
-import spreadIf from '../util/spread-if'
+import spreadIf from '../util/spreadIf'
 import GlobalStylesProvider from './GlobalStylesProvider'
 
 const defaultJss = globalJss.setup(jssPreset())

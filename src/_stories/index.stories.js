@@ -7,11 +7,10 @@ import React from 'react'
 import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import withStyles from '@material-ui/core/styles/withStyles'
-import { withBackgrounds } from '@storybook/addon-backgrounds'
 import { boolean, number, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import Route from 'react-router/Route'
-import BrowserRouter from 'react-router-dom/BrowserRouter'
+import { Route } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
 
 import DelayedProgress from '../components/DelayedProgress'
 import DrawerItem from '../components/DrawerItem'
@@ -37,19 +36,19 @@ import P from '../components/P'
 import Span from '../components/Span'
 import Ul from '../components/Ul'
 import { clearfix, middle } from '../css/util'
-import withFields from '../hocs/with-fields'
-import withFilePickers from '../hocs/with-file-pickers'
-import HideOnScrollView from './hide-on-scroll-view'
+import withFields from '../hocs/withFields'
+import withFilePickers from '../hocs/withFilePickers'
+import HideOnScrollView from './hideOnScrollView'
 import NotificationsView from './notifications-view'
 
 storiesOf('Components', module)
   .addDecorator(withKnobs)
-  .addDecorator(
-    withBackgrounds([
+  .addParameters({
+    backgrounds: [
       { name: 'White', value: '#fff', default: true },
       { name: 'Gray', value: '#f2f2f2' },
-    ]),
-  )
+    ],
+  })
   .add('HeroButton/Hard Link', () => (
     <HeroButton label="Google" icon={HomeIcon} dest="http://google.com" hardLink />
   ))
@@ -233,12 +232,12 @@ storiesOf('Components', module)
 
 storiesOf('Full Page', module)
   .addDecorator(withKnobs)
-  .addDecorator(
-    withBackgrounds([
-      { name: 'Gray', value: '#f2f2f2', default: true },
-      { name: 'White', value: '#fff' },
-    ]),
-  )
+  .addParameters({
+    backgrounds: [
+      { name: 'White', value: '#fff', default: true },
+      { name: 'Gray', value: '#f2f2f2' },
+    ],
+  })
   .add('StoryHost', () => <StoryHost>StoryHost</StoryHost>)
   .add('StoryHost Border', () => <StoryHost border>StoryHost</StoryHost>)
   .add('StoryHost Border/Dimensions', () => {

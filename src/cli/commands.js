@@ -1,16 +1,13 @@
 // @flow
 
-import { hasFile, pathCascade } from '../check-setup'
+import { hasFile } from '../check-setup'
 import { STORYBOOK_PORT } from '../env'
 
 import { knexConfigPath } from './shared'
 
 const hasCustomWebpackConfig = hasFile('webpack.config.js')
 
-const pathToSharynWebpackConfig = pathCascade(
-  'node_modules/@sharyn/webpack-config',
-  'node_modules/sharyn/webpack-config',
-)
+const pathToSharynWebpackConfig = 'node_modules/sharyn/webpack-config'
 const pathToGlobalSetup = './src/_testing/global-setup.js'
 const hasGlobalSetup = hasFile(pathToGlobalSetup)
 const pathToGlobalTeardown = './src/_testing/global-teardown.js'

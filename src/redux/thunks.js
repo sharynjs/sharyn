@@ -1,6 +1,6 @@
 // @flow
 
-import graphqlCall from '../shared/graphql-call'
+import graphqlCall from '../shared/graphqlCall'
 import spread from '../util/spread'
 
 let configuredUrlBase

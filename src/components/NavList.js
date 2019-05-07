@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-import Link from 'react-router-dom/Link'
 import List from '@material-ui/core/List'
+import { Link } from 'react-router-dom'
 
 import DrawerItem from './DrawerItem'
 import cond from '../util/cond'
@@ -11,7 +11,7 @@ import cond from '../util/cond'
 type RouteWithOptions = {
   path: string,
   title: string,
-  icon?: Function,
+  icon?: Object,
   hardLink?: boolean,
   newTab?: boolean,
   component: any,

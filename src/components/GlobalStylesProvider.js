@@ -4,7 +4,7 @@ import React from 'react'
 
 import withStyles from '@material-ui/core/styles/withStyles'
 
-import defaultGlobalStyles from '../css/global'
+import defaultGlobalStyles from '../css/globalStyles'
 
 const GlobalStylesProvider = ({
   children,

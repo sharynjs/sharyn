@@ -4,7 +4,7 @@ import React from 'react'
 
 import Button from '@material-ui/core/Button'
 import withStyles from '@material-ui/core/styles/withStyles'
-import Link from 'react-router-dom/Link'
+import { Link } from 'react-router-dom'
 
 const styles = {
   link: {
@@ -26,7 +26,7 @@ const Inner = ({
 }: {
   classes: Object,
   label: string,
-  icon: Function,
+  icon: Object,
 }) => (
   <div className={classes.container}>
     <Icon className={classes.icon} />
@@ -49,7 +49,7 @@ const HeroButtonJSX = ({
   dest: any,
   hardLink?: boolean,
   newTab?: boolean,
-  icon: Function,
+  icon: Object,
   label: string,
   classes: Object,
   label: string,

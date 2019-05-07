@@ -1,6 +1,6 @@
 // @flow
 
-import matchPath from 'react-router/matchPath'
+import { matchPath } from 'react-router'
 
 import loggedFilter from './loggedFilter'
 

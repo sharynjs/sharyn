@@ -1,7 +1,7 @@
 // @flow
 
 import { connect as withRedux } from 'react-redux'
-import withRouter from 'react-router-dom/withRouter'
+import { withRouter } from 'react-router-dom'
 import withLifecycle from 'recompose/lifecycle'
 import compose from 'recompose/compose'
 

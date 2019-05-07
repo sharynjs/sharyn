@@ -3,7 +3,7 @@
 import axios from 'axios'
 
 import spread from '../util/spread'
-import spreadIf from '../util/spread-if'
+import spreadIf from '../util/spreadIf'
 
 const call = ({
   urlBase = '',
