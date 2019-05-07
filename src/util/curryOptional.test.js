@@ -1,4 +1,4 @@
-import curryOptional from './curry-optional'
+import curryOptional from './curryOptional'
 
 // a, b, and c are optional, d is required
 const fn = (a, b, c, d) => [a, b, c, d]

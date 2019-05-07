@@ -1,7 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import { WDS_PORT as ENV_WDS_PORT, IS_DEV_ENV } from '@sharyn/env'
+import { WDS_PORT as ENV_WDS_PORT, IS_DEV_ENV } from '../env'
 
 const DEFAULT_WDS_PORT = 8022
 

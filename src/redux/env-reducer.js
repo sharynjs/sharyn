@@ -1,6 +1,6 @@
 // @flow
 
-import createReducer from './create-reducer'
+import createReducer from './createReducer'
 import { offlineCase, onlineCase, startClientNavigationCase } from './env-cases'
 
 const dataReducer = createReducer([offlineCase, onlineCase, startClientNavigationCase], {

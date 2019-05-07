@@ -1,7 +1,6 @@
 // @flow
 
-// flow-disable-next-line
-import swit from '@sharyn/util/swit'
+import swit from '../util/swit'
 
 const createReducer = (cases: any[] = [], initialState: any = {}) => (
   state: Object = initialState,

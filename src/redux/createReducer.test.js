@@ -1,4 +1,4 @@
-import createReducer from './create-reducer'
+import createReducer from './createReducer'
 
 test('defaultReducer', () => {
   expect(createReducer()()).toEqual({})

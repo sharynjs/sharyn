@@ -1,6 +1,6 @@
 // @flow
 
-import createReducer from './create-reducer'
+import createReducer from './createReducer'
 import {
   pageDataAsyncOrFetchPageSuccessCase,
   pageDataNavigationOrFetchPageRequestCase,

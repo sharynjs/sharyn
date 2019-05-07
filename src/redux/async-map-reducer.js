@@ -7,7 +7,7 @@ import {
   asyncMapFetchPageSuccessOrFailureCase,
   asyncMapNavigationCase,
 } from './async-map-cases'
-import createReducer from './create-reducer'
+import createReducer from './createReducer'
 
 const asyncMapReducer = createReducer([
   asyncMapAsyncRequestCase,

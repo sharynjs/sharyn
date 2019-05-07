@@ -13,7 +13,7 @@
     "build": "babel src -d .",
     "clean": "rimraf babel-preset babel-preset-sharyn check-setup cli client components css db env eslint-config eslint-config-sharyn hocs jest-config koa prettier-config redis redux server shared testing util webpack-config",
     "lint": "markdownlint README.md docs -i node_modules -c .mdlintrc.json && eslint build.js babel.config.js src && flow",
-    "test": "cross-env USE_PROCESS_CWD_FOR_APP_ROOT=truthy jest"
+    "test": "jest"
   },
   "husky": {
     "hooks": {

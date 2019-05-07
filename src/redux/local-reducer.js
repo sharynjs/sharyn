@@ -1,6 +1,6 @@
 // @flow
 
-import createReducer from './create-reducer'
+import createReducer from './createReducer'
 import { setLocalCase, deleteLocalCase } from './local-cases'
 
 const localReducer = createReducer([setLocalCase, deleteLocalCase])
