@@ -2,6 +2,7 @@
 
 import React from 'react'
 
+// flow-disable-next-line
 import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 // flow-disable-next-line

@@ -1,6 +1,6 @@
 // @flow
 
-/* eslint-disable import/no-extraneous-dependencies, no-alert */
+/* eslint-disable import/no-extraneous-dependencies, no-console, no-alert */
 
 import React from 'react'
 
@@ -137,7 +137,6 @@ storiesOf('Components', module)
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
-        {/* eslint-disable-next-line no-console */}
         <button type="button" onClick={() => console.log(fields)}>
           Log fields
         </button>

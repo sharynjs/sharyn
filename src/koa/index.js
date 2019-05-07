@@ -1,9 +1,18 @@
 // @flow
 
-/* eslint-disable import/no-dynamic-require, global-require */
-
+import { ApolloServer } from 'apollo-server-koa'
 import colors from 'colors/safe'
 import exitHook from 'exit-hook'
+
+import Koa from 'koa'
+import body from 'koa-body'
+import compress from 'koa-compress'
+import favicon from 'koa-favicon'
+import mount from 'koa-mount'
+import Router from 'koa-router'
+import session from 'koa-session'
+import enforceHttps from 'koa-sslify'
+import serveStatic from 'koa-static'
 
 import {
   NODE_ENV,
@@ -13,20 +22,17 @@ import {
   IS_LOCAL_ENV_TYPE,
   ENV_TYPE,
   SESSION_SECRET_KEY,
-  // flow-disable-next-line
-} from '@sharyn/env'
+} from '../env'
 import {
-  appRoot,
   hasFile,
   hasPackage,
   requireCascadeFromSource,
   pathCascade,
   requireSharyn,
+  sharynConfig,
 } from '../check-setup'
-// flow-disable-next-line
-const Koa = hasPackage('koa', true) && require(`${appRoot}/node_modules/koa`)
-// flow-disable-next-line
-const Router = hasPackage('koa-router', true) && require(`${appRoot}/node_modules/koa-router`)
+
+console.log(sharynConfig)
 
 const router = new Router()
 
@@ -94,15 +100,11 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
   })
 
   if (hasPackage('koa-sslify')) {
-    // flow-disable-next-line
-    const enforceHttps = require('koa-sslify')
     const hasHeroku = hasFile('Procfile')
     IS_LOCAL_ENV_TYPE || app.use(enforceHttps({ trustProtoHeader: hasHeroku }))
   }
 
   if (hasPackage('koa-session')) {
-    // flow-disable-next-line
-    const session = require('koa-session')
     const sessionOptions: Object = {
       maxAge: 1000 * 60 * 60 * 24 * 14, // 2 weeks
       rolling: true,
@@ -119,20 +121,14 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
   }
 
   if (hasPackage('koa-body')) {
-    // flow-disable-next-line
-    app.use(require('koa-body')({ multipart: true }))
+    app.use(body({ multipart: true }))
   }
 
   if (hasPackage('koa-compress')) {
-    // flow-disable-next-line
-    app.use(require('koa-compress')())
+    app.use(compress())
   }
 
   if (hasPackage('koa-mount') && hasPackage('koa-static')) {
-    // flow-disable-next-line
-    const mount = require('koa-mount')
-    // flow-disable-next-line
-    const serveStatic = require('koa-static')
     app
       .use(mount('/static', serveStatic('dist')))
       .use(mount('/static', serveStatic('public')))
@@ -141,20 +137,17 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
 
   if (hasPackage('koa-favicon')) {
     app.use(
-      // flow-disable-next-line
-      require('koa-favicon')(
+      favicon(
         `./${pathCascade(
           'public/img/favicon/favicon.ico',
           'public/img/favicon.ico',
           'public/favicon.ico',
-        )}`,
+        ) || 'undefined'}`,
       ),
     )
   }
 
   if (hasPackage('apollo-server-koa')) {
-    // flow-disable-next-line
-    const { ApolloServer } = require('apollo-server-koa')
     const apolloServer = new ApolloServer(options?.apolloConfig ?? {})
     apolloServer.applyMiddleware({ app })
   }
@@ -162,6 +155,7 @@ const startServer_ = (manualRouting: Function, options?: Object) => {
   routing(router)
   app.use(router.routes()).use(router.allowedMethods())
 
+  // eslint-disable-next-line no-console
   app.on('error', err => console.error(err))
 
   server = app.listen(options?.port || port)
