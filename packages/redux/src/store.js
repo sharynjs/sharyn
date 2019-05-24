@@ -27,6 +27,7 @@ const createSharynStore = ({
   localReducer = defaultLocalReducer,
   uiReducer = defaultUiReducer,
   userReducer = defaultUserReducer,
+  extraReducers = {},
 }: {
   preloadedState?: Object,
   isDevEnv?: boolean,
@@ -39,6 +40,7 @@ const createSharynStore = ({
   localReducer?: Function,
   uiReducer?: Function,
   userReducer?: Function,
+  extraReducers?: Object,
 } = {}) => {
   const reducerKeysToPersist = []
   persistLocal && reducerKeysToPersist.push('local')
@@ -58,6 +60,7 @@ const createSharynStore = ({
       ...(persistLocal ? { local: localReducer } : {}),
       ui: uiReducer,
       user: userReducer,
+      ...extraReducers,
     }),
     preloadedState ?? composedEnhancers,
     preloadedState ? composedEnhancers : undefined,

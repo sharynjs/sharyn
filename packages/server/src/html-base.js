@@ -47,10 +47,10 @@ ${!NO_SSR && css ? `    <style id="jss-ssr">${new CleanCSS().minify(css).styles}
   <body ${!NO_SSR && helmet ? helmet.bodyAttributes.toString() : ''}>
     <div id="${rootId}">${NO_SSR ? '' : appHtml}</div>
 ${
-    swPath
-      ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}'))</script>`
-      : ''
-  }
+  swPath
+    ? `    <script>navigator.serviceWorker && window.addEventListener('load', () => navigator.serviceWorker.register('${swPath}'))</script>`
+    : ''
+}
 ${SSR_ONLY ? '' : windowVarsScriptTags}
 ${SSR_ONLY ? '' : `    <script src="${WDS_PATH}/static/js/bundle.js"></script>`}
   </body>
