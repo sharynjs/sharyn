@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 import persistState from 'redux-localstorage'
 
 import defaultAsyncMapReducer from './async-map-reducer'
+import defaultDynamicDataReducer from './dynamic-data-reducer'
 import defaultGlobalDataReducer from './global-data-reducer'
 import defaultPageDataReducer from './page-data-reducer'
 import defaultEnvReducer from './env-reducer'
@@ -22,6 +23,7 @@ const createSharynStore = ({
   persistUser,
   asyncMapReducer = defaultAsyncMapReducer,
   globalDataReducer = defaultGlobalDataReducer,
+  dynamicDataReducer = defaultDynamicDataReducer,
   pageDataReducer = defaultPageDataReducer,
   envReducer = defaultEnvReducer,
   localReducer = defaultLocalReducer,
@@ -34,6 +36,7 @@ const createSharynStore = ({
   persistLocal?: boolean,
   persistUser?: boolean,
   asyncMapReducer?: Function,
+  dynamicDataReducer?: Function,
   globalDataReducer?: Function,
   pageDataReducer?: Function,
   envReducer?: Function,
@@ -54,6 +57,7 @@ const createSharynStore = ({
   return createStore(
     combineReducers({
       asyncMap: asyncMapReducer,
+      dynamicData: dynamicDataReducer,
       globalData: globalDataReducer,
       pageData: pageDataReducer,
       env: envReducer,

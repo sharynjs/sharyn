@@ -54,6 +54,13 @@ export const setGlobalData = createAction(SHARYN_SET_GLOBAL_DATA)
 export const SHARYN_DELETE_GLOBAL_DATA = 'SHARYN_DELETE_GLOBAL_DATA'
 export const deleteGlobalData = createAction(SHARYN_DELETE_GLOBAL_DATA)
 
+export const SHARYN_SET_DYNAMIC_DATA = 'SHARYN_SET_DYNAMIC_DATA'
+export const setDynamicData = createAction(SHARYN_SET_DYNAMIC_DATA)
+export const SHARYN_DELETE_DYNAMIC_DATA = 'SHARYN_DELETE_DYNAMIC_DATA'
+export const deleteDynamicData = createAction(SHARYN_DELETE_DYNAMIC_DATA)
+export const SHARYN_CLEAR_DYNAMIC_DATA = 'SHARYN_CLEAR_DYNAMIC_DATA'
+export const clearDynamicData = createAction(SHARYN_CLEAR_DYNAMIC_DATA)
+
 export const SHARYN_SET_LOCAL = 'SHARYN_SET_LOCAL'
 export const setLocal = createAction(SHARYN_SET_LOCAL)
 export const SHARYN_DELETE_LOCAL = 'SHARYN_DELETE_LOCAL'
