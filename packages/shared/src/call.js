@@ -12,12 +12,14 @@ const call = ({
   authorizationBearer,
   cookie,
   body,
+  withCredentials,
 }: {
   urlBase?: string,
   urlPath?: string,
   authorizationBearer?: string,
   cookie?: string,
   body?: any,
+  withCredentials?: boolean,
 }) =>
   axios.post(`${urlBase}${urlPath}`, body, {
     headers: {
@@ -26,6 +28,7 @@ const call = ({
       }),
       ...spread({ cookie }),
     },
+    ...spread({ withCredentials }),
   })
 
 export default call
