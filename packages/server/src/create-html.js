@@ -6,6 +6,7 @@ import serialize from 'serialize-javascript'
 import { dirChecksum } from '@sharyn/check-setup'
 import {
   API_URL, // Note: Not used in Sharyn boilerplate, but useful for SPAs
+  SSE_URL, // Note: Not used in Sharyn boilerplate, but useful for SPAs
   IS_DEV_ENV,
   NO_VERSION_VALIDATION,
   NODE_ENV,
@@ -17,6 +18,7 @@ import {
 const preloadedState = serialize({
   env: {
     API_URL,
+    SSE_URL,
     IS_DEV_ENV,
     SERVER_VERSION: NO_VERSION_VALIDATION
       ? null
