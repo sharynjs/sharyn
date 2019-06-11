@@ -17,6 +17,8 @@ export const clearInvalidFields = createAction(SHARYN_CLEAR_INVALID_FIELDS)
 
 export const SHARYN_NAVIGATION = 'SHARYN_NAVIGATION'
 export const navigation = createAction(SHARYN_NAVIGATION)
+export const SHARYN_INITIAL_NAVIGATION = 'SHARYN_INITIAL_NAVIGATION'
+export const initialNavigation = createAction(SHARYN_INITIAL_NAVIGATION)
 
 export const SHARYN_START_CLIENT_NAVIGATION = 'SHARYN_START_CLIENT_NAVIGATION'
 export const startClientNavigation = createAction(SHARYN_START_CLIENT_NAVIGATION)

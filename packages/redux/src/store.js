@@ -13,6 +13,7 @@ import defaultGlobalDataReducer from './global-data-reducer'
 import defaultPageDataReducer from './page-data-reducer'
 import defaultEnvReducer from './env-reducer'
 import defaultLocalReducer from './local-reducer'
+import defaultRouterReducer from './router-reducer'
 import defaultUiReducer from './ui-reducer'
 import defaultUserReducer from './user-reducer'
 
@@ -27,6 +28,7 @@ const createSharynStore = ({
   pageDataReducer = defaultPageDataReducer,
   envReducer = defaultEnvReducer,
   localReducer = defaultLocalReducer,
+  routerReducer = defaultRouterReducer,
   uiReducer = defaultUiReducer,
   userReducer = defaultUserReducer,
   extraReducers = {},
@@ -41,6 +43,7 @@ const createSharynStore = ({
   pageDataReducer?: Function,
   envReducer?: Function,
   localReducer?: Function,
+  routerReducer?: Function,
   uiReducer?: Function,
   userReducer?: Function,
   extraReducers?: Object,
@@ -64,6 +67,7 @@ const createSharynStore = ({
       ...(persistLocal ? { local: localReducer } : {}),
       ui: uiReducer,
       user: userReducer,
+      router: routerReducer,
       ...extraReducers,
     }),
     preloadedState ?? composedEnhancers,
