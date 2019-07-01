@@ -15,21 +15,23 @@ import {
   // flow-disable-next-line
 } from '@sharyn/env'
 
-const preloadedState = serialize({
-  env: {
-    API_URL,
-    SSE_URL,
-    IS_DEV_ENV,
-    SERVER_VERSION: NO_VERSION_VALIDATION
-      ? null
-      : dirChecksum('src', ['package.json', 'yarn.lock']),
-    isOnline: true,
-    isServerRender: true,
-  },
-})
+const preloadedState = (customEnv = {}) =>
+  serialize({
+    env: {
+      API_URL,
+      SSE_URL,
+      IS_DEV_ENV,
+      SERVER_VERSION: NO_VERSION_VALIDATION
+        ? null
+        : dirChecksum('src', ['package.json', 'yarn.lock']),
+      isOnline: true,
+      isServerRender: true,
+      ...customEnv,
+    },
+  })
 
-const injections = [
-  ['"%%PRELOADED_STATE%%"', preloadedState],
+const getInjections = customEnv => [
+  ['"%%PRELOADED_STATE%%"', preloadedState(customEnv)],
   [
     '%%BUNDLE_URL%%',
     NODE_ENV === 'production'
@@ -44,8 +46,8 @@ const injections = [
   ],
 ]
 
-const createHtml = (rawIndexHtml: string) =>
-  injections.reduce(
+const createHtml = (rawIndexHtml: string, customEnv: Object = {}) =>
+  getInjections(customEnv).reduce(
     (currentHtml, injection) => currentHtml.replace(injection[0], injection[1]),
     rawIndexHtml,
   )
