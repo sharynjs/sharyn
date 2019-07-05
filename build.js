@@ -218,6 +218,8 @@ const packages = [
       'cond.test.js',
       'curry-optional.js',
       'curry-optional.test.js',
+      'global.js',
+      'global.test.js',
       'is-either.js',
       'is-either.test.js',
       'spread.js',

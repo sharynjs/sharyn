@@ -10,6 +10,7 @@ import curryOptional from './curry-optional'
 import seq from './seq'
 import toggle from './toggle'
 import wait from './wait'
+import glob from './global'
 
 module.exports = {
   arr,
@@ -24,4 +25,5 @@ module.exports = {
   seq,
   toggle,
   wait,
+  glob,
 }
