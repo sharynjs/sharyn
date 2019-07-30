@@ -14,6 +14,8 @@ const graphqlCall = async ({
   mapRespData,
   extraBody = {},
   withCredentials,
+  cancelToken,
+  axiosOptions = {},
 }: {
   urlBase?: string,
   urlPath?: string,
@@ -24,6 +26,8 @@ const graphqlCall = async ({
   mapRespData?: Function,
   extraBody?: Object,
   withCredentials?: boolean,
+  cancelToken?: any,
+  axiosOptions?: Object,
 }) => {
   let callResp
 
@@ -39,7 +43,9 @@ const graphqlCall = async ({
       authorizationBearer,
       cookie,
       body: formData,
+      axiosOptions,
       withCredentials,
+      cancelToken,
     })
   } catch (err) {
     throw err.response?.data?.errors ? err.response.data.errors[0] : err
