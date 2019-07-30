@@ -90,6 +90,9 @@ export const graphqlThunk = ({
   failure = configuredGraphqlFailure,
   options: optionsFn = configuredOptionsFn,
   throwErr = true,
+  axiosOptions,
+  withCredentials,
+  cancelToken,
 }: {
   urlBase?: string,
   urlPath?: string,
@@ -114,6 +117,9 @@ export const graphqlThunk = ({
   failure?: Function,
   throwErr?: boolean,
   options?: Function,
+  axiosOptions?: Object,
+  withCredentials?: boolean,
+  cancelToken?: any,
 }) => async (dispatch: Function) => {
   if (!(request && success && failure)) {
     throw Error(
@@ -131,6 +137,9 @@ export const graphqlThunk = ({
       variables: variables instanceof Function ? variables(urlParams, fields) : variables,
       extraBody,
       mapRespData,
+      axiosOptions,
+      withCredentials,
+      cancelToken,
       ...optionsFn(),
     })
     dispatch(success({ data, ...spread({ asyncKey }) }))
