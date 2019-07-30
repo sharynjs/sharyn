@@ -93,6 +93,9 @@ export const graphqlThunk = ({
   axiosOptions,
   withCredentials,
   cancelToken,
+  dispatchRequest = true,
+  dispatchSuccess = true,
+  dispatchFailure = true,
 }: {
   urlBase?: string,
   urlPath?: string,
@@ -120,13 +123,16 @@ export const graphqlThunk = ({
   axiosOptions?: Object,
   withCredentials?: boolean,
   cancelToken?: any,
+  dispatchRequest?: boolean,
+  dispatchSuccess?: boolean,
+  dispatchFailure?: boolean,
 }) => async (dispatch: Function) => {
   if (!(request && success && failure)) {
     throw Error(
       'You need to configure a request, success, and failure action creator before using graphqlThunk',
     )
   }
-  dispatch(request(asyncKey))
+  dispatchRequest && dispatch(request(asyncKey))
   let data
   try {
     data = await graphqlCall({
@@ -142,7 +148,7 @@ export const graphqlThunk = ({
       cancelToken,
       ...optionsFn(),
     })
-    dispatch(success({ data, ...spread({ asyncKey }) }))
+    dispatchSuccess && dispatch(success({ data, ...spread({ asyncKey }) }))
     if (data.errors) {
       onDataErrors && onDataErrors(data)
     }
@@ -164,7 +170,7 @@ export const graphqlThunk = ({
     }
     return data
   } catch (error) {
-    dispatch(failure({ error, ...spread({ asyncKey }) }))
+    dispatchFailure && dispatch(failure({ error, ...spread({ asyncKey }) }))
     onCallError && onCallError(error)
     if (throwErr) {
       throw error
