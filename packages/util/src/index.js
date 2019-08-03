@@ -9,6 +9,7 @@ import spreadIf from './spread-if'
 import curryOptional from './curry-optional'
 import seq from './seq'
 import toggle from './toggle'
+import toString from './toString'
 import wait from './wait'
 import glob from './global'
 
@@ -24,6 +25,7 @@ module.exports = {
   curryOptional,
   seq,
   toggle,
+  toString,
   wait,
   glob,
 }
