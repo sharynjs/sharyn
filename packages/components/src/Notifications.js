@@ -25,6 +25,7 @@ const NotificationsJSX = ({
   handleDismissNotification,
   isOpen,
   updateIsOpen,
+  anchorOrigin = { vertical: 'bottom', horizontal: 'left' },
   ...props
 }: {
   notifications?: Object[],
@@ -32,6 +33,7 @@ const NotificationsJSX = ({
   currentSnackbar?: Object,
   isOpen: boolean,
   updateIsOpen: Function,
+  anchorOrigin?: Object,
 }) => {
   const currentSnackbar = notifications[0]
   if (currentSnackbar) {
@@ -67,7 +69,7 @@ const NotificationsJSX = ({
     }
     return (
       <Snackbar
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+        anchorOrigin={anchorOrigin}
         open={isOpen}
         onClose={(e, reason) => handleClose(updateIsOpen, keepClickAway, reason)}
         onExited={() => handleExited(updateIsOpen, handleDismissNotification)}

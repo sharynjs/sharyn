@@ -28,6 +28,6 @@ const handleDismissNotification = () => {
   notifications.shift()
 }
 
-const NotificationsView = () => <Notifications {...{ notifications, handleDismissNotification }} />
+const NotificationsView = () => <Notifications {...{ notifications, handleDismissNotification }} anchorOrigin={{ vertical: 'top', horizontal: 'right' }} />
 
 export default NotificationsView
