@@ -20,8 +20,8 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 ### Development
 
 - ✅ [**@sharyn/run-cmd**](https://github.com/sharynjs/sharyn-run-cmd) – Helpers to write scripts in a JavaScript file
-- [**@sharyn/babel-preset**](https://github.com/sharynjs/sharyn/blob/master/packages/babel-preset/README.md) – Configures all the detected and supported Babel modules
-- [**@sharyn/eslint-config**](https://github.com/sharynjs/sharyn/blob/master/packages/eslint-config/README.md) – Configures all the detected and supported ESLint modules
+- ✅ [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A default Babel preset
+- ✅ [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – A default ESLint configuration
 - ✅ [**@sharyn/prettier-config**](https://github.com/sharynjs/prettier-config-sharyn) – Prettier configuration
 - [**@sharyn/jest-config**](https://github.com/sharynjs/sharyn/blob/master/packages/jest-config/README.md) – Jest configuration
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md) – Lodash-like utils
