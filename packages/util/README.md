@@ -74,3 +74,20 @@ Don't execute a function inside it.
 ## 🌹 spreadIf
 
 Don't execute a function inside it.
+
+These last two are deprecated in favor of Lodash's pickBy for objects and filter for arrays.
+
+```js
+import pickBy from 'lodash/pickBy'
+import defined from '@sharyn/util/defined'
+
+const objA = { a: undefined, b: null, c: undefined }
+
+const objB = {
+  foo: 'foo',
+  bar: 'bar',
+  ...pickBy(objA, defined)
+}
+
+// { foo: 'foo', bar: 'bar', b: null }
+```
