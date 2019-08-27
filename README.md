@@ -38,7 +38,7 @@ Sharyn will work wonders for projects that follow the upcoming [major update](ht
 - 🏗️ [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Knex configuration and database utils
 - 🏗️ [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis setup
 - 🏗️ [**@sharyn/testing**](https://github.com/sharynjs/sharyn/blob/master/packages/testing/README.md) – Testing helpers
-- [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
+- 🏗️ [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
 - 🛑 [**@sharyn/hocs**](https://github.com/sharynjs/sharyn/blob/master/packages/hocs/README.md) – React High-Order Components
 - 🏗️ [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
 - 🏗️ [**@sharyn/redux**](https://github.com/sharynjs/sharyn/blob/master/packages/redux/README.md) – Redux helpers
