@@ -45,3 +45,5 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia) • [**Twitter**](https://twitter.com/verekia) • [**Website**](https://verekia.com) – MIT License
 
 _Sharyn_ is a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
+
+Logo by tiaesther_4360
