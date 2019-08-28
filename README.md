@@ -9,7 +9,7 @@
 
 > ⚠️ Hi :) This library is currently being rewritten. Don't use it.
 
-Sharyn is a library of packages that make your life easier and reduce your boilerplate code.
+Sharyn is a collection of JavaScript / TypeScript packages that make your life easier and reduce your boilerplate code.
 
 #### 💻 Development
 
