@@ -46,4 +46,4 @@ By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia
 
 _Sharyn_ is a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
 
-Logo by tiaesther_4360
+Rose illustration by tiaesther_4360
