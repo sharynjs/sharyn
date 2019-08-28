@@ -13,7 +13,6 @@ Sharyn is a library of packages that make your life easier and reduce your boile
 
 #### 💻 Development
 
-- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn-scripts) – Helpers to write "NPM scripts" in a JavaScript file
 - [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React + Flow
 - [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/prettier-config-sharyn) – Prettier configuration
@@ -21,6 +20,7 @@ Sharyn is a library of packages that make your life easier and reduce your boile
 
 #### 💯 General
 
+- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn-scripts) – Helpers to write "NPM scripts" in a JavaScript file
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn-util) – Lodash-like utils
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn-env) – Convenient access to env variables
 
