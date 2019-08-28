@@ -1,14 +1,10 @@
 # 🌹 @sharyn/testing
 
-This package provides testing helpers.
-
-## 🌹 Install
+This package provides testing helpers. It is quite empty at the moment.
 
 ```bash
 yarn add --dev @sharyn/testing
 ```
-
-## 🌹 Usage
 
 ### sel
 
