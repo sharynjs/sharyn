@@ -29,7 +29,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 🌐 Web
 
-- 🏗️ [**@sharyn/client**](https://github.com/sharynjs/sharyn/blob/master/packages/client/README.md) – Client-side helpers
+- [**@sharyn/browser**](https://github.com/sharynjs/sharyn-browser) – Helpers for code that runs in the browser
 - 🏗️ [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Helpers that can be used by both the client and the server
 - 🏗️ [**@sharyn/server**](https://github.com/sharynjs/sharyn/blob/master/packages/server/README.md) – Server-side helpers
 - 🏗️ [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
