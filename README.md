@@ -1,6 +1,3 @@
-<!-- markdownlint-disable no-inline-html -->
-<!-- markdownlint-disable first-line-h1 -->
-
 <div align="center">
   <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png" alt="Sharyn logo">
 </div>
@@ -45,15 +42,9 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 ## 🌹 Credits
 
-By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia)
+By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia), rose design by [**tiaesther**](https://pngtree.com/tiaesther_4360?type=1)
 
-Rose design by [**tiaesther**](https://pngtree.com/tiaesther_4360?type=1)
-
-<!-- markdownlint-disable no-trailing-punctuation -->
-
-#### Why _Sharyn_?
-
-It's a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
+_Sharyn_ is a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
 
 #### License
 
