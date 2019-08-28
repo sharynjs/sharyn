@@ -51,10 +51,10 @@ Rose design by [**tiaesther**](https://pngtree.com/tiaesther_4360?type=1)
 
 <!-- markdownlint-disable no-trailing-punctuation -->
 
-## 🌹 Why _Sharyn_?
+#### Why _Sharyn_?
 
 It's a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
 
-## 🌹 License
+#### License
 
 MIT
