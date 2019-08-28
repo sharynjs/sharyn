@@ -20,7 +20,6 @@ Sharyn is a library of packages that make your life easier and reduce your boile
 - ✅ [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – A default ESLint configuration
 - ✅ [**@sharyn/prettier-config**](https://github.com/sharynjs/prettier-config-sharyn) – Prettier configuration
 - ✅ [**@sharyn/util**](https://github.com/sharynjs/sharyn-util) – Lodash-like utils
-- 🏗️ [**@sharyn/jest-config**](https://github.com/sharynjs/sharyn/blob/master/packages/jest-config/README.md) – Jest configuration
 
 ### Web
 
