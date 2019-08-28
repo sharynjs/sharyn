@@ -42,7 +42,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 ## 🌹 Credits
 
-By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia), rose design by [**tiaesther**](https://pngtree.com/tiaesther_4360?type=1)
+By Jonathan Verrecchia – [**@verekia**](https://github.com/verekia)
 
 _Sharyn_ is a reference to one of my favorite metalcore songs, [**Rose of Sharyn**](https://www.youtube.com/watch?v=PgMsACFMIq8) by Killswitch Engage.
 
