@@ -1,7 +1,5 @@
 # 🌹 @sharyn/testing
 
-[![npm](https://img.shields.io/npm/v/@sharyn/testing.svg)](https://www.npmjs.com/package/@sharyn/testing)
-
 This package provides testing helpers.
 
 ## 🌹 Install
@@ -23,3 +21,9 @@ console.log(sel('hey')) // '[data-test="hey"]'
 
 expect(page).toClick(sel('submit-button'))
 ```
+
+<hr />
+
+<p align="center">
+  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>@sharynjs/sharyn</b></a>.
+</p>
