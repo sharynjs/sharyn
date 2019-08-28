@@ -11,9 +11,7 @@
 
 Sharyn is a library of packages that make your life easier and reduce your boilerplate code.
 
-## Packages
-
-### 💻 Development
+#### 💻 Development
 
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn-scripts) – Helpers to write "NPM scripts" in a JavaScript file
 - [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React + Flow
@@ -21,18 +19,18 @@ Sharyn is a library of packages that make your life easier and reduce your boile
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/prettier-config-sharyn) – Prettier configuration
 - 🏗️ [**@sharyn/testing**](https://github.com/sharynjs/sharyn/blob/master/packages/testing/README.md) – Testing helpers
 
-### 💯 General
+#### 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn-util) – Lodash-like utils
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn-env) – Convenient access to env variables
 
-### ⚛️ React
+#### ⚛️ React
 
 - [**@sharyn/hooks**](https://github.com/sharynjs/sharyn-hooks) – Convenient React Hooks
 - 🏗️ [**@sharyn/hocs**](https://github.com/sharynjs/sharyn/blob/master/packages/hocs/README.md) – React High-Order Components
 - 🏗️ [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
 
-### 🌐 Web
+#### 🌐 Web
 
 - 🏗️ [**@sharyn/client**](https://github.com/sharynjs/sharyn/blob/master/packages/client/README.md) – Client-side helpers
 - 🏗️ [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Helpers that can be used by both the client and the server
@@ -40,7 +38,7 @@ Sharyn is a library of packages that make your life easier and reduce your boile
 - 🏗️ [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
 - 🏗️ [**@sharyn/redux**](https://github.com/sharynjs/sharyn/blob/master/packages/redux/README.md) – Redux helpers
 
-### 🗄️ Databases
+#### 🗄️ Databases
 
 - 🏗️ [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Knex configuration and database utils
 - 🏗️ [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis setup
