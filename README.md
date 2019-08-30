@@ -35,11 +35,6 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 - 🏗️ [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
 - 🏗️ [**@sharyn/redux**](https://github.com/sharynjs/sharyn/blob/master/packages/redux/README.md) – Redux helpers
 
-#### 🗄️ Databases
-
-- 🏗️ [**@sharyn/db**](https://github.com/sharynjs/sharyn/blob/master/packages/db/README.md) – Knex configuration and database utils
-- 🏗️ [**@sharyn/redis**](https://github.com/sharynjs/sharyn/blob/master/packages/redis/README.md) – Redis setup
-
 ### Credits
 
 By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia) • [**Twitter**](https://twitter.com/verekia) • [**Website**](https://verekia.com) – MIT License
