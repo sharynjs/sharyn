@@ -31,7 +31,6 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn-browser) – Helpers for code that runs in the browser
 - 🏗️ [**@sharyn/shared**](https://github.com/sharynjs/sharyn/blob/master/packages/shared/README.md) – Helpers that can be used by both the client and the server
-- 🏗️ [**@sharyn/css**](https://github.com/sharynjs/sharyn/blob/master/packages/css/README.md) – Styles
 - 🏗️ [**@sharyn/redux**](https://github.com/sharynjs/sharyn/blob/master/packages/redux/README.md) – Redux helpers
 
 ### Credits
