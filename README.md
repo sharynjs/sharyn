@@ -23,13 +23,11 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### ⚛️ React
 
 - [**@sharyn/hooks**](https://github.com/sharynjs/sharyn-hooks) – Convenient React Hooks
-- 🏗️ [**@sharyn/hocs**](https://github.com/sharynjs/sharyn/blob/master/packages/hocs/README.md) – React High-Order Components
-- 🏗️ [**@sharyn/components**](https://github.com/sharynjs/sharyn/blob/master/packages/components/README.md) – UI components using Material UI
+
 
 #### 🌐 Web
 
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn-browser) – Helpers for code that runs in the browser
-- 🏗️ [**@sharyn/redux**](https://github.com/sharynjs/sharyn/blob/master/packages/redux/README.md) – Redux helpers
 
 ### Credits
 
