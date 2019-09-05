@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "test": "prettier index.js"
-  },
-  "dependencies": {
-    "prettier": "^1.14.2"
-  }
-}

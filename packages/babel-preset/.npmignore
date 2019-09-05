@@ -1,5 +1,0 @@
-src
-*.test.js
-*.test.js.flow
-
-# lerna bump 6

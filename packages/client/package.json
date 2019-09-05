@@ -1,9 +1,0 @@
-{
-  "name": "@sharyn/client",
-  "version": "4.0.1",
-  "repository": "https://github.com/sharynjs/sharyn/tree/master/packages/client",
-  "license": "MIT",
-  "dependencies": {
-    "@babel/runtime-corejs2": "^7.0.0"
-  }
-}

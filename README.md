@@ -14,9 +14,9 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 💻 Development
 
-- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React + Flow
-- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration
-- [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn-prettier-config) – Prettier configuration
+- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn-prettier) – A Prettier configuration
+- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
+- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
 
 #### ⚛️ React
 
@@ -26,6 +26,8 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 🌐 Web
 
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn-browser) – Helpers for code that runs in the browser
+
+And the single package **`sharyn`** contains everything, if you'd rather have less dependencies.
 
 ### Credits
 
