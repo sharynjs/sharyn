@@ -5,7 +5,6 @@ import getFormFields from '@sharyn/browser.getformfields'
 import commands from '@sharyn/commands'
 import env from '@sharyn/env'
 import hooks from '@sharyn/hooks'
-import prettier from '@sharyn/prettier'
 import reactRouter from '@sharyn/react-router'
 import scripts from '@sharyn/scripts'
 import util from '@sharyn/util'
@@ -17,7 +16,6 @@ export {
   commands,
   env,
   hooks,
-  prettier,
   reactRouter,
   scripts,
   util,
@@ -31,7 +29,6 @@ declare const _default: {
   commands: typeof commands
   env: typeof env
   hooks: typeof hooks
-  prettier: typeof prettier
   reactRouter: typeof reactRouter
   util: typeof util
 }
