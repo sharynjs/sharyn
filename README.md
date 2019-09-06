@@ -57,6 +57,8 @@ import { getFormFields } from 'sharyn'
 
 **Note**: If you use the `from 'sharyn'` syntax, you need to have `react` and `react-router` installed in your project, since some of the modules included in `sharyn` require them.
 
+Also, TypeScript users, remember to have your `esModuleInterop` set to `true` if you want to import the default exports without having to use the `*` syntax.
+
 ### Credits
 
 By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia) • [**Twitter**](https://twitter.com/verekia) • [**Website**](https://verekia.com) – MIT License

@@ -1,6 +1,4 @@
-import browser from '@sharyn/browser'
-import clearCaches from '@sharyn/browser.clearcaches'
-import getFormFields from '@sharyn/browser.getformfields'
+import { default as browser, clearCaches, getFormFields } from '@sharyn/browser'
 
 import commands from '@sharyn/commands'
 import env from '@sharyn/env'

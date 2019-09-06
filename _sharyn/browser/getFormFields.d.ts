@@ -1,1 +1,1 @@
-export { default } from '@sharyn/browser.getformfields'
+export { getFormFields as default } from '@sharyn/browser'

@@ -1,1 +1,1 @@
-module.exports = require('@sharyn/browser.getformfields')
+module.exports = require('@sharyn/browser').getFormFields
