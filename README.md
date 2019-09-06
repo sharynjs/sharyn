@@ -55,6 +55,8 @@ import { getFormFields } from 'sharyn/browser'
 import { getFormFields } from 'sharyn'
 ```
 
+**Note**: If you use the `from 'sharyn'` syntax, you need to have `react` installed in your project, since some of the modules included in `sharyn` require `react`.
+
 ### Credits
 
 By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia) • [**Twitter**](https://twitter.com/verekia) • [**Website**](https://verekia.com) – MIT License

@@ -1,6 +1,6 @@
 module.exports = {
   browser: require('@sharyn/browser'),
-  clearCache: require('@sharyn/browser.clearcache'),
+  clearCaches: require('@sharyn/browser.clearcaches'),
   getFormFields: require('@sharyn/browser.getformfields'),
 
   commands: require('@sharyn/commands'),
