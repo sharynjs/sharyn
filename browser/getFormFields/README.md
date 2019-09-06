@@ -44,5 +44,5 @@ getFormFields(form.current, true) // { firstname: 'Stan' }
 <hr />
 
 <p align="center">
-  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>Sharyn</b>, a collection of utilities and helpers</a>.
+  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>Sharyn</b></a>, a collection of utilities and helpers.
 </p>
