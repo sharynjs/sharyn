@@ -2,6 +2,16 @@
 
 **`getFormFields`**: Gives you the fields of a `form` element. `getFormFields` uses `FormData` and returns a plain object.
 
+## Installation
+
+```sh
+npm i @sharyn/browser.getformfields
+# or
+yarn add @sharyn/browser.getformfields
+```
+
+You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/tree/master/browser) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+
 ## Arguments
 
 **formElement (HTMLFormElement)**: The HTML `form` element.
@@ -39,6 +49,20 @@ If `firstname` is `Stan` and `lastname` is left empty:
 ```js
 getFormFields(form.current)       // { firstname: 'Stan', lastname: '' }
 getFormFields(form.current, true) // { firstname: 'Stan' }
+```
+
+## Imports
+
+Depending on the package you are using, you can import `getFormFields` in the following ways:
+
+```js
+import getFormFields from '@sharyn/browser.getformfields'
+import getFormFields from '@sharyn/browser/getFormFields'
+import getFormFields from 'sharyn/browser/getFormFields'
+
+import { getFormFields } from '@sharyn/browser'
+import { getFormFields } from 'sharyn/browser'
+import { getFormFields } from 'sharyn'
 ```
 
 <hr />
