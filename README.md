@@ -14,7 +14,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 💻 Development
 
-- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn-prettier) – A Prettier configuration
+- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/tree/master/packages/prettier) – A Prettier configuration
 - [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
 - [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
 
@@ -32,7 +32,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 Depending on your needs, you can install individual modules, like [`@sharyn/browser.getformfields`](https://www.npmjs.com/package/@sharyn/browser.getformfields), a group of modules, like [`@sharyn/browser`](https://www.npmjs.com/package/@sharyn/browser), or the whole library (which is actually quite small, 379KB on disk, including all its dependencies). That's the simplest way to get started. The library is separated into 2 parts, `sharyn`, which goes in your `dependencies`, and `sharyn-dev`, which goes in your `devDependencies`.
 
 ```sh
-npm i sharyn && npm i sharyn-dev --save-dev
+npm i sharyn && npm i --save-dev sharyn-dev
 # or
 yarn add sharyn && yarn add --dev sharyn-dev
 ```

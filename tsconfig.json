@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "lib": ["es6", "dom"],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "checkJs": true,
+    "noEmit": true
+  },
+  "include": ["packages/**/*"],
+  "exclude": ["packages/**/*.test.js"]
+}

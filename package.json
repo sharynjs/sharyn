@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "test": "tsc --noEmit --allowJs **/*.ts && jest"
+    "test": "tsc && jest"
   },
   "devDependencies": {
     "jest": "24.9.0",
