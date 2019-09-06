@@ -1,0 +1,6 @@
+{
+  "name": "@sharyn/browser.getformdata",
+  "version": "1.0.1",
+  "repository": "https://github.com/sharynjs/sharyn/tree/master/browser/getFormData",
+  "license": "MIT"
+}
