@@ -1,1 +1,1 @@
-export { default } from '@sharyn/hooks'
+export { default as useStateObject } from './useStateObject'

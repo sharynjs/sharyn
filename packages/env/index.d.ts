@@ -1,1 +1,3 @@
-export { default } from '@sharyn/env'
+declare const _default: any
+
+export default _default

@@ -1,1 +1,3 @@
-module.exports = require('@sharyn/hooks')
+module.exports = {
+  useStateObject: require('./useStateObject'),
+}
