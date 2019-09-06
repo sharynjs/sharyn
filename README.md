@@ -42,21 +42,17 @@ yarn add sharyn && yarn add --dev sharyn-dev
 And depending on what packages you chose to install, you have different ways to `import` or `require` a module:
 
 ```js
-import getFormFields from '@sharyn/browser.getformfields' // lowercase for individual packages
-import getFormFields from '@sharyn/browser/getFormFields'
-import getFormFields from 'sharyn/browser/getFormFields'
+// If you installed an individual package (note the lowercase name)
+import getFormFields from '@sharyn/browser.getformfields'
 
+// If you installed a group of modules
+import getFormFields from '@sharyn/browser/getFormFields'
 import { getFormFields } from '@sharyn/browser'
+
+// If you installed the whole library
+import getFormFields from 'sharyn/browser/getFormFields'
 import { getFormFields } from 'sharyn/browser'
 import { getFormFields } from 'sharyn'
-
-const getFormFields = require('@sharyn/browser.getformfields') // lowercase for individual packages
-const getFormFields = require('@sharyn/browser/getFormFields')
-const getFormFields = require('sharyn/browser/getFormFields')
-
-const { getFormFields } = require('@sharyn/browser')
-const { getFormFields } = require('sharyn/browser')
-const { getFormFields } = require('sharyn')
 ```
 
 ### Credits
