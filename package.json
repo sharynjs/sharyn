@@ -1,17 +1,10 @@
 {
-  "name": "sharyn",
-  "version": "12.0.0-beta.5",
-  "main": "index.js",
-  "repository": "https://github.com/sharynjs/sharyn",
-  "license": "MIT",
-  "dependencies": {
-    "@sharyn/browser": "1.0.0",
-    "@sharyn/commands": "1.0.1",
-    "@sharyn/env": "3.3.0",
-    "@sharyn/hooks": "1.0.1",
-    "@sharyn/prettier": "1.0.2",
-    "@sharyn/react-router": "1.1.4",
-    "@sharyn/scripts": "1.4.2",
-    "@sharyn/util": "3.10.0"
+  "private": true,
+  "scripts": {
+    "test": "tsc --noEmit --allowJs **/*.ts && jest"
+  },
+  "devDependencies": {
+    "jest": "24.9.0",
+    "typescript": "3.6.2"
   }
 }
