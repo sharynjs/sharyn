@@ -1,23 +1,23 @@
 {
   "name": "@sharyn/util",
-  "version": "3.11.1",
+  "version": "3.11.2",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/util.between": "1.0.0",
-    "@sharyn/util.cycle": "1.0.0",
-    "@sharyn/util.defined": "1.0.0",
-    "@sharyn/util.either": "1.0.0",
-    "@sharyn/util.exists": "1.0.0",
-    "@sharyn/util.global": "1.0.0",
-    "@sharyn/util.html": "1.0.0",
-    "@sharyn/util.ifs": "1.0.0",
-    "@sharyn/util.inlinethrow": "1.0.0",
-    "@sharyn/util.invoke": "1.0.0",
-    "@sharyn/util.swit": "1.0.0",
-    "@sharyn/util.toggle": "1.0.0",
-    "@sharyn/util.trycatch": "1.0.0",
-    "@sharyn/util.wait": "1.0.0"
+    "@sharyn/util.between": "1.0.1",
+    "@sharyn/util.cycle": "1.0.1",
+    "@sharyn/util.defined": "1.0.1",
+    "@sharyn/util.either": "1.0.1",
+    "@sharyn/util.exists": "1.0.1",
+    "@sharyn/util.global": "1.0.1",
+    "@sharyn/util.html": "1.0.1",
+    "@sharyn/util.ifs": "1.0.1",
+    "@sharyn/util.inlinethrow": "1.0.1",
+    "@sharyn/util.invoke": "1.0.1",
+    "@sharyn/util.swit": "1.0.1",
+    "@sharyn/util.toggle": "1.0.1",
+    "@sharyn/util.trycatch": "1.0.1",
+    "@sharyn/util.wait": "1.0.1"
   }
 }
