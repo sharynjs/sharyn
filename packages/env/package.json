@@ -5,6 +5,7 @@
   "repository": "sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
+    "@sharyn/env.check": "1.0.0",
     "dotenv": "8.1.0"
   }
 }

@@ -1,4 +1,4 @@
-const { check, checkPresent, checkAbsent } = require('./check')
+const { check, checkPresent, checkAbsent } = require('.')
 
 const oldProcessEnv = process.env
 

@@ -1,1 +1,1 @@
-module.exports = require('@sharyn/browser').clearCaches
+module.exports = require('@sharyn/browser/clearCaches')
