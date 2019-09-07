@@ -1,6 +1,6 @@
 # 🌹 @sharyn/commands
 
-Some command strings, to use alongside with [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/scripts). These are very specific to my personal use, so they will probably not be very useful to you.
+Some command strings, to use alongside with [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme). These are very specific to my personal use, so they will probably not be very useful to you.
 
 ### Installation
 
@@ -10,7 +10,7 @@ npm install --save-dev @sharyn/commands
 yarn add --dev @sharyn/commands
 ```
 
-Check the [**code directly**](https://github.com/sharynjs/sharyn/blob/master/commands/index.js) to see which commands are available.
+Check the [**code directly**](https://github.com/sharynjs/sharyn/blob/master/packages/commands/index.js) to see which commands are available.
 
 <hr />
 
