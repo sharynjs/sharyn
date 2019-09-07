@@ -10,7 +10,7 @@ npm i @sharyn/browser.getformfields
 yarn add @sharyn/browser.getformfields
 ```
 
-You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/tree/master/packages/browser) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
 
 ## Arguments
 

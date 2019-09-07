@@ -10,7 +10,7 @@ npm i @sharyn/util.trycatch
 yarn add @sharyn/util.trycatch
 ```
 
-You can alternatively install the [**`@sharyn/util`**](https://github.com/sharynjs/sharyn/tree/master/packages/util) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+You can alternatively install the [**`@sharyn/util`**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
 
 ## Arguments
 
