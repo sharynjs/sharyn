@@ -7,7 +7,7 @@
     "@sharyn/browser": "1.1.4",
     "@sharyn/commands": "1.1.1",
     "@sharyn/env": "3.5.2",
-    "@sharyn/hooks": "1.0.1",
+    "@sharyn/react-hooks": "1.0.0",
     "@sharyn/react-router": "1.1.5",
     "@sharyn/scripts": "1.4.2",
     "@sharyn/util": "3.10.0"

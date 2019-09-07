@@ -1,6 +1,4 @@
-# 🌹 @sharyn/hooks
-
-## useStateObject
+# 🌹 @sharyn/react-hooks.usestateobject
 
 ```jsx
 import { useStateObject } from '@sharyn/hooks'
@@ -47,7 +45,8 @@ const Cmp = () => {
 
 **`assign(obj)`**: Merge the state object shallowly with an other object using `Object.assign()`.
 
+<hr />
+
 <p align="center">
   This package is part of <a href="https://github.com/sharynjs/sharyn"><b>Sharyn</b></a>, a collection of utilities and helpers.
 </p>
-

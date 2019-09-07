@@ -3,7 +3,7 @@ const React = require('react')
 const Enzyme = require('enzyme')
 const Adapter = require('enzyme-adapter-react-16')
 
-const useStateObject = require('./useStateObject')
+const useStateObject = require('.')
 
 Enzyme.configure({ adapter: new Adapter() })
 
