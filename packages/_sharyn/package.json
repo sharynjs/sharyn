@@ -9,7 +9,7 @@
     "@sharyn/env": "3.5.2",
     "@sharyn/react-hooks": "1.0.1",
     "@sharyn/react-router": "1.1.6",
-    "@sharyn/scripts": "1.4.2",
-    "@sharyn/util": "3.10.0"
+    "@sharyn/scripts": "1.5.1",
+    "@sharyn/util": "3.11.2"
   }
 }
