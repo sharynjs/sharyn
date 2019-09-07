@@ -4,7 +4,5 @@
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
-  "dependencies": {
-    "lodash.isequal": "4.5.0"
-  }
+  "dependencies": {}
 }

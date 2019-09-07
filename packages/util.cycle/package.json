@@ -1,0 +1,9 @@
+{
+  "name": "@sharyn/util.cycle",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util.cycle",
+  "repository": "sharynjs/sharyn",
+  "description": "",
+  "keywords": [],
+  "license": "MIT"
+}

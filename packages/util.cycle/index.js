@@ -1,5 +1,4 @@
-const isEqual = require('lodash.isequal')
-
+// This is duplicated between cycle and toggle
 const cycleCore = (currentValue, ...values) => {
   const cycleValues = Array.isArray(values[0]) ? values[0] : values
   const currentIndex = cycleValues.findIndex(x => isEqual(x, currentValue))
@@ -7,4 +6,13 @@ const cycleCore = (currentValue, ...values) => {
   return cycleValues[newIndex]
 }
 
-module.exports = cycleCore
+const cycle = (currentValue, ...values) => {
+  if (values.length < 2) {
+    throw Error(
+      "cycle takes at least 3 parameters. Example: cycle(color, 'yellow', 'orange', 'red')"
+    )
+  }
+  return cycleCore(currentValue, ...values)
+}
+
+module.exports = cycle

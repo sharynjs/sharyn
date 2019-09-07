@@ -1,0 +1,12 @@
+{
+  "name": "@sharyn/util.either",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util.either",
+  "repository": "sharynjs/sharyn",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "4.5.0"
+  }
+}

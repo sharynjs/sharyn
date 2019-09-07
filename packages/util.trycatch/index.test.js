@@ -1,4 +1,4 @@
-const tryCatch = require('./tryCatch')
+const tryCatch = require('.')
 
 test('tryCatch', () => {
   expect(() => tryCatch()).toThrow('tryCatch takes at least 1 argument')

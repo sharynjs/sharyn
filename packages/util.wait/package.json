@@ -1,0 +1,9 @@
+{
+  "name": "@sharyn/util.wait",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util.wait",
+  "repository": "sharynjs/sharyn",
+  "description": "",
+  "keywords": [],
+  "license": "MIT"
+}
