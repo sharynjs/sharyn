@@ -7,7 +7,7 @@
     "start": "yarn docs",
     "pub": "yarn test && yarn docs && lerna publish --exact",
     "docs": "node docs/docs.js",
-    "test": "eslint packages docs.js && tsc && jest"
+    "test": "eslint packages docs && tsc && jest"
   },
   "prettier": "@sharyn/prettier",
   "eslintConfig": {
