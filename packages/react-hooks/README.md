@@ -1,4 +1,4 @@
-# 🌹⚛️ @sharyn/react-hooks
+# 🌹@sharyn/react-hooks
 
 [**useStateObject**](https://github.com/sharynjs/sharyn/tree/master/packages/react-hooks.usestateobject)
 
