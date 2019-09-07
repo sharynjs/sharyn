@@ -4,7 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/browser": "^1.1.3",
+    "@sharyn/browser": "1.1.3",
     "@sharyn/commands": "1.1.1",
     "@sharyn/env": "3.5.1",
     "@sharyn/hooks": "1.0.1",
