@@ -1,7 +1,7 @@
 {
   "name": "@sharyn/commands",
   "version": "1.1.0",
-  "homepage": "https://github.com/sharynjs/sharyn/tree/master/commands",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/commands",
   "repository": "sharynjs/sharyn",
   "description": "Some command strings that I use. You probably won't need this package.",
   "license": "MIT"

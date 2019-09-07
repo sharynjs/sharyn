@@ -1,0 +1,10 @@
+{
+  "name": "@sharyn/util",
+  "version": "3.11.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
+  "repository": "sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "4.5.0"
+  }
+}

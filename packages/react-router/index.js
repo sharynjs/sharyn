@@ -1,1 +1,5 @@
-module.exports = require('@sharyn/react-router')
+module.exports = {
+  PrivateRoute: require('./PrivateRoute'),
+  Refresh: require('./Refresh'),
+  ServerOnlyRoute: require('./ServerOnlyRoute'),
+}

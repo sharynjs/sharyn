@@ -1,0 +1,12 @@
+{
+  "name": "@sharyn/scripts",
+  "version": "1.5.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/scripts",
+  "repository": "sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "child-process-promise": "2.2.1",
+    "lodash.flattendeep": "4.4.0",
+    "lodash.isplainobject": "4.0.6"
+  }
+}
