@@ -1,11 +1,11 @@
 {
   "name": "@sharyn/env",
-  "version": "3.4.1",
+  "version": "3.5.0",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/env",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/env.check": "1.0.0",
+    "@sharyn/env.check": "^1.0.1",
     "dotenv": "8.1.0"
   }
 }

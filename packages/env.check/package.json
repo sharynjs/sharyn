@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/env.check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/env.check",
   "repository": "sharynjs/sharyn",
   "description": "Helpers to check the validity of your environment variables.",
