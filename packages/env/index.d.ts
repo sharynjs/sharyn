@@ -1,3 +1,5 @@
-declare const _default: any
+// This is bypassing all type checking in order to use the named import
+// syntax to access the env properties. Without it, TypeScript breaks on:
+// import { SOME_ENV_VAR } from '@sharyn/env'
 
-export default _default
+declare module '@sharyn/env'

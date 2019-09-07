@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "start": "yarn docs",
-    "pub": "yarn test && lerna publish",
+    "pub": "yarn test && lerna publish --exact",
     "docs": "node docs.js",
     "test": "tsc && jest"
   },
