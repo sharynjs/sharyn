@@ -1,8 +1,10 @@
 /**
  * An inline `try` / `catch` / `finally` function, which returns the result of the `try` or `catch` case.
  * @parentpackage util
- * @param {number} [milliseconds=1000] The duration of the wait.
- * @returns {Promise}
+ * @param {Function} tryFn The `try` instructions in a function.
+ * @param {Function} [catchFn] The `catch` instructions in a function. Called with the error.
+ * @param {Function} [finallyFn] The `finally` instructions in a function.
+ * @returns {any} What your `tryFn` or `catchFn` functions return.
  * @example
  * ```js
  * tryCatch(() => success()) // some result

@@ -14,11 +14,15 @@ You can alternatively install the [**`@sharyn/util`**](https://github.com/sharyn
 
 ## Arguments
 
-**\[milliseconds=1000\] (number)**: The duration of the wait.
+**tryFn (function)**: The `try` instructions in a function.
+
+**\[catchFn\] (function)**: The `catch` instructions in a function. Called with the error.
+
+**\[finallyFn\] (function)**: The `finally` instructions in a function.
 
 ## Returns
 
-**Promise**
+**any**: What your `tryFn` or `catchFn` functions return.
 
 ## Example
 
