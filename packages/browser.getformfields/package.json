@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/browser.getformfields",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/browser.getformfields",
   "repository": "sharynjs/sharyn",
   "description": "Gives you the fields of a form element. getFormFields uses FormData and returns a plain object.",
