@@ -1,4 +1,4 @@
-const { setGlobal, getGlobal, getAllGlobal, deleteGlobal, clearGlobal } = require('./global')
+const { setGlobal, getGlobal, getAllGlobal, deleteGlobal, clearGlobal } = require('.')
 
 test('global', () => {
   expect(getAllGlobal()).toEqual({})

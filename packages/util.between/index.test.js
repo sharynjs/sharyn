@@ -1,4 +1,4 @@
-const between = require('./between')
+const between = require('.')
 
 test('between', () => {
   expect(() => between()).toThrow()

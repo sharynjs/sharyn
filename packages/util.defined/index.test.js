@@ -1,4 +1,4 @@
-const defined = require('./defined')
+const defined = require('.')
 
 test('defined', () => {
   expect(defined(undefined)).toBe(false)

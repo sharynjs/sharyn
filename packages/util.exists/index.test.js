@@ -1,4 +1,4 @@
-const exists = require('./exists')
+const exists = require('.')
 
 test('exists', () => {
   expect(exists('')).toBe(true)

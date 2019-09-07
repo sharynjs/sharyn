@@ -1,4 +1,4 @@
-const toggle = require('./toggle')
+const toggle = require('.')
 
 test('toggle', () => {
   expect(() => toggle()).toThrow()

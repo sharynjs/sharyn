@@ -1,4 +1,4 @@
-const cycle = require('./cycle')
+const cycle = require('.')
 
 test('cycle', () => {
   expect(() => cycle()).toThrow()

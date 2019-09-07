@@ -1,4 +1,4 @@
-const invoke = require('./invoke')
+const invoke = require('.')
 
 test('invoke', () => {
   expect(invoke(() => 1)).toBe(1)

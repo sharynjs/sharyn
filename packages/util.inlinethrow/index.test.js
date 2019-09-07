@@ -1,4 +1,4 @@
-const inlineThrow = require('./inlineThrow')
+const inlineThrow = require('.')
 
 test('inlineThrow', () => {
   expect(() => inlineThrow()).toThrow(undefined)

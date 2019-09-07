@@ -1,4 +1,4 @@
-const ifs = require('./ifs')
+const ifs = require('.')
 
 test('ifs', () => {
   expect(() => ifs()).toThrow()

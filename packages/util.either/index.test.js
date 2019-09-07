@@ -1,4 +1,4 @@
-const either = require('./either')
+const either = require('.')
 
 test('either', () => {
   expect(either(1, 1)).toBe(true)

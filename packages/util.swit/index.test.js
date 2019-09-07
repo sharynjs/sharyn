@@ -1,4 +1,4 @@
-const swit = require('./swit')
+const swit = require('.')
 
 test('swit', () => {
   expect(() => swit()).toThrow()
