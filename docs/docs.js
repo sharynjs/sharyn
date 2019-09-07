@@ -8,6 +8,7 @@ const moduleTemplate = fs.readFileSync('docs/templates/module.md').toString()
 const files = [
   'packages/browser.clearcaches/index.js',
   'packages/browser.getformfields/index.js',
+  'packages/util.swit/index.js',
   'packages/util.toggle/index.js',
   'packages/util.trycatch/index.js',
   'packages/util.wait/index.js',

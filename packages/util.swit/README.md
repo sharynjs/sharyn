@@ -1,11 +1,32 @@
-## 🌹 swit
+# 🌹 swit
 
-**`swit`** is an inline and less verbose `switch`.
+**`swit`**: An inline and less verbose `switch`.
+
+## Installation
+
+```sh
+npm i @sharyn/util.swit
+# or
+yarn add @sharyn/util.swit
+```
+
+You can alternatively install the [**`@sharyn/util`**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+
+## Arguments
+
+**value (any)**: The switch value.
+
+**cases (Array.<any>)**: The cases in the form of pairs of value and result.
+
+**defaultCase (any)**: The second value (last parameter that is not an array).
+
+## Returns
+
+**any**: The matching result.
+
+## Example
 
 ```js
-import swit from '@sharyn/util/swit'
-// or import { swit } from '@sharyn/util'
-
 const value = 2
 
 swit(
@@ -78,4 +99,22 @@ swit(
 
 The default case is the last argument that is *not an array*. If you want it to return an array, please wrap it in a `() =>` function.
 
-**`swit`** is part of [`@sharyn/util`](https://github.com/sharynjs/sharyn-util/blob/master/README.md)
+## Imports
+
+Depending on the package you are using, you can `import` or `require` `swit` in the following ways:
+
+```js
+import swit from '@sharyn/util.swit'
+import swit from '@sharyn/util/swit'
+import swit from 'sharyn/util/swit'
+
+import { swit } from '@sharyn/util'
+import { swit } from 'sharyn/util'
+import { swit } from 'sharyn'
+```
+
+<hr />
+
+<p align="center">
+  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>Sharyn</b></a>, a collection of utilities and helpers.
+</p>
