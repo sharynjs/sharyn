@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
+
 # 🌹 swit
 
 **`swit`**: An inline and less verbose `switch`.

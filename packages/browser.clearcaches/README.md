@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
+
 # 🌹 clearCaches
 
 **`clearCaches`**: Clears all the [`caches`](https://developer.mozilla.org/en-US/docs/Web/API/Cache) used by service workers.

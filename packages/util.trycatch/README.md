@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
+
 # 🌹 tryCatch
 
 **`tryCatch`**: An inline `try` / `catch` / `finally` function, which returns the result of the `try` or `catch` case.

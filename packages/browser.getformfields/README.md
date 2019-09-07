@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
+
 # 🌹 getFormFields
 
 **`getFormFields`**: Gives you the fields of a `form` element. `getFormFields` uses `FormData` and returns a plain object.

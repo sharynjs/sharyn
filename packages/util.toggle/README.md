@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
+
 # 🌹 toggle
 
 **`toggle`**: Toggles between two values, and defaults to the first one.
