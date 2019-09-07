@@ -5,7 +5,7 @@ const isEqual = require('lodash.isequal')
  * @parentpackage util
  * @param {any} value The switch value.
  * @param {any[]} cases The cases in the form of pairs of value and result.
- * @param {any} defaultCase The second value (last parameter that is not an array).
+ * @param {any} defaultCase The default case value (last parameter that is not an array).
  * @returns {any} The matching result.
  * @example
  * ```js

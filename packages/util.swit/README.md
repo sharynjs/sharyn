@@ -20,7 +20,7 @@ You can alternatively install the [**`@sharyn/util`**](https://github.com/sharyn
 
 **cases (Array.<any>)**: The cases in the form of pairs of value and result.
 
-**defaultCase (any)**: The second value (last parameter that is not an array).
+**defaultCase (any)**: The default case value (last parameter that is not an array).
 
 ## Returns
 
