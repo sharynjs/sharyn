@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "pub": "lerna publish",
-    "start": "node docs.js",
+    "start": "yarn docs",
+    "pub": "yarn test && lerna publish",
+    "docs": "node docs.js",
     "test": "tsc && jest"
   },
   "devDependencies": {
