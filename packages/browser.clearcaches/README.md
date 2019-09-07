@@ -20,7 +20,7 @@ You can alternatively install the [**`@sharyn/browser`**](https://github.com/sha
 
 ## Returns
 
-**Promise** 
+**Promise**
 
 ## Example
 

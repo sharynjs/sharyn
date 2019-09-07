@@ -1,12 +1,15 @@
 {
   "private": true,
   "scripts": {
+    "start": "node docs.js",
     "test": "tsc && jest"
   },
   "devDependencies": {
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "jest": "24.9.0",
+    "jsdoc-api": "5.0.3",
+    "mustache": "^3.0.3",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "typescript": "3.6.2"

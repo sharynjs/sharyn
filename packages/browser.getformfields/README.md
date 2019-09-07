@@ -53,7 +53,7 @@ getFormFields(form.current, true) // { firstname: 'Stan' }
 
 ## Imports
 
-Depending on the package you are using, you can import `getFormFields` in the following ways:
+Depending on the package you are using, you can `import` or `require` `getFormFields` in the following ways:
 
 ```js
 import getFormFields from '@sharyn/browser.getformfields'
