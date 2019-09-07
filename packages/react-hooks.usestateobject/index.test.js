@@ -12,16 +12,7 @@ const e = React.createElement
 const { shallow } = Enzyme
 
 const TestCmp = () => {
-  const {
-    get,
-    getAll,
-    set,
-    setAll,
-    merge,
-    assign,
-    del,
-    clear,
-  } = useStateObject()
+  const { get, getAll, set, setAll, merge, assign, del, clear } = useStateObject()
   return e('div', null, [
     e('a', {
       key: 'setAll',
@@ -72,8 +63,7 @@ const TestCmp = () => {
 
 test('useStateObject', () => {
   const wrapper = shallow(e(TestCmp, null))
-  const expectResult = (id, expected) =>
-    expect(wrapper.find(`#${id}`).text()).toEqual(expected)
+  const expectResult = (id, expected) => expect(wrapper.find(`#${id}`).text()).toEqual(expected)
   const click = id => wrapper.find(`#${id}`).simulate('click')
 
   expectResult('all', JSON.stringify({}))

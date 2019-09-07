@@ -16,9 +16,7 @@ const PrivateRoute = ({
     render: props => {
       const to = { pathname: redirectPath }
       if (withReturnUrl) {
-        to.search = `?${returnUrlName}=${encodeURIComponent(
-          props.location.pathname
-        )}`
+        to.search = `?${returnUrlName}=${encodeURIComponent(props.location.pathname)}`
       }
       return loggedIn ? e(component, props) : e(Redirect, { to })
     },

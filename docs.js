@@ -1,5 +1,4 @@
 const fs = require('fs')
-const path = require('path')
 
 const jsdoc = require('jsdoc-api')
 const mustache = require('mustache')

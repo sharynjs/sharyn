@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 const html = require('.')
 
 test('html', () => {

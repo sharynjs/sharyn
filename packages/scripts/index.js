@@ -41,7 +41,7 @@ const getParams = (args, fnName) => {
 }
 
 const runSync = (...args) => {
-  const { cmdToUse, silent, cmd, command, extraEnv, env, spawnOptions } = getParams(args, 'runSync')
+  const { cmdToUse, silent, extraEnv, env, spawnOptions } = getParams(args, 'runSync')
 
   silent || print(cmdToUse)
 
@@ -57,10 +57,7 @@ const runSync = (...args) => {
 }
 
 const runAsync = (...args) => {
-  const { cmdToUse, silent, cmd, command, extraEnv, env, spawnOptions } = getParams(
-    args,
-    'runAsync'
-  )
+  const { cmdToUse, silent, extraEnv, env, spawnOptions } = getParams(args, 'runAsync')
 
   silent || print(cmdToUse)
 

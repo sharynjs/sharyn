@@ -1,19 +1,51 @@
 {
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "start": "yarn docs",
     "pub": "yarn test && lerna publish --exact",
     "docs": "node docs.js",
-    "test": "tsc && jest"
+    "test": "eslint packages docs.js && tsc && jest"
+  },
+  "prettier": "@sharyn/prettier",
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 10,
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-unused-vars": [
+        2,
+        {
+          "ignoreRestSiblings": true
+        }
+      ]
+    }
   },
   "devDependencies": {
+    "@sharyn/prettier": "1.2.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
+    "eslint": "6.3.0",
+    "eslint-config-prettier": "6.2.0",
+    "eslint-plugin-prettier": "3.1.0",
     "jest": "24.9.0",
     "jsdoc-api": "5.0.3",
     "lerna": "3.16.4",
     "mustache": "3.0.3",
+    "prettier": "1.18.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "typescript": "3.6.2"

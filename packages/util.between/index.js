@@ -1,8 +1,6 @@
 const between = (value, bound1, bound2, option, ...args) => {
   if (bound1 === undefined || bound2 === undefined || args.length > 0) {
-    throw Error(
-      "between takes 3 or 4 parameters. Example: between(x, 10, 100, 'exclude')"
-    )
+    throw Error("between takes 3 or 4 parameters. Example: between(x, 10, 100, 'exclude')")
   }
   let lowerBound
   let upperBound

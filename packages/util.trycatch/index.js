@@ -29,8 +29,8 @@ const tryCatch = (tryFn, catchFn, finallyFn) => {
   if (tryFn) {
     try {
       return tryFn()
-    }
-    catch (err) {}
+      // eslint-disable-next-line no-empty
+    } catch (err) {}
   }
 }
 

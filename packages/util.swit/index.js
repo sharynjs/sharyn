@@ -15,13 +15,9 @@ const swit = (value, ...cases) => {
     defaultCase = cases[cases.length - 1]
   }
 
-  const foundCase = casesToTest.find(c =>
-    c.slice(0, -1).some(x => isEqual(x, value))
-  )
-  const caseToUse = foundCase ? foundCase[foundCase.length -1] : defaultCase
-  return (
-    caseToUse && (caseToUse instanceof Function ? caseToUse(value) : caseToUse)
-  )
+  const foundCase = casesToTest.find(c => c.slice(0, -1).some(x => isEqual(x, value)))
+  const caseToUse = foundCase ? foundCase[foundCase.length - 1] : defaultCase
+  return caseToUse && (caseToUse instanceof Function ? caseToUse(value) : caseToUse)
 }
 
 module.exports = swit
