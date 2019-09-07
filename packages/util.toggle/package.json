@@ -5,5 +5,8 @@
   "repository": "sharynjs/sharyn",
   "description": "",
   "keywords": [],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "4.5.0"
+  }
 }

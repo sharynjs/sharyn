@@ -1,4 +1,6 @@
 // This is duplicated between cycle and toggle
+const isEqual = require('lodash.isequal')
+
 const cycleCore = (currentValue, ...values) => {
   const cycleValues = Array.isArray(values[0]) ? values[0] : values
   const currentIndex = cycleValues.findIndex(x => isEqual(x, currentValue))
