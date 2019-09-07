@@ -8,8 +8,9 @@ const moduleTemplate = fs.readFileSync('docs/templates/module.md').toString()
 const files = [
   'packages/browser.clearcaches/index.js',
   'packages/browser.getformfields/index.js',
-  'packages/util.wait/index.js',
+  'packages/util.toggle/index.js',
   'packages/util.trycatch/index.js',
+  'packages/util.wait/index.js',
 ]
 
 const filesData = files.map(
@@ -17,6 +18,7 @@ const filesData = files.map(
     jsdoc
       .explainSync({ files: file })
       .filter(({ kind }) => kind === 'function')
+      .filter(({ tags }) => tags) // To rule out the other undocumented functions of these files
       .map(jsDocData => ({
         mdPath: `${jsDocData.meta.path}/README.md`,
         jsDocData: {
