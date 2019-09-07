@@ -1,9 +1,9 @@
 {
   "name": "sharyn-dev",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/prettier": "1.1.0"
+    "@sharyn/prettier": "^1.1.1"
   }
 }

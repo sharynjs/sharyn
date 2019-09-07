@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/browser.clearcaches",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/browser/clearCaches",
   "repository": "sharynjs/sharyn",
   "description": "Clears all the caches used by service workers, and optionally reloads the page.",

@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/browser",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/browser",
   "repository": "sharynjs/sharyn",
   "description": "Helpers for code that runs in the browser.",
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@sharyn/browser.clearcaches": "1.0.2",
-    "@sharyn/browser.getformfields": "1.0.2"
+    "@sharyn/browser.clearcaches": "^1.0.3",
+    "@sharyn/browser.getformfields": "^1.0.3"
   }
 }

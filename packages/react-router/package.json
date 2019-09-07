@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/react-router",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/react-router",
   "repository": "sharynjs/sharyn",
   "license": "MIT"
