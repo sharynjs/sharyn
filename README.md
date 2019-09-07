@@ -8,9 +8,9 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 💯 General
 
-- [**@sharyn/util**](https://github.com/sharynjs/sharyn-util) – Lodash-like utils
-- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn-scripts) – Helpers to write "NPM scripts" in a JavaScript file
-- [**@sharyn/env**](https://github.com/sharynjs/sharyn-env) – Convenient access and validation of env variables
+- [**@sharyn/util**](https://github.com/sharynjs/sharyn/tree/master/packages/util) – Lodash-like utils
+- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/tree/master/packages/scripts) – Helpers to write "NPM scripts" in a JavaScript file
+- [**@sharyn/env**](https://github.com/sharynjs/sharyn/tree/master/packages/env) – Convenient access and validation of env variables
 
 #### 💻 Development
 
@@ -20,12 +20,12 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### ⚛️ React
 
-- [**@sharyn/hooks**](https://github.com/sharynjs/sharyn-hooks) – Convenient React Hooks
-
+- [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/tree/master/packages/react-hooks) – Convenient React Hooks
+- [**@sharyn/react-router**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router) – Components for React Router
 
 #### 🌐 Web
 
-- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/tree/master/browser) – Helpers for code that runs in the browser
+- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/tree/master/packages/browser) – Helpers for code that runs in the browser
 
 ## Getting Started
 
