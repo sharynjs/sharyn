@@ -1,4 +1,4 @@
-# 🌹 @sharyn-env
+# 🌹 @sharyn/env
 
 ## Usage
 

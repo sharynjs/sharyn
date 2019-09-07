@@ -8,24 +8,24 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 💯 General
 
-- [**@sharyn/util**](https://github.com/sharynjs/sharyn/tree/master/packages/util) – Lodash-like utils
-- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/tree/master/packages/scripts) – Helpers to write "NPM scripts" in a JavaScript file
+- [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils
+- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md#readme) – Convenient access and validation of env variables
 
 #### 💻 Development
 
-- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/tree/master/packages/prettier) – A Prettier configuration
+- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier/README.md#readme) – A Prettier configuration
 - [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
 - [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
 
 #### ⚛️ React
 
-- [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/tree/master/packages/react-hooks) – Convenient React Hooks
-- [**@sharyn/react-router**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router) – Components for React Router
+- [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/blob/master/packages/react-hooks/README.md#readme) – Convenient React Hooks
+- [**@sharyn/react-router**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router/README.md#readme) – Components for React Router
 
 #### 🌐 Web
 
-- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/tree/master/packages/browser) – Helpers for code that runs in the browser
+- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) – Helpers for code that runs in the browser
 
 ## Getting Started
 
