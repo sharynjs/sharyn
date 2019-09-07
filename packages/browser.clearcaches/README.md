@@ -20,7 +20,7 @@ You can alternatively install the [**`@sharyn/browser`**](https://github.com/sha
 
 ## Returns
 
-**void**
+**Promise** 
 
 ## Example
 
@@ -35,7 +35,7 @@ const UpdateBanner = () => (
 
 ## Imports
 
-Depending on the package you are using, you can import `clearCaches` in the following ways:
+Depending on the package you are using, you can `import` or `require` `clearCaches` in the following ways:
 
 ```js
 import clearCaches from '@sharyn/browser.clearcaches'
