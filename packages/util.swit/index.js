@@ -80,6 +80,10 @@ const isEqual = require('lodash.isequal')
  * ### Default case
  *
  * The default case is the last argument that is *not an array*. If you want it to return an array, please wrap it in a `() =>` function.
+ *
+ * ### Returning functions
+ *
+ * Similarly, if you want `swit` to return functions, you will need to wrap them in a `() =>` function as well (or your function will get executed instead of returned).
  */
 
 const swit = (value, ...cases) => {
