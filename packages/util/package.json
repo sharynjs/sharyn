@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/util",
-  "version": "3.11.4",
+  "version": "3.11.5",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "@sharyn/util.invoke": "1.0.1",
     "@sharyn/util.swit": "1.0.2",
     "@sharyn/util.toggle": "1.0.2",
-    "@sharyn/util.trycatch": "1.0.2",
-    "@sharyn/util.wait": "1.0.2"
+    "@sharyn/util.trycatch": "1.0.3",
+    "@sharyn/util.wait": "1.0.3"
   }
 }
