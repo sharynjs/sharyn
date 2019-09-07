@@ -3,5 +3,10 @@
   "version": "1.1.5",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/react-router",
   "repository": "sharynjs/sharyn",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@sharyn/react-router.privateroute": "1.0.0",
+    "@sharyn/react-router.refresh": "1.0.0",
+    "@sharyn/react-router.serveronlyroute": "1.0.0"
+  }
 }

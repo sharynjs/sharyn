@@ -1,7 +1,7 @@
 const React = require('react')
 const { Route } = require('react-router')
 
-const Refresh = require('./Refresh')
+const Refresh = require('@sharyn/react-router.refresh')
 
 const e = React.createElement
 
