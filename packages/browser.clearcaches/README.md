@@ -10,7 +10,7 @@ npm i @sharyn/browser.clearcaches
 yarn add @sharyn/browser.clearcaches
 ```
 
-You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/tree/master/browser) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/tree/master/packages/browser) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
 
 ## Arguments
 

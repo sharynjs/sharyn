@@ -5,7 +5,11 @@ const mustache = require('mustache')
 
 const moduleTemplate = fs.readFileSync('docs/templates/module.md').toString()
 
-const files = ['packages/browser.clearcaches/index.js', 'packages/browser.getformfields/index.js']
+const files = [
+  'packages/browser.clearcaches/index.js',
+  'packages/browser.getformfields/index.js',
+  'packages/util.wait/index.js',
+]
 
 const filesData = files.map(
   file =>
@@ -13,10 +17,7 @@ const filesData = files.map(
       .explainSync({ files: file })
       .filter(({ kind }) => kind === 'function')
       .map(jsDocData => ({
-        mdPath: `${jsDocData.meta.path}/${jsDocData.meta.filename.substring(
-          0,
-          jsDocData.meta.filename.length - 8
-        )}README.md`,
+        mdPath: `${jsDocData.meta.path}/README.md`,
         jsDocData: {
           ...jsDocData,
           parentPackage: (jsDocData.tags.find(t => t.title === 'parentpackage') || {}).value,

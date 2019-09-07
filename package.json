@@ -5,7 +5,7 @@
   ],
   "scripts": {
     "start": "yarn docs",
-    "pub": "yarn test && lerna publish --exact",
+    "pub": "yarn test && yarn docs && lerna publish --exact",
     "docs": "node docs.js",
     "test": "eslint packages docs.js && tsc && jest"
   },
