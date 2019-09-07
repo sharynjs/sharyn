@@ -9,7 +9,7 @@ module.exports = {
   envCheck: require('@sharyn/env/check'),
 
   reactHooks: require('@sharyn/react-hooks'),
-  useStateObject: require('@sharyn/react-hooks/useStateObject')
+  useStateObject: require('@sharyn/react-hooks/useStateObject'),
 
   reactRouter: require('@sharyn/react-router'),
   scripts: require('@sharyn/scripts'),
