@@ -1,11 +1,28 @@
 # 🌹 tryCatch
 
-**`tryCatch`** is an inline `try` / `catch` / `finally` function, which returns the result of the `try` or `catch` case.
+**`tryCatch`**: An inline `try` / `catch` / `finally` function, which returns the result of the `try` or `catch` case.
+
+## Installation
+
+```sh
+npm i @sharyn/util.trycatch
+# or
+yarn add @sharyn/util.trycatch
+```
+
+You can alternatively install the [**`@sharyn/util`**](https://github.com/sharynjs/sharyn/tree/master/packages/util) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+
+## Arguments
+
+**\[milliseconds=1000\] (number)**: The duration of the wait.
+
+## Returns
+
+**Promise**
+
+## Example
 
 ```js
-import tryCatch from '@sharyn/util/tryCatch'
-// or import { tryCatch } from '@sharyn/util'
-
 tryCatch(() => success()) // some result
 tryCatch(() => failure()) // undefined
 tryCatch(() => failure(), err => err) // the error
@@ -32,4 +49,22 @@ const result = tryCatch(() => somethingRisky(), e => handleError(e))
 
 Please note that `tryCatch` may affect the linting or type-checking of that code compared to using a real `try` / `catch` block.
 
-**`tryCatch`** is part of [`@sharyn/util`](https://github.com/sharynjs/sharyn-util/blob/master/README.md)
+## Imports
+
+Depending on the package you are using, you can `import` or `require` `tryCatch` in the following ways:
+
+```js
+import tryCatch from '@sharyn/util.trycatch'
+import tryCatch from '@sharyn/util/tryCatch'
+import tryCatch from 'sharyn/util/tryCatch'
+
+import { tryCatch } from '@sharyn/util'
+import { tryCatch } from 'sharyn/util'
+import { tryCatch } from 'sharyn'
+```
+
+<hr />
+
+<p align="center">
+  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>Sharyn</b></a>, a collection of utilities and helpers.
+</p>

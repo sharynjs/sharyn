@@ -9,6 +9,7 @@ const files = [
   'packages/browser.clearcaches/index.js',
   'packages/browser.getformfields/index.js',
   'packages/util.wait/index.js',
+  'packages/util.trycatch/index.js',
 ]
 
 const filesData = files.map(

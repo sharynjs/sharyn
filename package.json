@@ -6,7 +6,7 @@
   "scripts": {
     "start": "yarn docs",
     "pub": "yarn test && yarn docs && lerna publish --exact",
-    "docs": "node docs.js",
+    "docs": "node docs/docs.js",
     "test": "eslint packages docs.js && tsc && jest"
   },
   "prettier": "@sharyn/prettier",
