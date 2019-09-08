@@ -5,7 +5,7 @@
 ```sh
 npm i --save-dev @sharyn/prettier
 # or
-yarn add --dev @sharyn/browser
+yarn add --dev @sharyn/prettier
 ```
 
 ## Usage
