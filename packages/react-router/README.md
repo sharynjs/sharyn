@@ -16,8 +16,8 @@ You can alternatively install the entire [**sharyn**](https://github.com/sharynj
 
 ## Modules
 
-- [**PrivateRoute**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router.privateroute/README.md#readme) – A &#x60;Route&#x60; that redirects unauthenticated users
-- [**ServerOnlyRoute**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router.serveronlyroute/README.md#readme) – A &#x60;Route&#x60; that refreshes the page on the client
+- [**PrivateRoute**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router.privateroute/README.md#readme) – A `Route` that redirects unauthenticated users
+- [**ServerOnlyRoute**](https://github.com/sharynjs/sharyn/tree/master/packages/react-router.serveronlyroute/README.md#readme) – A `Route` that refreshes the page on the client
 
 <hr />
 

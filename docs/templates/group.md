@@ -17,7 +17,7 @@ You can alternatively install the entire [**sharyn**](https://github.com/sharynj
 ## Modules
 
 {{ #modules }}
-- [**{{ name }}**](https://github.com/sharynjs/sharyn/tree/master/packages/{{ group }}.{{ lowercase }}/README.md#readme) – {{ description }}
+- [**{{ name }}**](https://github.com/sharynjs/sharyn/tree/master/packages/{{ group }}.{{ lowercase }}/README.md#readme) – {{{ description }}}
 {{ /modules }}
 
 <hr />
