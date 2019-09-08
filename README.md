@@ -42,12 +42,12 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 💻 Development
 
 [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier/README.md#readme) – A Prettier configuration
-[**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
-[**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
+[**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn/README.md#readme) – A Babel preset for React and Flow
+[**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn/README.md#readme) – An ESLint configuration for Babel, React and Flow
 
 ## Getting Started
 
-Depending on your needs, you can install individual modules, like [`@sharyn/browser.getformfields`](https://www.npmjs.com/package/@sharyn/browser.getformfields), a group of modules, like [`@sharyn/browser`](https://www.npmjs.com/package/@sharyn/browser), or the whole library (which is actually quite small, 379KB on disk, including all its dependencies). That's the simplest way to get started. The library is separated into 2 parts, `sharyn`, which goes in your `dependencies`, and `sharyn-dev`, which goes in your `devDependencies`.
+Depending on your needs, you can install individual modules, like [**@sharyn/util.swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme), a group of modules, like [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme), or the whole [**sharyn**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library (which is actually quite small, 379KB on disk, including all its dependencies). That's the simplest way to get started. The library is separated into 2 parts, [**sharyn**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme), which goes in your `dependencies`, and [**sharyn-dev**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn-dev/README.md#readme), which goes in your `devDependencies`.
 
 ```sh
 npm i sharyn && npm i --save-dev sharyn-dev
@@ -60,17 +60,17 @@ yarn add sharyn && yarn add --dev sharyn-dev
 And depending on what packages you chose to install, you have different ways to `import` or `require` a module:
 
 ```js
-// If you installed an individual package (note the lowercase name)
-import getFormFields from '@sharyn/browser.getformfields'
+// If you installed an individual package (all lowercase)
+import swit from '@sharyn/util.swit'
 
-// If you installed a group of modules
-import getFormFields from '@sharyn/browser/getFormFields'
-import { getFormFields } from '@sharyn/browser'
+// If you installed a group of modules like '@sharyn/util'
+import swit from '@sharyn/util/swit'
+import { swit } from '@sharyn/util'
 
-// If you installed the whole library
-import getFormFields from 'sharyn/browser/getFormFields'
-import { getFormFields } from 'sharyn/browser'
-import { getFormFields } from 'sharyn'
+// If you installed the whole 'sharyn' library
+import swit from 'sharyn/util/swit'
+import { swit } from 'sharyn/util'
+import { swit } from 'sharyn'
 ```
 
 **Note**: If you use the `from 'sharyn'` syntax, you need to have `react` and `react-router` installed in your project, since some of the modules included in `sharyn` require them.
