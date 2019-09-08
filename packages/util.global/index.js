@@ -1,17 +1,25 @@
 let globalObject = {}
 
-exports.setGlobal = (key, value) => {
+const setGlobal = (key, value) => {
   globalObject[key] = value
 }
 
-exports.getGlobal = key => globalObject[key]
+const getGlobal = key => globalObject[key]
 
-exports.getAllGlobal = () => globalObject
+const getAllGlobal = () => globalObject
 
-exports.deleteGlobal = key => {
+const deleteGlobal = key => {
   delete globalObject[key]
 }
 
-exports.clearGlobal = () => {
+const clearGlobal = () => {
   globalObject = {}
+}
+
+module.exports = {
+  setGlobal,
+  getGlobal,
+  getAllGlobal,
+  deleteGlobal,
+  clearGlobal,
 }
