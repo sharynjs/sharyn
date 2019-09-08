@@ -49,7 +49,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 ## Getting Started
 
-Depending on your needs, you can install individual modules, like [**@sharyn/util.swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme), a group of modules, like [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme), or the whole [**sharyn**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library. If you want to install everything, run:
+Depending on your needs, you can install individual modules, like [**@sharyn/util.swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme), a group of modules, like [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme), or the whole library. If you want to install everything, run:
 
 ```sh
 npm i sharyn
