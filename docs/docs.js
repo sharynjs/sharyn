@@ -59,7 +59,77 @@ const groups = [
     ],
     description: 'Components for React Router.',
   },
-  // { path: 'packages/util', modules: [] },
+  {
+    group: 'util',
+    modules: [
+      {
+        name: 'between',
+        lowercase: 'between',
+        description: 'Tests if a value is between two bounds',
+      },
+      {
+        name: 'cycle',
+        lowercase: 'cycle',
+        description: 'Cycles between multiple values',
+      },
+      {
+        name: 'either',
+        lowercase: 'either',
+        description: 'Tests equality with multiple values',
+      },
+      {
+        name: 'exists',
+        lowercase: 'exists',
+        description: 'Returns `true` if not `null` or `undefined`',
+      },
+      {
+        name: 'global',
+        lowercase: 'global',
+        description: 'Functions to create and access global variables',
+      },
+      {
+        name: 'html',
+        lowercase: 'html',
+        description: 'A template string tag for HTML syntax highlighting',
+      },
+      {
+        name: 'ifs',
+        lowercase: 'ifs',
+        description: 'An `if`, `else if`, `else if`... `else` util',
+      },
+      {
+        name: 'inlineThrow',
+        lowercase: 'inlinethrow',
+        description: 'To `throw` in an expression',
+      },
+      {
+        name: 'invoke',
+        lowercase: 'invoke',
+        description: 'A self invoking function util',
+      },
+      {
+        name: 'swit',
+        lowercase: 'swit',
+        description: 'An inline and less verbose `switch`',
+      },
+      {
+        name: 'toggle',
+        lowercase: 'toggle',
+        description: 'Toggles between two values',
+      },
+      {
+        name: 'tryCatch',
+        lowercase: 'trycatch',
+        description: 'An inline `try` - `catch` - `finally`',
+      },
+      {
+        name: 'wait',
+        lowercase: 'wait',
+        description: 'A `Promise`-based delay',
+      },
+    ],
+    description: 'Lodash-like utils.',
+  },
 ]
 
 const modulesData = moduleFiles.map(
