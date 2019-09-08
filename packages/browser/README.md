@@ -1,3 +1,5 @@
+<!-- This file is auto-generated, don't modify it. Modify docs.js instead. -->
+
 # 🌹 @sharyn/browser
 
 Helpers for code that runs in the browser.
@@ -10,12 +12,12 @@ npm i @sharyn/browser
 yarn add @sharyn/browser
 ```
 
-You can alternatively install the entire [**`sharyn`**](https://github.com/sharynjs/sharyn) library.
+You can alternatively install the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
 
 ## Modules
 
-- [**clearCaches**](https://github.com/sharynjs/sharyn/tree/master/browser/clearCaches) – Clears all the caches used by service workers.
-- [**getFormFields**](https://github.com/sharynjs/sharyn/tree/master/browser/getFormFields) – Gives you the fields of a `form` element as a plain object.
+- [**clearCaches**](https://github.com/sharynjs/sharyn/tree/master/browser.clearcaches/README.md#readme) – Clears all the service worker caches
+- [**getFormData**](https://github.com/sharynjs/sharyn/tree/master/browser.getformdata/README.md#readme) – Gives you the form data as a plain object
 
 <hr />
 

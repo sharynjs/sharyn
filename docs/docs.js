@@ -4,8 +4,9 @@ const jsdoc = require('jsdoc-api')
 const mustache = require('mustache')
 
 const moduleTemplate = fs.readFileSync('docs/templates/module.md').toString()
+const groupTemplate = fs.readFileSync('docs/templates/group.md').toString()
 
-const files = [
+const moduleFiles = [
   'packages/browser.clearcaches/index.js',
   'packages/browser.getformdata/index.js',
   'packages/util.swit/index.js',
@@ -14,7 +15,29 @@ const files = [
   'packages/util.wait/index.js',
 ]
 
-const filesData = files.map(
+const groups = [
+  {
+    group: 'browser',
+    modules: [
+      {
+        name: 'clearCaches',
+        lowercase: 'clearcaches',
+        description: 'Clears all the service worker caches',
+      },
+      {
+        name: 'getFormData',
+        lowercase: 'getformdata',
+        description: 'Gives you the form data as a plain object',
+      },
+    ],
+    description: 'Helpers for code that runs in the browser.',
+  },
+  // { path: 'packages/react-hooks', modules: [] },
+  // { path: 'packages/react-router', modules: [] },
+  // { path: 'packages/util', modules: [] },
+]
+
+const modulesData = moduleFiles.map(
   file =>
     jsdoc
       .explainSync({ files: file })
@@ -43,4 +66,10 @@ const filesData = files.map(
       }))[0]
 )
 
-filesData.forEach(fd => fs.writeFileSync(fd.mdPath, mustache.render(moduleTemplate, fd.jsDocData)))
+modulesData.forEach(fd =>
+  fs.writeFileSync(fd.mdPath, mustache.render(moduleTemplate, fd.jsDocData))
+)
+
+groups.forEach(group =>
+  fs.writeFileSync(`packages/${group.group}/README.md`, mustache.render(groupTemplate, group))
+)
