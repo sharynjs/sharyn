@@ -43,8 +43,22 @@ const groups = [
     ],
     description: 'React Hooks.',
   },
-  // { path: 'packages/react-hooks', modules: [] },
-  // { path: 'packages/react-router', modules: [] },
+  {
+    group: 'react-router',
+    modules: [
+      {
+        name: 'PrivateRoute',
+        lowercase: 'privateroute',
+        description: 'A `Route` that redirects unauthenticated users',
+      },
+      {
+        name: 'ServerOnlyRoute',
+        lowercase: 'serveronlyroute',
+        description: 'A `Route` that refreshes the page on the client',
+      },
+    ],
+    description: 'Components for React Router.',
+  },
   // { path: 'packages/util', modules: [] },
 ]
 
