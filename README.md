@@ -8,7 +8,10 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 💯 General
 
-- [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils
+- [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils:
+  - [**@sharyn/util/inlineThrow**](https://github.com/sharynjs/sharyn/blob/master/packages/util.inlineThrow/README.md#readme) – To `throw` in an expression.
+  - [**@sharyn/util/invoke**](https://github.com/sharynjs/sharyn/blob/master/packages/util.invoke/README.md#readme) – A self invoking function util.
+  - [**@sharyn/util/swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme) – An inline and less verbose `switch`.
   - [**@sharyn/util/toggle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.toggle/README.md#readme) – Toggles between two values.
   - [**@sharyn/util/tryCatch**](https://github.com/sharynjs/sharyn/blob/master/packages/util.trycatch/README.md#readme) – An inline `try` - `catch` - `finally`.
   - [**@sharyn/util/wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay.
