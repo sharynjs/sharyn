@@ -9,6 +9,9 @@ module.exports = {
   useStateObject: require('@sharyn/react-hooks/useStateObject'),
 
   reactRouter: require('@sharyn/react-router'),
+  PrivateRoute: require('@sharyn/react-router/PrivateRoute'),
+  ServerOnlyRoute: require('@sharyn/react-router/ServerOnlyRoute'),
+
   scripts: require('@sharyn/scripts'),
   util: require('@sharyn/util'),
 }
