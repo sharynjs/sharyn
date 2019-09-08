@@ -1,5 +1,5 @@
 /**
- * Gives you the fields of a `form` element. `getFormFields` uses `FormData` and returns a plain object.
+ * Gives you the fields and data of a `form` element. `getFormData` uses `FormData` and returns a plain object.
  * @parentpackage browser
  * @param {HTMLFormElement} formElement The HTML `form` element.
  * @param {boolean} [onlyTruthy=false] Falsy fields (like `''`) are omitted if `true`.
@@ -14,10 +14,10 @@
  *         <input name="firstname" />
  *         <input name="lastname" />
  *       </form>
- *       <button onClick={() => console.log(getFormFields(form.current))}>
+ *       <button onClick={() => console.log(getFormData(form.current))}>
  *         Log all form values
  *       </button>
- *       <button onClick={() => console.log(getFormFields(form.current, true))}>
+ *       <button onClick={() => console.log(getFormData(form.current, true))}>
  *         Log truthy form values
  *       </button>
  *     </>
@@ -28,11 +28,11 @@
  * If `firstname` is `Stan` and `lastname` is left empty:
  *
  * ```js
- * getFormFields(form.current)       // { firstname: 'Stan', lastname: '' }
- * getFormFields(form.current, true) // { firstname: 'Stan' }
+ * getFormData(form.current)       // { firstname: 'Stan', lastname: '' }
+ * getFormData(form.current, true) // { firstname: 'Stan' }
  * ```
  */
-const getFormFields = (formElement, onlyTruthy) => {
+const getFormData = (formElement, onlyTruthy) => {
   const formData = new FormData(formElement)
   const data = {}
   Array.from(formData.entries()).forEach(([key, value]) => {
@@ -43,4 +43,4 @@ const getFormFields = (formElement, onlyTruthy) => {
   return data
 }
 
-module.exports = getFormFields
+module.exports = getFormData

@@ -1,15 +1,15 @@
 <!-- This file is auto-generated, don't modify it. Modify the JSDoc instead. -->
 
-# 🌹 getFormFields
+# 🌹 getFormData
 
-**`getFormFields`**: Gives you the fields of a `form` element. `getFormFields` uses `FormData` and returns a plain object.
+**`getFormData`**: Gives you the fields and data of a `form` element. `getFormData` uses `FormData` and returns a plain object.
 
 ## Installation
 
 ```sh
-npm i @sharyn/browser.getformfields
+npm i @sharyn/browser.getformdata
 # or
-yarn add @sharyn/browser.getformfields
+yarn add @sharyn/browser.getformdata
 ```
 
 You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library.
@@ -35,10 +35,10 @@ const Form = () => {
         <input name="firstname" />
         <input name="lastname" />
       </form>
-      <button onClick={() => console.log(getFormFields(form.current))}>
+      <button onClick={() => console.log(getFormData(form.current))}>
         Log all form values
       </button>
-      <button onClick={() => console.log(getFormFields(form.current, true))}>
+      <button onClick={() => console.log(getFormData(form.current, true))}>
         Log truthy form values
       </button>
     </>
@@ -49,22 +49,22 @@ const Form = () => {
 If `firstname` is `Stan` and `lastname` is left empty:
 
 ```js
-getFormFields(form.current)       // { firstname: 'Stan', lastname: '' }
-getFormFields(form.current, true) // { firstname: 'Stan' }
+getFormData(form.current)       // { firstname: 'Stan', lastname: '' }
+getFormData(form.current, true) // { firstname: 'Stan' }
 ```
 
 ## Imports
 
-Depending on the package you are using, you can `import` or `require` `getFormFields` in the following ways:
+Depending on the package you are using, you can `import` or `require` `getFormData` in the following ways:
 
 ```js
-import getFormFields from '@sharyn/browser.getformfields'
-import getFormFields from '@sharyn/browser/getFormFields'
-import getFormFields from 'sharyn/browser/getFormFields'
+import getFormData from '@sharyn/browser.getformdata'
+import getFormData from '@sharyn/browser/getFormData'
+import getFormData from 'sharyn/browser/getFormData'
 
-import { getFormFields } from '@sharyn/browser'
-import { getFormFields } from 'sharyn/browser'
-import { getFormFields } from 'sharyn'
+import { getFormData } from '@sharyn/browser'
+import { getFormData } from 'sharyn/browser'
+import { getFormData } from 'sharyn'
 ```
 
 <hr />
