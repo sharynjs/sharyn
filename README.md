@@ -10,7 +10,6 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
-- [**@sharyn/env**](https://github.com/sharynjs/sharyn/blob/master/packages/env/README.md#readme) – Convenient access and validation of env variables
 
 #### 💻 Development
 
