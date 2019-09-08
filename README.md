@@ -9,26 +9,20 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils:
-  - [**between**](https://github.com/sharynjs/sharyn/blob/master/packages/util.between/README.md#readme) – Tests if a value is between two bounds.
-  - [**cycle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.cycle/README.md#readme) – Cycles between multiple values.
-  - [**either**](https://github.com/sharynjs/sharyn/blob/master/packages/util.either/README.md#readme) – Tests equality with multiple values.
-  - [**exists**](https://github.com/sharynjs/sharyn/blob/master/packages/util.exists/README.md#readme) – Returns `true` if not `null` or `undefined`.
-  - [**global**](https://github.com/sharynjs/sharyn/blob/master/packages/util.global/README.md#readme) – Functions to create and access global variables.
-  - [**html**](https://github.com/sharynjs/sharyn/blob/master/packages/util.html/README.md#readme) – A template string tag for HTML syntax highlighting.
-  - [**ifs**](https://github.com/sharynjs/sharyn/blob/master/packages/util.ifs/README.md#readme) – `if`, `else if`, `else if`... `else` util.
-  - [**inlineThrow**](https://github.com/sharynjs/sharyn/blob/master/packages/util.inlineThrow/README.md#readme) – To `throw` in an expression.
-  - [**invoke**](https://github.com/sharynjs/sharyn/blob/master/packages/util.invoke/README.md#readme) – A self invoking function util.
-  - [**swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme) – An inline and less verbose `switch`.
-  - [**toggle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.toggle/README.md#readme) – Toggles between two values.
-  - [**tryCatch**](https://github.com/sharynjs/sharyn/blob/master/packages/util.trycatch/README.md#readme) – An inline `try` - `catch` - `finally`.
-  - [**wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay.
+  - [**between**](https://github.com/sharynjs/sharyn/blob/master/packages/util.between/README.md#readme) – Tests if a value is between two bounds
+  - [**cycle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.cycle/README.md#readme) – Cycles between multiple values
+  - [**either**](https://github.com/sharynjs/sharyn/blob/master/packages/util.either/README.md#readme) – Tests equality with multiple values
+  - [**exists**](https://github.com/sharynjs/sharyn/blob/master/packages/util.exists/README.md#readme) – Returns `true` if not `null` or `undefined`
+  - [**global**](https://github.com/sharynjs/sharyn/blob/master/packages/util.global/README.md#readme) – Functions to create and access global variables
+  - [**html**](https://github.com/sharynjs/sharyn/blob/master/packages/util.html/README.md#readme) – A template string tag for HTML syntax highlighting
+  - [**ifs**](https://github.com/sharynjs/sharyn/blob/master/packages/util.ifs/README.md#readme) – An `if`, `else if`, `else if`... `else` util
+  - [**inlineThrow**](https://github.com/sharynjs/sharyn/blob/master/packages/util.inlineThrow/README.md#readme) – To `throw` in an expression
+  - [**invoke**](https://github.com/sharynjs/sharyn/blob/master/packages/util.invoke/README.md#readme) – A self invoking function util
+  - [**swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme) – An inline and less verbose `switch`
+  - [**toggle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.toggle/README.md#readme) – Toggles between two values
+  - [**tryCatch**](https://github.com/sharynjs/sharyn/blob/master/packages/util.trycatch/README.md#readme) – An inline `try` - `catch` - `finally`
+  - [**wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
-
-#### 💻 Development
-
-- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier/README.md#readme) – A Prettier configuration
-- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
-- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
 
 #### ⚛️ React
 
@@ -38,6 +32,12 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 🌐 Web
 
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) – Helpers for code that runs in the browser
+
+#### 💻 Development
+
+- [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier/README.md#readme) – A Prettier configuration
+- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React and Flow
+- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
 
 ## Getting Started
 
