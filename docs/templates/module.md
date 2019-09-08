@@ -12,7 +12,7 @@ npm i @sharyn/{{ parentPackage }}.{{lowercaseName}}
 yarn add @sharyn/{{ parentPackage }}.{{lowercaseName}}
 ```
 
-You can alternatively install the [**`@sharyn/{{ parentPackage }}`**](https://github.com/sharynjs/sharyn/blob/master/packages/{{ parentPackage }}/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library.
+You can alternatively install the [**@sharyn/{{ parentPackage }}**](https://github.com/sharynjs/sharyn/blob/master/packages/{{ parentPackage }}/README.md#readme) package, or the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
 
 ## Arguments
 

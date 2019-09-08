@@ -12,7 +12,7 @@ npm i @sharyn/util.swit
 yarn add @sharyn/util.swit
 ```
 
-You can alternatively install the [**`@sharyn/util`**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library.
+You can alternatively install the [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) package, or the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
 
 ## Arguments
 

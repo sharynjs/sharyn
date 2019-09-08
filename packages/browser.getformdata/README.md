@@ -12,7 +12,7 @@ npm i @sharyn/browser.getformdata
 yarn add @sharyn/browser.getformdata
 ```
 
-You can alternatively install the [**`@sharyn/browser`**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) package, or the entire [**`sharyn`**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) library.
+You can alternatively install the [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) package, or the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
 
 ## Arguments
 
