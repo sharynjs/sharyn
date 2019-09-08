@@ -1,7 +1,5 @@
 import { default as browser, clearCaches, getFormFields } from '@sharyn/browser'
 import commands from '@sharyn/commands'
-import env from '@sharyn/env'
-import envCheck from '@sharyn/env/check'
 import { default as reactHooks, useStateObject } from '@sharyn/react-hooks'
 import reactRouter from '@sharyn/react-router'
 import scripts from '@sharyn/scripts'
@@ -12,8 +10,6 @@ export {
   clearCaches,
   getFormFields,
   commands,
-  env,
-  envCheck,
   reactHooks,
   useStateObject,
   reactRouter,
@@ -27,9 +23,6 @@ declare const _default: {
   getFormFields: typeof getFormFields
 
   commands: typeof commands
-
-  env: typeof env
-  envCheck: typeof envCheck
 
   reactHooks: typeof reactHooks
   useStateObject: typeof useStateObject

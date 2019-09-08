@@ -5,9 +5,6 @@ module.exports = {
 
   commands: require('@sharyn/commands'),
 
-  env: require('@sharyn/env'),
-  envCheck: require('@sharyn/env/check'),
-
   reactHooks: require('@sharyn/react-hooks'),
   useStateObject: require('@sharyn/react-hooks/useStateObject'),
 

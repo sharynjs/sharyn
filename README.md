@@ -9,6 +9,7 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils
+  - [**@sharyn/util.wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay.
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
 
 #### 💻 Development
