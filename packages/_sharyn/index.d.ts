@@ -1,4 +1,4 @@
-import { default as browser, clearCaches, getFormFields } from '@sharyn/browser'
+import { default as browser, clearCaches, getFormData } from '@sharyn/browser'
 import commands from '@sharyn/commands'
 import { default as reactHooks, useStateObject } from '@sharyn/react-hooks'
 import reactRouter from '@sharyn/react-router'
@@ -8,7 +8,7 @@ import util from '@sharyn/util'
 export {
   browser,
   clearCaches,
-  getFormFields,
+  getFormData,
   commands,
   reactHooks,
   useStateObject,
@@ -20,7 +20,7 @@ export {
 declare const _default: {
   browser: typeof browser
   clearCaches: typeof clearCaches
-  getFormFields: typeof getFormFields
+  getFormData: typeof getFormData
 
   commands: typeof commands
 

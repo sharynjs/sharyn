@@ -1,11 +1,11 @@
 import clearCaches from '@sharyn/browser.clearcaches'
-import getFormFields from '@sharyn/browser.getformfields'
+import getFormData from '@sharyn/browser.getformdata'
 
-export { clearCaches, getFormFields }
+export { clearCaches, getFormData }
 
 declare const _default: {
   clearCaches: typeof clearCaches
-  getFormFields: typeof getFormFields
+  getFormData: typeof getFormData
 }
 
 export default _default

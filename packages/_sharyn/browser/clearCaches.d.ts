@@ -1,1 +1,1 @@
-export { clearCaches as default } from '@sharyn/browser'
+export { default } from '@sharyn/browser/clearCaches'

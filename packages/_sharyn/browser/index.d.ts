@@ -1,1 +1,1 @@
-export { default, clearCaches, getFormFields } from '@sharyn/browser'
+export { default, clearCaches, getFormData } from '@sharyn/browser'
