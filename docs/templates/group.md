@@ -12,7 +12,7 @@ npm i @sharyn/{{ group }}
 yarn add @sharyn/{{ group }}
 ```
 
-You can alternatively install the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
+You can alternatively install the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library or individual modules.
 
 ## Modules
 

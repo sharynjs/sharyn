@@ -12,7 +12,7 @@ npm i @sharyn/util
 yarn add @sharyn/util
 ```
 
-You can alternatively install the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library.
+You can alternatively install the entire [**sharyn**](https://github.com/sharynjs/sharyn#getting-started) library or individual modules.
 
 ## Modules
 
