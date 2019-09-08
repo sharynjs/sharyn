@@ -29,7 +29,6 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/blob/master/packages/react-hooks/README.md#readme) – React Hooks:
   - [**useStateObject**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router.usestateobject/README.md#readme) – A hook to manage a state that is an object
-
 - [**@sharyn/react-router**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router/README.md#readme) – Components for React Router:
   - [**PrivateRoute**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router.privateroute/README.md#readme) – A `Route` that redirects unauthenticated users
   - [**Refresh**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router.refresh/README.md#readme) – A `Route` that refreshes the client's page
