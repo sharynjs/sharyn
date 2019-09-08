@@ -1,15 +1,15 @@
 {
   "name": "sharyn",
-  "version": "12.0.6",
+  "version": "12.0.7",
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/browser": "1.1.7",
+    "@sharyn/browser": "1.1.8",
     "@sharyn/commands": "1.1.2",
     "@sharyn/env": "3.5.4",
     "@sharyn/react-hooks": "1.0.3",
-    "@sharyn/react-router": "1.1.7",
+    "@sharyn/react-router": "1.1.8",
     "@sharyn/scripts": "1.5.2",
-    "@sharyn/util": "3.11.6"
+    "@sharyn/util": "3.11.7"
   }
 }
