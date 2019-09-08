@@ -5,9 +5,5 @@
   "repository": "sharynjs/sharyn",
   "description": "",
   "keywords": [],
-  "license": "MIT",
-  "dependencies": {
-    "lodash.clonedeep": "4.5.0",
-    "lodash.merge": "4.6.2"
-  }
+  "license": "MIT"
 }

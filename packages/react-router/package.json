@@ -6,7 +6,6 @@
   "license": "MIT",
   "dependencies": {
     "@sharyn/react-router.privateroute": "1.0.2",
-    "@sharyn/react-router.refresh": "1.0.1",
     "@sharyn/react-router.serveronlyroute": "1.0.1"
   }
 }
