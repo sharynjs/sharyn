@@ -16,8 +16,8 @@ You can alternatively install the entire [**sharyn**](https://github.com/sharynj
 
 ## Modules
 
-- [**clearCaches**](https://github.com/sharynjs/sharyn/tree/master/browser.clearcaches/README.md#readme) – Clears all the service worker caches
-- [**getFormData**](https://github.com/sharynjs/sharyn/tree/master/browser.getformdata/README.md#readme) – Gives you the form data as a plain object
+- [**clearCaches**](https://github.com/sharynjs/sharyn/tree/master/packages/browser.clearcaches/README.md#readme) – Clears all the service worker caches
+- [**getFormData**](https://github.com/sharynjs/sharyn/tree/master/packages/browser.getformdata/README.md#readme) – Gives you the form data as a plain object
 
 <hr />
 
