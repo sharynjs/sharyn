@@ -36,10 +36,10 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 #### 🌐 Web
 
-- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) – Helpers for code that runs in the browser
+- [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) – Helpers for code that runs in the browser:
 
-  - [**clearCaches**](https://github.com/sharynjs/sharyn/blob/master/packages/browser.clearcaches#README.md#readme) – Clears all the service worker caches
-  - [**getFormData**](https://github.com/sharynjs/sharyn/blob/master/packages/browser.getformdata#README.md#readme) – Gives you the form data as a plain object
+  - [**clearCaches**](https://github.com/sharynjs/sharyn/blob/master/packages/browser.clearcaches/README.md#readme) – Clears all the service worker caches
+  - [**getFormData**](https://github.com/sharynjs/sharyn/blob/master/packages/browser.getformdata/README.md#readme) – Gives you the form data as a plain object
 
 #### 💻 Development
 
