@@ -9,6 +9,13 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 #### 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils:
+  - [**@sharyn/util/between**](https://github.com/sharynjs/sharyn/blob/master/packages/util.between/README.md#readme) – Tests if a value is between two bounds.
+  - [**@sharyn/util/cycle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.cycle/README.md#readme) – Cycles between multiple values.
+  - [**@sharyn/util/either**](https://github.com/sharynjs/sharyn/blob/master/packages/util.either/README.md#readme) – Tests equality with multiple values.
+  - [**@sharyn/util/exists**](https://github.com/sharynjs/sharyn/blob/master/packages/util.exists/README.md#readme) – Returns `true` if not `null` or `undefined`.
+  - [**@sharyn/util/global**](https://github.com/sharynjs/sharyn/blob/master/packages/util.global/README.md#readme) – Functions to create and access global variables.
+  - [**@sharyn/util/html**](https://github.com/sharynjs/sharyn/blob/master/packages/util.html/README.md#readme) – A template string tag for HTML syntax highlighting.
+  - [**@sharyn/util/ifs**](https://github.com/sharynjs/sharyn/blob/master/packages/util.ifs/README.md#readme) – `if`, `else if`, `else if`... `else` util.
   - [**@sharyn/util/inlineThrow**](https://github.com/sharynjs/sharyn/blob/master/packages/util.inlineThrow/README.md#readme) – To `throw` in an expression.
   - [**@sharyn/util/invoke**](https://github.com/sharynjs/sharyn/blob/master/packages/util.invoke/README.md#readme) – A self invoking function util.
   - [**@sharyn/util/swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme) – An inline and less verbose `switch`.
