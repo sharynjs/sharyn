@@ -1,5 +1,40 @@
 # 🌹 @sharyn/env
 
+# Deprecated
+
+Use [envalid](https://www.npmjs.com/package/envalid) instead. Example:
+
+```js
+const envalid = require('envalid')
+const pick = require('lodash.pick')
+const either = require('@sharyn/util.either')
+const swit = require('@sharyn/util.swit')
+
+const { email, bool, port, str } = envalid
+
+const varDefs = {
+  STAGE: str({ choices: ['dev', 'local-prod', 'staging', 'prod'] }),
+  TRUE: bool(),
+  EMAIL: email({ desc: 'The email of the admin' }),
+  PORT: port(),
+}
+
+const env = envalid.cleanEnv(
+  process.env,
+  {
+    STAGE: varDefs.STAGE,
+    ...swit(
+      process.env.STAGE,
+      ['dev', 'local-prod', pick(varDefs, 'TRUE', 'PORT')],
+      ['staging', 'prod', pick(varDefs, 'EMAIL', 'PORT')]
+    ),
+  },
+  { strict: true }
+)
+
+module.exports = env
+```
+
 ## Usage
 
 ```bash
