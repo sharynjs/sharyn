@@ -32,6 +32,17 @@ const groups = [
     ],
     description: 'Helpers for code that runs in the browser.',
   },
+  {
+    group: 'react-hooks',
+    modules: [
+      {
+        name: 'useStateObject',
+        lowercase: 'usestateobject',
+        description: 'A hook to manage a state that is an object',
+      },
+    ],
+    description: 'React Hooks.',
+  },
   // { path: 'packages/react-hooks', modules: [] },
   // { path: 'packages/react-router', modules: [] },
   // { path: 'packages/util', modules: [] },
