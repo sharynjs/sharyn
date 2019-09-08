@@ -12,6 +12,6 @@
   "license": "MIT",
   "dependencies": {
     "@sharyn/browser.clearcaches": "1.0.9",
-    "@sharyn/browser.getformfields": "1.0.8"
+    "@sharyn/browser.getformdata": "1.0.3"
   }
 }

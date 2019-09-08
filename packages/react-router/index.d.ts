@@ -1,4 +1,11 @@
-// I don't know how to type React components.
-// It will eventually happen. Any help is appreciated!
+import PrivateRoute from '@sharyn/react-router.privateroute'
+import ServerOnlyRoute from '@sharyn/react-router.serveronlyroute'
 
-declare module '@sharyn/react-router'
+export { PrivateRoute, ServerOnlyRoute }
+
+declare const _default: {
+  PrivateRoute: typeof PrivateRoute
+  ServerOnlyRoute: typeof ServerOnlyRoute
+}
+
+export default _default

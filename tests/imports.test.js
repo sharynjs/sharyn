@@ -37,7 +37,18 @@ const sharynReactRouterServerOnlyRoute = require('sharyn/react-router/ServerOnly
 const scripts = require('@sharyn/scripts')
 const sharynScripts = require('sharyn/scripts')
 
-test('individual packages', () => {
+const util = require('@sharyn/util')
+const sharynUtil = require('sharyn/util')
+
+const between = require('@sharyn/util.between')
+const utilBetween = require('@sharyn/util/between')
+const sharynUtilBetween = require('sharyn/util/between')
+
+const cycle = require('@sharyn/util.cycle')
+const utilCycle = require('@sharyn/util/cycle')
+const sharynUtilCycle = require('sharyn/util/cycle')
+
+test('imports', () => {
   expect(typeof clearCaches).toBe('function')
   expect(typeof browserClearCaches).toBe('function')
   expect(typeof sharynBrowserClearCaches).toBe('function')
@@ -104,4 +115,20 @@ test('individual packages', () => {
   expect(typeof scripts.scripts).toBe('function')
   expect(typeof sharynScripts.scripts).toBe('function')
   expect(typeof sharyn.scripts.scripts).toBe('function')
+
+  expect(typeof between).toBe('function')
+  expect(typeof utilBetween).toBe('function')
+  expect(typeof sharynUtilBetween).toBe('function')
+  expect(typeof util.between).toBe('function')
+  expect(typeof sharynUtil.between).toBe('function')
+  expect(typeof sharyn.util.between).toBe('function')
+  expect(typeof sharyn.between).toBe('function')
+
+  expect(typeof cycle).toBe('function')
+  expect(typeof utilCycle).toBe('function')
+  expect(typeof sharynUtilCycle).toBe('function')
+  expect(typeof util.cycle).toBe('function')
+  expect(typeof sharynUtil.cycle).toBe('function')
+  expect(typeof sharyn.util.cycle).toBe('function')
+  expect(typeof sharyn.cycle).toBe('function')
 })

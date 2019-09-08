@@ -13,5 +13,8 @@ module.exports = {
   ServerOnlyRoute: require('@sharyn/react-router/ServerOnlyRoute'),
 
   scripts: require('@sharyn/scripts'),
+
   util: require('@sharyn/util'),
+  between: require('@sharyn/util/between'),
+  cycle: require('@sharyn/util/cycle'),
 }

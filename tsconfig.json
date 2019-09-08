@@ -5,6 +5,6 @@
     "esModuleInterop": true,
     "noEmit": true
   },
-  "include": ["packages/**/*"],
-  "exclude": ["packages/**/*.test.js"]
+  "include": ["packages/**/*", "tests/**/*"],
+  "exclude": ["*.test.js"]
 }
