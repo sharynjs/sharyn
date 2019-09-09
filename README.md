@@ -58,6 +58,8 @@ npm i sharyn && npm i --save-dev sharyn-dev
 yarn add sharyn && yarn add --dev sharyn-dev
 ```
 
+This will install [**sharyn**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn/README.md#readme) in your `dependencies` and [**sharyn-dev**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn-dev/README.md#readme) in your `devDependencies`.
+
 If you use `sharyn/react-hooks` or `sharyn/react-router` which are included, you will need to install `react` and `react-router` too. They are not listed as `peerDependencies` to avoid noise in projects that want to use `sharyn` without React.
 
 ## Imports
