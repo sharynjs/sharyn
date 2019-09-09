@@ -1,0 +1,10 @@
+{
+  "extends": "../base.json",
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "target": "es2018",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false
+  }
+}
