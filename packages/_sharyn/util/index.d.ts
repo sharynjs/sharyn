@@ -1,1 +1,21 @@
-export { default, between, cycle, defined } from '@sharyn/util'
+export {
+  default,
+  between,
+  cycle,
+  defined,
+  either,
+  exists,
+  html,
+  ifs,
+  inlineThrow,
+  invoke,
+  swit,
+  toggle,
+  tryCatch,
+  wait,
+  getGlobal,
+  setGlobal,
+  getAllGlobal,
+  deleteGlobal,
+  clearGlobal,
+} from '@sharyn/util'
