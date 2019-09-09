@@ -72,12 +72,12 @@ import { swit } from '@sharyn/util'
 // If you installed the whole 'sharyn' library
 import swit from 'sharyn/util/swit'
 import { swit } from 'sharyn/util'
+
+// As a convenience, utils are also available directly on 'sharyn'
 import { swit } from 'sharyn'
 ```
 
-**Note**: If you use the `from 'sharyn'` syntax, you need to have `react` and `react-router` installed in your project, since some of the modules included in `sharyn` require them.
-
-Also, TypeScript users, remember to have your `esModuleInterop` set to `true` if you want to import the default exports without having to use the `*` syntax.
+**Note**: TypeScript users, you need your `esModuleInterop` set to `true` if you want to import the default exports without having to use the `*` syntax.
 
 ### Credits
 

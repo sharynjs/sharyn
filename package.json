@@ -9,7 +9,12 @@
     "docs": "node docs/docs.js",
     "test": "eslint packages docs && tsc && jest"
   },
-  "prettier": "@sharyn/prettier",
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
   "eslintConfig": {
     "extends": [
       "eslint:recommended",
@@ -35,7 +40,6 @@
     }
   },
   "devDependencies": {
-    "@sharyn/prettier": "1.2.0",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
     "eslint": "6.3.0",
