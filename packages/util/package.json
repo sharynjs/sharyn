@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/util",
-  "version": "3.11.8",
+  "version": "3.11.9",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "@sharyn/util.defined": "1.0.1",
     "@sharyn/util.either": "1.0.1",
     "@sharyn/util.exists": "1.0.1",
-    "@sharyn/util.global": "1.0.1",
+    "@sharyn/util.global": "1.0.2",
     "@sharyn/util.html": "1.0.2",
     "@sharyn/util.ifs": "1.0.2",
     "@sharyn/util.inlinethrow": "1.0.1",
