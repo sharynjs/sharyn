@@ -45,18 +45,20 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/prettier**](https://github.com/sharynjs/sharyn/blob/master/packages/prettier/README.md#readme) – A Prettier configuration
 - [**@sharyn/tsconfig**](https://github.com/sharynjs/sharyn/blob/master/packages/tsconfig/README.md#readme) – TypeScript configurations
-- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn/blob/master/README.md#readme) – A Babel preset for React and Flow
-- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow
+- [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn/blob/master/README.md#readme) – A Babel preset for React and Flow (not included in [**sharyn-dev**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn-dev/README.md#readme))
+- [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration for Babel, React and Flow (not included in [**sharyn-dev**](https://github.com/sharynjs/sharyn/blob/master/packages/_sharyn-dev/README.md#readme))
 
 ## Getting Started
 
 Depending on your needs, you can install individual modules, like [**@sharyn/util.swit**](https://github.com/sharynjs/sharyn/blob/master/packages/util.swit/README.md#readme), a group of modules, like [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme), or the whole library. If you want to install everything, run:
 
 ```sh
-npm i sharyn
+npm i sharyn && npm i --save-dev sharyn-dev
 # or
-yarn add sharyn
+yarn add sharyn && yarn add --dev sharyn-dev
 ```
+
+If you use `sharyn/react-hooks` or `sharyn/react-router` which are included, you will need to install `react` and `react-router` too. They are not listed as `peerDependencies` to avoid noise in projects that want to use `sharyn` without React.
 
 ## Imports
 
