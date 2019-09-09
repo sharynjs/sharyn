@@ -48,6 +48,10 @@ const cycle = require('@sharyn/util.cycle')
 const utilCycle = require('@sharyn/util/cycle')
 const sharynUtilCycle = require('sharyn/util/cycle')
 
+// const defined = require('@sharyn/util.defined')
+// const utilDefined = require('@sharyn/util/defined')
+// const sharynUtilDefined = require('sharyn/util/defined')
+
 test('imports', () => {
   expect(typeof browser).toBe('object')
   expect(browser).toBe(sharynBrowser)
@@ -155,4 +159,12 @@ test('imports', () => {
   expect(cycle).toBe(sharynUtil.cycle)
   expect(cycle).toBe(sharyn.util.cycle)
   expect(cycle).toBe(sharyn.cycle)
+
+  // expect(typeof defined).toBe('function')
+  // expect(defined).toBe(utilDefined)
+  // expect(defined).toBe(sharynUtilDefined)
+  // expect(defined).toBe(util.defined)
+  // expect(defined).toBe(sharynUtil.defined)
+  // expect(defined).toBe(sharyn.util.defined)
+  // expect(defined).toBe(sharyn.defined)
 })
