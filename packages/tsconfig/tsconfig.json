@@ -1,7 +1,6 @@
 {
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["esnext", "dom"],
     "target": "es5"
   }
 }
