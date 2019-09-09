@@ -26,6 +26,8 @@ For server bundkes, in `tsconfig.json`, use:
 }
 ```
 
+If your editor complains, use `@sharyn/tsconfig/tsconfig.json` or `@sharyn/tsconfig/server/tsconfig.json`.
+
 ## Options
 
 Please have a look at the [**source code**](https://github.com/sharynjs/sharyn/blob/master/packages/tsconfig) to see what the options are.
