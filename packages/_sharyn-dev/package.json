@@ -4,6 +4,7 @@
   "repository": "https://github.com/sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/prettier": "1.2.3"
+    "@sharyn/prettier": "1.2.3",
+    "@sharyn/tsconfig": "1.0.0"
   }
 }
