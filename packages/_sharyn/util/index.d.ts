@@ -1,1 +1,1 @@
-export { default, between, cycle } from '@sharyn/util'
+export { default, between, cycle, defined } from '@sharyn/util'

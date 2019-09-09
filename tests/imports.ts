@@ -86,14 +86,12 @@ util.cycle
 sharynUtil.cycle
 sharyn.cycle
 
-// import defined from '@sharyn/util.defined'
-// import utilDefined from '@sharyn/util/defined'
-// import sharynUtilDefined from 'sharyn/util/defined'
-// import { defined as defined1 } from '@sharyn/util'
-// import { defined as defined2 } from 'sharyn/util'
-// import { defined as defined3 } from 'sharyn'
-// util.defined
-// sharynUtil.defined
-// sharynUtil1.defined
-// sharyn.util.defined
-// sharyn.defined
+import defined from '@sharyn/util.defined'
+import utilDefined from '@sharyn/util/defined'
+import sharynUtilDefined from 'sharyn/util/defined'
+import { defined as defined1 } from '@sharyn/util'
+import { defined as defined2 } from 'sharyn/util'
+import { defined as defined3 } from 'sharyn'
+util.defined
+sharynUtil.defined
+sharyn.defined
