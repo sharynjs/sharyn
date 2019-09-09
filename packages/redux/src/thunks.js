@@ -4,6 +4,8 @@
 import graphqlCall from '@sharyn/shared/graphql-call'
 // flow-disable-next-line
 import spread from '@sharyn/util/spread'
+// flow-disable-next-line
+import wait from '@sharyn/util/wait'
 
 let configuredUrlBase
 let configuredUrlPath
@@ -21,6 +23,9 @@ let configuredFetchPageFailure
 let configuredOnDataErrors
 let configuredOnCallError
 
+let configuredPreSuccessWait
+let configuredPostSuccessWait
+
 export const configureGraphqlThunk = ({
   request,
   success,
@@ -30,6 +35,8 @@ export const configureGraphqlThunk = ({
   options = () => ({}),
   onDataErrors,
   onCallError,
+  preSuccessWait,
+  postSuccessWait,
 }: {
   request: Function,
   success: Function,
@@ -39,6 +46,8 @@ export const configureGraphqlThunk = ({
   options?: Function,
   onDataErrors?: Function,
   onCallError?: Function,
+  preSuccessWait?: number,
+  postSuccessWait?: number,
 }) => {
   configuredGraphqlRequest = request
   configuredGraphqlSuccess = success
@@ -48,6 +57,8 @@ export const configureGraphqlThunk = ({
   configuredOptionsFn = options
   configuredOnDataErrors = onDataErrors
   configuredOnCallError = onCallError
+  configuredPreSuccessWait = preSuccessWait
+  configuredPostSuccessWait = postSuccessWait
 }
 
 export const configureFetchPageThunk = ({
@@ -96,6 +107,10 @@ export const graphqlThunk = ({
   dispatchRequest = true,
   dispatchSuccess = true,
   dispatchFailure = true,
+  // flow-disable-next-line
+  preSuccessWait = configuredPreSuccessWait,
+  // flow-disable-next-line
+  postSuccessWait = configuredPostSuccessWait,
 }: {
   urlBase?: string,
   urlPath?: string,
@@ -126,6 +141,8 @@ export const graphqlThunk = ({
   dispatchRequest?: boolean,
   dispatchSuccess?: boolean,
   dispatchFailure?: boolean,
+  preSuccessWait?: number,
+  postSuccessWait?: number,
 }) => async (dispatch: Function) => {
   if (!(request && success && failure)) {
     throw Error(
@@ -148,7 +165,17 @@ export const graphqlThunk = ({
       cancelToken,
       ...optionsFn(),
     })
+
+    if (preSuccessWait) {
+      await wait(preSuccessWait)
+    }
+
     dispatchSuccess && dispatch(success({ data, ...spread({ asyncKey }) }))
+
+    if (postSuccessWait) {
+      await wait(postSuccessWait)
+    }
+
     if (data.errors) {
       onDataErrors && onDataErrors(data)
     }

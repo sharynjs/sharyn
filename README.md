@@ -1,33 +1,28 @@
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/40995577/42487947-ea40d256-840b-11e8-8acc-50e62a3226b7.png" alt="Sharyn logo">
-</div>
-
 # 🌹 Sharyn
 
 Sharyn is a collection of JavaScript / TypeScript packages that make your life easier and reduce your boilerplate code.
 
-#### 💯 General
+## 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn-util) – Lodash-like utils
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn-scripts) – Helpers to write "NPM scripts" in a JavaScript file
 - [**@sharyn/env**](https://github.com/sharynjs/sharyn-env) – Convenient access and validation of env variables
 
-#### 💻 Development
+## 💻 Development
 
 - [**babel-preset-sharyn**](https://github.com/sharynjs/babel-preset-sharyn) – A Babel preset for React + Flow
 - [**eslint-config-sharyn**](https://github.com/sharynjs/eslint-config-sharyn) – An ESLint configuration
 - [**@sharyn/prettier-config**](https://github.com/sharynjs/sharyn-prettier-config) – Prettier configuration
 
-#### ⚛️ React
+## ⚛️ React
 
 - [**@sharyn/hooks**](https://github.com/sharynjs/sharyn-hooks) – Convenient React Hooks
 
-
-#### 🌐 Web
+## 🌐 Web
 
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn-browser) – Helpers for code that runs in the browser
 
-### Credits
+## Credits
 
 By **Jonathan Verrecchia** (**verekia**) [**Github**](https://github.com/verekia) • [**Twitter**](https://twitter.com/verekia) • [**Website**](https://verekia.com) – MIT License
 

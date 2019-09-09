@@ -6,7 +6,7 @@ This package provides testing helpers. It is quite empty at the moment.
 yarn add --dev @sharyn/testing
 ```
 
-### sel
+## sel
 
 A short helper to target `data-test` attributes with a selector.
 
@@ -17,9 +17,3 @@ console.log(sel('hey')) // '[data-test="hey"]'
 
 expect(page).toClick(sel('submit-button'))
 ```
-
-<hr />
-
-<p align="center">
-  This package is part of <a href="https://github.com/sharynjs/sharyn"><b>@sharynjs/sharyn</b></a>.
-</p>
