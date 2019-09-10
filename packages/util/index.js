@@ -8,6 +8,7 @@ const {
 
 module.exports = {
   between: require('@sharyn/util.between'),
+  css: require('@sharyn/util.css'),
   cycle: require('@sharyn/util.cycle'),
   defined: require('@sharyn/util.defined'),
   either: require('@sharyn/util.either'),

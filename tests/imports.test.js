@@ -43,6 +43,7 @@ test('imports', () => {
       onSharynRoot: true,
       modules: [
         'between',
+        'css',
         'cycle',
         'defined',
         'either',

@@ -76,6 +76,16 @@ util.between
 sharynUtil.between
 sharyn.between
 
+import css from '@sharyn/util.css'
+import utilCss from '@sharyn/util/css'
+import sharynUtilCss from 'sharyn/util/css'
+import { css as css1 } from '@sharyn/util'
+import { css as css2 } from 'sharyn/util'
+import { css as css3 } from 'sharyn'
+util.css
+sharynUtil.css
+sharyn.css
+
 import cycle from '@sharyn/util.cycle'
 import utilCycle from '@sharyn/util/cycle'
 import sharynUtilCycle from 'sharyn/util/cycle'

@@ -1,4 +1,5 @@
 import between from '@sharyn/util.between'
+import css from '@sharyn/util.css'
 import cycle from '@sharyn/util.cycle'
 import defined from '@sharyn/util.defined'
 import either from '@sharyn/util.either'
@@ -15,6 +16,7 @@ import { getGlobal, setGlobal, getAllGlobal, deleteGlobal, clearGlobal } from '@
 
 export {
   between,
+  css,
   cycle,
   defined,
   either,
@@ -36,6 +38,7 @@ export {
 
 declare const _default: {
   between: typeof between
+  css: typeof css
   cycle: typeof cycle
   defined: typeof defined
   either: typeof either

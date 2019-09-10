@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@sharyn/util.between": "1.0.2",
+    "@sharyn/util.css": "0.1.0",
     "@sharyn/util.cycle": "1.0.2",
     "@sharyn/util.defined": "1.0.1",
     "@sharyn/util.either": "1.0.1",
