@@ -1,1 +1,1 @@
-export { default } from '@sharyn/util.html'
+export { default } from '@sharyn/util.defined'

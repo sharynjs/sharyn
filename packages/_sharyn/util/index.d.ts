@@ -1,12 +1,10 @@
 export {
   default,
   between,
-  css,
   cycle,
   defined,
   either,
   exists,
-  html,
   ifs,
   inlineThrow,
   invoke,

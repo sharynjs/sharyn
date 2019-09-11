@@ -6,13 +6,11 @@
   "license": "MIT",
   "dependencies": {
     "@sharyn/util.between": "1.0.2",
-    "@sharyn/util.css": "1.0.0",
     "@sharyn/util.cycle": "1.0.2",
     "@sharyn/util.defined": "1.0.1",
     "@sharyn/util.either": "1.0.1",
     "@sharyn/util.exists": "1.0.1",
     "@sharyn/util.global": "1.0.2",
-    "@sharyn/util.html": "1.0.2",
     "@sharyn/util.ifs": "1.0.2",
     "@sharyn/util.inlinethrow": "1.0.1",
     "@sharyn/util.invoke": "1.0.1",

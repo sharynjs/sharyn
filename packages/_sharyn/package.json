@@ -10,6 +10,7 @@
     "@sharyn/react-hooks": "1.0.4",
     "@sharyn/react-router": "1.1.10",
     "@sharyn/scripts": "1.5.2",
+    "@sharyn/tags": "0.1.0",
     "@sharyn/util": "3.12.0"
   }
 }

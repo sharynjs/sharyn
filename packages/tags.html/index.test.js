@@ -1,0 +1,17 @@
+const tag = require('.')
+
+test('html', () => {
+  expect(tag``).toBe('')
+  expect(tag`a`).toBe('a')
+  expect(tag`${'x'}`).toBe('x')
+  expect(tag`${'x'}a`).toBe('xa')
+  expect(tag`a${'x'}`).toBe('ax')
+  expect(tag`${'x'}${'y'}`).toBe('xy')
+  expect(tag`a${'x'}${'y'}`).toBe('axy')
+  expect(tag`${'x'}a${'y'}`).toBe('xay')
+  expect(tag`${'x'}${'y'}a`).toBe('xya')
+  expect(tag`a${'x'}b${'y'}`).toBe('axby')
+  expect(tag`${'x'}a${'y'}b`).toBe('xayb')
+  expect(tag`a${'x'}b${'y'}c`).toBe('axbyc')
+  expect(tag`a${'w'}${'x'}b${'y'}c${'z'}`).toBe('awxbycz')
+})

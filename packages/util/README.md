@@ -21,7 +21,6 @@ You can alternatively install the entire [**sharyn**](https://github.com/sharynj
 - [**either**](https://github.com/sharynjs/sharyn/tree/master/packages/util.either/README.md#readme) – Tests equality with multiple values
 - [**exists**](https://github.com/sharynjs/sharyn/tree/master/packages/util.exists/README.md#readme) – Returns `true` if not `null` or `undefined`
 - [**global**](https://github.com/sharynjs/sharyn/tree/master/packages/util.global/README.md#readme) – Functions to create and access global variables
-- [**html**](https://github.com/sharynjs/sharyn/tree/master/packages/util.html/README.md#readme) – A template string tag for HTML syntax highlighting
 - [**ifs**](https://github.com/sharynjs/sharyn/tree/master/packages/util.ifs/README.md#readme) – An `if`, `else if`, `else if`... `else` util
 - [**inlineThrow**](https://github.com/sharynjs/sharyn/tree/master/packages/util.inlinethrow/README.md#readme) – To `throw` in an expression
 - [**invoke**](https://github.com/sharynjs/sharyn/tree/master/packages/util.invoke/README.md#readme) – A self invoking function util

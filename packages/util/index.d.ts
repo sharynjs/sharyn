@@ -1,10 +1,8 @@
 import between from '@sharyn/util.between'
-import css from '@sharyn/util.css'
 import cycle from '@sharyn/util.cycle'
 import defined from '@sharyn/util.defined'
 import either from '@sharyn/util.either'
 import exists from '@sharyn/util.exists'
-import html from '@sharyn/util.html'
 import ifs from '@sharyn/util.ifs'
 import invoke from '@sharyn/util.invoke'
 import inlineThrow from '@sharyn/util.inlinethrow'
@@ -16,12 +14,10 @@ import { getGlobal, setGlobal, getAllGlobal, deleteGlobal, clearGlobal } from '@
 
 export {
   between,
-  css,
   cycle,
   defined,
   either,
   exists,
-  html,
   ifs,
   invoke,
   inlineThrow,
@@ -38,12 +34,10 @@ export {
 
 declare const _default: {
   between: typeof between
-  css: typeof css
   cycle: typeof cycle
   defined: typeof defined
   either: typeof either
   exists: typeof exists
-  html: typeof html
   ifs: typeof ifs
   invoke: typeof invoke
   inlineThrow: typeof inlineThrow

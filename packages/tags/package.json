@@ -1,0 +1,11 @@
+{
+  "name": "@sharyn/tags",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/tags",
+  "repository": "sharynjs/sharyn",
+  "license": "MIT",
+  "dependencies": {
+    "@sharyn/tags.css": "0.1.0",
+    "@sharyn/tags.html": "0.1.0"
+  }
+}

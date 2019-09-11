@@ -14,7 +14,6 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
   - [**either**](https://github.com/sharynjs/sharyn/blob/master/packages/util.either/README.md#readme) – Tests equality with multiple values
   - [**exists**](https://github.com/sharynjs/sharyn/blob/master/packages/util.exists/README.md#readme) – Returns `true` if not `null` or `undefined`
   - [**global**](https://github.com/sharynjs/sharyn/blob/master/packages/util.global/README.md#readme) – Functions to create and access global variables
-  - [**html**](https://github.com/sharynjs/sharyn/blob/master/packages/util.html/README.md#readme) – A template string tag for HTML syntax highlighting
   - [**ifs**](https://github.com/sharynjs/sharyn/blob/master/packages/util.ifs/README.md#readme) – An `if`, `else if`, `else if`... `else` util
   - [**inlineThrow**](https://github.com/sharynjs/sharyn/blob/master/packages/util.inlineThrow/README.md#readme) – To `throw` in an expression
   - [**invoke**](https://github.com/sharynjs/sharyn/blob/master/packages/util.invoke/README.md#readme) – A self invoking function util
@@ -22,6 +21,10 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
   - [**toggle**](https://github.com/sharynjs/sharyn/blob/master/packages/util.toggle/README.md#readme) – Toggles between two values
   - [**tryCatch**](https://github.com/sharynjs/sharyn/blob/master/packages/util.trycatch/README.md#readme) – An inline `try` - `catch` - `finally`
   - [**wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay
+
+- [**@sharyn/tags**](https://github.com/sharynjs/sharyn/blob/master/packages/tags/README.md#readme) – No-op ES6 template string tags to enable syntax highlighting in editors:
+  - [**css**](https://github.com/sharynjs/sharyn/blob/master/packages/tags.css/README.md#readme) – For CSS
+  - [**html**](https://github.com/sharynjs/sharyn/blob/master/packages/tags.html/README.md#readme) – For HTML
 
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
 
