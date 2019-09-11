@@ -1,5 +1,5 @@
-import clearCaches from '@sharyn/browser.clearcaches'
-import getFormData from '@sharyn/browser.getformdata'
+import clearCaches from './clearcaches'
+import getFormData from './getformdata'
 
 export { clearCaches, getFormData }
 

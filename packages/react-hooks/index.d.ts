@@ -1,4 +1,4 @@
-import useStateObject from '@sharyn/react-hooks.usestateobject'
+import useStateObject from './usestateobject'
 
 export { useStateObject }
 

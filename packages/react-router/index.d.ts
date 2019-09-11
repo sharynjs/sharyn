@@ -1,5 +1,5 @@
-import PrivateRoute from '@sharyn/react-router.privateroute'
-import ServerOnlyRoute from '@sharyn/react-router.serveronlyroute'
+import PrivateRoute from './privateroute'
+import ServerOnlyRoute from './serveronlyroute'
 
 export { PrivateRoute, ServerOnlyRoute }
 

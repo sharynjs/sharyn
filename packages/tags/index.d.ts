@@ -1,5 +1,5 @@
-import css from '@sharyn/tags.css'
-import html from '@sharyn/tags.html'
+import css from './css'
+import html from './html'
 
 export { css, html }
 
