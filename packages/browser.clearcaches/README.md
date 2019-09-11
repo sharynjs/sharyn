@@ -41,15 +41,15 @@ Depending on the package you are using, you can `import` or `require` `clearCach
 
 ```js
 // If you installed @sharyn/browser.clearcaches
-import clearCaches from '@sharyn/browser.clearcaches' // smaller import size (better for client bundles)
+import clearCaches from '@sharyn/browser.clearcaches' // smaller size, better for client bundles
 
 // If you installed @sharyn/browser
-import clearCaches from '@sharyn/browser/clearCaches' // smaller import size (better for client bundles)
-import { clearCaches } from '@sharyn/browser' // more convenient (nicer for Node environments)
+import clearCaches from '@sharyn/browser/clearCaches' // smaller size, better for client bundles
+import { clearCaches } from '@sharyn/browser' // more convenient in Node environments
 
 // If you installed sharyn
-import clearCaches from 'sharyn/browser/clearCaches' // smaller import size (better for client bundles)
-import { clearCaches } from 'sharyn/browser' // more convenient (nicer for Node environments)
+import clearCaches from 'sharyn/browser/clearCaches' // smaller size, better for client bundles
+import { clearCaches } from 'sharyn/browser' // more convenient in Node environments
 ```
 
 <hr />

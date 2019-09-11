@@ -111,15 +111,15 @@ Depending on the package you are using, you can `import` or `require` `swit` in 
 
 ```js
 // If you installed @sharyn/util.swit
-import swit from '@sharyn/util.swit' // smaller import size (better for client bundles)
+import swit from '@sharyn/util.swit' // smaller size, better for client bundles
 
 // If you installed @sharyn/util
-import swit from '@sharyn/util/swit' // smaller import size (better for client bundles)
-import { swit } from '@sharyn/util' // more convenient (nicer for Node environments)
+import swit from '@sharyn/util/swit' // smaller size, better for client bundles
+import { swit } from '@sharyn/util' // more convenient in Node environments
 
 // If you installed sharyn
-import swit from 'sharyn/util/swit' // smaller import size (better for client bundles)
-import { swit } from 'sharyn/util' // more convenient (nicer for Node environments)
+import swit from 'sharyn/util/swit' // smaller size, better for client bundles
+import { swit } from 'sharyn/util' // more convenient in Node environments
 ```
 
 <hr />

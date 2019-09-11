@@ -46,15 +46,15 @@ Depending on the package you are using, you can `import` or `require` `toggle` i
 
 ```js
 // If you installed @sharyn/util.toggle
-import toggle from '@sharyn/util.toggle' // smaller import size (better for client bundles)
+import toggle from '@sharyn/util.toggle' // smaller size, better for client bundles
 
 // If you installed @sharyn/util
-import toggle from '@sharyn/util/toggle' // smaller import size (better for client bundles)
-import { toggle } from '@sharyn/util' // more convenient (nicer for Node environments)
+import toggle from '@sharyn/util/toggle' // smaller size, better for client bundles
+import { toggle } from '@sharyn/util' // more convenient in Node environments
 
 // If you installed sharyn
-import toggle from 'sharyn/util/toggle' // smaller import size (better for client bundles)
-import { toggle } from 'sharyn/util' // more convenient (nicer for Node environments)
+import toggle from 'sharyn/util/toggle' // smaller size, better for client bundles
+import { toggle } from 'sharyn/util' // more convenient in Node environments
 ```
 
 <hr />

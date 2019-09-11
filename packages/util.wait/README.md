@@ -40,15 +40,15 @@ Depending on the package you are using, you can `import` or `require` `wait` in 
 
 ```js
 // If you installed @sharyn/util.wait
-import wait from '@sharyn/util.wait' // smaller import size (better for client bundles)
+import wait from '@sharyn/util.wait' // smaller size, better for client bundles
 
 // If you installed @sharyn/util
-import wait from '@sharyn/util/wait' // smaller import size (better for client bundles)
-import { wait } from '@sharyn/util' // more convenient (nicer for Node environments)
+import wait from '@sharyn/util/wait' // smaller size, better for client bundles
+import { wait } from '@sharyn/util' // more convenient in Node environments
 
 // If you installed sharyn
-import wait from 'sharyn/util/wait' // smaller import size (better for client bundles)
-import { wait } from 'sharyn/util' // more convenient (nicer for Node environments)
+import wait from 'sharyn/util/wait' // smaller size, better for client bundles
+import { wait } from 'sharyn/util' // more convenient in Node environments
 ```
 
 <hr />

@@ -59,15 +59,15 @@ Depending on the package you are using, you can `import` or `require` `getFormDa
 
 ```js
 // If you installed @sharyn/browser.getformdata
-import getFormData from '@sharyn/browser.getformdata' // smaller import size (better for client bundles)
+import getFormData from '@sharyn/browser.getformdata' // smaller size, better for client bundles
 
 // If you installed @sharyn/browser
-import getFormData from '@sharyn/browser/getFormData' // smaller import size (better for client bundles)
-import { getFormData } from '@sharyn/browser' // more convenient (nicer for Node environments)
+import getFormData from '@sharyn/browser/getFormData' // smaller size, better for client bundles
+import { getFormData } from '@sharyn/browser' // more convenient in Node environments
 
 // If you installed sharyn
-import getFormData from 'sharyn/browser/getFormData' // smaller import size (better for client bundles)
-import { getFormData } from 'sharyn/browser' // more convenient (nicer for Node environments)
+import getFormData from 'sharyn/browser/getFormData' // smaller size, better for client bundles
+import { getFormData } from 'sharyn/browser' // more convenient in Node environments
 ```
 
 <hr />

@@ -61,15 +61,15 @@ Depending on the package you are using, you can `import` or `require` `tryCatch`
 
 ```js
 // If you installed @sharyn/util.trycatch
-import tryCatch from '@sharyn/util.trycatch' // smaller import size (better for client bundles)
+import tryCatch from '@sharyn/util.trycatch' // smaller size, better for client bundles
 
 // If you installed @sharyn/util
-import tryCatch from '@sharyn/util/tryCatch' // smaller import size (better for client bundles)
-import { tryCatch } from '@sharyn/util' // more convenient (nicer for Node environments)
+import tryCatch from '@sharyn/util/tryCatch' // smaller size, better for client bundles
+import { tryCatch } from '@sharyn/util' // more convenient in Node environments
 
 // If you installed sharyn
-import tryCatch from 'sharyn/util/tryCatch' // smaller import size (better for client bundles)
-import { tryCatch } from 'sharyn/util' // more convenient (nicer for Node environments)
+import tryCatch from 'sharyn/util/tryCatch' // smaller size, better for client bundles
+import { tryCatch } from 'sharyn/util' // more convenient in Node environments
 ```
 
 <hr />
