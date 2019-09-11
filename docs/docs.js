@@ -60,6 +60,17 @@ const groups = [
     description: 'Components for React Router.',
   },
   {
+    group: 'tags',
+    description: 'No-op ES6 template string tags to enable syntax highlighting in editors.',
+    modules: [
+      {
+        name: 'html',
+        lowercase: 'html',
+        description: 'A template string tag for HTML syntax highlighting',
+      },
+    ],
+  },
+  {
     group: 'util',
     modules: [
       {
@@ -86,11 +97,6 @@ const groups = [
         name: 'global',
         lowercase: 'global',
         description: 'Functions to create and access global variables',
-      },
-      {
-        name: 'html',
-        lowercase: 'html',
-        description: 'A template string tag for HTML syntax highlighting',
       },
       {
         name: 'ifs',
