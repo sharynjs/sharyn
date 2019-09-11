@@ -45,13 +45,16 @@ cycle({ a: 1 }, { a: 1 }, { a: 2 }) // { a: 2 }
 Depending on the package you are using, you can `import` or `require` `toggle` in the following ways:
 
 ```js
-import toggle from '@sharyn/util.toggle'
+// If you installed @sharyn/util.toggle
+import toggle from '@sharyn/util.toggle' // smaller import size (better for client bundles)
 
-import toggle from '@sharyn/util/toggle'
-import { toggle } from '@sharyn/util'
+// If you installed @sharyn/util
+import toggle from '@sharyn/util/toggle' // smaller import size (better for client bundles)
+import { toggle } from '@sharyn/util' // more convenient (nicer for Node environments)
 
-import toggle from 'sharyn/util/toggle'
-import { toggle } from 'sharyn/util'
+// If you installed sharyn
+import toggle from 'sharyn/util/toggle' // smaller import size (better for client bundles)
+import { toggle } from 'sharyn/util' // more convenient (nicer for Node environments)
 ```
 
 <hr />

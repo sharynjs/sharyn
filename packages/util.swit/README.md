@@ -110,13 +110,16 @@ Similarly, if you want `swit` to return functions, you will need to wrap them in
 Depending on the package you are using, you can `import` or `require` `swit` in the following ways:
 
 ```js
-import swit from '@sharyn/util.swit'
+// If you installed @sharyn/util.swit
+import swit from '@sharyn/util.swit' // smaller import size (better for client bundles)
 
-import swit from '@sharyn/util/swit'
-import { swit } from '@sharyn/util'
+// If you installed @sharyn/util
+import swit from '@sharyn/util/swit' // smaller import size (better for client bundles)
+import { swit } from '@sharyn/util' // more convenient (nicer for Node environments)
 
-import swit from 'sharyn/util/swit'
-import { swit } from 'sharyn/util'
+// If you installed sharyn
+import swit from 'sharyn/util/swit' // smaller import size (better for client bundles)
+import { swit } from 'sharyn/util' // more convenient (nicer for Node environments)
 ```
 
 <hr />

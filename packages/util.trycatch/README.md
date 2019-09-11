@@ -60,13 +60,16 @@ Please note that `tryCatch` may affect the linting or type-checking of that code
 Depending on the package you are using, you can `import` or `require` `tryCatch` in the following ways:
 
 ```js
-import tryCatch from '@sharyn/util.trycatch'
+// If you installed @sharyn/util.trycatch
+import tryCatch from '@sharyn/util.trycatch' // smaller import size (better for client bundles)
 
-import tryCatch from '@sharyn/util/tryCatch'
-import { tryCatch } from '@sharyn/util'
+// If you installed @sharyn/util
+import tryCatch from '@sharyn/util/tryCatch' // smaller import size (better for client bundles)
+import { tryCatch } from '@sharyn/util' // more convenient (nicer for Node environments)
 
-import tryCatch from 'sharyn/util/tryCatch'
-import { tryCatch } from 'sharyn/util'
+// If you installed sharyn
+import tryCatch from 'sharyn/util/tryCatch' // smaller import size (better for client bundles)
+import { tryCatch } from 'sharyn/util' // more convenient (nicer for Node environments)
 ```
 
 <hr />

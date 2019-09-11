@@ -40,13 +40,16 @@ const UpdateBanner = () => (
 Depending on the package you are using, you can `import` or `require` `clearCaches` in the following ways:
 
 ```js
-import clearCaches from '@sharyn/browser.clearcaches'
+// If you installed @sharyn/browser.clearcaches
+import clearCaches from '@sharyn/browser.clearcaches' // smaller import size (better for client bundles)
 
-import clearCaches from '@sharyn/browser/clearCaches'
-import { clearCaches } from '@sharyn/browser'
+// If you installed @sharyn/browser
+import clearCaches from '@sharyn/browser/clearCaches' // smaller import size (better for client bundles)
+import { clearCaches } from '@sharyn/browser' // more convenient (nicer for Node environments)
 
-import clearCaches from 'sharyn/browser/clearCaches'
-import { clearCaches } from 'sharyn/browser'
+// If you installed sharyn
+import clearCaches from 'sharyn/browser/clearCaches' // smaller import size (better for client bundles)
+import { clearCaches } from 'sharyn/browser' // more convenient (nicer for Node environments)
 ```
 
 <hr />

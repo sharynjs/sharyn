@@ -31,13 +31,16 @@ You can alternatively install the [**@sharyn/{{ parentPackage }}**](https://gith
 Depending on the package you are using, you can `import` or `require` `{{ name }}` in the following ways:
 
 ```js
-import {{ name }} from '@sharyn/{{ parentPackage }}.{{{ lowercaseName }}}'
+// If you installed @sharyn/{{ parentPackage }}.{{{ lowercaseName }}}
+import {{ name }} from '@sharyn/{{ parentPackage }}.{{{ lowercaseName }}}' // smaller import size (better for client bundles)
 
-import {{ name }} from '@sharyn/{{ parentPackage }}/{{ name }}'
-import { {{ name }} } from '@sharyn/{{ parentPackage }}'
+// If you installed @sharyn/{{ parentPackage }}
+import {{ name }} from '@sharyn/{{ parentPackage }}/{{ name }}' // smaller import size (better for client bundles)
+import { {{ name }} } from '@sharyn/{{ parentPackage }}' // more convenient (nicer for Node environments)
 
-import {{ name }} from 'sharyn/{{ parentPackage }}/{{ name }}'
-import { {{ name }} } from 'sharyn/{{ parentPackage }}'
+// If you installed sharyn
+import {{ name }} from 'sharyn/{{ parentPackage }}/{{ name }}' // smaller import size (better for client bundles)
+import { {{ name }} } from 'sharyn/{{ parentPackage }}' // more convenient (nicer for Node environments)
 ```
 
 <hr />

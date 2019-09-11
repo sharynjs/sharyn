@@ -39,13 +39,16 @@ main()
 Depending on the package you are using, you can `import` or `require` `wait` in the following ways:
 
 ```js
-import wait from '@sharyn/util.wait'
+// If you installed @sharyn/util.wait
+import wait from '@sharyn/util.wait' // smaller import size (better for client bundles)
 
-import wait from '@sharyn/util/wait'
-import { wait } from '@sharyn/util'
+// If you installed @sharyn/util
+import wait from '@sharyn/util/wait' // smaller import size (better for client bundles)
+import { wait } from '@sharyn/util' // more convenient (nicer for Node environments)
 
-import wait from 'sharyn/util/wait'
-import { wait } from 'sharyn/util'
+// If you installed sharyn
+import wait from 'sharyn/util/wait' // smaller import size (better for client bundles)
+import { wait } from 'sharyn/util' // more convenient (nicer for Node environments)
 ```
 
 <hr />

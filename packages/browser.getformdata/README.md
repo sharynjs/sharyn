@@ -58,13 +58,16 @@ getFormData(form.current, true) // { firstname: 'Stan' }
 Depending on the package you are using, you can `import` or `require` `getFormData` in the following ways:
 
 ```js
-import getFormData from '@sharyn/browser.getformdata'
+// If you installed @sharyn/browser.getformdata
+import getFormData from '@sharyn/browser.getformdata' // smaller import size (better for client bundles)
 
-import getFormData from '@sharyn/browser/getFormData'
-import { getFormData } from '@sharyn/browser'
+// If you installed @sharyn/browser
+import getFormData from '@sharyn/browser/getFormData' // smaller import size (better for client bundles)
+import { getFormData } from '@sharyn/browser' // more convenient (nicer for Node environments)
 
-import getFormData from 'sharyn/browser/getFormData'
-import { getFormData } from 'sharyn/browser'
+// If you installed sharyn
+import getFormData from 'sharyn/browser/getFormData' // smaller import size (better for client bundles)
+import { getFormData } from 'sharyn/browser' // more convenient (nicer for Node environments)
 ```
 
 <hr />
