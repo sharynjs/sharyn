@@ -1,3 +1,5 @@
+// This file is auto-generated, modify the source in /build
+
 const { getGlobal, setGlobal, getAllGlobal, deleteGlobal, clearGlobal } = require('./global')
 
 module.exports = {

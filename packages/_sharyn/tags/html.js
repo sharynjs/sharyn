@@ -1,1 +1,3 @@
-module.exports = require('@sharyn/tags/html')
+// This file is auto-generated, modify the source in /build
+
+module.exports = require('@sharyn/tags.html')

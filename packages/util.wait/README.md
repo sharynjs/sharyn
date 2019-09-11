@@ -45,7 +45,6 @@ import wait from 'sharyn/util/wait'
 
 import { wait } from '@sharyn/util'
 import { wait } from 'sharyn/util'
-import { wait } from 'sharyn'
 ```
 
 <hr />

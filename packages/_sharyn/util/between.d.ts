@@ -1,1 +1,3 @@
-export { default } from '@sharyn/util/between'
+// This file is auto-generated, modify the source in /build
+
+export { default } from '@sharyn/util.between'

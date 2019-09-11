@@ -4,10 +4,11 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "yarn docs",
-    "pub": "yarn test && yarn docs && lerna publish --exact",
+    "start": "yarn build && yarn docs",
+    "pub": "yarn test && yarn build && yarn docs && lerna publish --exact",
+    "build": "node build/build.js",
     "docs": "node docs/docs.js",
-    "test": "eslint packages docs && tsc && jest"
+    "test": "eslint packages docs build && tsc && jest"
   },
   "prettier": {
     "printWidth": 100,
@@ -47,6 +48,7 @@
     "eslint-plugin-prettier": "3.1.0",
     "jest": "24.9.0",
     "jsdoc-api": "5.0.3",
+    "klaw-sync": "6.0.0",
     "lerna": "3.16.4",
     "mustache": "3.0.3",
     "prettier": "1.18.2",

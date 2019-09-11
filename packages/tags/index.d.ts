@@ -1,3 +1,5 @@
+// This file is auto-generated, modify the source in /build
+
 import css from './css'
 import html from './html'
 

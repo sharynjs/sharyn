@@ -1,3 +1,5 @@
+// This file is auto-generated, modify the source in /build
+
 export {
   default,
   getGlobal,
@@ -5,4 +7,4 @@ export {
   getAllGlobal,
   deleteGlobal,
   clearGlobal,
-} from '@sharyn/util/global'
+} from '@sharyn/util.global'

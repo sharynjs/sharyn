@@ -1,1 +1,3 @@
-module.exports = require('@sharyn/react-router/PrivateRoute')
+// This file is auto-generated, modify the source in /build
+
+module.exports = require('@sharyn/react-router.privateroute')

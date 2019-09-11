@@ -46,7 +46,6 @@ import clearCaches from 'sharyn/browser/clearCaches'
 
 import { clearCaches } from '@sharyn/browser'
 import { clearCaches } from 'sharyn/browser'
-import { clearCaches } from 'sharyn'
 ```
 
 <hr />

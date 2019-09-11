@@ -37,7 +37,6 @@ import {{ name }} from 'sharyn/{{ parentPackage }}/{{ name }}'
 
 import { {{ name }} } from '@sharyn/{{ parentPackage }}'
 import { {{ name }} } from 'sharyn/{{ parentPackage }}'
-import { {{ name }} } from 'sharyn'
 ```
 
 <hr />

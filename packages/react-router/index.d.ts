@@ -1,3 +1,5 @@
+// This file is auto-generated, modify the source in /build
+
 import PrivateRoute from './privateroute'
 import ServerOnlyRoute from './serveronlyroute'
 

@@ -51,7 +51,6 @@ import toggle from 'sharyn/util/toggle'
 
 import { toggle } from '@sharyn/util'
 import { toggle } from 'sharyn/util'
-import { toggle } from 'sharyn'
 ```
 
 <hr />

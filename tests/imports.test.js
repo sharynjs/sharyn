@@ -67,7 +67,7 @@ test('imports', () => {
     const sharynGroup = require(`sharyn${isInSharynDev ? '-dev' : ''}/${groupName}`)
 
     expect(typeof group).toBe('object')
-    expect(group).toBe(sharynGroup)
+    expect(group).toStrictEqual(sharynGroup)
 
     properties &&
       properties.forEach(propertyName => {

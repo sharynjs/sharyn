@@ -116,7 +116,6 @@ import swit from 'sharyn/util/swit'
 
 import { swit } from '@sharyn/util'
 import { swit } from 'sharyn/util'
-import { swit } from 'sharyn'
 ```
 
 <hr />

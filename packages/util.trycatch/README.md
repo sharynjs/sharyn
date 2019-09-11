@@ -66,7 +66,6 @@ import tryCatch from 'sharyn/util/tryCatch'
 
 import { tryCatch } from '@sharyn/util'
 import { tryCatch } from 'sharyn/util'
-import { tryCatch } from 'sharyn'
 ```
 
 <hr />

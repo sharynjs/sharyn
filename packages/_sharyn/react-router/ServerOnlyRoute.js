@@ -1,1 +1,3 @@
-module.exports = require('@sharyn/react-router/ServerOnlyRoute')
+// This file is auto-generated, modify the source in /build
+
+module.exports = require('@sharyn/react-router.serveronlyroute')

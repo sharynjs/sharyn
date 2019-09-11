@@ -1,3 +1,5 @@
+// This file is auto-generated, modify the source in /build
+
 import clearCaches from './clearcaches'
 import getFormData from './getformdata'
 

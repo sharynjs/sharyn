@@ -64,7 +64,6 @@ import getFormData from 'sharyn/browser/getFormData'
 
 import { getFormData } from '@sharyn/browser'
 import { getFormData } from 'sharyn/browser'
-import { getFormData } from 'sharyn'
 ```
 
 <hr />

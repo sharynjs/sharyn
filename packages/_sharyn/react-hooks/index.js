@@ -1,1 +1,5 @@
-module.exports = require('@sharyn/react-hooks')
+// This file is auto-generated, modify the source in /build
+
+module.exports = {
+  useStateObject: require('./usestateobject'),
+}
