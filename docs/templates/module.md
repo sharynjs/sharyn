@@ -32,10 +32,11 @@ Depending on the package you are using, you can `import` or `require` `{{ name }
 
 ```js
 import {{ name }} from '@sharyn/{{ parentPackage }}.{{{ lowercaseName }}}'
-import {{ name }} from '@sharyn/{{ parentPackage }}/{{ name }}'
-import {{ name }} from 'sharyn/{{ parentPackage }}/{{ name }}'
 
+import {{ name }} from '@sharyn/{{ parentPackage }}/{{ name }}'
 import { {{ name }} } from '@sharyn/{{ parentPackage }}'
+
+import {{ name }} from 'sharyn/{{ parentPackage }}/{{ name }}'
 import { {{ name }} } from 'sharyn/{{ parentPackage }}'
 ```
 

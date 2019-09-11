@@ -40,10 +40,11 @@ Depending on the package you are using, you can `import` or `require` `wait` in 
 
 ```js
 import wait from '@sharyn/util.wait'
-import wait from '@sharyn/util/wait'
-import wait from 'sharyn/util/wait'
 
+import wait from '@sharyn/util/wait'
 import { wait } from '@sharyn/util'
+
+import wait from 'sharyn/util/wait'
 import { wait } from 'sharyn/util'
 ```
 

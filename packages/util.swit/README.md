@@ -111,10 +111,11 @@ Depending on the package you are using, you can `import` or `require` `swit` in 
 
 ```js
 import swit from '@sharyn/util.swit'
-import swit from '@sharyn/util/swit'
-import swit from 'sharyn/util/swit'
 
+import swit from '@sharyn/util/swit'
 import { swit } from '@sharyn/util'
+
+import swit from 'sharyn/util/swit'
 import { swit } from 'sharyn/util'
 ```
 

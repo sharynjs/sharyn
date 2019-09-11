@@ -46,10 +46,11 @@ Depending on the package you are using, you can `import` or `require` `toggle` i
 
 ```js
 import toggle from '@sharyn/util.toggle'
-import toggle from '@sharyn/util/toggle'
-import toggle from 'sharyn/util/toggle'
 
+import toggle from '@sharyn/util/toggle'
 import { toggle } from '@sharyn/util'
+
+import toggle from 'sharyn/util/toggle'
 import { toggle } from 'sharyn/util'
 ```
 

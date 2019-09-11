@@ -61,10 +61,11 @@ Depending on the package you are using, you can `import` or `require` `tryCatch`
 
 ```js
 import tryCatch from '@sharyn/util.trycatch'
-import tryCatch from '@sharyn/util/tryCatch'
-import tryCatch from 'sharyn/util/tryCatch'
 
+import tryCatch from '@sharyn/util/tryCatch'
 import { tryCatch } from '@sharyn/util'
+
+import tryCatch from 'sharyn/util/tryCatch'
 import { tryCatch } from 'sharyn/util'
 ```
 

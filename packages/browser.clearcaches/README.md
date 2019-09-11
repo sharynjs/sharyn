@@ -41,10 +41,11 @@ Depending on the package you are using, you can `import` or `require` `clearCach
 
 ```js
 import clearCaches from '@sharyn/browser.clearcaches'
-import clearCaches from '@sharyn/browser/clearCaches'
-import clearCaches from 'sharyn/browser/clearCaches'
 
+import clearCaches from '@sharyn/browser/clearCaches'
 import { clearCaches } from '@sharyn/browser'
+
+import clearCaches from 'sharyn/browser/clearCaches'
 import { clearCaches } from 'sharyn/browser'
 ```
 

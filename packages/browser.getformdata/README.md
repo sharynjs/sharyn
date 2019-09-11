@@ -59,10 +59,11 @@ Depending on the package you are using, you can `import` or `require` `getFormDa
 
 ```js
 import getFormData from '@sharyn/browser.getformdata'
-import getFormData from '@sharyn/browser/getFormData'
-import getFormData from 'sharyn/browser/getFormData'
 
+import getFormData from '@sharyn/browser/getFormData'
 import { getFormData } from '@sharyn/browser'
+
+import getFormData from 'sharyn/browser/getFormData'
 import { getFormData } from 'sharyn/browser'
 ```
 
