@@ -15,9 +15,6 @@ const Cmp = ({ something }) => (
 If you want to execute some imperative code inside it you can do it with **`invoke`**:
 
 ```jsx
-import invoke from '@sharyn/util/invoke'
-// or import { invoke } from '@sharyn/util'
-
 const Cmp = ({ something }) => (
   <div data-something={invoke(() => {
     console.log(something)
