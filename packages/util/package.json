@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/util",
-  "version": "3.13.0",
+  "version": "3.13.1",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/util",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
@@ -14,9 +14,9 @@
     "@sharyn/util.ifs": "1.0.2",
     "@sharyn/util.inlinethrow": "1.0.1",
     "@sharyn/util.invoke": "1.0.2",
-    "@sharyn/util.swit": "1.0.5",
-    "@sharyn/util.toggle": "1.0.5",
-    "@sharyn/util.trycatch": "1.0.6",
-    "@sharyn/util.wait": "1.0.6"
+    "@sharyn/util.swit": "1.0.6",
+    "@sharyn/util.toggle": "1.0.6",
+    "@sharyn/util.trycatch": "1.0.7",
+    "@sharyn/util.wait": "1.0.7"
   }
 }
