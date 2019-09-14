@@ -200,4 +200,6 @@ test('scripts', () => {
   expect(() => scripts({ bar: () => {} })).toThrow('"foo" does not exist in scripts()')
   process.argv = [null, null, 'bar']
   expect(() => scripts({ bar: () => {} })).not.toThrow()
+  process.argv = [null, null, 'baz', 'arg1', 'arg2']
+  expect(scripts({ baz: (arg1, arg2) => [arg1, arg2] })).toEqual(['arg1', 'arg2'])
 })

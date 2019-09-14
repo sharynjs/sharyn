@@ -75,10 +75,9 @@ const parallel = (...args) => Promise.all(flattenDeep(args).map(command => runAs
 const scripts = (scriptsObj = {}) => {
   const scriptCalledName = process.argv[2]
   if (scriptsObj[scriptCalledName]) {
-    scriptsObj[scriptCalledName]()
-  } else {
-    throw Error(`"${scriptCalledName}" does not exist in scripts()`)
+    return scriptsObj[scriptCalledName](...process.argv.slice(3))
   }
+  throw Error(`"${scriptCalledName}" does not exist in scripts()`)
 }
 
 module.exports = {
