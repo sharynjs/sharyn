@@ -1,6 +1,6 @@
 # 🌹 @sharyn/nanoid
 
-A [Nano ID](https://github.com/ai/nanoid#readme) default configuration with no lookalikes (`0`, `O`, `1`, `l`, `I`), and without `-` and `_`.
+A [Nano ID](https://github.com/ai/nanoid) default configuration with no lookalikes (`0`, `O`, `1`, `l`, `I`), and without `-` and `_`.
 
 To have a risk of collision similar to UUID v4 (149 billion years at 1000 IDs per hour for 1% collision risk on [Nano ID Collision Calculator](https://zelark.github.io/nano-id-cc/)), use a length of `22` (334 billion years), or `21` (44 billion years). The default length used here is `20` (6 billion years), for the only reason that it's a nicer round number, while remaining extremely collision-safe.
 
