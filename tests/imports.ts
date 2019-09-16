@@ -24,6 +24,11 @@ import { DOCKER_COMPOSE_UP as DOCKER_COMPOSE_UP2 } from 'sharyn/commands'
 commands.DOCKER_COMPOSE_UP
 sharynCommands.DOCKER_COMPOSE_UP
 
+import nanoid from '@sharyn/nanoid'
+import sharynNanoid from 'sharyn/nanoid'
+nanoid
+sharynNanoid
+
 import prettier from '@sharyn/prettier'
 import { printWidth } from '@sharyn/prettier'
 prettier.printWidth

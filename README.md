@@ -22,11 +22,13 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
   - [**tryCatch**](https://github.com/sharynjs/sharyn/blob/master/packages/util.trycatch/README.md#readme) – An inline `try` - `catch` - `finally`
   - [**wait**](https://github.com/sharynjs/sharyn/blob/master/packages/util.wait/README.md#readme) – A `Promise`-based delay
 
+- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
+
 - [**@sharyn/tags**](https://github.com/sharynjs/sharyn/blob/master/packages/tags/README.md#readme) – No-op ES6 template string tags to enable syntax highlighting in editors:
   - [**css**](https://github.com/sharynjs/sharyn/blob/master/packages/tags.css/README.md#readme) – For CSS
   - [**html**](https://github.com/sharynjs/sharyn/blob/master/packages/tags.html/README.md#readme) – For HTML
 
-- [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
+- [**@sharyn/nanoid**](https://github.com/sharynjs/sharyn/blob/master/packages/nanoid/README.md#readme) – A Nano ID default configuration
 
 #### ⚛️ React
 
