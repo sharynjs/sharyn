@@ -23,6 +23,9 @@ test('commands', () => {
   expect(waitDockerPgReady('abc')).toBe(
     'until docker run --rm --link db:pg --net abc postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
   )
+  expect(waitDockerPgReady('abc', 'db-hello')).toBe(
+    'until docker run --rm --link db-hello:pg --net abc postgres:latest pg_isready -U postgres -h pg; do sleep 1; done'
+  )
 
   expect(webpackDevServer()).toBe('webpack-dev-server ')
   expect(webpackDevServer(1234)).toBe('webpack-dev-server --port 1234')
