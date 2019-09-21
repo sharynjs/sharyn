@@ -77,6 +77,10 @@ test('runSync', () => {
   expect(mockExit).not.toHaveBeenCalled()
 
   spawnSync.mockReturnValue({ status: 123 })
+
+  runSync('failing-command', { stopIfFail: false })
+  expect(mockExit).not.toHaveBeenCalled()
+
   runSync('failing-command')
   expect(mockExit).toHaveBeenCalledWith(1)
 })

@@ -35,13 +35,16 @@ const getParams = (args, fnName) => {
     }
   }
 
-  const { silent, cmd, command, extraEnv, env, ...spawnOptions } = options
+  const { silent, cmd, command, extraEnv, env, stopIfFail, ...spawnOptions } = options
 
-  return { cmdToUse, silent, cmd, command, extraEnv, env, spawnOptions }
+  return { cmdToUse, silent, cmd, command, extraEnv, env, spawnOptions, stopIfFail }
 }
 
 const runSync = (...args) => {
-  const { cmdToUse, silent, extraEnv, env, spawnOptions } = getParams(args, 'runSync')
+  const { cmdToUse, silent, extraEnv, env, spawnOptions, stopIfFail = true } = getParams(
+    args,
+    'runSync'
+  )
 
   silent || print(cmdToUse)
 
@@ -51,7 +54,7 @@ const runSync = (...args) => {
     ...spawnOptions,
   })
 
-  if (result.status !== 0) {
+  if (stopIfFail && result.status !== 0) {
     process.exit(1)
   }
 }
