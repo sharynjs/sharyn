@@ -30,6 +30,8 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/nanoid**](https://github.com/sharynjs/sharyn/blob/master/packages/nanoid/README.md#readme) – A Nano ID default configuration
 
+- [**@sharyn/actions**](https://github.com/sharynjs/sharyn/blob/master/packages/actions/README.md#readme) – Flux Standard Actions creator functions
+
 #### ⚛️ React
 
 - [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/blob/master/packages/react-hooks/README.md#readme) – React Hooks:

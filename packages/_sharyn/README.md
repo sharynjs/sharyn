@@ -6,6 +6,7 @@ This is an umbrella package that includes the following packages:
 - [**@sharyn/scripts**](https://github.com/sharynjs/sharyn/blob/master/packages/scripts/README.md#readme) – Helpers to write "NPM scripts" in a JavaScript file
 - [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/blob/master/packages/react-hooks/README.md#readme) – React Hooks
 - [**@sharyn/react-router**](https://github.com/sharynjs/sharyn/blob/master/packages/react-router/README.md#readme) – Components for React Router
+- [**@sharyn/actions**](https://github.com/sharynjs/sharyn/blob/master/packages/actions/README.md#readme) – Flux Standard Actions creator functions
 - [**@sharyn/browser**](https://github.com/sharynjs/sharyn/blob/master/packages/browser/README.md#readme) – Helpers for code that runs in the browser
 - [**@sharyn/nanoid**](https://github.com/sharynjs/sharyn/blob/master/packages/nanoid/README.md#readme) – A Nano ID default configuration
 
