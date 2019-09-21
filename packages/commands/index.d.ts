@@ -1,7 +1,7 @@
 export function httpServer(options?: object): string
 export function serverlessDeploy(port?: string): string
 export function serverlessOffline(options?: object): string
-export function waitDockerPgReady(network: string): string
+export function waitDockerPgReady(network: string, dbName?: string): string
 export function webpackDevServer(port?: string): string
 
 export const DOCKER_COMPOSE_UP: string

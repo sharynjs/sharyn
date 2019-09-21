@@ -9,11 +9,11 @@ const commands = {
   serverlessDeploy: stage => `serverless deploy ${stage ? `-s ${stage}` : ''}`,
   serverlessOffline: ({ stage, port } = {}) =>
     `serverless offline ${stage ? `-s ${stage}` : ''} ${port ? `-P ${port}` : ''}`,
-  waitDockerPgReady: network => {
+  waitDockerPgReady: (network, dbName = 'db') => {
     if (!network) {
       throw Error('waitDockerPgReady requires a Docker network argument')
     }
-    return `until docker run --rm --link db:pg --net ${network} postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
+    return `until docker run --rm --link ${dbName}:pg --net ${network} postgres:latest pg_isready -U postgres -h pg; do sleep 1; done`
   },
   webpackDevServer: port => `webpack-dev-server ${port ? `--port ${port}` : ''}`,
 }
