@@ -1,6 +1,10 @@
 test('imports', () => {
   ;[
     {
+      groupName: 'actions',
+      properties: ['action', 'errorAction'],
+    },
+    {
       groupName: 'browser',
       modules: ['clearCaches', 'getFormData'],
     },

@@ -1,3 +1,12 @@
+import actions from '@sharyn/actions'
+import sharynActions from 'sharyn/actions'
+import { errorAction as errorAction1 } from '@sharyn/actions'
+import { errorAction as errorAction2 } from 'sharyn/actions'
+actions.errorAction
+sharynActions.errorAction
+
+
+
 import browser from '@sharyn/browser'
 import sharynBrowser from 'sharyn/browser'
 
