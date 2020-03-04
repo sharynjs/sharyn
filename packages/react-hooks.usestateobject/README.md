@@ -1,25 +1,26 @@
 # 🌹 @sharyn/react-hooks.usestateobject
 
 ```jsx
-import { useStateObject } from '@sharyn/hooks'
-// or import useStateObject from '@sharyn/hooks/useStateObject'
+import { useStateObject } from '@sharyn/react-hooks'
+// or import useStateObject from '@sharyn/react-hooks/useStateObject'
+// or import useStateObject from '@sharyn/react-hooks.usestateobject'
 
 const Cmp = () => {
-  const { set: setField, get: getField, getAll: getFields } = useStateObject()
+  const [fields, { set: setField }] = useStateObject()
 
   return (
     <>
       <input
         name="firstname"
         onChange={e => setField('firstname', e.target.value)}
-        value={getField('firstname') || ''}
+        value={fields.firstname || ''}
       />
       <input
         name="lastname"
         onChange={e => setField('lastname', e.target.value)}
-        value={getField('lastname') || ''}
+        value={fields.lastname || ''}
       />
-      <button onClick={() => console.log(getFields())}></button>
+      <button onClick={() => console.log(fields)}>Print</button>
     </>
   )
 }
@@ -27,11 +28,11 @@ const Cmp = () => {
 
 ### API
 
-**`useStateObject(initialStateObject)`**: Pass an initial object to the hook, defaults to `{}`.
+**`useStateObject(initialStateObject)`**: Pass an initial object to the hook, defaults to `{}`. You can pass `null` to it.
 
-**`getAll()`**: Returns the entire state object
+Returns:
 
-**`get(key)`**: Returns the value for the key
+**[stateObject, { set, setAll, del, clear, assign, merge }]**
 
 **`set(key, value)`**: Sets the value for the key
 
