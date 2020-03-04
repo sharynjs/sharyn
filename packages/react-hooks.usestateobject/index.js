@@ -5,17 +5,33 @@ const lodashMerge = require('lodash.merge')
 const useStateObject = (initialStateObject = {}) => {
   const [stateObject, setStateObject] = useState(initialStateObject)
 
-  const setAll = (obj = {}) => setStateObject(obj)
-  const assign = obj => setStateObject(Object.assign({}, stateObject, obj))
-  const merge = obj => setStateObject(lodashMerge({}, stateObject, obj))
+  const setAll = (obj = {}) => {
+    setStateObject(obj)
+    return obj
+  }
+
+  const assign = obj => {
+    const newStateObject = Object.assign({}, stateObject, obj)
+    setStateObject(newStateObject)
+    return newStateObject
+  }
+
+  const merge = obj => {
+    const newStateObject = lodashMerge({}, stateObject, obj)
+    setStateObject(newStateObject)
+    return newStateObject
+  }
 
   const set = (key, value) => {
     if (stateObject) {
       const newStateObject = cloneDeep(stateObject)
       newStateObject[key] = value
       setStateObject(newStateObject)
+      return newStateObject
     } else {
-      setStateObject({ [key]: value })
+      const newStateObject = { [key]: value }
+      setStateObject(newStateObject)
+      return newStateObject
     }
   }
 
@@ -24,11 +40,17 @@ const useStateObject = (initialStateObject = {}) => {
       const newStateObject = cloneDeep(stateObject)
       delete newStateObject[key]
       setStateObject(newStateObject)
+      return newStateObject
     } else {
       return stateObject
     }
   }
-  const clear = () => setStateObject({})
+
+  const clear = () => {
+    const newStateObject = {}
+    setStateObject(newStateObject)
+    return newStateObject
+  }
 
   return [stateObject, { setAll, assign, merge, set, del, clear }]
 }
