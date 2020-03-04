@@ -1,10 +1,10 @@
 {
   "name": "@sharyn/react-hooks",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/react-hooks",
   "repository": "sharynjs/sharyn",
   "license": "MIT",
   "dependencies": {
-    "@sharyn/react-hooks.usestateobject": "2.0.0"
+    "@sharyn/react-hooks.usestateobject": "2.0.1"
   }
 }
