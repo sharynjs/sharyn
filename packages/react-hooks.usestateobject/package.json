@@ -1,6 +1,6 @@
 {
   "name": "@sharyn/react-hooks.usestateobject",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "homepage": "https://github.com/sharynjs/sharyn/tree/master/packages/react-hooks.usestateobject",
   "repository": "sharynjs/sharyn",
   "description": "Provides a React Hook interface to manipulate a state object.",
