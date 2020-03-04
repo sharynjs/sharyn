@@ -1,8 +1,4 @@
-export default function useStateObject(
-  initialStateObject?: Object
-): {
-  get(key: string): any
-  getAll(): Object
+interface StateObjectActions {
   set(key: string, value: any): void
   setAll(obj: Object): void
   del(key: string): void
@@ -10,3 +6,5 @@ export default function useStateObject(
   merge(obj: Object): void
   assign(obj: Object): void
 }
+
+export default function useStateObject(initialStateObject?: Object): [Object | null, StateObjectActions]

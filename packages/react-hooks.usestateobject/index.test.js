@@ -12,7 +12,7 @@ const e = React.createElement
 const { shallow } = Enzyme
 
 const TestCmp = () => {
-  const { get, getAll, set, setAll, merge, assign, del, clear } = useStateObject()
+  const [stateObject, { set, setAll, merge, assign, del, clear }] = useStateObject()
   return e('div', null, [
     e('a', {
       key: 'setAll',
@@ -54,10 +54,20 @@ const TestCmp = () => {
       id: 'assign',
       onClick: () => assign({ e: { ea: 5, ec: 5 } }),
     }),
-    e('div', { key: 'a', id: 'a' }, JSON.stringify(get('a'))),
-    e('div', { key: 'b', id: 'b' }, JSON.stringify(get('b'))),
-    e('div', { key: 'c', id: 'c' }, JSON.stringify(get('c'))),
-    e('div', { key: 'all', id: 'all' }, JSON.stringify(getAll())),
+    e('a', {
+      key: 'setNull',
+      id: 'setNull',
+      onClick: () => setAll(null),
+    }),
+    e('a', {
+      key: 'setUndefined',
+      id: 'setUndefined',
+      onClick: () => setAll(undefined),
+    }),
+    e('div', { key: 'a', id: 'a' }, JSON.stringify(stateObject && stateObject.a)),
+    e('div', { key: 'b', id: 'b' }, JSON.stringify(stateObject && stateObject.b)),
+    e('div', { key: 'c', id: 'c' }, JSON.stringify(stateObject && stateObject.c)),
+    e('div', { key: 'all', id: 'all' }, JSON.stringify(stateObject)),
   ])
 }
 
@@ -103,4 +113,28 @@ test('useStateObject', () => {
   expectResult('all', JSON.stringify({ e: { ea: 1, eb: 2 } }))
   click('assign')
   expectResult('all', JSON.stringify({ e: { ea: 5, ec: 5 } }))
+
+  click('setNull')
+  expectResult('all', JSON.stringify(null))
+
+  click('setC')
+  expectResult('all', JSON.stringify({ c: 3 }))
+  expectResult('a', '')
+  expectResult('b', '')
+  expectResult('c', '3')
+
+  click('setNull')
+  expectResult('all', JSON.stringify(null))
+
+  click('setUndefined')
+  expectResult('all', JSON.stringify({}))
+  expectResult('a', '')
+  expectResult('b', '')
+  expectResult('c', '')
+
+  click('deleteB')
+  expectResult('all', JSON.stringify({}))
+  expectResult('a', '')
+  expectResult('b', '')
+  expectResult('c', '')
 })
