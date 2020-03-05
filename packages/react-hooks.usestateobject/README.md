@@ -46,7 +46,7 @@ Returns:
 
 **`assign(obj)`**: Merge the state object shallowly with an other object using `Object.assign()`.
 
-### Warning
+### ⚠️ Warning ⚠️
 
 Unfortunately you cannot call multiple modifier functions in a row. This won't work:
 
