@@ -46,6 +46,25 @@ Returns:
 
 **`assign(obj)`**: Merge the state object shallowly with an other object using `Object.assign()`.
 
+### Warning
+
+Unfortunately you cannot call multiple modifier functions in a row. This won't work:
+
+```js
+onClick={() => {
+  set('a', 1)
+  set('b', 2)
+}}
+```
+
+This is due to the asynchronous nature of React's `useState` (calling `setState` multiple times in a row also doesn't work, but in the context of an object it's more confusing). There may be better implementations, but for now, combine all your modifications into one using `merge`, `assign`, or `setAll`:
+
+```js
+onClick={() => {
+  merge({ a: 1, b: 2 })
+}}
+```
+
 <hr />
 
 <p align="center">
