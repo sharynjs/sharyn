@@ -8,7 +8,7 @@ module.exports = {
   exists: require('./exists'),
   ifs: require('./ifs'),
   invoke: require('./invoke'),
-  inlineThrow: require('./inlinethrow'),
+  inlineThrow: require('./inlineThrow'),
   swit: require('./swit'),
   toggle: require('./toggle'),
   tryCatch: require('./tryCatch'),
