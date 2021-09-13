@@ -32,6 +32,8 @@ Sharyn is a collection of JavaScript / TypeScript packages that make your life e
 
 - [**@sharyn/actions**](https://github.com/sharynjs/sharyn/blob/master/packages/actions/README.md#readme) – Flux Standard Actions creator functions
 
+- [**@sharyn/chakra-next**](https://github.com/sharynjs/sharyn/blob/master/packages/chakra-next/README.md#readme) – Next Link applied to Chakra UI components
+
 #### ⚛️ React
 
 - [**@sharyn/react-hooks**](https://github.com/sharynjs/sharyn/blob/master/packages/react-hooks/README.md#readme) – React Hooks:
