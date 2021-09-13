@@ -1,0 +1,11 @@
+{
+  "include": ["src/*", "./*"],
+  "exclude": ["node_modules", "dist", "rollup.config.ts"],
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node"
+  }
+}

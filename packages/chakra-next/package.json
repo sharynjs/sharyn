@@ -1,0 +1,32 @@
+{
+  "name": "@sharyn/chakra-next",
+  "version": "0.1.4",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
+  "main": "dist/sharyn-chakra-next.cjs.js",
+  "module": "dist/sharyn-chakra-next.esm.js",
+  "types": "dist/types",
+  "peerDependencies": {
+    "@chakra-ui/react": ">=1.6.0",
+    "next": ">=10.0.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^1.6.7",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/react": "^17.0.20",
+    "acorn-jsx": "^5.3.2",
+    "next": "^11.1.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.56.3",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "next": "^11.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
