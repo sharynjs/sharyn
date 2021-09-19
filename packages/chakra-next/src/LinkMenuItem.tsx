@@ -5,15 +5,12 @@ import Link, { LinkProps } from 'next/link'
 
 interface Props {
   href: string
-  nextLinkProps?: LinkProps
+  nextLinkProps?: Omit<LinkProps, 'href' | 'passHref' | 'as'>
 }
 
-const LinkMenuItem = ({
-  href,
-  nextLinkProps,
-  children,
-  ...menuItemProps
-}: Props & MenuItemProps) => (
+export type LinkMenuItemProps = Props & MenuItemProps
+
+const LinkMenuItem = ({ href, nextLinkProps, children, ...menuItemProps }: LinkMenuItemProps) => (
   <Link href={href} passHref {...nextLinkProps}>
     <MenuItem as="a" {...menuItemProps}>
       {children}

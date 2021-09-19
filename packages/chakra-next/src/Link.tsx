@@ -5,7 +5,7 @@ import NextLink, { LinkProps as NextLinkProps } from 'next/link'
 
 interface Props {
   href: string
-  nextLinkProps?: NextLinkProps
+  nextLinkProps?: Omit<NextLinkProps, 'href' | 'passHref' | 'as'>
 }
 
 export type LinkProps = Props & ChakraLinkProps

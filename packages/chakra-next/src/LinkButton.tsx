@@ -5,7 +5,7 @@ import Link, { LinkProps } from 'next/link'
 
 interface Props {
   href: string
-  nextLinkProps?: LinkProps
+  nextLinkProps?: Omit<LinkProps, 'href' | 'passHref' | 'as'>
 }
 
 export type LinkButtonProps = Props & ButtonProps
