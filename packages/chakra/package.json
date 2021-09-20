@@ -1,0 +1,24 @@
+{
+  "name": "@sharyn/chakra",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "prepublishOnly": "yarn build"
+  },
+  "main": "dist/sharyn-chakra.cjs.js",
+  "module": "dist/sharyn-chakra.esm.js",
+  "types": "dist/types",
+  "peerDependencies": {
+    "@chakra-ui/react": ">=1.6.0",
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^1.6.7",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/react": "^17.0.20",
+    "rollup": "^2.56.3",
+    "typescript": "^4.4.3"
+  }
+}
