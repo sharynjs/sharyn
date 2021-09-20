@@ -17,7 +17,7 @@ interface Props {
   trigger: (openAlert: () => void) => ReactElement
   body: ReactNode
   headerLabel: string
-  actionLabel: string
+  actionLabel?: string
   actionButtonProps?: ButtonProps
   cancelLabel?: string
   closeOnError?: boolean
@@ -34,7 +34,7 @@ const AlertTrigger = ({
   actionLabel,
   action,
   onError,
-  closeOnError = false
+  closeOnError = false,
 }: Props) => {
   const { isOpen: isAlertOpen, onOpen: openAlert, onClose: closeAlert } = useDisclosure()
   const [isActionLoading, { on: enableActionLoading, off: disableActionLoading }] = useBoolean()
@@ -66,14 +66,16 @@ const AlertTrigger = ({
               <Button ref={cancelDeleteRef} onClick={closeAlert}>
                 {cancelLabel}
               </Button>
-              <Button
-                onClick={handleActionButtonClick}
-                isLoading={isActionLoading}
-                ml={3}
-                {...actionButtonProps}
-              >
-                {actionLabel}
-              </Button>
+              {action && actionLabel && (
+                <Button
+                  onClick={handleActionButtonClick}
+                  isLoading={isActionLoading}
+                  ml={3}
+                  {...actionButtonProps}
+                >
+                  {actionLabel}
+                </Button>
+              )}
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialogOverlay>
