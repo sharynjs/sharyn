@@ -15,8 +15,8 @@ import {
 
 interface Props {
   trigger: (openAlert: () => void) => ReactElement
-  body: ReactNode
-  headerLabel: string
+  body: (closeAlert: () => void) => ReactNode
+  headerLabel?: string
   actionLabel?: string
   actionButtonProps?: ButtonProps
   cancelLabel?: string
@@ -58,10 +58,12 @@ const AlertTrigger = ({
       <AlertDialog isOpen={isAlertOpen} leastDestructiveRef={cancelDeleteRef} onClose={closeAlert}>
         <AlertDialogOverlay>
           <AlertDialogContent>
-            <AlertDialogHeader fontSize="lg" fontWeight="bold">
-              {headerLabel}
-            </AlertDialogHeader>
-            <AlertDialogBody>{body}</AlertDialogBody>
+            {headerLabel && (
+              <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                {headerLabel}
+              </AlertDialogHeader>
+            )}
+            <AlertDialogBody>{body(closeAlert)}</AlertDialogBody>
             <AlertDialogFooter>
               <Button ref={cancelDeleteRef} onClick={closeAlert}>
                 {cancelLabel}
