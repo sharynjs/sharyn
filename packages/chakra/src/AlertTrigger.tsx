@@ -1,88 +1,80 @@
-import React, { useRef, ReactNode, ReactElement } from 'react'
+import React, { useRef, ReactElement, RefObject } from 'react'
 
 import {
-  Button,
-  ButtonProps,
   AlertDialog,
-  AlertDialogBody,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
   useDisclosure,
-  useBoolean,
 } from '@chakra-ui/react'
 
 interface Props {
   trigger: (openAlert: () => void) => ReactElement
-  body: (closeAlert: () => void) => ReactNode
-  headerLabel?: string
-  actionLabel?: string
-  actionButtonProps?: ButtonProps
-  cancelLabel?: string
-  closeOnError?: boolean
-  action?: (...args: any[]) => any
-  onError?: (error: Error, closeAlert?: () => void) => any
+  children: ({
+    leastDestructiveRef,
+    closeAlert,
+  }: {
+    leastDestructiveRef: RefObject<any>
+    closeAlert: () => void
+  }) => ReactElement
 }
 
-const AlertTrigger = ({
-  trigger,
-  body,
-  headerLabel,
-  cancelLabel = 'Cancel',
-  actionButtonProps,
-  actionLabel,
-  action,
-  onError,
-  closeOnError = false,
-}: Props) => {
-  const { isOpen: isAlertOpen, onOpen: openAlert, onClose: closeAlert } = useDisclosure()
-  const [isActionLoading, { on: enableActionLoading, off: disableActionLoading }] = useBoolean()
-  const cancelDeleteRef = useRef(null)
-
-  const handleActionButtonClick = async () => {
-    enableActionLoading()
-    try {
-      action && (await action())
-      closeAlert()
-    } catch (err) {
-      closeOnError && closeAlert()
-      onError && onError(err)
-    }
-    disableActionLoading()
-  }
+const AlertTrigger = ({ trigger, children }: Props) => {
+  const { isOpen, onOpen: openAlert, onClose: closeAlert } = useDisclosure()
+  const leastDestructiveRef = useRef(null)
 
   return (
     <>
       {trigger(openAlert)}
-      <AlertDialog isOpen={isAlertOpen} leastDestructiveRef={cancelDeleteRef} onClose={closeAlert}>
+      <AlertDialog isOpen={isOpen} leastDestructiveRef={leastDestructiveRef} onClose={closeAlert}>
         <AlertDialogOverlay>
-          <AlertDialogContent>
-            {headerLabel && (
-              <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                {headerLabel}
-              </AlertDialogHeader>
-            )}
-            <AlertDialogBody>{body(closeAlert)}</AlertDialogBody>
-            <AlertDialogFooter>
-              <Button ref={cancelDeleteRef} onClick={closeAlert}>
-                {cancelLabel}
-              </Button>
-              {action && actionLabel && (
-                <Button
-                  onClick={handleActionButtonClick}
-                  isLoading={isActionLoading}
-                  ml={3}
-                  {...actionButtonProps}
-                >
-                  {actionLabel}
-                </Button>
-              )}
-            </AlertDialogFooter>
-          </AlertDialogContent>
+          <AlertDialogContent>{children({ leastDestructiveRef, closeAlert })}</AlertDialogContent>
         </AlertDialogOverlay>
       </AlertDialog>
     </>
   )
 }
 export default AlertTrigger
+
+// For reference, this implementation was possible but messy with TypeScript and too restrictive:
+// <AlertTrigger trigger={openAlert => <Button onClick={openAlert}>Open</Button>}>
+//   <AlertContent text="Kikoo" />
+// </AlertTrigger>
+
+// import React, { useRef, cloneElement, Children, ReactElement, RefObject } from 'react'
+
+// import {
+//   AlertDialog,
+//   AlertDialogContent,
+//   AlertDialogOverlay,
+//   useDisclosure,
+// } from '@chakra-ui/react'
+
+// interface Props {
+//   trigger: (openAlert: () => void) => ReactElement
+//   children: ReactElement
+// }
+
+// export interface AlertContentProps {
+//   leastDestructiveRef?: RefObject<any>
+//   closeAlert?: () => void
+//   [x: string]: unknown
+// }
+
+// const AlertTrigger = ({ trigger, children }: Props) => {
+//   const { isOpen, onOpen: openAlert, onClose: closeAlert } = useDisclosure()
+//   const leastDestructiveRef = useRef(null)
+//   const Child = Children.only(children)
+//   const ChildWithProps = cloneElement(Child, { leastDestructiveRef, closeAlert })
+
+//   return (
+//     <>
+//       {trigger(openAlert)}
+//       <AlertDialog isOpen={isOpen} leastDestructiveRef={leastDestructiveRef} onClose={closeAlert}>
+//         <AlertDialogOverlay>
+//           <AlertDialogContent>{ChildWithProps}</AlertDialogContent>
+//         </AlertDialogOverlay>
+//       </AlertDialog>
+//     </>
+//   )
+// }
+// export default AlertTrigger
