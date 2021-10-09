@@ -1,5 +1,7 @@
 # 🌹 between
 
+🛑 Use Lodash `inRange` instead.
+
 **`between`** tests if a numeral value is between two bounds.
 
 So instead of writing this:
