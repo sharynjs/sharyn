@@ -6,6 +6,8 @@
 
 Sharyn is a collection of JavaScript / TypeScript packages that make your life easier and reduce your boilerplate code.
 
+**Note**: I have ported the most useful of those packages over to my new repository [V1V2](https://github.com/v1v2/v1v2).
+
 #### 💯 General
 
 - [**@sharyn/util**](https://github.com/sharynjs/sharyn/blob/master/packages/util/README.md#readme) – Lodash-like utils:
